@@ -1,0 +1,256 @@
+{
+  "schema": "mirsad.production-known-item-analysis",
+  "generated_at": "2026-08-10T01:59:27.536658+00:00",
+  "metrics_are_positive_only": true,
+  "unjudged_results_are_not_labeled_irrelevant": true,
+  "overall": {
+    "cases": 99,
+    "known_item_recall_at_1": 0.4141,
+    "known_item_recall_at_5": 0.4949,
+    "known_item_recall_at_10": 0.5051,
+    "known_item_recall_at_20": 0.5051,
+    "known_item_mrr": 0.4496,
+    "known_item_success_at_5": 0.4949,
+    "known_item_success_at_10": 0.5051
+  },
+  "groups": {
+    "language:arabic": {
+      "captured_cases": 40,
+      "external_limits": 1,
+      "cases": 39,
+      "known_item_recall_at_1": 0.5641,
+      "known_item_recall_at_5": 0.641,
+      "known_item_recall_at_10": 0.641,
+      "known_item_recall_at_20": 0.641,
+      "known_item_mrr": 0.5992,
+      "known_item_success_at_5": 0.641,
+      "known_item_success_at_10": 0.641
+    },
+    "language:english": {
+      "captured_cases": 45,
+      "external_limits": 0,
+      "cases": 45,
+      "known_item_recall_at_1": 0.3111,
+      "known_item_recall_at_5": 0.4,
+      "known_item_recall_at_10": 0.4222,
+      "known_item_recall_at_20": 0.4222,
+      "known_item_mrr": 0.3476,
+      "known_item_success_at_5": 0.4,
+      "known_item_success_at_10": 0.4222
+    },
+    "language:mixed": {
+      "captured_cases": 15,
+      "external_limits": 0,
+      "cases": 15,
+      "known_item_recall_at_1": 0.3333,
+      "known_item_recall_at_5": 0.4,
+      "known_item_recall_at_10": 0.4,
+      "known_item_recall_at_20": 0.4,
+      "known_item_mrr": 0.3667,
+      "known_item_success_at_5": 0.4,
+      "known_item_success_at_10": 0.4
+    },
+    "source:bluesky": {
+      "captured_cases": 40,
+      "external_limits": 1,
+      "cases": 39,
+      "known_item_recall_at_1": 0.0,
+      "known_item_recall_at_5": 0.0256,
+      "known_item_recall_at_10": 0.0256,
+      "known_item_recall_at_20": 0.0256,
+      "known_item_mrr": 0.0128,
+      "known_item_success_at_5": 0.0256,
+      "known_item_success_at_10": 0.0256
+    },
+    "source:hacker_news": {
+      "captured_cases": 11,
+      "external_limits": 0,
+      "cases": 11,
+      "known_item_recall_at_1": 0.8182,
+      "known_item_recall_at_5": 0.8182,
+      "known_item_recall_at_10": 0.8182,
+      "known_item_recall_at_20": 0.8182,
+      "known_item_mrr": 0.8182,
+      "known_item_success_at_5": 0.8182,
+      "known_item_success_at_10": 0.8182
+    },
+    "source:youtube": {
+      "captured_cases": 49,
+      "external_limits": 0,
+      "cases": 49,
+      "known_item_recall_at_1": 0.6531,
+      "known_item_recall_at_5": 0.7959,
+      "known_item_recall_at_10": 0.8163,
+      "known_item_recall_at_20": 0.8163,
+      "known_item_mrr": 0.7145,
+      "known_item_success_at_5": 0.7959,
+      "known_item_success_at_10": 0.8163
+    },
+    "query_class:exact_phrase": {
+      "captured_cases": 56,
+      "external_limits": 0,
+      "cases": 56,
+      "known_item_recall_at_1": 0.7321,
+      "known_item_recall_at_5": 0.8393,
+      "known_item_recall_at_10": 0.8571,
+      "known_item_recall_at_20": 0.8571,
+      "known_item_mrr": 0.7793,
+      "known_item_success_at_5": 0.8393,
+      "known_item_success_at_10": 0.8571
+    },
+    "query_class:handle": {
+      "captured_cases": 36,
+      "external_limits": 1,
+      "cases": 35,
+      "known_item_recall_at_1": 0.0,
+      "known_item_recall_at_5": 0.0,
+      "known_item_recall_at_10": 0.0,
+      "known_item_recall_at_20": 0.0,
+      "known_item_mrr": 0.0,
+      "known_item_success_at_5": 0.0,
+      "known_item_success_at_10": 0.0
+    },
+    "query_class:hashtag": {
+      "captured_cases": 8,
+      "external_limits": 0,
+      "cases": 8,
+      "known_item_recall_at_1": 0.0,
+      "known_item_recall_at_5": 0.25,
+      "known_item_recall_at_10": 0.25,
+      "known_item_recall_at_20": 0.25,
+      "known_item_mrr": 0.1086,
+      "known_item_success_at_5": 0.25,
+      "known_item_success_at_10": 0.25
+    }
+  },
+  "arabic_loss_funnel": {
+    "known_targets": 55,
+    "stage_counts": {
+      "live_request_completed": 54,
+      "discovered": 32,
+      "canonicalized": 32,
+      "matched": 32,
+      "admitted": 32,
+      "semantic_opportunity": 32,
+      "final_top_5": 31,
+      "final_top_10": 31
+    },
+    "misses": [
+      {
+        "case_id": "real-37f9d285df8d34ca",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-d50e1a3d171ba3e9",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-e25e83fcc20dd163",
+        "source": "bluesky",
+        "loss": "live_request_completed"
+      },
+      {
+        "case_id": "real-3a53c178827f57b5",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-44d6dfaf197bd45e",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-afadbf19c79fe969",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-2e294dbb9b6547b6",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-fde30b9652b7b3a3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-30ba076548754f1f",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-05679329e64a02ac",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-866232697abb2cf3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-429dfb31eb073bdd",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-00c3afb1d211a2b4",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-2d0d125e6722928f",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-38950944c5621103",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-8c3de637fab30f8f",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-3cf9183459543673",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-245c7eb24d8cb055",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-65b92f3f31472a52",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-1b1a861a344939b3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-c2650b5424138701",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-0aae1b3920d7216f",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-246c90a723a0039b",
+        "source": "bluesky",
+        "loss": "discovered"
+      }
+    ]
+  }
+}

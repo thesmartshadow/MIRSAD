@@ -1,0 +1,12 @@
+.env
+.git
+.run
+.venv
+**/__pycache__
+**/*.pyc
+apps/web/node_modules
+apps/web/dist
+data
+reports
+test-results
+playwright-report

@@ -1,0 +1,895 @@
+{
+  "schema": "mirsad.mafer-phase3-model-shadow",
+  "version": "1.0",
+  "split": "holdout",
+  "fixture_sha256": "50b06e990e39e41995893b4de288553d16d4f575ca2d825554039004b23b5ca2",
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "license": "Apache-2.0",
+    "declared_size_gib": 0.22
+  },
+  "documents": 72,
+  "queries": 18,
+  "metrics": {
+    "overall": {
+      "queries": 18,
+      "p_at_5": 0.3778,
+      "p_at_10": 0.1889,
+      "mrr": 0.7565,
+      "recall_at_10": 0.9444,
+      "recall_at_20": 0.9444,
+      "ndcg_at_5": 0.8179,
+      "ndcg_at_10": 0.8179,
+      "success_at_1": 0.6111,
+      "success_at_3": 0.8889,
+      "success_at_5": 0.9444
+    },
+    "language": {
+      "arabic": {
+        "queries": 6,
+        "p_at_5": 0.3333,
+        "p_at_10": 0.1667,
+        "mrr": 0.5474,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.648,
+        "ndcg_at_10": 0.648,
+        "success_at_1": 0.3333,
+        "success_at_3": 0.6667,
+        "success_at_5": 0.8333
+      },
+      "english": {
+        "queries": 10,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.8833,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9222,
+        "ndcg_at_10": 0.9222,
+        "success_at_1": 0.8,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "mixed": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.75,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8065,
+        "ndcg_at_10": 0.8065,
+        "success_at_1": 0.5,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      }
+    },
+    "class": {
+      "ambiguous": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6509,
+        "ndcg_at_10": 0.6509,
+        "success_at_1": 0.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "entity": {
+        "queries": 3,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9732,
+        "ndcg_at_10": 0.9732,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "event": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "exact_phrase": {
+        "queries": 2,
+        "p_at_5": 0.2,
+        "p_at_10": 0.1,
+        "mrr": 0.5172,
+        "recall_at_10": 0.5,
+        "recall_at_20": 0.5,
+        "ndcg_at_5": 0.5,
+        "ndcg_at_10": 0.5,
+        "success_at_1": 0.5,
+        "success_at_3": 0.5,
+        "success_at_5": 0.5
+      },
+      "handle": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "hashtag": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6934,
+        "ndcg_at_10": 0.6934,
+        "success_at_1": 0.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "historical": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "identifier": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.6666,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.7853,
+        "ndcg_at_10": 0.7853,
+        "success_at_1": 0.5,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "person": {
+        "queries": 3,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.4167,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6294,
+        "ndcg_at_10": 0.6294,
+        "success_at_1": 0.0,
+        "success_at_3": 0.6667,
+        "success_at_5": 1.0
+      },
+      "topic": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      }
+    }
+  },
+  "performance": {
+    "initialization_ms": 536.84,
+    "document_encoding_ms": 200.63,
+    "document_encoding_per_item_ms": 2.7865,
+    "query_encoding_mean_ms": 2.5626,
+    "reranking_mean_ms": 0.1928,
+    "peak_rss_delta_kib": 610668
+  },
+  "cases": [
+    {
+      "id": "hold_ar_person_rare",
+      "query": "ليلى عبد الستار",
+      "language": "arabic",
+      "class": "person",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6934,
+        "ndcg_at_10": 0.6934,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        3
+      ],
+      "top_10": [
+        "hold_ar_person_rare:negative:1",
+        "hold_ar_person_rare:positive:1",
+        "hold_ar_person_rare:positive:2",
+        "hold_ar_person_common:positive:2",
+        "hold_ar_spelling:negative:2",
+        "hold_ar_person_common:negative:1",
+        "hold_recent_event:negative:1",
+        "hold_handle:positive:2",
+        "hold_entity_en:negative:1",
+        "hold_ar_mixed_name:negative:1"
+      ]
+    },
+    {
+      "id": "hold_ar_person_common",
+      "query": "حسن علي",
+      "language": "arabic",
+      "class": "person",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.25,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5013,
+        "ndcg_at_10": 0.5013,
+        "success_at_1": 0,
+        "success_at_3": 0,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          4,
+          5
+        ]
+      },
+      "relevant_ranks": [
+        5,
+        4
+      ],
+      "top_10": [
+        "hold_ar_person_common:negative:1",
+        "hold_ar_hashtag:positive:1",
+        "hold_ar_spelling:negative:1",
+        "hold_ar_person_common:positive:2",
+        "hold_ar_person_common:positive:1",
+        "hold_ar_hashtag:negative:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_ar_spelling:negative:2",
+        "hold_mixed_entity:positive:2",
+        "hold_ar_person_rare:negative:1"
+      ]
+    },
+    {
+      "id": "hold_ar_org",
+      "query": "ديوان الرقابة المالية الاتحادي",
+      "language": "arabic",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_ar_org:positive:2",
+        "hold_ar_org:positive:1",
+        "hold_ar_org:negative:1",
+        "hold_identifier:negative:1",
+        "hold_ar_org:negative:2",
+        "hold_identifier:positive:1",
+        "hold_exact_en:positive:2",
+        "hold_historical:positive:2",
+        "hold_historical:negative:2",
+        "hold_handle:negative:2"
+      ]
+    },
+    {
+      "id": "hold_ar_exact_diacritics",
+      "query": "\"وِزَارَةُ التَّرْبِيَة\"",
+      "language": "arabic",
+      "class": "exact_phrase",
+      "metrics": {
+        "p_at_5": 0.0,
+        "p_at_10": 0.0,
+        "mrr": 0.0345,
+        "recall_at_10": 0.0,
+        "recall_at_20": 0.0,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.0,
+        "success_at_1": 0,
+        "success_at_3": 0,
+        "success_at_5": 0,
+        "relevant_ranks": [
+          29,
+          33
+        ]
+      },
+      "relevant_ranks": [
+        29,
+        33
+      ],
+      "top_10": [
+        "hold_ar_hashtag:positive:2",
+        "hold_ar_spelling:negative:2",
+        "hold_ar_person_common:positive:2",
+        "hold_ar_person_common:positive:1",
+        "hold_historical:negative:2",
+        "hold_ar_mixed_name:positive:2",
+        "hold_ar_org:negative:1",
+        "hold_ar_spelling:negative:1",
+        "hold_ar_hashtag:negative:2",
+        "hold_ar_hashtag:positive:1"
+      ]
+    },
+    {
+      "id": "hold_ar_spelling",
+      "query": "إعادة الإعمار",
+      "language": "arabic",
+      "class": "topic",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "hold_ar_spelling:positive:1",
+        "hold_ar_spelling:positive:2",
+        "hold_historical:negative:2",
+        "hold_historical:positive:1",
+        "hold_ar_spelling:negative:1",
+        "hold_ar_person_common:positive:1",
+        "hold_recent_event:negative:1",
+        "hold_historical:positive:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_ar_spelling:negative:2"
+      ]
+    },
+    {
+      "id": "hold_ar_hashtag",
+      "query": "#مناخ_العراق",
+      "language": "arabic",
+      "class": "hashtag",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6934,
+        "ndcg_at_10": 0.6934,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        2
+      ],
+      "top_10": [
+        "hold_ar_hashtag:negative:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_ar_hashtag:positive:1",
+        "hold_ar_person_common:positive:2",
+        "hold_mixed_entity:positive:2",
+        "hold_historical:positive:1",
+        "hold_mixed_entity:negative:2",
+        "hold_ar_person_rare:positive:1",
+        "hold_handle:negative:2",
+        "hold_historical:positive:2"
+      ]
+    },
+    {
+      "id": "hold_mixed_entity",
+      "query": "Google العراق",
+      "language": "mixed",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        1
+      ],
+      "top_10": [
+        "hold_mixed_entity:positive:2",
+        "hold_mixed_entity:negative:2",
+        "hold_mixed_entity:positive:1",
+        "hold_ar_hashtag:negative:2",
+        "hold_historical:positive:1",
+        "hold_handle:negative:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_historical:positive:2",
+        "hold_historical:negative:1",
+        "hold_ar_hashtag:positive:1"
+      ]
+    },
+    {
+      "id": "hold_handle",
+      "query": "@iraqidata",
+      "language": "english",
+      "class": "handle",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_handle:positive:2",
+        "hold_handle:positive:1",
+        "hold_ar_person_common:negative:1",
+        "hold_ar_spelling:negative:2",
+        "hold_ar_person_common:positive:2",
+        "hold_ar_mixed_name:positive:1",
+        "hold_ar_mixed_name:negative:1",
+        "hold_ar_person_rare:positive:1",
+        "hold_ar_mixed_name:positive:2",
+        "hold_identifier:positive:1"
+      ]
+    },
+    {
+      "id": "hold_identifier",
+      "query": "GHSA-m72x-9p56-4c3h",
+      "language": "english",
+      "class": "identifier",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.3333,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5706,
+        "ndcg_at_10": 0.5706,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          3,
+          4
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        4
+      ],
+      "top_10": [
+        "hold_identifier:negative:2",
+        "hold_commit_hash:positive:2",
+        "hold_identifier:positive:1",
+        "hold_identifier:positive:2",
+        "hold_commit_hash:positive:1",
+        "hold_commit_hash:negative:2",
+        "hold_handle:positive:2",
+        "hold_entity_en:negative:1",
+        "hold_identifier:negative:1",
+        "hold_ar_mixed_name:positive:2"
+      ]
+    },
+    {
+      "id": "hold_recent_event",
+      "query": "latest Basra water project",
+      "language": "english",
+      "class": "event",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "hold_recent_event:positive:1",
+        "hold_recent_event:positive:2",
+        "hold_recent_event:negative:1",
+        "hold_recent_event:negative:2",
+        "hold_long_topic:negative:2",
+        "hold_long_topic:positive:2",
+        "hold_ar_spelling:positive:2",
+        "hold_long_topic:positive:1",
+        "hold_ar_person_rare:positive:2",
+        "hold_ar_hashtag:positive:1"
+      ]
+    },
+    {
+      "id": "hold_historical",
+      "query": "Iraq 1991 archive",
+      "language": "english",
+      "class": "historical",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "hold_historical:positive:1",
+        "hold_historical:positive:2",
+        "hold_ar_hashtag:negative:2",
+        "hold_historical:negative:1",
+        "hold_ar_hashtag:positive:2",
+        "hold_mixed_entity:positive:2",
+        "hold_handle:negative:2",
+        "hold_mixed_entity:negative:2",
+        "hold_ar_hashtag:positive:1",
+        "hold_historical:negative:2"
+      ]
+    },
+    {
+      "id": "hold_entity_en",
+      "query": "Orion Civic Lab",
+      "language": "english",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_entity_en:positive:2",
+        "hold_entity_en:positive:1",
+        "hold_entity_en:negative:2",
+        "hold_entity_en:negative:1",
+        "hold_ar_person_rare:positive:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_mixed_entity:positive:2",
+        "hold_ar_org:negative:1",
+        "hold_mixed_entity:positive:1",
+        "hold_ar_exact_diacritics:negative:1"
+      ]
+    },
+    {
+      "id": "hold_long_topic",
+      "query": "community effects of coastal erosion and saltwater intrusion",
+      "language": "english",
+      "class": "topic",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "hold_long_topic:positive:1",
+        "hold_long_topic:positive:2",
+        "hold_ar_spelling:positive:2",
+        "hold_recent_event:positive:1",
+        "hold_long_topic:negative:2",
+        "hold_ar_hashtag:positive:1",
+        "hold_ar_spelling:positive:1",
+        "hold_recent_event:negative:1",
+        "hold_recent_event:positive:2",
+        "hold_ar_person_rare:positive:2"
+      ]
+    },
+    {
+      "id": "hold_ambiguous",
+      "query": "jaguar",
+      "language": "english",
+      "class": "ambiguous",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6509,
+        "ndcg_at_10": 0.6509,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          4
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        4
+      ],
+      "top_10": [
+        "hold_ambiguous:negative:2",
+        "hold_ambiguous:positive:1",
+        "hold_ambiguous:negative:1",
+        "hold_ambiguous:positive:2",
+        "hold_recent_event:negative:2",
+        "hold_ar_person_rare:negative:1",
+        "hold_ar_spelling:negative:1",
+        "hold_historical:negative:2",
+        "hold_ar_hashtag:negative:2",
+        "hold_entity_en:negative:1"
+      ]
+    },
+    {
+      "id": "hold_exact_en",
+      "query": "\"Open Transit Charter\"",
+      "language": "english",
+      "class": "exact_phrase",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_exact_en:positive:2",
+        "hold_exact_en:positive:1",
+        "hold_exact_en:negative:2",
+        "hold_exact_en:negative:1",
+        "hold_ar_person_rare:positive:1",
+        "hold_ar_org:negative:1",
+        "hold_historical:negative:2",
+        "hold_ar_mixed_name:negative:2",
+        "hold_identifier:negative:1",
+        "hold_recent_event:negative:1"
+      ]
+    },
+    {
+      "id": "hold_ar_mixed_name",
+      "query": "أحمد Kareem",
+      "language": "mixed",
+      "class": "person",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6934,
+        "ndcg_at_10": 0.6934,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        3
+      ],
+      "top_10": [
+        "hold_ar_mixed_name:negative:1",
+        "hold_ar_mixed_name:positive:1",
+        "hold_ar_mixed_name:positive:2",
+        "hold_ar_person_common:positive:2",
+        "hold_ar_person_common:negative:1",
+        "hold_ar_spelling:negative:2",
+        "hold_handle:positive:2",
+        "hold_ar_person_common:positive:1",
+        "hold_ar_person_rare:positive:1",
+        "hold_ar_hashtag:positive:2"
+      ]
+    },
+    {
+      "id": "hold_commit_hash",
+      "query": "9f86d081884c7d659a2feaa0c55ad015",
+      "language": "english",
+      "class": "identifier",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_commit_hash:positive:2",
+        "hold_commit_hash:positive:1",
+        "hold_commit_hash:negative:2",
+        "hold_identifier:negative:2",
+        "hold_identifier:positive:1",
+        "hold_identifier:positive:2",
+        "hold_ar_hashtag:positive:2",
+        "hold_handle:positive:2",
+        "hold_ar_mixed_name:positive:2",
+        "hold_entity_en:negative:1"
+      ]
+    },
+    {
+      "id": "hold_duplicates_outage",
+      "query": "municipal air quality warning",
+      "language": "english",
+      "class": "event",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "hold_duplicates_outage:positive:2",
+        "hold_duplicates_outage:positive:1",
+        "hold_duplicates_outage:negative:1",
+        "hold_duplicates_outage:negative:2",
+        "hold_long_topic:positive:2",
+        "hold_ar_hashtag:positive:1",
+        "hold_handle:positive:1",
+        "hold_ar_org:negative:1",
+        "hold_ar_person_rare:negative:2",
+        "hold_ar_person_rare:positive:2"
+      ]
+    }
+  ]
+}

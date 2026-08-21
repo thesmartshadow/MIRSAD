@@ -1,0 +1,94 @@
+{
+  "schema": "mirsad.search-evolution-performance",
+  "version": "1.1.0",
+  "captured_at": "2026-08-21T01:47:11.799928+00:00",
+  "operator_database_used": false,
+  "cases": {
+    "cold": {
+      "semantic_ms": {
+        "baseline": 1392.34,
+        "after": 1224.92,
+        "change_percent": -12.02
+      },
+      "api_wall_ms": {
+        "baseline": 1519.0,
+        "after": 1356.92,
+        "change_percent": -10.67
+      },
+      "rss_after_mib": {
+        "baseline": 694.21,
+        "after": 696.74
+      },
+      "cache_hits": 0,
+      "cache_misses": 20,
+      "semantic_profile_ms": {
+        "model_load": 767.27,
+        "query_encoding": 19.07,
+        "candidate_cache_lookup": 0.24,
+        "candidate_embedding_generation": 436.55,
+        "similarity": 1.78
+      },
+      "embedding_batch_size": 20
+    },
+    "warm_repeat": {
+      "semantic_ms": {
+        "baseline": 20.43,
+        "after": 20.82,
+        "change_percent": 1.91
+      },
+      "api_wall_ms": {
+        "baseline": 122.24,
+        "after": 122.45,
+        "change_percent": 0.17
+      },
+      "rss_after_mib": {
+        "baseline": 696.09,
+        "after": 697.74
+      },
+      "cache_hits": 20,
+      "cache_misses": 0,
+      "semantic_profile_ms": {
+        "model_load": 0.0,
+        "query_encoding": 18.62,
+        "candidate_cache_lookup": 0.31,
+        "candidate_embedding_generation": 0.0,
+        "similarity": 1.86
+      },
+      "embedding_batch_size": 0
+    },
+    "warm_new_query_cached_content": {
+      "semantic_ms": {
+        "baseline": 23.2,
+        "after": 23.27,
+        "change_percent": 0.3
+      },
+      "api_wall_ms": {
+        "baseline": 120.69,
+        "after": 121.99,
+        "change_percent": 1.08
+      },
+      "rss_after_mib": {
+        "baseline": 696.46,
+        "after": 697.87
+      },
+      "cache_hits": 20,
+      "cache_misses": 0,
+      "semantic_profile_ms": {
+        "model_load": 0.0,
+        "query_encoding": 21.21,
+        "candidate_cache_lookup": 0.24,
+        "candidate_embedding_generation": 0.0,
+        "similarity": 1.8
+      },
+      "embedding_batch_size": 0
+    }
+  },
+  "decisions": {
+    "persistent_embedding_cache": "NOT_IMPLEMENTED",
+    "reason": "The existing bounded in-process content cache and batch encoder already reduce warm document generation to zero; a new persistent vector store did not clear the evidence gate.",
+    "batching": "PRESERVED_BOUNDED_MAX_32",
+    "ranking_semantics": "UNCHANGED",
+    "perceived_speed": "SSE_PROGRESS_IMPLEMENTED"
+  },
+  "interpretation": "Cold-run variance is dominated by local model initialization. Warm-path changes within a few milliseconds are measurement noise and are not claimed as compute improvement."
+}

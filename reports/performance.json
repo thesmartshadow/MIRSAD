@@ -1,0 +1,55 @@
+{
+  "schema": "mirsad.local-search-benchmark",
+  "version": "1.0",
+  "iterations": 12,
+  "fixture_connectors": 3,
+  "per_connector_latency_ms": 50,
+  "records_per_search": 15,
+  "unique_records_per_search": 2,
+  "median_wall_ms": 198.99,
+  "p95_wall_ms": 230.92,
+  "median_phase_ms": {
+    "connector_collection": 57.55,
+    "persistence": 18.55,
+    "deduplication": 22.55,
+    "ranking": 75.82,
+    "clustering": 6.64
+  },
+  "engine_scaling": [
+    {
+      "records": 100,
+      "normalization_ms": 0.3,
+      "ranking_ms": 5.2,
+      "deduplication_ms": 80.33,
+      "clustering_ms": 5.78
+    },
+    {
+      "records": 200,
+      "normalization_ms": 0.61,
+      "ranking_ms": 8.94,
+      "deduplication_ms": 344.69,
+      "clustering_ms": 13.56
+    },
+    {
+      "records": 1000,
+      "normalization_ms": 3.13,
+      "ranking_ms": 44.35,
+      "deduplication_ms": null,
+      "clustering_ms": null
+    },
+    {
+      "records": 5000,
+      "normalization_ms": 16.19,
+      "ranking_ms": 226.95,
+      "deduplication_ms": null,
+      "clustering_ms": null
+    },
+    {
+      "records": 10000,
+      "normalization_ms": 32.56,
+      "ranking_ms": 434.71,
+      "deduplication_ms": null,
+      "clustering_ms": null
+    }
+  ]
+}

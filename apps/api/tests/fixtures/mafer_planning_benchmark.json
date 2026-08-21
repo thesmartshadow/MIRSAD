@@ -1,0 +1,27 @@
+{
+  "schema": "mirsad.mafer-planning-benchmark",
+  "version": "1.0",
+  "method": "Judged retrieval actions and useful-URL outcomes; separate from frozen relevance holdouts.",
+  "queries": [
+    {"id":"handle_en","query":"@thesmartshadow","language":"english","class":"handle","time_range":"all","useful_sources":["bluesky","x","github","youtube","reddit"],"useful_variants":["ORIGINAL","HANDLE"],"memory":0},
+    {"id":"handle_ar","query":"@ali_firas","language":"english","class":"handle","time_range":"all","useful_sources":["bluesky","x","github","mastodon","reddit"],"useful_variants":["ORIGINAL","HANDLE"],"memory":1},
+    {"id":"person_en","query":"Ali Firas","language":"english","class":"person","time_range":"all","useful_sources":["github","bluesky","x","youtube","reddit"],"useful_variants":["ORIGINAL","EXACT"],"memory":1},
+    {"id":"person_ar","query":"علي فراس","language":"arabic","class":"person","time_range":"all","useful_sources":["bluesky","x","github","youtube","mastodon"],"useful_variants":["ORIGINAL","EXACT","ARABIC_NORMALIZED","TRANSLITERATION"],"variant_requirements":{"github":["TRANSLITERATION"],"youtube":["TRANSLITERATION","EXACT"]},"memory":1},
+    {"id":"entity_mixed","query":"Microsoft العراق","language":"mixed","class":"entity","time_range":"all","useful_sources":["github","youtube","x","threads","rss","gdelt"],"useful_variants":["ORIGINAL","EXACT","ARABIC_NORMALIZED"],"memory":0},
+    {"id":"topic_en","query":"artificial intelligence","language":"english","class":"topic","time_range":"30d","useful_sources":["youtube","bluesky","mastodon","gdelt","rss","hacker_news","github","reddit","x","threads"],"useful_variants":["ORIGINAL","NORMALIZED"],"memory":2},
+    {"id":"topic_ar","query":"الذكاء الاصطناعي","language":"arabic","class":"topic","time_range":"30d","useful_sources":["youtube","bluesky","mastodon","gdelt","rss","reddit","x","threads"],"useful_variants":["ORIGINAL","ARABIC_NORMALIZED"],"memory":1},
+    {"id":"hashtag_en","query":"#technology","language":"english","class":"hashtag","time_range":"7d","useful_sources":["mastodon","bluesky","x","threads","youtube","reddit"],"useful_variants":["ORIGINAL","HASHTAG"],"memory":0},
+    {"id":"hashtag_ar","query":"#بغداد","language":"arabic","class":"hashtag","time_range":"7d","useful_sources":["mastodon","bluesky","x","threads","youtube"],"useful_variants":["ORIGINAL","HASHTAG","ARABIC_NORMALIZED"],"memory":0},
+    {"id":"identifier_cve","query":"CVE-2026-61371","language":"english","class":"identifier","time_range":"all","useful_sources":["github","hacker_news","rss","gdelt","reddit"],"useful_variants":["ORIGINAL","IDENTIFIER","EXACT"],"memory":1},
+    {"id":"identifier_ghsa","query":"GHSA-2345-6789-cfgh","language":"english","class":"identifier","time_range":"all","useful_sources":["github","hacker_news","rss","reddit"],"useful_variants":["ORIGINAL","IDENTIFIER","EXACT"],"memory":1},
+    {"id":"repository","query":"openai/openai-python","language":"english","class":"identifier","time_range":"all","useful_sources":["github","hacker_news","reddit"],"useful_variants":["ORIGINAL","IDENTIFIER","EXACT"],"memory":2},
+    {"id":"event_recent","query":"latest Baghdad news","language":"english","class":"event","time_range":"24h","useful_sources":["gdelt","rss","x","threads","bluesky","youtube"],"useful_variants":["ORIGINAL","NORMALIZED"],"memory":0},
+    {"id":"exact_ar","query":"\"وزارة التخطيط\"","language":"arabic","class":"exact_phrase","time_range":"30d","useful_sources":["rss","gdelt","youtube","x","threads"],"useful_variants":["ORIGINAL","EXACT","ARABIC_NORMALIZED"],"variant_requirements":{"rss":["EXACT"],"gdelt":["EXACT"]},"memory":1},
+    {"id":"historical","query":"Baghdad 2003 archive","language":"english","class":"historical","time_range":"all","useful_sources":["rss","gdelt","reddit","youtube"],"useful_variants":["ORIGINAL","NORMALIZED"],"memory":3},
+    {"id":"ambiguous","query":"apple","language":"english","class":"ambiguous","time_range":"all","useful_sources":["youtube","bluesky","mastodon","gdelt","rss","hacker_news","github","reddit","x","threads"],"useful_variants":["ORIGINAL"],"memory":1},
+    {"id":"mixed_openai","query":"OpenAI بغداد","language":"mixed","class":"entity","time_range":"30d","useful_sources":["youtube","bluesky","x","threads","rss","gdelt","github"],"useful_variants":["ORIGINAL","EXACT","ARABIC_NORMALIZED"],"memory":1},
+    {"id":"domain","query":"openai.com","language":"english","class":"identifier","time_range":"all","useful_sources":["github","reddit","x","threads","rss"],"useful_variants":["ORIGINAL","IDENTIFIER","EXACT"],"memory":2},
+    {"id":"organization_ar","query":"وِزَارَةُ التَّخْطِيط","language":"arabic","class":"entity","time_range":"all","useful_sources":["rss","gdelt","youtube","x","threads"],"useful_variants":["ORIGINAL","EXACT","ARABIC_NORMALIZED"],"variant_requirements":{"rss":["ARABIC_NORMALIZED"],"gdelt":["ARABIC_NORMALIZED"]},"memory":2},
+    {"id":"topic_collision","query":"technology","language":"english","class":"ambiguous","time_range":"7d","useful_sources":["youtube","bluesky","mastodon","hacker_news","github","reddit","x","threads"],"useful_variants":["ORIGINAL"],"memory":0}
+  ]
+}

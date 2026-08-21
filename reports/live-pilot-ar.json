@@ -1,0 +1,806 @@
+{
+  "schema": "mirsad.search-export",
+  "version": "1.0",
+  "generated_at": "2026-08-08T21:32:43.187219+00:00",
+  "search": {
+    "id": "ede4fdeb-5f7a-4c8f-8a8e-fa78a2966721",
+    "original_query": "العراق",
+    "normalized_query": "العراق",
+    "detected_language": "ar",
+    "status": "partial",
+    "sources": [
+      "bluesky",
+      "hacker_news",
+      "github",
+      "gdelt",
+      "rss"
+    ],
+    "result_count": 9,
+    "unique_count": 9,
+    "duration_ms": 3046,
+    "started_at": "2026-08-08T21:32:40.135991",
+    "completed_at": "2026-08-08T21:32:43.180840",
+    "warnings": [
+      {
+        "source": "bluesky",
+        "code": "http_403",
+        "message": "Source access is unavailable from this environment",
+        "retryable": false,
+        "status_code": 403
+      },
+      {
+        "source": "gdelt",
+        "code": "timeout",
+        "message": "GDELT exceeded the interactive search latency budget",
+        "retryable": true,
+        "status_code": null
+      }
+    ],
+    "parameters": {
+      "query": "العراق",
+      "sources": [
+        "bluesky",
+        "hacker_news",
+        "github",
+        "gdelt",
+        "rss"
+      ],
+      "time_range": "30d",
+      "language": "ar",
+      "limit": 30,
+      "exact_phrase": false,
+      "sort": "best_match",
+      "content_types": [],
+      "has_media": null,
+      "has_links": null,
+      "hashtags": [],
+      "source_options": {}
+    }
+  },
+  "analytics": {
+    "total_results": 9,
+    "unique_results": 9,
+    "source_count": 1,
+    "duplicate_count": 0,
+    "average_score": 32.42,
+    "search_duration_ms": 3046,
+    "mentions_over_time": [
+      {
+        "timestamp": "2026-07-09T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-10T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-11T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-12T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-13T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-14T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-15T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-16T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-17T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-18T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-19T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-20T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-21T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-22T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-23T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-24T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-25T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-26T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-27T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-28T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-29T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-30T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-07-31T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-01T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-02T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-03T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-04T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-05T21:32:43.180912+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-06T21:32:43.180912+00:00",
+        "count": 1
+      },
+      {
+        "timestamp": "2026-08-07T21:32:43.180912+00:00",
+        "count": 0
+      }
+    ],
+    "trend_percent": -20.0,
+    "overall_trend_percent": -20.0,
+    "social_mentions_over_time": [
+      {
+        "timestamp": "2026-07-09T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-10T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-11T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-12T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-13T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-14T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-15T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-16T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-17T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-18T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-19T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-20T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-21T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-22T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-23T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-24T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-25T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-26T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-27T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-28T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-29T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-30T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-31T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-01T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-02T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-03T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-04T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-05T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-06T21:32:43.180958+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-07T21:32:43.180958+00:00",
+        "count": 0
+      }
+    ],
+    "social_trend_percent": 0.0,
+    "news_mentions_over_time": [
+      {
+        "timestamp": "2026-07-09T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-10T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-11T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-12T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-13T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-14T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-15T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-16T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-17T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-18T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-19T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-20T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-21T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-22T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-23T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-24T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-25T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-26T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-27T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-28T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-29T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-30T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-07-31T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-01T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-02T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-03T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-04T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-05T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-06T21:32:43.180990+00:00",
+        "count": 0
+      },
+      {
+        "timestamp": "2026-08-07T21:32:43.180990+00:00",
+        "count": 0
+      }
+    ],
+    "news_trend_percent": 0.0,
+    "platform_distribution": {
+      "github": 9
+    },
+    "social_source_distribution": {},
+    "most_active_platforms": [],
+    "most_engaged_results": [],
+    "top_hashtags": [],
+    "top_mentioned_accounts": [],
+    "platform_diversity": 0,
+    "category_distribution": {
+      "developer_community": 9
+    },
+    "average_social_reach": null,
+    "top_related_terms": [
+      {
+        "term": "موقع",
+        "count": 3
+      },
+      {
+        "term": "منصه",
+        "count": 3
+      },
+      {
+        "term": "الاصطناعي",
+        "count": 2
+      },
+      {
+        "term": "تطبيق",
+        "count": 2
+      },
+      {
+        "term": "iraq",
+        "count": 2
+      },
+      {
+        "term": "abdullahabbas77",
+        "count": 1
+      },
+      {
+        "term": "تحشيشيه",
+        "count": 1
+      },
+      {
+        "term": "لعبه",
+        "count": 1
+      },
+      {
+        "term": "noni",
+        "count": 1
+      },
+      {
+        "term": "باسم",
+        "count": 1
+      },
+      {
+        "term": "عبدالله",
+        "count": 1
+      },
+      {
+        "term": "السايق",
+        "count": 1
+      }
+    ],
+    "language_distribution": {
+      "ar": 9
+    },
+    "publication_time_distribution": {
+      "last_7d": 1,
+      "last_30d": 8
+    },
+    "score_distribution": {
+      "20-39": 9
+    },
+    "cluster_distribution": {
+      "1": 9
+    },
+    "bucket": "24h",
+    "bucket_count": 30
+  },
+  "records": [
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "AbdullahAbbas77",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "AbdullahAbbas77/noni",
+      "text": "اسمي عبدالله من العراق و صنعت لعبه صغيره تحشيشيه حلةه باسم السايق السكران",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-08-06T23:47:46",
+      "fetch_time": "2026-08-08T21:32:41.330347",
+      "original_url": "https://github.com/AbdullahAbbas77/noni",
+      "final_score": 37.95,
+      "relevance": 69.75,
+      "freshness": 51.65,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "f8764d47-3f1d-4117-ab4f-025c9a8dc498"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "alazhyrykhbyb-creator",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "alazhyrykhbyb-creator/-",
+      "text": "موقع تعديل الصور باحدث ادوات الذكاء الاصطناعي في العراق 🇮🇶",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-31T14:49:39",
+      "fetch_time": "2026-08-08T21:32:41.330361",
+      "original_url": "https://github.com/alazhyrykhbyb-creator/-",
+      "final_score": 33.55,
+      "relevance": 69.87,
+      "freshness": 5.67,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "c500f808-49e7-47f5-8c92-604fb2218c51"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "alihadli",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "alihadli/khan-aliraq",
+      "text": " تطبيق خان العراق - منصة التجارة الإلكترونية ",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-21T02:28:16",
+      "fetch_time": "2026-08-08T21:32:41.330394",
+      "original_url": "https://github.com/alihadli/khan-aliraq",
+      "final_score": 33.09,
+      "relevance": 70.0,
+      "freshness": 0.15,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "eb4aca8e-e321-4907-a775-d1d375487df1"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "results-zummar",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "results-zummar/results-zummar",
+      "text": "موقع نتائج الامتحانات الوزارية في العراق",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-13T21:37:34",
+      "fetch_time": "2026-08-08T21:32:41.330405",
+      "original_url": "https://github.com/results-zummar/results-zummar",
+      "final_score": 33.02,
+      "relevance": 69.91,
+      "freshness": 0.01,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "dc414c46-8f73-4933-b157-68969cad4867"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "almobd3com",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "almobd3com/almbd3com",
+      "text": "منصة المبدع التعليمية تهدف إلى توفير كل ما يحتاجه الطالب في العراق من ملازم وكتب ومراجعات مركزة. شبكة المبدع، موقع المبدع.",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-27T19:41:05",
+      "fetch_time": "2026-08-08T21:32:41.330376",
+      "original_url": "https://github.com/almobd3com/almbd3com",
+      "final_score": 32.88,
+      "relevance": 69.43,
+      "freshness": 1.52,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "3eb56403-6bc9-45a4-bf38-e07bfcd62704"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "ardalhadi26-tech",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "ardalhadi26-tech/United-Companies",
+      "text": "نظام كامل لشركه نقل غاز في العراق شركه الناقلات النموذجيه لنقل المنتوجات النفطيه المحدوده",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-19T14:13:08",
+      "fetch_time": "2026-08-08T21:32:41.330402",
+      "original_url": "https://github.com/ardalhadi26-tech/United-Companies",
+      "final_score": 32.83,
+      "relevance": 69.58,
+      "freshness": 0.09,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "fa65ca41-79a7-4f61-9176-684c15d7a33d"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "alazreeaqeel-ship-it",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "alazreeaqeel-ship-it/Saas-QR",
+      "text": "مينوزي (Menozy) — النظام الرقمي المتكامل لإدارة المطاعم والكافيهات والفنادق في العراق. • قائمة طعام رقمية عبر رمز QR على كل طاولة • استقبال الطلبات وتتبّعها لحظة بلحظة • شاشة مطبخ وطباعة فواتير حرارية • لوحة تحكم للمبيعات والتقارير • دعم عربي وكردي وإنجليزي، دفع نقدي/إلكتروني/تحويل بنكي ابدأ خلال دقائق — تجربة مجانية ٣٠ يوماً بدون بطاقة.",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-30T12:04:28",
+      "fetch_time": "2026-08-08T21:32:41.330366",
+      "original_url": "https://github.com/alazreeaqeel-ship-it/Saas-QR",
+      "final_score": 32.36,
+      "relevance": 68.19,
+      "freshness": 3.85,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "24d997ed-ca8f-4745-b7e3-9321f1c65f6a"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "SeeYou0128",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "SeeYou0128/souq-al-iraq-releases",
+      "text": "توزيع نسخ تطبيق سوق العراق (APK)",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-23T08:53:04",
+      "fetch_time": "2026-08-08T21:32:41.330385",
+      "original_url": "https://github.com/SeeYou0128/souq-al-iraq-releases",
+      "final_score": 28.05,
+      "relevance": 69.91,
+      "freshness": 0.33,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "9dc056b8-a946-41a5-b478-cb902679a3c3"
+    },
+    {
+      "query": "العراق",
+      "source": "github",
+      "source_type": "repository",
+      "author": "minbalad2020-stack",
+      "author_handle": null,
+      "author_verified": null,
+      "title": "minbalad2020-stack/zekaa-iraq",
+      "text": "منصة ذكاء العراق للذكاء الاصطناعي",
+      "language": "ar",
+      "hashtags": null,
+      "mentions": null,
+      "media_type": null,
+      "like_count": null,
+      "view_count": null,
+      "comment_count": 0,
+      "share_count": null,
+      "repost_count": null,
+      "reaction_count": null,
+      "publication_time": "2026-07-11T14:36:02",
+      "fetch_time": "2026-08-08T21:32:41.330408",
+      "original_url": "https://github.com/minbalad2020-stack/zekaa-iraq",
+      "final_score": 28.05,
+      "relevance": 69.96,
+      "freshness": 0.01,
+      "engagement": 0.0,
+      "social_reach": null,
+      "source_confidence": 75.0,
+      "cross_source_presence": 0.0,
+      "duplicate_group": null,
+      "cluster": "1bd07134-f5df-48a9-808f-5be27a144103"
+    }
+  ]
+}

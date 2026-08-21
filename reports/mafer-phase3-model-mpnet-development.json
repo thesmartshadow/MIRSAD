@@ -1,0 +1,819 @@
+{
+  "schema": "mirsad.mafer-phase3-model-shadow",
+  "version": "1.0",
+  "split": "development",
+  "fixture_sha256": "cf5be21e8d87e57599787a12472a0358fc59a67c850dd1f4dc84758c441ebae8",
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "license": "Apache-2.0",
+    "declared_size_gib": 1.0
+  },
+  "documents": 64,
+  "queries": 16,
+  "metrics": {
+    "overall": {
+      "queries": 16,
+      "p_at_5": 0.4,
+      "p_at_10": 0.2,
+      "mrr": 0.8958,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "ndcg_at_5": 0.9078,
+      "ndcg_at_10": 0.9078,
+      "success_at_1": 0.8125,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    },
+    "language": {
+      "arabic": {
+        "queries": 8,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.7917,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8457,
+        "ndcg_at_10": 0.8457,
+        "success_at_1": 0.625,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "english": {
+        "queries": 7,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9771,
+        "ndcg_at_10": 0.9771,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "mixed": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      }
+    },
+    "class": {
+      "ambiguous": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "entity": {
+        "queries": 3,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.8333,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.871,
+        "ndcg_at_10": 0.871,
+        "success_at_1": 0.6667,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "event": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "exact_phrase": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.75,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8255,
+        "ndcg_at_10": 0.8255,
+        "success_at_1": 0.5,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "handle": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "hashtag": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "historical": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "identifier": {
+        "queries": 1,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "person": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.6666,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.7105,
+        "ndcg_at_10": 0.7105,
+        "success_at_1": 0.5,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      },
+      "topic": {
+        "queries": 2,
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1.0,
+        "success_at_3": 1.0,
+        "success_at_5": 1.0
+      }
+    }
+  },
+  "performance": {
+    "initialization_ms": 963.9,
+    "document_encoding_ms": 480.02,
+    "document_encoding_per_item_ms": 7.5003,
+    "query_encoding_mean_ms": 7.9372,
+    "reranking_mean_ms": 0.191,
+    "peak_rss_delta_kib": 1558000
+  },
+  "cases": [
+    {
+      "id": "dev_ar_person_rare",
+      "query": "سارة الخفاجي",
+      "language": "arabic",
+      "class": "person",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.3333,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5706,
+        "ndcg_at_10": 0.5706,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          3,
+          4
+        ]
+      },
+      "relevant_ranks": [
+        4,
+        3
+      ],
+      "top_10": [
+        "dev_ar_person_rare:negative:1",
+        "dev_recent_event:negative:1",
+        "dev_ar_person_rare:positive:2",
+        "dev_ar_person_rare:positive:1",
+        "dev_hashtag:negative:2",
+        "dev_hashtag:positive:2",
+        "dev_ar_person_common:positive:2",
+        "dev_ar_org:negative:1",
+        "dev_hashtag:positive:1",
+        "dev_recent_event:positive:1"
+      ]
+    },
+    {
+      "id": "dev_ar_person_common",
+      "query": "محمد علي",
+      "language": "arabic",
+      "class": "person",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8503,
+        "ndcg_at_10": 0.8503,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5
+        ]
+      },
+      "relevant_ranks": [
+        5,
+        1
+      ],
+      "top_10": [
+        "dev_ar_person_common:positive:2",
+        "dev_ar_person_common:negative:1",
+        "dev_ar_person_common:negative:2",
+        "dev_recent_event:negative:1",
+        "dev_ar_person_common:positive:1",
+        "dev_ar_person_rare:positive:1",
+        "dev_handle:positive:2",
+        "dev_historical:positive:2",
+        "dev_ar_person_rare:positive:2",
+        "dev_ar_person_rare:negative:1"
+      ]
+    },
+    {
+      "id": "dev_ar_org",
+      "query": "هيئة النزاهة الاتحادية",
+      "language": "arabic",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6934,
+        "ndcg_at_10": 0.6934,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        2
+      ],
+      "top_10": [
+        "dev_ar_org:negative:1",
+        "dev_ar_org:positive:2",
+        "dev_ar_org:positive:1",
+        "dev_hashtag:positive:1",
+        "dev_ar_org:negative:2",
+        "dev_ar_exact_diacritics:negative:2",
+        "dev_hashtag:positive:2",
+        "dev_exact_en:positive:1",
+        "dev_ar_spelling:positive:2",
+        "dev_historical:negative:2"
+      ]
+    },
+    {
+      "id": "dev_ar_exact_diacritics",
+      "query": "\"وِزَارَةُ الصِّحَّة\"",
+      "language": "arabic",
+      "class": "exact_phrase",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 0.5,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6509,
+        "ndcg_at_10": 0.6509,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          4
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        4
+      ],
+      "top_10": [
+        "dev_ar_exact_diacritics:negative:2",
+        "dev_ar_exact_diacritics:positive:1",
+        "dev_ar_exact_diacritics:negative:1",
+        "dev_ar_exact_diacritics:positive:2",
+        "dev_recent_event:negative:1",
+        "dev_hashtag:positive:1",
+        "dev_ar_person_rare:negative:1",
+        "dev_hashtag:positive:2",
+        "dev_ar_org:negative:1",
+        "dev_ar_org:negative:2"
+      ]
+    },
+    {
+      "id": "dev_ar_spelling",
+      "query": "إدارة الأزمات",
+      "language": "arabic",
+      "class": "topic",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "dev_ar_spelling:positive:2",
+        "dev_ar_spelling:positive:1",
+        "dev_recent_event:positive:1",
+        "dev_hashtag:positive:1",
+        "dev_identifier:negative:1",
+        "dev_hashtag:negative:1",
+        "dev_ar_spelling:negative:2",
+        "dev_ar_org:negative:1",
+        "dev_hashtag:positive:2",
+        "dev_recent_event:positive:2"
+      ]
+    },
+    {
+      "id": "dev_mixed_entity",
+      "query": "Microsoft العراق",
+      "language": "mixed",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        1
+      ],
+      "top_10": [
+        "dev_mixed_entity:positive:2",
+        "dev_mixed_entity:negative:2",
+        "dev_mixed_entity:positive:1",
+        "dev_mixed_entity:negative:1",
+        "dev_historical:positive:2",
+        "dev_ar_person_rare:positive:1",
+        "dev_historical:positive:1",
+        "dev_ar_person_common:positive:2",
+        "dev_historical:negative:1",
+        "dev_handle:negative:1"
+      ]
+    },
+    {
+      "id": "dev_handle",
+      "query": "@baghdadtech",
+      "language": "english",
+      "class": "handle",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "dev_handle:positive:1",
+        "dev_handle:positive:2",
+        "dev_ar_person_rare:positive:2",
+        "dev_recent_event:negative:1",
+        "dev_ar_person_common:positive:2",
+        "dev_hashtag:negative:2",
+        "dev_ar_person_rare:positive:1",
+        "dev_handle:negative:2",
+        "dev_ar_person_common:positive:1",
+        "dev_mixed_entity:negative:2"
+      ]
+    },
+    {
+      "id": "dev_identifier",
+      "query": "CVE-2027-10421",
+      "language": "english",
+      "class": "identifier",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        3,
+        1
+      ],
+      "top_10": [
+        "dev_identifier:positive:2",
+        "dev_identifier:negative:2",
+        "dev_identifier:positive:1",
+        "dev_identifier:negative:1",
+        "dev_handle:positive:1",
+        "dev_exact_en:positive:1",
+        "dev_entity_en:positive:2",
+        "dev_ar_org:positive:2",
+        "dev_ambiguous:negative:1",
+        "dev_ar_exact_diacritics:positive:1"
+      ]
+    },
+    {
+      "id": "dev_recent_event",
+      "query": "آخر أخبار فيضانات البصرة",
+      "language": "arabic",
+      "class": "event",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "dev_recent_event:positive:1",
+        "dev_recent_event:positive:2",
+        "dev_recent_event:negative:1",
+        "dev_ar_person_common:positive:1",
+        "dev_historical:positive:2",
+        "dev_ar_spelling:positive:1",
+        "dev_historical:positive:1",
+        "dev_recent_event:negative:2",
+        "dev_ar_person_rare:positive:1",
+        "dev_ar_person_common:positive:2"
+      ]
+    },
+    {
+      "id": "dev_historical",
+      "query": "بغداد 1958 أرشيف",
+      "language": "arabic",
+      "class": "historical",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "dev_historical:positive:1",
+        "dev_historical:positive:2",
+        "dev_historical:negative:2",
+        "dev_ar_person_common:positive:2",
+        "dev_recent_event:negative:1",
+        "dev_historical:negative:1",
+        "dev_recent_event:positive:1",
+        "dev_ar_person_rare:positive:1",
+        "dev_recent_event:positive:2",
+        "dev_mixed_entity:negative:2"
+      ]
+    },
+    {
+      "id": "dev_hashtag",
+      "query": "#التحول_الرقمي",
+      "language": "arabic",
+      "class": "hashtag",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "dev_hashtag:positive:2",
+        "dev_hashtag:positive:1",
+        "dev_recent_event:negative:1",
+        "dev_ar_person_rare:negative:1",
+        "dev_ar_org:negative:1",
+        "dev_ar_person_rare:positive:2",
+        "dev_hashtag:negative:1",
+        "dev_recent_event:positive:1",
+        "dev_hashtag:negative:2",
+        "dev_historical:negative:2"
+      ]
+    },
+    {
+      "id": "dev_entity_en",
+      "query": "Acme Observatory",
+      "language": "english",
+      "class": "entity",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "dev_entity_en:positive:2",
+        "dev_entity_en:positive:1",
+        "dev_entity_en:negative:2",
+        "dev_entity_en:negative:1",
+        "dev_ambiguous:positive:2",
+        "dev_duplicates_outage:negative:1",
+        "dev_historical:negative:2",
+        "dev_ambiguous:negative:1",
+        "dev_identifier:negative:2",
+        "dev_handle:positive:1"
+      ]
+    },
+    {
+      "id": "dev_long_topic",
+      "query": "effects of drought on urban water systems",
+      "language": "english",
+      "class": "topic",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        2,
+        1
+      ],
+      "top_10": [
+        "dev_long_topic:positive:2",
+        "dev_long_topic:positive:1",
+        "dev_recent_event:positive:2",
+        "dev_long_topic:negative:2",
+        "dev_ar_spelling:positive:1",
+        "dev_ar_person_common:positive:1",
+        "dev_recent_event:negative:2",
+        "dev_long_topic:negative:1",
+        "dev_duplicates_outage:positive:2",
+        "dev_recent_event:positive:1"
+      ]
+    },
+    {
+      "id": "dev_ambiguous",
+      "query": "mercury",
+      "language": "english",
+      "class": "ambiguous",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.9197,
+        "ndcg_at_10": 0.9197,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        3
+      ],
+      "top_10": [
+        "dev_ambiguous:positive:1",
+        "dev_ambiguous:negative:2",
+        "dev_ambiguous:positive:2",
+        "dev_ambiguous:negative:1",
+        "dev_entity_en:positive:2",
+        "dev_entity_en:negative:2",
+        "dev_entity_en:positive:1",
+        "dev_ar_exact_diacritics:negative:1",
+        "dev_identifier:positive:2",
+        "dev_historical:negative:2"
+      ]
+    },
+    {
+      "id": "dev_exact_en",
+      "query": "\"Civic Data Compact\"",
+      "language": "english",
+      "class": "exact_phrase",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "dev_exact_en:positive:1",
+        "dev_exact_en:positive:2",
+        "dev_exact_en:negative:1",
+        "dev_exact_en:negative:2",
+        "dev_hashtag:positive:1",
+        "dev_ar_person_rare:positive:1",
+        "dev_historical:negative:2",
+        "dev_entity_en:positive:1",
+        "dev_ar_org:positive:2",
+        "dev_handle:positive:2"
+      ]
+    },
+    {
+      "id": "dev_duplicates_outage",
+      "query": "regional heat alert",
+      "language": "english",
+      "class": "event",
+      "metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.2,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2
+        ]
+      },
+      "relevant_ranks": [
+        1,
+        2
+      ],
+      "top_10": [
+        "dev_duplicates_outage:positive:1",
+        "dev_duplicates_outage:positive:2",
+        "dev_duplicates_outage:negative:1",
+        "dev_ar_exact_diacritics:positive:1",
+        "dev_duplicates_outage:negative:2",
+        "dev_recent_event:positive:2",
+        "dev_long_topic:positive:2",
+        "dev_long_topic:positive:1",
+        "dev_ar_spelling:positive:2",
+        "dev_identifier:positive:2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5850 @@
+{
+  "artifact": "MIRSAD v1.0 functional hardening live matrix",
+  "observational_only": true,
+  "captured_at": "2026-08-10T13:08:38.473688+00:00",
+  "api_root": "http://127.0.0.1:8000/api/v1",
+  "source_states_before": [
+    {
+      "key": "bluesky",
+      "name": "Bluesky",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported",
+      "coverage_label": "Public posts indexed by Bluesky",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": true,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "top",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": null,
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T13:05:05.620362Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 2512.83,
+      "last_latency_ms": 969.82,
+      "last_result_count": 1,
+      "last_normalized_count": 1,
+      "last_malformed_count": 0,
+      "request_count": 1,
+      "failure_count": 1,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "facebook",
+      "name": "Facebook",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Global public-post keyword search is unavailable",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": false,
+        "author_search": "conditional",
+        "recent_search": false,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": "conditional",
+        "pagination": false,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Global public-post keyword search is not available with the configured API access",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "gdelt",
+      "name": "GDELT News",
+      "kind": "news",
+      "category": "news",
+      "support_level": "supported",
+      "coverage_label": "News indexed by GDELT DOC 2.0",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": false,
+        "engagement_metrics": false,
+        "pagination": false,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "news"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "unknown",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": "GDELT is temporarily degraded after repeated timeouts",
+      "failure_category": "circuit_open",
+      "http_status": null,
+      "average_latency_ms": 2000.37,
+      "last_latency_ms": 0.02,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 6,
+      "failure_count": 6,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "github",
+      "name": "GitHub",
+      "kind": "code",
+      "category": "developer_community",
+      "support_level": "supported",
+      "coverage_label": "Public repositories, issues, and pull requests",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "repositories",
+          "issues",
+          "pull_requests"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "DIRECT_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": true
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": true,
+      "status": "unknown",
+      "detail": "Anonymous requests have a lower rate limit",
+      "confidence": 75.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T12:39:11.796533Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 550.89,
+      "last_latency_ms": 496.25,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 12,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [
+          "repositories"
+        ],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "hacker_news",
+      "name": "Hacker News",
+      "kind": "community",
+      "category": "developer_community",
+      "support_level": "supported",
+      "coverage_label": "Public Hacker News records indexed by Algolia",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "unknown",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T12:39:11.796533Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 789.89,
+      "last_latency_ms": 688.08,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 10,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "instagram",
+      "name": "Instagram",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Hashtagged public media only; no global keyword search",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts",
+          "videos"
+        ],
+        "search_modes": [
+          "hashtag"
+        ],
+        "sort_modes": [
+          "recent"
+        ],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "unconfigured",
+      "detail": "Professional account hashtag access not configured",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "linkedin",
+      "name": "LinkedIn",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Authorized user or organization content only",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": false,
+        "author_search": "conditional",
+        "recent_search": false,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": "conditional",
+        "pagination": "conditional",
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Global public-post search is unavailable through configured API access",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "mastodon",
+      "name": "Mastodon",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported",
+      "coverage_label": "Public timeline coverage on configured Mastodon instances",
+      "capabilities": {
+        "keyword_search": "conditional",
+        "phrase_search": "conditional",
+        "hashtag_search": true,
+        "author_search": "conditional",
+        "recent_search": true,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": true,
+        "hashtag_timeline": true,
+        "authenticated_fulltext_search": "conditional",
+        "instance_scoped": true,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "public_timeline",
+          "hashtag_timeline",
+          "authenticated_fulltext_search"
+        ],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "PUBLIC_TIMELINE"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": "conditional",
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_TIMELINE",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": "Public timeline mode; full-text search not configured",
+      "confidence": 62.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T13:05:05.620362Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 574.48,
+      "last_latency_ms": 338.71,
+      "last_result_count": 40,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 6,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "rss",
+      "name": "RSS Feeds",
+      "kind": "feed",
+      "category": "news",
+      "support_level": "supported",
+      "coverage_label": "Server-configured public feeds",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": "conditional",
+        "date_filter": true,
+        "public_posts": false,
+        "comments": false,
+        "engagement_metrics": false,
+        "pagination": false,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "news"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": "conditional",
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "unknown",
+      "detail": null,
+      "confidence": 72.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T12:39:11.796533Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 504.92,
+      "last_latency_ms": 384.1,
+      "last_result_count": 23,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 9,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "reddit",
+      "name": "Reddit",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Approved Reddit Data API post search",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "all_reddit",
+          "communities"
+        ],
+        "sort_modes": [
+          "relevance",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX",
+          "HISTORICAL_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": "conditional",
+        "historical_index": "conditional",
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Approved API credentials required; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "telegram",
+      "name": "Telegram",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Public Channels only; requires a locally authorized user session",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": "conditional",
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "unconfigured",
+      "detail": "Public-channel user session not configured",
+      "confidence": 62.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "threads",
+      "name": "Threads",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Official Threads keyword and topic-tag search",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": "conditional",
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "keyword",
+          "topic_tag"
+        ],
+        "sort_modes": [
+          "top",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Access token not configured; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "tiktok",
+      "name": "TikTok",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Public videos through the approved Research API",
+      "capabilities": {
+        "keyword_search": "conditional",
+        "phrase_search": "conditional",
+        "hashtag_search": "conditional",
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "videos"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Research API approval and credentials required",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "x",
+      "name": "X",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Official API recent posts; full archive depends on access tier",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": "conditional",
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "relevance",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX",
+          "HISTORICAL_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": "conditional",
+        "historical_index": "conditional",
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Bearer token not configured; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "youtube",
+      "name": "YouTube",
+      "kind": "video",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Public videos, channels, and playlists through YouTube Data API",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": "conditional",
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "videos",
+          "channels",
+          "playlists"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "relevance",
+          "recent",
+          "most_engaged"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": "2026-08-10T13:05:05.620362Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 1060.84,
+      "last_latency_ms": 387.75,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 11,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "baghdad",
+      "query": "بغداد",
+      "time_range": "7d",
+      "payload": {
+        "query": "بغداد",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "5cc59784-837d-4ce1-a5d4-f84b122f770b",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:01.359415+00:00",
+      "completed_at": "2026-08-10T13:08:04.046998+00:00",
+      "wall_time_ms": 2687.58,
+      "status": "completed",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [],
+        "external_limit_sources": [],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "SHORT_AMBIGUOUS",
+      "original_query": "بغداد",
+      "normalized_query": "بغداد",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "d3990b83f1ada912dc8f",
+            "text": "بغداد",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "d006638a823ba6f5eaf5",
+            "text": "بغداد",
+            "parent_id": "d3990b83f1ada912dc8f",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "00100ee596a0e63f9534",
+            "text": "بغداد",
+            "parent_id": "d3990b83f1ada912dc8f",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "bluesky",
+        "youtube",
+        "mastodon",
+        "rss",
+        "github",
+        "gdelt",
+        "hacker_news"
+      ],
+      "completion_order": [
+        "rss",
+        "mastodon",
+        "youtube",
+        "bluesky"
+      ],
+      "per_source": {
+        "bluesky": {
+          "requests": 1,
+          "fetched": 30,
+          "valid": 30,
+          "matched": 29,
+          "admitted": 29,
+          "persisted": 29,
+          "final_top": 10,
+          "latency_ms": 1269.73,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d3990b83f1ada912dc8f"
+          ],
+          "query_variant_texts": [
+            "بغداد"
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "valid": 30,
+          "matched": 50,
+          "admitted": 30,
+          "persisted": 30,
+          "final_top": 20,
+          "latency_ms": 1254.87,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d3990b83f1ada912dc8f"
+          ],
+          "query_variant_texts": [
+            "بغداد"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 607.4,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d3990b83f1ada912dc8f"
+          ],
+          "query_variant_texts": [
+            "بغداد"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 562.19,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d3990b83f1ada912dc8f"
+          ],
+          "query_variant_texts": [
+            "بغداد"
+          ]
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 29,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 50
+        },
+        "admitted_per_source": {
+          "bluesky": 29,
+          "youtube": 30
+        },
+        "final_top_per_source": {
+          "youtube": 20,
+          "bluesky": 10
+        },
+        "admitted_total": 59,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 29,
+            "min": 65.45,
+            "p25": 67.13,
+            "median": 67.42,
+            "mean": 71.431,
+            "p75": 77.0,
+            "max": 87.12
+          },
+          "youtube": {
+            "count": 30,
+            "min": 82.98,
+            "p25": 88.715,
+            "median": 99.445,
+            "mean": 95.161,
+            "p75": 99.51,
+            "max": 99.58
+          }
+        }
+      },
+      "results": 30,
+      "unique": 30,
+      "clusters": 26,
+      "duration_ms": 2613,
+      "stop_reason": "USER_LIMIT",
+      "uncertainty": null,
+      "warnings": [],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "524bf187-e5c9-4ae9-8e0a-8a3e5cfa9262",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=gDcBULXyEIE",
+          "title": "بغداد المنصور الداودي | جولة في شارع المطاعم وأجواء بغداد الجميلة 2026/8/8",
+          "text": "جولة جديدة في بغداد ❤️     اليوم نأخذكم بجولة في **منطقة المنصور – الداودي** ونمر على **شارع المطاعم**، ونشوف أجواء المنطقة والشوارع ...",
+          "score": 90.25
+        },
+        {
+          "rank": 2,
+          "id": "7190bafa-89a5-425d-8337-18350ee42b27",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=IS51eE6gqRI",
+          "title": "عناصر بزي أمني يشتمون مواطنا في بغداد",
+          "text": "عناصر بزي أمني وعجلات مظللة يشتمون مواطنا في أحد شوارع العاصمة بغداد. #العراق #الساعة #اخبار_الساعة #على_مدار_العراق.",
+          "score": 89.29
+        },
+        {
+          "rank": 3,
+          "id": "16020536-0deb-419f-b5dc-cc553bc821d4",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=Su2PPI3GiuA",
+          "title": "شوفوا الأعظمية اليوم.. بغداد بجمالها الحقيقي 2026/8/9",
+          "text": "جولة جديدة في منطقة الأعظمية – بغداد 2026** في هذا الفيديو نأخذكم بجولة ممتعة في شوارع منطقة الأعظمية، إحدى أعرق وأجمل مناطق بغداد، ...",
+          "score": 87.98
+        },
+        {
+          "rank": 4,
+          "id": "6722c8e9-1664-4583-808f-f46b14ff4d04",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/meridiannews.bsky.social/post/3mskmecszo32d",
+          "title": "مدينة الدائرة والجمال الحجري: عظمة العمارة العباسية من بغداد إلى سامراء",
+          "text": "مدينة الدائرة والجمال الحجري: عظمة العمارة العباسية من بغداد إلى سامراء\n\nعندما رآت العالم سقوط بني أمية، فإن قيام بني العباسى أعاد الحياة ليس فقط في السياسة، ولكن أيضا في العمارة. من تخطيط مدينة الدائرة المذهلة في بغداد إلى مدينة سامراء الكبرى مع منارته",
+          "score": 86.55
+        },
+        {
+          "rank": 5,
+          "id": "2250c7d9-8693-4ed7-82b4-2e97e1dba57f",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=FGz_2r2r8p4",
+          "title": "جولة في بغداد من جسر باب المعظم | شوارع بغداد وأجواء دجلة 2026/8/10",
+          "text": "جولة جديدة في شوارع بغداد ✨ نبدأها من جسر باب المعظم ونشوف أجواء العاصمة وحركة الشوارع والمناظر الجميلة على نهر دجلة. جسر باب ...",
+          "score": 86.41
+        }
+      ]
+    },
+    {
+      "id": "planning_ministry",
+      "query": "وزارة التخطيط",
+      "time_range": "7d",
+      "payload": {
+        "query": "وزارة التخطيط",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "c3721904-831f-490b-8149-009fd2fe88e0",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:04.049217+00:00",
+      "completed_at": "2026-08-10T13:08:09.387620+00:00",
+      "wall_time_ms": 5338.4,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [
+          "bluesky"
+        ],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "bluesky",
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "MULTI_TERM_TOPIC",
+      "original_query": "وزارة التخطيط",
+      "normalized_query": "وزاره التخطيط",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "2d76896aa0cccb9bb909",
+            "text": "وزارة التخطيط",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "c176a03a471eaf813222",
+            "text": "وزاره التخطيط",
+            "parent_id": "2d76896aa0cccb9bb909",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "81ec206029f3cc589f0f",
+            "text": "\"وزارة التخطيط\"",
+            "parent_id": "2d76896aa0cccb9bb909",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "cda12d5329b51477f52b",
+            "text": "وزاره التخطيط",
+            "parent_id": "2d76896aa0cccb9bb909",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "rss",
+        "github",
+        "hacker_news",
+        "gdelt"
+      ],
+      "completion_order": [
+        "mastodon",
+        "rss",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "rss",
+        "github",
+        "hacker_news",
+        "youtube",
+        "gdelt"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 59,
+          "valid": 59,
+          "matched": 3,
+          "admitted": 3,
+          "persisted": 3,
+          "final_top": 3,
+          "latency_ms": 2511.57,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909",
+            "81ec206029f3cc589f0f",
+            "cda12d5329b51477f52b"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "bluesky": {
+          "requests": 3,
+          "fetched": 4,
+          "valid": 4,
+          "matched": 1,
+          "admitted": 1,
+          "persisted": 1,
+          "final_top": 1,
+          "latency_ms": 2192.55,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "http_403"
+          ],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط"
+          ]
+        },
+        "mastodon": {
+          "requests": 2,
+          "fetched": 80,
+          "valid": 80,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 955.35,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909",
+            "81ec206029f3cc589f0f",
+            "cda12d5329b51477f52b"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 46,
+          "valid": 46,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1082.24,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909",
+            "81ec206029f3cc589f0f",
+            "cda12d5329b51477f52b"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "github": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 742.43,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط"
+          ]
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 955.21,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "2d76896aa0cccb9bb909"
+          ],
+          "query_variant_texts": [
+            "وزارة التخطيط"
+          ]
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 3000.23,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "timeout"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 1,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 3
+        },
+        "admitted_per_source": {
+          "bluesky": 1,
+          "youtube": 3
+        },
+        "final_top_per_source": {
+          "youtube": 3,
+          "bluesky": 1
+        },
+        "admitted_total": 4,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 1,
+            "min": 64.09,
+            "p25": 64.09,
+            "median": 64.09,
+            "mean": 64.09,
+            "p75": 64.09,
+            "max": 64.09
+          },
+          "youtube": {
+            "count": 3,
+            "min": 65.07,
+            "p25": 65.38,
+            "median": 65.69,
+            "mean": 66.067,
+            "p75": 66.565,
+            "max": 67.44
+          }
+        }
+      },
+      "results": 4,
+      "unique": 4,
+      "clusters": 4,
+      "duration_ms": 5323,
+      "stop_reason": "MAX_ROUNDS",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "bluesky",
+          "code": "http_403",
+          "message": "Bluesky returned an earlier page but a later page was unavailable",
+          "retryable": false,
+          "status_code": 403
+        },
+        {
+          "source": "gdelt",
+          "code": "timeout",
+          "message": "GDELT exceeded the interactive search latency budget",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "d4a44f2d-14be-4cd0-8be5-052070864014",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=WUsTfCqGfKY",
+          "title": "وزارة التخطيط تتابعْ ميدانياٌ مشروع إنشاء مُستشفى سعة (200) سرير في قضاء هيت بمحافظة الانبار",
+          "text": "وزارة التخطيط تتابعْ ميدانياٌ مشروع إنشاء مُستشفى سعة (200) سرير في قضاء هيت بمحافظة الانبار",
+          "score": 67.02
+        },
+        {
+          "rank": 2,
+          "id": "402d154e-97bb-4907-9146-a02429588b81",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=wj-ap-JUMl0",
+          "title": "&quot;عدنا وزارة رعاية مو وزارة عمل&quot;.. الخبير الاقتصادي أحمد هذال: التخطيط والعمل مُغيبان تماما في العراق",
+          "text": "\"عدنا وزارة رعاية مو وزارة عمل\".. الخبير الاقتصادي أحمد هذال: التخطيط والعمل مُغيبان تماما في العراق #الرابعة ‫#الرابعةTV للأشتراك في‬ ...",
+          "score": 65.24
+        },
+        {
+          "rank": 3,
+          "id": "8bc9bfec-9c0a-4337-b252-c03eda40de51",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=eg4TJGfsyJk",
+          "title": "صباحك مصري | مؤشرات سوق العمل في مصر خلال الربع الثاني 2026",
+          "text": "وزارة التخطيط والتنمية الاقتصادية تستعرض مؤشرات سوق العمل في مصر خلال الربع الثاني 2026 برنامج صباحي يهتم بكل الأخبار ...",
+          "score": 64.67
+        },
+        {
+          "rank": 4,
+          "id": "43434aae-491a-4f37-a1ff-aadfaa8f4b1d",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/onnews.bsky.social/post/3msnijmfpul2t",
+          "title": "وزيرا السياحة والتخطيط يناقشان إسهامات قطاع السياحة في الاقتصاد القومي 121NEWS",
+          "text": "عقد شريف فتحي وزير السياحة والآثار، والدكتور أحمد رستم وزير التخطيط والتنمية الاقتصادية، اجتماعًا تنسيقيًا، بمقر وزارة السياحة والآثار بمدينة العلمين. وذلك لبحث سبل تعزيز التعاون والتنسيق بين الوزارتين، لإبراز وتحديد إسهامات قطاع السياحة في مصر في الاقتصاد القومي بصورة أكثر دقة وشمولاً، وتعزيز رصد وقياس عوائده وتأثيراته المباشرة وغير المباشرة على الاقتصاد الوطني، وخاصة […]",
+          "score": 63.64
+        }
+      ]
+    },
+    {
+      "id": "abwab",
+      "query": "منصة ابواب",
+      "time_range": "7d",
+      "payload": {
+        "query": "منصة ابواب",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "eb9b3a5a-0f2c-41f7-9436-f56013449877",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:09.389293+00:00",
+      "completed_at": "2026-08-10T13:08:14.187831+00:00",
+      "wall_time_ms": 4798.54,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [
+          "bluesky"
+        ],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "bluesky",
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "MULTI_TERM_TOPIC",
+      "original_query": "منصة ابواب",
+      "normalized_query": "منصه ابواب",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "a82904227900b45c6397",
+            "text": "منصة ابواب",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "2c760dd39b777b9a7aa9",
+            "text": "منصه ابواب",
+            "parent_id": "a82904227900b45c6397",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "4d593ebb2309946f7ceb",
+            "text": "\"منصة ابواب\"",
+            "parent_id": "a82904227900b45c6397",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "3ef329eca1e5dfc414f7",
+            "text": "منصه ابواب",
+            "parent_id": "a82904227900b45c6397",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "bluesky",
+        "gdelt"
+      ],
+      "completion_order": [
+        "mastodon",
+        "github",
+        "hacker_news",
+        "youtube",
+        "mastodon",
+        "rss",
+        "github",
+        "hacker_news",
+        "youtube",
+        "bluesky",
+        "gdelt"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 3,
+          "admitted": 3,
+          "persisted": 3,
+          "final_top": 3,
+          "latency_ms": 3026.79,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "a82904227900b45c6397",
+            "4d593ebb2309946f7ceb",
+            "3ef329eca1e5dfc414f7"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب",
+            "\"منصة ابواب\"",
+            "منصه ابواب"
+          ]
+        },
+        "github": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1391.54,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "a82904227900b45c6397",
+            "4d593ebb2309946f7ceb",
+            "3ef329eca1e5dfc414f7"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب",
+            "\"منصة ابواب\"",
+            "منصه ابواب"
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1681.72,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "a82904227900b45c6397",
+            "4d593ebb2309946f7ceb",
+            "3ef329eca1e5dfc414f7"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب",
+            "\"منصة ابواب\"",
+            "منصه ابواب"
+          ]
+        },
+        "mastodon": {
+          "requests": 2,
+          "fetched": 80,
+          "valid": 80,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1090.02,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "a82904227900b45c6397",
+            "4d593ebb2309946f7ceb",
+            "3ef329eca1e5dfc414f7"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب",
+            "\"منصة ابواب\"",
+            "منصه ابواب"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 674.13,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "a82904227900b45c6397"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب"
+          ]
+        },
+        "bluesky": {
+          "requests": 3,
+          "fetched": 1,
+          "valid": 1,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 2261.84,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "http_403"
+          ],
+          "query_variant_attempts": [
+            "a82904227900b45c6397"
+          ],
+          "query_variant_texts": [
+            "منصة ابواب"
+          ]
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 3000.65,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "timeout"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 3
+        },
+        "admitted_per_source": {
+          "youtube": 3
+        },
+        "final_top_per_source": {
+          "youtube": 3
+        },
+        "admitted_total": 3,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "youtube": {
+            "count": 3,
+            "min": 72.79,
+            "p25": 73.15,
+            "median": 73.51,
+            "mean": 75.36,
+            "p75": 76.645,
+            "max": 79.78
+          }
+        }
+      },
+      "results": 3,
+      "unique": 3,
+      "clusters": 3,
+      "duration_ms": 4784,
+      "stop_reason": "MAX_ROUNDS",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "bluesky",
+          "code": "http_403",
+          "message": "Bluesky returned an earlier page but a later page was unavailable",
+          "retryable": false,
+          "status_code": 403
+        },
+        {
+          "source": "gdelt",
+          "code": "timeout",
+          "message": "GDELT exceeded the interactive search latency budget",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "2a58ee7d-af02-42c7-a258-90f49f863123",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=xx3nZ5hC6-0",
+          "title": "تفاصيل الأونلاين في مادة الفيزياء على منصة ابواب لتالتة ثانوي وتانية بكالوريا والثانوية الأزهرية",
+          "text": "الحريف #علي_مصطفى #فيزيا_سهلة #فيزياء_2027 #البكالوريا #ثانوية_عامة #ابواب بروفايل مستر علي مصطفى على منصة ابواب: ...",
+          "score": 79.27
+        },
+        {
+          "rank": 2,
+          "id": "fdae06f1-73b2-481e-96d8-ac0dd8163566",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=ki0rZ5cWL0Q",
+          "title": "رسمياً.. فتح باب الحجز لدفعة 2027 أونلاين على منصة أبواب",
+          "text": "البكالوريا_2027 #ابواب #نظام_البكالوريا #لغة_عربية #وائل_عيسى#تأسيس_النحو#تأسيس_البلاغة لكل طلاب البكالوريا وثالثة ...",
+          "score": 73.0
+        },
+        {
+          "rank": 3,
+          "id": "8706d2dc-1f5c-4897-bfe8-8f7b4f067d01",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=NEoOfkXo75E",
+          "title": "حقيقة منصة أبواب 🔰 | هل هيه عراقيه أم اردنيه ؟؟ | علي براهيم ",
+          "text": "منصة ابواب احدى المنصات التعليميه التي تقدم محاضرات لمدرسين مشاهير واكيد هذه المحاضرات بفلوس وسعر الدورة الواحدة عندهم مرتفع .",
+          "score": 72.26
+        }
+      ]
+    },
+    {
+      "id": "arabic_ai",
+      "query": "الذكاء الاصطناعي",
+      "time_range": "7d",
+      "payload": {
+        "query": "الذكاء الاصطناعي",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "b8529b05-24fd-4f95-824b-05af9e5d1475",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:14.189414+00:00",
+      "completed_at": "2026-08-10T13:08:17.537234+00:00",
+      "wall_time_ms": 3347.82,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "MULTI_TERM_TOPIC",
+      "original_query": "الذكاء الاصطناعي",
+      "normalized_query": "الذكاء الاصطناعي",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "94a2d4f01e686f67a034",
+            "text": "الذكاء الاصطناعي",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "9da7cb2651e02e60d7fa",
+            "text": "الذكاء الاصطناعي",
+            "parent_id": "94a2d4f01e686f67a034",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "77dc6a794ea2f1d77dc6",
+            "text": "\"الذكاء الاصطناعي\"",
+            "parent_id": "94a2d4f01e686f67a034",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "53b36291b08d81994083",
+            "text": "الذكاء الاصطناعي",
+            "parent_id": "94a2d4f01e686f67a034",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "bluesky",
+        "gdelt"
+      ],
+      "completion_order": [
+        "mastodon",
+        "hacker_news",
+        "github",
+        "youtube",
+        "gdelt",
+        "mastodon",
+        "rss",
+        "github",
+        "hacker_news",
+        "bluesky",
+        "youtube"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "valid": 60,
+          "matched": 20,
+          "admitted": 20,
+          "persisted": 20,
+          "final_top": 19,
+          "latency_ms": 2600.33,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034",
+            "77dc6a794ea2f1d77dc6"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "github": {
+          "requests": 2,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 20,
+          "admitted": 20,
+          "persisted": 20,
+          "final_top": 4,
+          "latency_ms": 1966.2,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034",
+            "77dc6a794ea2f1d77dc6"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1888.83,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034",
+            "77dc6a794ea2f1d77dc6"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "mastodon": {
+          "requests": 2,
+          "fetched": 80,
+          "valid": 80,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1017.4,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034",
+            "77dc6a794ea2f1d77dc6"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 502.17,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي"
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 30,
+          "valid": 30,
+          "matched": 27,
+          "admitted": 27,
+          "persisted": 27,
+          "final_top": 7,
+          "latency_ms": 1084.47,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "94a2d4f01e686f67a034"
+          ],
+          "query_variant_texts": [
+            "الذكاء الاصطناعي"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 27,
+          "gdelt": 0,
+          "github": 20,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 20
+        },
+        "admitted_per_source": {
+          "bluesky": 27,
+          "github": 20,
+          "youtube": 20
+        },
+        "final_top_per_source": {
+          "bluesky": 7,
+          "youtube": 19,
+          "github": 4
+        },
+        "admitted_total": 67,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 27,
+            "min": 67.59,
+            "p25": 67.83,
+            "median": 75.88,
+            "mean": 79.554,
+            "p75": 86.485,
+            "max": 99.69
+          },
+          "github": {
+            "count": 20,
+            "min": 65.25,
+            "p25": 67.09,
+            "median": 67.67,
+            "mean": 70.47,
+            "p75": 72.345,
+            "max": 81.33
+          },
+          "youtube": {
+            "count": 20,
+            "min": 77.15,
+            "p25": 83.79,
+            "median": 99.14,
+            "mean": 92.511,
+            "p75": 99.403,
+            "max": 99.54
+          }
+        }
+      },
+      "results": 30,
+      "unique": 30,
+      "clusters": 30,
+      "duration_ms": 3275,
+      "stop_reason": "USER_LIMIT",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "d4eb40ff-cc4d-418d-85b3-05d9de3ba6c1",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/ntsrnews.bsky.social/post/3msm4tyltz52h",
+          "title": "الذكاء الاصطناعي يهمش البطلات في قصص الأطفال",
+          "text": "الذكاء الاصطناعي يهمش البطلات في قصص الأطفال\nbit.ly/3RV59gW\n#النجم_لأخبار_التقنية",
+          "score": 86.24
+        },
+        {
+          "rank": 2,
+          "id": "e6dd338d-b8e9-465e-8d3d-d3d5a6e2eac8",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/udemyfreecourse.bsky.social/post/3msmjmyc4r42b",
+          "title": "دورة ماجستير في هندسة الذكاء الاصطناعي – Free Udemy Course 100% OFF",
+          "text": "[FREE] دورة ماجستير في هندسة الذكاء الاصطناعي",
+          "score": 85.66
+        },
+        {
+          "rank": 3,
+          "id": "beaa6868-b9c1-42bf-ba32-aa671d900a89",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=h_060hXzYPY",
+          "title": "الذكاء الاصطناعي يتحكم في حياتي بالهند😟🇮🇳(ورطني مع الهنود)",
+          "text": "رابط قروب الواتس: https://whatsapp.com/channel/0029Vb6rE1XGJP8GlYQ5J00R القناة الثانيه: ...",
+          "score": 85.17
+        },
+        {
+          "rank": 4,
+          "id": "b0d2664a-07cb-414b-970f-772080ae549e",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=FNlPkgzMx5M",
+          "title": "خايف من الذكاء الاصطناعي وهو أصلاً عواطلي! 🤣",
+          "text": "مين فيكم خايف الذكاء الاصطناعي ياخذ مكانه بالشغل؟ منشن صاحبك العواطلي خليه يتطمن! لا تنسوا تشتركوا بقناة نيكات وتفعلوا ...",
+          "score": 83.83
+        },
+        {
+          "rank": 5,
+          "id": "df138e8e-1e22-404e-8cce-253b74cbf961",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/ntsrnews.bsky.social/post/3msix5a7opi27",
+          "title": "حاسوب الذكاء الاصطناعي يغير مستقبل الكمبيوتر الشخصي",
+          "text": "حاسوب الذكاء الاصطناعي يغير مستقبل الكمبيوتر الشخصي\nbit.ly/3TzWVvd\n#النجم_لأخبار_التقنية",
+          "score": 83.0
+        }
+      ]
+    },
+    {
+      "id": "microsoft_iraq",
+      "query": "Microsoft العراق",
+      "time_range": "7d",
+      "payload": {
+        "query": "Microsoft العراق",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "e4af89c6-5051-4562-83ac-9f477cdf04ce",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:17.539561+00:00",
+      "completed_at": "2026-08-10T13:08:19.702348+00:00",
+      "wall_time_ms": 2162.79,
+      "status": "partial",
+      "outcome": {
+        "reason": "NO_MATCHES",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "mixed_language",
+      "query_type": "MIXED_LANGUAGE",
+      "original_query": "Microsoft العراق",
+      "normalized_query": "microsoft العراق",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "230b2f8449b189e5142e",
+            "text": "Microsoft العراق",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "MIXED_LANGUAGE",
+              "ENTITY_LIKE",
+              "TOPIC",
+              "RECENT_INTENT"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "661a862f780a9a02b347",
+            "text": "microsoft العراق",
+            "parent_id": "230b2f8449b189e5142e",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "MIXED_LANGUAGE",
+              "ENTITY_LIKE",
+              "TOPIC",
+              "RECENT_INTENT"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "637ca1036294f3fd02c2",
+            "text": "\"Microsoft العراق\"",
+            "parent_id": "230b2f8449b189e5142e",
+            "transformation": "EXACT",
+            "intent": [
+              "MIXED_LANGUAGE",
+              "ENTITY_LIKE",
+              "TOPIC",
+              "RECENT_INTENT"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "65d2a6d1e2db806b8fdf",
+            "text": "Microsoft العراق",
+            "parent_id": "230b2f8449b189e5142e",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "MIXED_LANGUAGE",
+              "ENTITY_LIKE",
+              "TOPIC",
+              "RECENT_INTENT"
+            ],
+            "language": "mixed",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "github",
+        "youtube",
+        "bluesky",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "rss",
+        "github",
+        "bluesky",
+        "youtube",
+        "gdelt",
+        "rss",
+        "youtube",
+        "github",
+        "mastodon",
+        "hacker_news",
+        "bluesky"
+      ],
+      "per_source": {
+        "github": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1257.36,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e",
+            "637ca1036294f3fd02c2"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق",
+            "\"Microsoft العراق\""
+          ]
+        },
+        "youtube": {
+          "requests": 3,
+          "fetched": 12,
+          "valid": 12,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1835.15,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e",
+            "637ca1036294f3fd02c2"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق",
+            "\"Microsoft العراق\""
+          ]
+        },
+        "bluesky": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1764.84,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e",
+            "637ca1036294f3fd02c2"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق",
+            "\"Microsoft العراق\""
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 46,
+          "valid": 46,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1039.21,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e",
+            "637ca1036294f3fd02c2"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق",
+            "\"Microsoft العراق\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 714.99,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 633.77,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "230b2f8449b189e5142e"
+          ],
+          "query_variant_texts": [
+            "Microsoft العراق"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 0
+        },
+        "admitted_per_source": {},
+        "final_top_per_source": {},
+        "admitted_total": 0,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {}
+      },
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "duration_ms": 2155,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "id": "cve_recent",
+      "query": "CVE-2026-61371",
+      "time_range": "7d",
+      "payload": {
+        "query": "CVE-2026-61371",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "01a78c7b-3cc0-44a7-9fbf-090834a0bb58",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:19.703829+00:00",
+      "completed_at": "2026-08-10T13:08:21.471723+00:00",
+      "wall_time_ms": 1767.89,
+      "status": "partial",
+      "outcome": {
+        "reason": "NO_MATCHES",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "organization_phrase",
+      "query_type": "RARE_ENTITY",
+      "original_query": "CVE-2026-61371",
+      "normalized_query": "cve-2026-61371",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "d9a3b3083a7b61c63830",
+            "text": "CVE-2026-61371",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "IDENTIFIER",
+              "ENGLISH",
+              "ENTITY_LIKE",
+              "RECENT_INTENT"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "3eff44b23da4e478944f",
+            "text": "cve-2026-61371",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "IDENTIFIER",
+              "ENGLISH",
+              "ENTITY_LIKE",
+              "RECENT_INTENT"
+            ],
+            "language": "en",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "ca633f91f1a07970001e",
+            "text": "\"CVE-2026-61371\"",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "EXACT",
+            "intent": [
+              "IDENTIFIER",
+              "ENGLISH",
+              "ENTITY_LIKE",
+              "RECENT_INTENT"
+            ],
+            "language": "en",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "6135cd38085d064f0a21",
+            "text": "CVE-2026-61371",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "IDENTIFIER",
+            "intent": [
+              "IDENTIFIER",
+              "ENGLISH",
+              "ENTITY_LIKE",
+              "RECENT_INTENT"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "identifier_search",
+              "phrase_search",
+              "keyword_search"
+            ],
+            "reason": "distinctive identifier; semantic rewriting prohibited"
+          }
+        ]
+      },
+      "selected_sources": [
+        "github",
+        "rss",
+        "hacker_news",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "youtube",
+        "github",
+        "rss",
+        "hacker_news",
+        "gdelt",
+        "mastodon",
+        "rss",
+        "github",
+        "youtube",
+        "bluesky",
+        "hacker_news"
+      ],
+      "per_source": {
+        "github": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1328.53,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 46,
+          "valid": 46,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1226.2,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1725.98,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1334.08,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 842.47,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 411.38,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 0
+        },
+        "admitted_per_source": {},
+        "final_top_per_source": {},
+        "admitted_total": 0,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {}
+      },
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "duration_ms": 1761,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "id": "cve_exact_all",
+      "query": "CVE-2026-61371",
+      "time_range": "all",
+      "exact_phrase": true,
+      "payload": {
+        "query": "CVE-2026-61371",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "all",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": true
+      },
+      "session_id": "0cd24d05-f6fa-4c3a-a871-0782d4acfdd7",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:21.473161+00:00",
+      "completed_at": "2026-08-10T13:08:23.118407+00:00",
+      "wall_time_ms": 1645.25,
+      "status": "partial",
+      "outcome": {
+        "reason": "NO_MATCHES",
+        "cause": null,
+        "time_range": "all",
+        "completed_sources": [
+          "bluesky",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt",
+          "github"
+        ],
+        "external_limit_sources": [
+          "gdelt",
+          "github"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "exact_phrase",
+      "query_type": "EXACT_PHRASE",
+      "original_query": "CVE-2026-61371",
+      "normalized_query": "cve-2026-61371",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "d9a3b3083a7b61c63830",
+            "text": "CVE-2026-61371",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "IDENTIFIER",
+              "EXACT_PHRASE",
+              "ENGLISH",
+              "ENTITY_LIKE"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "3eff44b23da4e478944f",
+            "text": "cve-2026-61371",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "IDENTIFIER",
+              "EXACT_PHRASE",
+              "ENGLISH",
+              "ENTITY_LIKE"
+            ],
+            "language": "en",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "ca633f91f1a07970001e",
+            "text": "\"CVE-2026-61371\"",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "EXACT",
+            "intent": [
+              "IDENTIFIER",
+              "EXACT_PHRASE",
+              "ENGLISH",
+              "ENTITY_LIKE"
+            ],
+            "language": "en",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "6135cd38085d064f0a21",
+            "text": "CVE-2026-61371",
+            "parent_id": "d9a3b3083a7b61c63830",
+            "transformation": "IDENTIFIER",
+            "intent": [
+              "IDENTIFIER",
+              "EXACT_PHRASE",
+              "ENGLISH",
+              "ENTITY_LIKE"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "identifier_search",
+              "phrase_search",
+              "keyword_search"
+            ],
+            "reason": "distinctive identifier; semantic rewriting prohibited"
+          }
+        ]
+      },
+      "selected_sources": [
+        "github",
+        "rss",
+        "hacker_news",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "rss",
+        "github",
+        "youtube",
+        "hacker_news",
+        "gdelt",
+        "github",
+        "mastodon",
+        "rss",
+        "youtube",
+        "hacker_news",
+        "bluesky"
+      ],
+      "per_source": {
+        "github": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1029.76,
+          "statuses": [
+            "healthy",
+            "external_limit"
+          ],
+          "errors": [
+            "http_403"
+          ],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371"
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 46,
+          "valid": 46,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1006.41,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1567.56,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1262.56,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830",
+            "ca633f91f1a07970001e"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 824.42,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 443.01,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "d9a3b3083a7b61c63830"
+          ],
+          "query_variant_texts": [
+            "CVE-2026-61371"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 0
+        },
+        "admitted_per_source": {},
+        "final_top_per_source": {},
+        "admitted_total": 0,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {}
+      },
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "duration_ms": 1637,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        },
+        {
+          "source": "github",
+          "code": "http_403",
+          "message": "Source access is unavailable from this environment",
+          "retryable": false,
+          "status_code": 403
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "id": "handle_plain",
+      "query": "thesmartshadow",
+      "time_range": "7d",
+      "payload": {
+        "query": "thesmartshadow",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "32e56403-5d1b-40f7-ac34-09eef1e2e0b1",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:23.119998+00:00",
+      "completed_at": "2026-08-10T13:08:24.733352+00:00",
+      "wall_time_ms": 1613.35,
+      "status": "partial",
+      "outcome": {
+        "reason": "NO_MATCHES",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "SHORT_AMBIGUOUS",
+      "original_query": "thesmartshadow",
+      "normalized_query": "thesmartshadow",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "6642ad5ef22f860ea5f2",
+            "text": "thesmartshadow",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ENGLISH",
+              "RECENT_INTENT",
+              "AMBIGUOUS",
+              "TOPIC"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "110e18a6ee698af67080",
+            "text": "thesmartshadow",
+            "parent_id": "6642ad5ef22f860ea5f2",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ENGLISH",
+              "RECENT_INTENT",
+              "AMBIGUOUS",
+              "TOPIC"
+            ],
+            "language": "en",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "rss",
+        "hacker_news",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "rss",
+        "youtube",
+        "hacker_news",
+        "gdelt",
+        "mastodon",
+        "bluesky"
+      ],
+      "per_source": {
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 510.45,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "6642ad5ef22f860ea5f2"
+          ],
+          "query_variant_texts": [
+            "thesmartshadow"
+          ]
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 743.09,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "6642ad5ef22f860ea5f2"
+          ],
+          "query_variant_texts": [
+            "thesmartshadow"
+          ]
+        },
+        "youtube": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 568.89,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "6642ad5ef22f860ea5f2"
+          ],
+          "query_variant_texts": [
+            "thesmartshadow"
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 843.56,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "6642ad5ef22f860ea5f2"
+          ],
+          "query_variant_texts": [
+            "thesmartshadow"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 398.1,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "6642ad5ef22f860ea5f2"
+          ],
+          "query_variant_texts": [
+            "thesmartshadow"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.03,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 0
+        },
+        "admitted_per_source": {},
+        "final_top_per_source": {},
+        "admitted_total": 0,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {}
+      },
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "duration_ms": 1605,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "id": "handle_at",
+      "query": "@thesmartshadow",
+      "time_range": "7d",
+      "payload": {
+        "query": "@thesmartshadow",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "b67ef360-d30b-4a27-a339-21b333b80d08",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:24.734804+00:00",
+      "completed_at": "2026-08-10T13:08:26.083960+00:00",
+      "wall_time_ms": 1349.16,
+      "status": "partial",
+      "outcome": {
+        "reason": "NO_MATCHES",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "bluesky",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "handle",
+      "query_type": "HANDLE",
+      "original_query": "@thesmartshadow",
+      "normalized_query": "@thesmartshadow",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "21febde1303c8d8ef5d1",
+            "text": "@thesmartshadow",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "HANDLE",
+              "ENGLISH",
+              "IDENTIFIER",
+              "RECENT_INTENT",
+              "AMBIGUOUS"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "00cf6c85637469dd0f20",
+            "text": "@thesmartshadow",
+            "parent_id": "21febde1303c8d8ef5d1",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "HANDLE",
+              "ENGLISH",
+              "IDENTIFIER",
+              "RECENT_INTENT",
+              "AMBIGUOUS"
+            ],
+            "language": "en",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "a43eb49b4eae7d637a0a",
+            "text": "@thesmartshadow",
+            "parent_id": "21febde1303c8d8ef5d1",
+            "transformation": "HANDLE",
+            "intent": [
+              "HANDLE",
+              "ENGLISH",
+              "IDENTIFIER",
+              "RECENT_INTENT",
+              "AMBIGUOUS"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "author_search",
+              "keyword_search"
+            ],
+            "reason": "exact handle preservation"
+          },
+          {
+            "variant_id": "10d55877ee680c0bb550",
+            "text": "@thesmartshadow",
+            "parent_id": "21febde1303c8d8ef5d1",
+            "transformation": "IDENTIFIER",
+            "intent": [
+              "HANDLE",
+              "ENGLISH",
+              "IDENTIFIER",
+              "RECENT_INTENT",
+              "AMBIGUOUS"
+            ],
+            "language": "en",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "identifier_search",
+              "phrase_search",
+              "keyword_search"
+            ],
+            "reason": "distinctive identifier; semantic rewriting prohibited"
+          }
+        ]
+      },
+      "selected_sources": [
+        "hacker_news",
+        "bluesky",
+        "youtube",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "completion_order": [
+        "youtube",
+        "hacker_news",
+        "bluesky",
+        "gdelt",
+        "mastodon",
+        "rss"
+      ],
+      "per_source": {
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 824.34,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "21febde1303c8d8ef5d1"
+          ],
+          "query_variant_texts": [
+            "@thesmartshadow"
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 890.13,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "21febde1303c8d8ef5d1"
+          ],
+          "query_variant_texts": [
+            "@thesmartshadow"
+          ]
+        },
+        "youtube": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 675.98,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "21febde1303c8d8ef5d1"
+          ],
+          "query_variant_texts": [
+            "@thesmartshadow"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 422.0,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "21febde1303c8d8ef5d1"
+          ],
+          "query_variant_texts": [
+            "@thesmartshadow"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 422.91,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "21febde1303c8d8ef5d1"
+          ],
+          "query_variant_texts": [
+            "@thesmartshadow"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 0,
+          "gdelt": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 0
+        },
+        "admitted_per_source": {},
+        "final_top_per_source": {},
+        "admitted_total": 0,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {}
+      },
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "duration_ms": 1343,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "id": "hashtag_baghdad",
+      "query": "#بغداد",
+      "time_range": "7d",
+      "payload": {
+        "query": "#بغداد",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "7d",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "a20d90ce-a398-418f-a170-7d018464561f",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:26.085385+00:00",
+      "completed_at": "2026-08-10T13:08:28.283028+00:00",
+      "wall_time_ms": 2197.64,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "7d",
+        "completed_sources": [
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "bluesky",
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": [
+          "mastodon"
+        ]
+      },
+      "intent": "hashtag",
+      "query_type": "HASHTAG",
+      "original_query": "#بغداد",
+      "normalized_query": "#بغداد",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "5765b3d17606e005c0dc",
+            "text": "#بغداد",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "HASHTAG",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "1cd25deb6ffe7f0bf6d0",
+            "text": "#بغداد",
+            "parent_id": "5765b3d17606e005c0dc",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "HASHTAG",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "13456adfc6aecb3ea3e0",
+            "text": "#بغداد",
+            "parent_id": "5765b3d17606e005c0dc",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "HASHTAG",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          },
+          {
+            "variant_id": "03d2826a9432d635905e",
+            "text": "#بغداد",
+            "parent_id": "5765b3d17606e005c0dc",
+            "transformation": "HASHTAG",
+            "intent": [
+              "ARABIC",
+              "HASHTAG",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "hashtag_search"
+            ],
+            "reason": "exact hashtag preservation"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "rss",
+        "hacker_news",
+        "gdelt"
+      ],
+      "completion_order": [
+        "bluesky",
+        "mastodon",
+        "youtube",
+        "gdelt",
+        "rss",
+        "hacker_news"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "valid": 30,
+          "matched": 1,
+          "admitted": 1,
+          "persisted": 1,
+          "final_top": 1,
+          "latency_ms": 1312.06,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "5765b3d17606e005c0dc"
+          ],
+          "query_variant_texts": [
+            "#بغداد"
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 1,
+          "admitted": 1,
+          "persisted": 1,
+          "final_top": 1,
+          "latency_ms": 888.4,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "http_error"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 890.89,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "5765b3d17606e005c0dc"
+          ],
+          "query_variant_texts": [
+            "#بغداد"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 479.87,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "5765b3d17606e005c0dc"
+          ],
+          "query_variant_texts": [
+            "#بغداد"
+          ]
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 754.28,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "5765b3d17606e005c0dc"
+          ],
+          "query_variant_texts": [
+            "#بغداد"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 1,
+          "gdelt": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 1
+        },
+        "admitted_per_source": {
+          "bluesky": 1,
+          "youtube": 1
+        },
+        "final_top_per_source": {
+          "youtube": 1,
+          "bluesky": 1
+        },
+        "admitted_total": 2,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 1,
+            "min": 79.63,
+            "p25": 79.63,
+            "median": 79.63,
+            "mean": 79.63,
+            "p75": 79.63,
+            "max": 79.63
+          },
+          "youtube": {
+            "count": 1,
+            "min": 100,
+            "p25": 100,
+            "median": 100,
+            "mean": 100.0,
+            "p75": 100,
+            "max": 100
+          }
+        }
+      },
+      "results": 2,
+      "unique": 2,
+      "clusters": 2,
+      "duration_ms": 2183,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "bluesky",
+          "code": "http_error",
+          "message": "Source returned HTTP 400",
+          "retryable": false,
+          "status_code": 400
+        },
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "943dc2ee-8795-4961-94e0-24492bc8ec35",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=0Qt6UAXXhNI",
+          "title": "علي الزيدي يوجه قوى مكافحة الارهاب نحو العاصمة بغداد | اخر الاخبار",
+          "text": "اخر اخبار العراق اليوم عاجل تقديم الإعلامية المتميزة سليل #اخر_الاخبار #العراق #بغداد.",
+          "score": 70.66
+        },
+        {
+          "rank": 2,
+          "id": "8e1ade7e-960f-4a03-9909-c34587813a28",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/urban-graffiti.bsky.social/post/3msnhqh2irc2t",
+          "title": null,
+          "text": "Iraq, Baghdad // العراق, بغداد\n\n#iraq #baghdad #العراق #بغداد #غرافيتي",
+          "score": 47.07
+        }
+      ]
+    },
+    {
+      "id": "arabic_person",
+      "query": "علي فراس",
+      "time_range": "all",
+      "payload": {
+        "query": "علي فراس",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "all",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "85853e7c-4d15-4258-b9a3-ce84d8167f10",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:28.284527+00:00",
+      "completed_at": "2026-08-10T13:08:31.607539+00:00",
+      "wall_time_ms": 3323.01,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "all",
+        "completed_sources": [
+          "bluesky",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "MULTI_TERM_TOPIC",
+      "original_query": "علي فراس",
+      "normalized_query": "علي فراس",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "78fdabb8a149a9554066",
+            "text": "علي فراس",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "79c9613d720e8bfc409b",
+            "text": "علي فراس",
+            "parent_id": "78fdabb8a149a9554066",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "369290a71dae85db2269",
+            "text": "\"علي فراس\"",
+            "parent_id": "78fdabb8a149a9554066",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "5f7561b579ad39157bd5",
+            "text": "علي فراس",
+            "parent_id": "78fdabb8a149a9554066",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          },
+          {
+            "variant_id": "47a63a9d7064586ceaef",
+            "text": "Ali Firas",
+            "parent_id": "79c9613d720e8bfc409b",
+            "transformation": "TRANSLITERATION",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "en",
+            "confidence": 0.78,
+            "drift_risk": 0.18,
+            "round_created": 2,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "author_search"
+            ],
+            "reason": "bounded dictionary transliteration for a name-like Arabic query"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "hacker_news",
+        "rss",
+        "mastodon",
+        "bluesky",
+        "gdelt"
+      ],
+      "completion_order": [
+        "rss",
+        "hacker_news",
+        "youtube",
+        "gdelt",
+        "mastodon",
+        "rss",
+        "hacker_news",
+        "bluesky",
+        "youtube"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "valid": 60,
+          "matched": 46,
+          "admitted": 30,
+          "persisted": 30,
+          "final_top": 17,
+          "latency_ms": 2595.74,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "78fdabb8a149a9554066",
+            "369290a71dae85db2269",
+            "47a63a9d7064586ceaef"
+          ],
+          "query_variant_texts": [
+            "علي فراس",
+            "\"علي فراس\"",
+            "Ali Firas"
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 3,
+          "valid": 3,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1759.71,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "78fdabb8a149a9554066",
+            "369290a71dae85db2269",
+            "47a63a9d7064586ceaef"
+          ],
+          "query_variant_texts": [
+            "علي فراس",
+            "\"علي فراس\"",
+            "Ali Firas"
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 46,
+          "valid": 46,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1117.75,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "78fdabb8a149a9554066",
+            "369290a71dae85db2269",
+            "47a63a9d7064586ceaef"
+          ],
+          "query_variant_texts": [
+            "علي فراس",
+            "\"علي فراس\"",
+            "Ali Firas"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 441.37,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "78fdabb8a149a9554066"
+          ],
+          "query_variant_texts": [
+            "علي فراس"
+          ]
+        },
+        "bluesky": {
+          "requests": 1,
+          "fetched": 30,
+          "valid": 30,
+          "matched": 13,
+          "admitted": 13,
+          "persisted": 13,
+          "final_top": 13,
+          "latency_ms": 1154.07,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "78fdabb8a149a9554066"
+          ],
+          "query_variant_texts": [
+            "علي فراس"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 13,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 46
+        },
+        "admitted_per_source": {
+          "bluesky": 13,
+          "youtube": 30
+        },
+        "final_top_per_source": {
+          "youtube": 17,
+          "bluesky": 13
+        },
+        "admitted_total": 43,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 13,
+            "min": 39.82,
+            "p25": 61.5,
+            "median": 64.19,
+            "mean": 60.868,
+            "p75": 68.5,
+            "max": 73.45
+          },
+          "youtube": {
+            "count": 30,
+            "min": 89.85,
+            "p25": 89.85,
+            "median": 99.705,
+            "mean": 96.603,
+            "p75": 100.0,
+            "max": 100
+          }
+        }
+      },
+      "results": 30,
+      "unique": 24,
+      "clusters": 20,
+      "duration_ms": 3253,
+      "stop_reason": "USER_LIMIT",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "5f3abe9c-f904-4f48-aafb-78f728ce7736",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/channel/UCt9Q9wxjYK9tm99f3mT3kqA",
+          "title": "علي فراس",
+          "text": "علي فراس",
+          "score": 84.28
+        },
+        {
+          "rank": 2,
+          "id": "6eaac501-c0b3-4ca8-b88f-873020c42b2d",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/remembergaza.bsky.social/post/3meksenfck42n",
+          "title": null,
+          "text": "In memory of:\n\nFiras Ahmed Ali Qashta / فراس أحمد علي قشطه\nAge: 13\n\nWe will not forget you.",
+          "score": 72.89
+        },
+        {
+          "rank": 3,
+          "id": "df56a2ff-0953-491f-b17c-581e29c34a25",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/remembergaza.bsky.social/post/3mkvnd2qwvx2p",
+          "title": null,
+          "text": "In memory of:\n\nFiras Ali Ibrahim Abu Jarada / فراس علي ابراهيم ابو جراده\nAge: 17\n\nWe will not forget you.",
+          "score": 72.27
+        },
+        {
+          "rank": 4,
+          "id": "c2615bec-3b21-430c-aa31-da871bd0e991",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/ezztantawi.bsky.social/post/3mo5uvj55p222",
+          "title": null,
+          "text": "‏ما كنتُ مُذْ كنتُ إلّا طَوْعَ خِلّاني\nليسَت مُؤاخَذَةُ الإخوانِ مِن شَانِي\n\nيَجني الخليلُ فأستَحْلي جِنايتَه\nحتَّى أدُلَّ على عَفوي وإحسَاني\n\nإذا خليلي لم تَكثُرْ إساءتُه\nفأين موضعُ إحساني وغُفراني ؟!\n\n• أبو فراس الحمداني",
+          "score": 69.08
+        },
+        {
+          "rank": 5,
+          "id": "9673bf99-6c30-4202-93b0-6c4f38e77763",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/duahorii.bsky.social/post/3ma2lrjjbis2g",
+          "title": null,
+          "text": "يَجني الخَليلُ فَأَستَحلي جِنايَتَهُ\nحَتّى أَدُلُّ عَلى عَفوي وَإِحساني\nوَيُتبِعُ الذَنبَ ذَنباً حينَ يَعرِفُني\nعَمداً وَأُتبِعُ غُفراناً بِغُفرانِ\nيَجني عَلَيَّ وَأَحنو صافِحاً أَبَداً\nلاشَيءَ أَحسَنُ مِن حانٍ عَلى جانِ\n\nقلبك رهيف يبو فراس😢\nكمان نون",
+          "score": 67.94
+        }
+      ]
+    },
+    {
+      "id": "arabic_person_full",
+      "query": "علي فراس محمد رضا",
+      "time_range": "all",
+      "payload": {
+        "query": "علي فراس محمد رضا",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "all",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": false
+      },
+      "session_id": "efc85301-a88c-43f6-ab33-e1552e12b73e",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:31.609812+00:00",
+      "completed_at": "2026-08-10T13:08:34.379465+00:00",
+      "wall_time_ms": 2769.65,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "all",
+        "completed_sources": [
+          "bluesky",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "keywords",
+      "query_type": "MULTI_TERM_TOPIC",
+      "original_query": "علي فراس محمد رضا",
+      "normalized_query": "علي فراس محمد رضا",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "680a4fe0d3623dc35932",
+            "text": "علي فراس محمد رضا",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "4ae8f8fa26154c43dfe8",
+            "text": "علي فراس محمد رضا",
+            "parent_id": "680a4fe0d3623dc35932",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "d529785563f6577122d3",
+            "text": "\"علي فراس محمد رضا\"",
+            "parent_id": "680a4fe0d3623dc35932",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "650653d3f0c4cb477949",
+            "text": "علي فراس محمد رضا",
+            "parent_id": "680a4fe0d3623dc35932",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          },
+          {
+            "variant_id": "8ff6ab3f8eaac7b9e905",
+            "text": "Ali Firas Mohammed Reda",
+            "parent_id": "4ae8f8fa26154c43dfe8",
+            "transformation": "TRANSLITERATION",
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "en",
+            "confidence": 0.78,
+            "drift_risk": 0.18,
+            "round_created": 2,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "author_search"
+            ],
+            "reason": "bounded dictionary transliteration for a name-like Arabic query"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "bluesky",
+        "hacker_news",
+        "rss",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "hacker_news",
+        "bluesky",
+        "youtube",
+        "gdelt",
+        "mastodon",
+        "rss",
+        "hacker_news",
+        "bluesky",
+        "youtube"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "valid": 60,
+          "matched": 4,
+          "admitted": 4,
+          "persisted": 4,
+          "final_top": 4,
+          "latency_ms": 2559.43,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "680a4fe0d3623dc35932",
+            "d529785563f6577122d3",
+            "8ff6ab3f8eaac7b9e905"
+          ],
+          "query_variant_texts": [
+            "علي فراس محمد رضا",
+            "\"علي فراس محمد رضا\"",
+            "Ali Firas Mohammed Reda"
+          ]
+        },
+        "bluesky": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 2,
+          "admitted": 2,
+          "persisted": 2,
+          "final_top": 2,
+          "latency_ms": 1747.86,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "680a4fe0d3623dc35932",
+            "d529785563f6577122d3",
+            "8ff6ab3f8eaac7b9e905"
+          ],
+          "query_variant_texts": [
+            "علي فراس محمد رضا",
+            "\"علي فراس محمد رضا\"",
+            "Ali Firas Mohammed Reda"
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1568.7,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "680a4fe0d3623dc35932",
+            "d529785563f6577122d3",
+            "8ff6ab3f8eaac7b9e905"
+          ],
+          "query_variant_texts": [
+            "علي فراس محمد رضا",
+            "\"علي فراس محمد رضا\"",
+            "Ali Firas Mohammed Reda"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 611.01,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "680a4fe0d3623dc35932"
+          ],
+          "query_variant_texts": [
+            "علي فراس محمد رضا"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 479.28,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "680a4fe0d3623dc35932"
+          ],
+          "query_variant_texts": [
+            "علي فراس محمد رضا"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 2,
+          "gdelt": 0,
+          "github": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 4
+        },
+        "admitted_per_source": {
+          "bluesky": 2,
+          "youtube": 4
+        },
+        "final_top_per_source": {
+          "youtube": 4,
+          "bluesky": 2
+        },
+        "admitted_total": 6,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 2,
+            "min": 72.66,
+            "p25": 73.127,
+            "median": 73.595,
+            "mean": 73.595,
+            "p75": 74.062,
+            "max": 74.53
+          },
+          "youtube": {
+            "count": 4,
+            "min": 65.42,
+            "p25": 66.207,
+            "median": 69.53,
+            "mean": 71.067,
+            "p75": 74.39,
+            "max": 79.79
+          }
+        }
+      },
+      "results": 6,
+      "unique": 6,
+      "clusters": 6,
+      "duration_ms": 2747,
+      "stop_reason": "MAX_ROUNDS",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "e5380fa9-cf2a-412e-a7a0-9f07fdc7f922",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/channel/UCiW4wMdu78Fm12OII0bAz9Q",
+          "title": "محمد رضا فراس",
+          "text": "محمد رضا فراس",
+          "score": 74.16
+        },
+        {
+          "rank": 2,
+          "id": "5a53285d-4474-4fe4-9cb0-896aafebb860",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/afanennet.bsky.social/post/3mqwav26ozm2z",
+          "title": "خُلَق الإنسان حراً:",
+          "text": "خُلَق الإنسان حراً:\n\nقراءة في كتاب \"الأسوار والكلمات عن أدب باسم خندقجي\" للكاتب فراس حج محمد وفاء عمران محامدة | فلسطين خلق الله الإنسان حراً، ومنحه جسداً قادراً على الحركة والاكتشاف، وعقلاً مكنه من الإبداع والابتكار؛ فالحرية جوهر إنساني لا يكتمل دونه الوجود. ورغم القوانين والحدود التي وضعها الله،…",
+          "score": 73.93
+        },
+        {
+          "rank": 3,
+          "id": "08575e41-5074-4527-8ff9-8cde5a3f1979",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/independentarabia.com.web.brid.gy/post/3ldchc25456f2",
+          "title": "كيف سيتجاوز المنتخب السعودي أزمة الإصابات قبل \"خليجي 26\"؟",
+          "text": "> <p>هيرفي رينارد المدير الفني لمنتخب السعودية وسالم الدوسري لاعب نادي الهلال (الحساب الرسمي للمنتخب السعودي على منصة إكس)</p>\n\nرياضة\n\nTags:\n\nالمنتخب السعودي\n\nمنتخب السعودية\n\nسالم الدوسري\n\nهيرفي رينارد\n\nفراس البريكان\n\nخليجي 26\n\nما زال المدير الفني الفرنسي للمنتخب السعودي هيرفي رينارد يتلقى الصدمات حول القائمة التي ستخوض منافسات بطولة \"خليجي 26\"، التي ستقام في الكويت خلال الفترة بين الـ21 من ديسمبر (كانون الأول) الجاري والثالث من يناير (كانون الثاني) 2025.\n\nويوجد المنتخب السعودي في المجموعة الثان",
+          "score": 72.08
+        },
+        {
+          "rank": 4,
+          "id": "5830f576-1e65-47d5-86a5-a3f0f3d65350",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/channel/UCjYv659YV_uNKi0pyxQLSHg",
+          "title": "مروة فراس محمد رضا موسى",
+          "text": "قناة متنوعه.",
+          "score": 67.0
+        },
+        {
+          "rank": 5,
+          "id": "f60b3016-34b0-4993-b7aa-4b2a8d8fe1ec",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=RUABQue5Nhg",
+          "title": "كتاب إلكتروني📕أبو فراس الحمداني, الشّاعر الأمير - محمد رضا مروّة.pdf⇩",
+          "text": "تنزيل الكتاب كاملاً بصيغة pdf https://archive.org/download/aboferasmr/aboferasmr.pdf.",
+          "score": 65.94
+        }
+      ]
+    },
+    {
+      "id": "arabic_diacritized_exact",
+      "query": "وِزَارَةُ التَّخْطِيط",
+      "time_range": "all",
+      "exact_phrase": true,
+      "payload": {
+        "query": "وِزَارَةُ التَّخْطِيط",
+        "sources": [
+          "bluesky",
+          "gdelt",
+          "github",
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "source_selection": "auto",
+        "time_range": "all",
+        "language": "all",
+        "sort": "best_match",
+        "search_mode": "balanced",
+        "limit": 30,
+        "exact_phrase": true
+      },
+      "session_id": "6a205324-128a-4349-8057-7876f5e50501",
+      "http_status": 201,
+      "started_at": "2026-08-10T13:08:34.381332+00:00",
+      "completed_at": "2026-08-10T13:08:38.471182+00:00",
+      "wall_time_ms": 4089.85,
+      "status": "partial",
+      "outcome": {
+        "reason": "RESULTS_AVAILABLE",
+        "cause": null,
+        "time_range": "all",
+        "completed_sources": [
+          "hacker_news",
+          "mastodon",
+          "rss",
+          "youtube"
+        ],
+        "partial_sources": [
+          "bluesky"
+        ],
+        "failed_sources": [
+          "gdelt"
+        ],
+        "external_limit_sources": [
+          "bluesky",
+          "gdelt"
+        ],
+        "time_filtered_sources": []
+      },
+      "intent": "exact_phrase",
+      "query_type": "EXACT_PHRASE",
+      "original_query": "وِزَارَةُ التَّخْطِيط",
+      "normalized_query": "وزاره التخطيط",
+      "query_lattice": {
+        "max_variants": 6,
+        "variants": [
+          {
+            "variant_id": "c3c3bc37a8a19bfe9567",
+            "text": "وِزَارَةُ التَّخْطِيط",
+            "parent_id": null,
+            "transformation": "ORIGINAL",
+            "intent": [
+              "ARABIC",
+              "EXACT_PHRASE",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 1.0,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "verbatim user query; immutable lattice root"
+          },
+          {
+            "variant_id": "1ca4a6edd20caa0a9440",
+            "text": "وزاره التخطيط",
+            "parent_id": "c3c3bc37a8a19bfe9567",
+            "transformation": "NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "EXACT_PHRASE",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.98,
+            "drift_risk": 0.02,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search"
+            ],
+            "reason": "deterministic Unicode/case/whitespace normalization"
+          },
+          {
+            "variant_id": "4387a8abe139475a4cec",
+            "text": "\"وِزَارَةُ التَّخْطِيط\"",
+            "parent_id": "c3c3bc37a8a19bfe9567",
+            "transformation": "EXACT",
+            "intent": [
+              "ARABIC",
+              "EXACT_PHRASE",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.97,
+            "drift_risk": 0.0,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "phrase_search"
+            ],
+            "reason": "preserve phrase/name adjacency"
+          },
+          {
+            "variant_id": "26aea28f6c569c495a75",
+            "text": "وزاره التخطيط",
+            "parent_id": "c3c3bc37a8a19bfe9567",
+            "transformation": "ARABIC_NORMALIZED",
+            "intent": [
+              "ARABIC",
+              "EXACT_PHRASE",
+              "TOPIC",
+              "PERSON_LIKE"
+            ],
+            "language": "ar",
+            "confidence": 0.96,
+            "drift_risk": 0.03,
+            "round_created": 1,
+            "eligible_source_capabilities": [
+              "keyword_search",
+              "phrase_search"
+            ],
+            "reason": "Arabic diacritic/tatweel and conservative letter normalization"
+          }
+        ]
+      },
+      "selected_sources": [
+        "youtube",
+        "bluesky",
+        "hacker_news",
+        "rss",
+        "mastodon",
+        "gdelt"
+      ],
+      "completion_order": [
+        "hacker_news",
+        "youtube",
+        "bluesky",
+        "gdelt",
+        "rss",
+        "mastodon",
+        "hacker_news",
+        "youtube"
+      ],
+      "per_source": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "valid": 60,
+          "matched": 32,
+          "admitted": 30,
+          "persisted": 30,
+          "final_top": 20,
+          "latency_ms": 2444.2,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "c3c3bc37a8a19bfe9567",
+            "4387a8abe139475a4cec",
+            "26aea28f6c569c495a75"
+          ],
+          "query_variant_texts": [
+            "وِزَارَةُ التَّخْطِيط",
+            "\"وِزَارَةُ التَّخْطِيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "bluesky": {
+          "requests": 3,
+          "fetched": 29,
+          "valid": 29,
+          "matched": 14,
+          "admitted": 14,
+          "persisted": 14,
+          "final_top": 10,
+          "latency_ms": 2227.94,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "http_403"
+          ],
+          "query_variant_attempts": [
+            "c3c3bc37a8a19bfe9567"
+          ],
+          "query_variant_texts": [
+            "وِزَارَةُ التَّخْطِيط"
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 1622.69,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "c3c3bc37a8a19bfe9567",
+            "4387a8abe139475a4cec",
+            "26aea28f6c569c495a75"
+          ],
+          "query_variant_texts": [
+            "وِزَارَةُ التَّخْطِيط",
+            "\"وِزَارَةُ التَّخْطِيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 23,
+          "valid": 23,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 437.66,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "c3c3bc37a8a19bfe9567"
+          ],
+          "query_variant_texts": [
+            "وِزَارَةُ التَّخْطِيط"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "valid": 40,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 616.55,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "query_variant_attempts": [
+            "c3c3bc37a8a19bfe9567"
+          ],
+          "query_variant_texts": [
+            "وِزَارَةُ التَّخْطِيط"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "valid": 0,
+          "matched": 0,
+          "admitted": 0,
+          "persisted": 0,
+          "final_top": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "query_variant_attempts": [],
+          "query_variant_texts": []
+        }
+      },
+      "candidate_admission": {
+        "per_source_limit": 30,
+        "matched_per_source": {
+          "bluesky": 14,
+          "gdelt": 0,
+          "hacker_news": 0,
+          "mastodon": 0,
+          "rss": 0,
+          "youtube": 32
+        },
+        "admitted_per_source": {
+          "bluesky": 14,
+          "youtube": 30
+        },
+        "final_top_per_source": {
+          "youtube": 20,
+          "bluesky": 10
+        },
+        "admitted_total": 44,
+        "final_global_cap": 30,
+        "relevance_distribution_by_source": {
+          "bluesky": {
+            "count": 14,
+            "min": 37.86,
+            "p25": 63.903,
+            "median": 64.59,
+            "mean": 64.301,
+            "p75": 70.425,
+            "max": 73.19
+          },
+          "youtube": {
+            "count": 30,
+            "min": 62.41,
+            "p25": 75.613,
+            "median": 98.255,
+            "mean": 89.08,
+            "p75": 98.63,
+            "max": 98.9
+          }
+        }
+      },
+      "results": 30,
+      "unique": 30,
+      "clusters": 28,
+      "duration_ms": 4013,
+      "stop_reason": "USER_LIMIT",
+      "uncertainty": null,
+      "warnings": [
+        {
+          "source": "bluesky",
+          "code": "http_403",
+          "message": "Bluesky returned an earlier page but a later page was unavailable",
+          "retryable": false,
+          "status_code": 403
+        },
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "id": "b18041b6-18a6-41b0-afbd-d159ee30bd34",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/channel/UCI1KVcjEDGzlNOC-l1A1Qbg",
+          "title": "وزارة التخطيط",
+          "text": "وزارة التخطيط",
+          "score": 76.92
+        },
+        {
+          "rank": 2,
+          "id": "3f62eb26-540d-41bb-b838-76d32a65f1c6",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/watch?v=t1eALRhmZ0Q",
+          "title": "وزارة التخطيط تتابع ميدانياً مشروع تأهيل وصيانة طريق (العمارة – بتيرة – الفجر) في ميسان",
+          "text": "وزارة التخطيط تتابع ميدانياً مشروع تأهيل وصيانة طريق (العمارة – بتيرة – الفجر) في ميسان",
+          "score": 74.59
+        },
+        {
+          "rank": 3,
+          "id": "36a8c33a-46d2-458c-af9d-14dff6443949",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/kaya.sysky.club/post/3mdggdxf5222t",
+          "title": null,
+          "text": "ناقصكم الصورة تبع انا وزارة التخطيط وهي وزارة التنفيذ",
+          "score": 72.62
+        },
+        {
+          "rank": 4,
+          "id": "86b100f2-530f-4afb-84a2-3e747d96bed6",
+          "source": "youtube",
+          "acquisition_mode": "DIRECT_API",
+          "canonical_url": "https://www.youtube.com/channel/UCaXoeg81TCcViwq6dmrUkYg",
+          "title": "وزارة التخطيط العراقية",
+          "text": "وزارة التخطيط العراقية",
+          "score": 71.41
+        },
+        {
+          "rank": 5,
+          "id": "2db7d2b6-865a-410b-bc75-78af996dc8d3",
+          "source": "bluesky",
+          "acquisition_mode": "PUBLIC_API",
+          "canonical_url": "https://bsky.app/profile/rawaha360.bsky.social/post/3me7rjrjdxp2l",
+          "title": "من هي أفراح الزوبة… أول امرأة يمنية تتولى وزارة التخطيط والتعاون الدولي؟",
+          "text": "من هي أفراح الزوبة… أول امرأة يمنية تتولى وزارة التخطيط والتعاون الدولي؟\n\nضمت الحكومة الجديدة تعيين أفراح الزوبة وزيرةً للتخطيط والتعاون الدولي، لتكون أول امرأة يمنية تتولى الحقيبة. تتمتع الزوبة بخبرة قيادية واستراتيجية تمتد لأكثر من 25 عامًا في مجالات الإدارة العامة وحوكمة المؤسسات والتنمية…",
+          "score": 70.62
+        }
+      ]
+    }
+  ]
+}

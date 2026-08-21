@@ -1,0 +1,65 @@
+services:
+  searxng:
+    profiles: ["mafer"]
+    image: ${SEARXNG_IMAGE:-docker.io/searxng/searxng:latest}
+    environment:
+      SEARXNG_BASE_URL: http://127.0.0.1:8080/
+      SEARXNG_SECRET: ${SEARXNG_SECRET:-mirsad-local-only-change-before-sharing}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./infra/searxng/settings.yml:/etc/searxng/settings.yml:ro
+      - searxng-cache:/var/cache/searxng
+    restart: unless-stopped
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      MIRSAD_DATABASE_URL: sqlite:////app/data/mirsad.db
+      MIRSAD_WEB_ORIGIN: http://127.0.0.1:5173
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:-}
+      X_BEARER_TOKEN: ${X_BEARER_TOKEN:-}
+      MIRSAD_X_ARCHIVE_ACCESS: ${MIRSAD_X_ARCHIVE_ACCESS:-false}
+      THREADS_ACCESS_TOKEN: ${THREADS_ACCESS_TOKEN:-}
+      TELEGRAM_API_ID: ${TELEGRAM_API_ID:-}
+      TELEGRAM_API_HASH: ${TELEGRAM_API_HASH:-}
+      TELEGRAM_SESSION_STRING: ${TELEGRAM_SESSION_STRING:-}
+      REDDIT_CLIENT_ID: ${REDDIT_CLIENT_ID:-}
+      REDDIT_CLIENT_SECRET: ${REDDIT_CLIENT_SECRET:-}
+      MIRSAD_REDDIT_USER_AGENT: ${MIRSAD_REDDIT_USER_AGENT:-MIRSAD/1.1.0 local institutional research}
+      MASTODON_BASE_URL: ${MASTODON_BASE_URL:-}
+      MASTODON_ACCESS_TOKEN: ${MASTODON_ACCESS_TOKEN:-}
+      INSTAGRAM_ACCESS_TOKEN: ${INSTAGRAM_ACCESS_TOKEN:-}
+      INSTAGRAM_USER_ID: ${INSTAGRAM_USER_ID:-}
+      MIRSAD_META_GRAPH_VERSION: ${MIRSAD_META_GRAPH_VERSION:-v23.0}
+      TIKTOK_CLIENT_KEY: ${TIKTOK_CLIENT_KEY:-}
+      TIKTOK_CLIENT_SECRET: ${TIKTOK_CLIENT_SECRET:-}
+      MIRSAD_TIKTOK_RESEARCH_APPROVED: ${MIRSAD_TIKTOK_RESEARCH_APPROVED:-false}
+      MIRSAD_GITHUB_SCOPES: ${MIRSAD_GITHUB_SCOPES:-repositories}
+      MIRSAD_RSS_FEEDS: ${MIRSAD_RSS_FEEDS:-https://feeds.bbci.co.uk/news/world/rss.xml}
+      SEARXNG_ENABLED: ${SEARXNG_ENABLED:-false}
+      SEARXNG_URL: ${SEARXNG_DOCKER_URL:-http://searxng:8080}
+      MIRSAD_SEARXNG_ENGINES: ${MIRSAD_SEARXNG_ENGINES:-}
+      MIRSAD_DISCOVERY_EMBED_ENABLED: ${MIRSAD_DISCOVERY_EMBED_ENABLED:-false}
+      MIRSAD_COMMON_CRAWL_ENABLED: ${MIRSAD_COMMON_CRAWL_ENABLED:-false}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - mirsad-data:/app/data
+    restart: unless-stopped
+  web:
+    build:
+      context: apps/web
+      args:
+        VITE_API_ROOT: http://127.0.0.1:8000/api/v1
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:5173:5173"
+    restart: unless-stopped
+
+volumes:
+  mirsad-data:
+  searxng-cache:

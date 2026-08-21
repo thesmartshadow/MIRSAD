@@ -1,0 +1,62 @@
+{
+  "schema": "mirsad.relevance-performance",
+  "version": "1.0",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "candidate_limit": 20,
+  "production_search_result_cap": 200,
+  "peak_rss_delta_kib": 700168,
+  "observations": [
+    {
+      "documents": 100,
+      "fts_matches": 100,
+      "retrieval_ms": 0.1,
+      "lexical_feature_ms": 4.03,
+      "cold_semantic_ms": 727.85,
+      "warm_semantic_ms": 4.3,
+      "final_scoring_ms": 1.31,
+      "cold_total_ms": 733.3,
+      "warm_total_ms": 9.75,
+      "warm_cache_hits": 20,
+      "reranked_candidates": 20
+    },
+    {
+      "documents": 1000,
+      "fts_matches": 1000,
+      "retrieval_ms": 0.83,
+      "lexical_feature_ms": 40.52,
+      "cold_semantic_ms": 77.01,
+      "warm_semantic_ms": 4.3,
+      "final_scoring_ms": 1.24,
+      "cold_total_ms": 119.6,
+      "warm_total_ms": 46.89,
+      "warm_cache_hits": 20,
+      "reranked_candidates": 20
+    },
+    {
+      "documents": 5000,
+      "fts_matches": 5000,
+      "retrieval_ms": 3.89,
+      "lexical_feature_ms": 189.06,
+      "cold_semantic_ms": 70.42,
+      "warm_semantic_ms": 4.39,
+      "final_scoring_ms": 1.29,
+      "cold_total_ms": 264.65,
+      "warm_total_ms": 198.62,
+      "warm_cache_hits": 20,
+      "reranked_candidates": 20
+    },
+    {
+      "documents": 10000,
+      "fts_matches": 10000,
+      "retrieval_ms": 8.03,
+      "lexical_feature_ms": 397.45,
+      "cold_semantic_ms": 74.13,
+      "warm_semantic_ms": 4.7,
+      "final_scoring_ms": 1.26,
+      "cold_total_ms": 480.86,
+      "warm_total_ms": 411.43,
+      "warm_cache_hits": 20,
+      "reranked_candidates": 20
+    }
+  ]
+}

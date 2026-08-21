@@ -1,0 +1,56 @@
+{
+  "artifact": "functional hardening analytics expected-versus-actual",
+  "captured_at": "2026-08-10T18:37:23+03:00",
+  "database": "data/mirsad.db",
+  "global_scope": {
+    "expected_from_sqlite": {
+      "content_record_count": 59,
+      "unique_canonical_count": 59,
+      "search_appearance_count": 30,
+      "source_count": 2,
+      "duplicate_group_count": 4,
+      "cluster_count": 27,
+      "search_session_count": 2
+    },
+    "actual_from_api": {
+      "content_record_count": 59,
+      "unique_canonical_count": 59,
+      "search_appearance_count": 30,
+      "source_count": 2,
+      "duplicate_group_count": 4,
+      "cluster_count": 27,
+      "search_session_count": 2
+    },
+    "matches": true,
+    "latest_session_is_zero_result": true,
+    "global_analytics_remains_nonzero": true
+  },
+  "nonzero_session_scope": {
+    "session_id": "4013ab0a-8c49-445a-86ae-56f231d5369d",
+    "query": "بغداد",
+    "expected_results": 30,
+    "actual_results": 30,
+    "expected_unique": 30,
+    "actual_unique": 30,
+    "matches": true
+  },
+  "zero_session_scope": {
+    "session_id": "7ada0e29-ff26-4598-857e-c2b92bcd0beb",
+    "query": "CVE-2026-61371",
+    "expected_results": 0,
+    "actual_results": 0,
+    "scope_label_present": true,
+    "matches": true
+  },
+  "persistence": {
+    "fts_rows": 59,
+    "content_rows": 59,
+    "foreign_key_violations": 0,
+    "orphan_search_results": 0,
+    "orphan_cluster_members": 0,
+    "bookmarks_after_restart": 1,
+    "saved_searches_after_restart": 1,
+    "saved_search_source_selection": "auto",
+    "integrity_check": "ok"
+  }
+}

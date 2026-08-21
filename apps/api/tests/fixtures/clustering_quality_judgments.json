@@ -1,0 +1,84 @@
+{
+  "schema": "mirsad.clustering-judgments",
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "english_broad_ai",
+      "query": "artificial intelligence",
+      "language": "en",
+      "document_ids": [
+        "ai-orion-news", "ai-orion-social", "ai-orion-ar", "ai-orion-video",
+        "ai-openai-office", "ai-openai-grant", "ai-toolbox-repo", "ai-course-repo",
+        "ai-revolution-essay", "ai-blockchain-repo", "ai-mccarthy-essay",
+        "ai-virus-news", "ai-virus-copy"
+      ],
+      "same_story_groups": [
+        ["ai-orion-news", "ai-orion-social", "ai-orion-ar", "ai-orion-video"],
+        ["ai-virus-news", "ai-virus-copy"]
+      ]
+    },
+    {
+      "id": "english_entity_microsoft",
+      "query": "Microsoft",
+      "language": "en",
+      "document_ids": [
+        "ms-cloud-news", "ms-cloud-ar", "ms-cloud-video", "ms-windows-news",
+        "ms-windows-social", "ms-basra-center", "ms-acquisition", "ms-earnings"
+      ],
+      "same_story_groups": [
+        ["ms-cloud-news", "ms-cloud-ar", "ms-cloud-video"],
+        ["ms-windows-news", "ms-windows-social"]
+      ]
+    },
+    {
+      "id": "arabic_broad_iraq",
+      "query": "العراق",
+      "language": "ar",
+      "document_ids": [
+        "iraq-bridge-ar-news", "iraq-bridge-ar-social", "iraq-bridge-en",
+        "iraq-basra-hospital", "iraq-budget", "iraq-election", "iraq-football",
+        "iraq-tech-event"
+      ],
+      "same_story_groups": [
+        ["iraq-bridge-ar-news", "iraq-bridge-ar-social", "iraq-bridge-en"]
+      ]
+    },
+    {
+      "id": "arabic_broad_ai",
+      "query": "الذكاء الاصطناعي",
+      "language": "ar",
+      "document_ids": [
+        "ar-ai-law-news", "ar-ai-law-social", "ar-ai-law-en", "ar-ai-education",
+        "ar-ai-medical", "ar-ai-chatbot", "ar-ai-strategy", "ar-ai-art"
+      ],
+      "same_story_groups": [
+        ["ar-ai-law-news", "ar-ai-law-social", "ar-ai-law-en"]
+      ]
+    },
+    {
+      "id": "arabic_broad_baghdad",
+      "query": "بغداد",
+      "language": "ar",
+      "document_ids": [
+        "baghdad-water-news", "baghdad-water-social", "baghdad-airport-news",
+        "baghdad-airport-ar", "baghdad-book-fair", "baghdad-weather"
+      ],
+      "same_story_groups": [
+        ["baghdad-water-news", "baghdad-water-social"],
+        ["baghdad-airport-news", "baghdad-airport-ar"]
+      ]
+    },
+    {
+      "id": "mixed_broad_technology",
+      "query": "technology التكنولوجيا",
+      "language": "mixed",
+      "document_ids": [
+        "tech-chip-news", "tech-chip-social", "tech-chip-ar", "tech-training",
+        "tech-paper", "tech-conference"
+      ],
+      "same_story_groups": [
+        ["tech-chip-news", "tech-chip-social", "tech-chip-ar"]
+      ]
+    }
+  ]
+}

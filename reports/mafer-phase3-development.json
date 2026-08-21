@@ -1,0 +1,4575 @@
+{
+  "schema": "mirsad.mafer-phase3-evaluation-result",
+  "version": "1.0",
+  "split": "development",
+  "fixture_sha256": "cf5be21e8d87e57599787a12472a0358fc59a67c850dd1f4dc84758c441ebae8",
+  "queries": 16,
+  "production_versions": {
+    "planner_version": "mafer-planner-v2.0",
+    "intent_version": "mafer-intent-v2.0",
+    "lattice_version": "mafer-lattice-v2.0",
+    "router_version": "mafer-router-v2.0",
+    "engine_router_version": "mafer-engine-router-v2.0",
+    "uncertainty_version": "mafer-uncertainty-v2.0",
+    "stop_model_version": "mafer-stop-v2.0",
+    "ranking_version": "mirsad-hybrid-lex25-sem75-v1",
+    "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "semantic_model_version": "fastembed-mean-pooling-v1",
+    "clustering_version": "mirsad-story-clustering-v2"
+  },
+  "shadow_versions": {
+    "router_version": "mafer-shadow-router-v3.0",
+    "uncertainty_version": "mafer-shadow-uncertainty-v3.0",
+    "stop_model_version": "mafer-shadow-saturation-v3.0",
+    "fusion_version": "mafer-shadow-query-fusion-v3.0",
+    "diversity_version": "mafer-shadow-near-tie-diversity-v3.0",
+    "arabic_expert_model": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "arabic_expert_version": "not-promoted-shadow-v1"
+  },
+  "fusion_weights": {
+    "ambiguous": 0.25,
+    "entity": 0.7,
+    "event": 0.25,
+    "exact_phrase": 0.55,
+    "handle": 0.7,
+    "hashtag": 0.7,
+    "historical": 0.25,
+    "identifier": 0.7,
+    "person": 0.55,
+    "topic": 0.25
+  },
+  "production": {
+    "retrieval_metrics": {
+      "queries": 16,
+      "p_at_5": 0.7,
+      "p_at_10": 0.5125,
+      "mrr": 1.0,
+      "recall_at_10": 0.8579,
+      "recall_at_20": 0.8863,
+      "ndcg_at_5": 0.7659,
+      "ndcg_at_10": 0.8481,
+      "success_at_1": 1.0,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    },
+    "candidate_recall": 0.8863,
+    "stop": {
+      "premature_stops": 1,
+      "premature_stop_rate": 0.0625,
+      "unnecessary_extra_rounds": 4,
+      "unnecessary_extra_round_rate": 0.25,
+      "useful_admitted_gain_missed_after_false_stop": 3,
+      "requests_avoided_by_correct_stopping": 10,
+      "premature_ids": [
+        "dev_duplicates_outage"
+      ],
+      "unnecessary_ids": [
+        "dev_mixed_entity",
+        "dev_identifier",
+        "dev_hashtag",
+        "dev_exact_en"
+      ]
+    },
+    "uncertainty_ordering": {
+      "LOW": {
+        "queries": 16,
+        "candidate_recall": 0.8863,
+        "p_at_5": 0.7,
+        "optimal_round": 1.562
+      }
+    },
+    "fusion_metrics": {
+      "queries": 16,
+      "p_at_5": 0.6125,
+      "p_at_10": 0.5188,
+      "mrr": 0.9375,
+      "recall_at_10": 0.975,
+      "recall_at_20": 1.0,
+      "ndcg_at_5": 0.6518,
+      "ndcg_at_10": 0.8453,
+      "success_at_1": 0.875,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    }
+  },
+  "shadow": {
+    "retrieval_metrics": {
+      "queries": 16,
+      "p_at_5": 0.725,
+      "p_at_10": 0.5312,
+      "mrr": 1.0,
+      "recall_at_10": 0.8892,
+      "recall_at_20": 0.9175,
+      "ndcg_at_5": 0.7874,
+      "ndcg_at_10": 0.8733,
+      "success_at_1": 1.0,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    },
+    "candidate_recall": 0.9175,
+    "stop": {
+      "premature_stops": 0,
+      "premature_stop_rate": 0.0,
+      "unnecessary_extra_rounds": 0,
+      "unnecessary_extra_round_rate": 0.0,
+      "useful_admitted_gain_missed_after_false_stop": 0,
+      "requests_avoided_by_correct_stopping": 23,
+      "premature_ids": [],
+      "unnecessary_ids": []
+    },
+    "uncertainty_ordering": {
+      "HIGH": {
+        "queries": 1,
+        "candidate_recall": 0.8,
+        "p_at_5": 0.4,
+        "optimal_round": 2
+      },
+      "LOW": {
+        "queries": 15,
+        "candidate_recall": 0.9254,
+        "p_at_5": 0.7467,
+        "optimal_round": 1.533
+      }
+    },
+    "fusion_metrics": {
+      "queries": 16,
+      "p_at_5": 0.9375,
+      "p_at_10": 0.5312,
+      "mrr": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "ndcg_at_5": 0.9562,
+      "ndcg_at_10": 0.9924,
+      "success_at_1": 1.0,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    },
+    "diversity_metrics": {
+      "queries": 16,
+      "p_at_5": 0.925,
+      "p_at_10": 0.5312,
+      "mrr": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "ndcg_at_5": 0.9499,
+      "ndcg_at_10": 0.9937,
+      "success_at_1": 1.0,
+      "success_at_3": 1.0,
+      "success_at_5": 1.0
+    }
+  },
+  "bootstrap_shadow_minus_production": {
+    "p_at_5": {
+      "mean": 0.0246,
+      "lower_95": 0.0,
+      "upper_95": 0.075
+    },
+    "p_at_10": {
+      "mean": 0.0184,
+      "lower_95": 0.0,
+      "upper_95": 0.0563
+    },
+    "mrr": {
+      "mean": 0.0,
+      "lower_95": 0.0,
+      "upper_95": 0.0
+    },
+    "recall_at_10": {
+      "mean": 0.0307,
+      "lower_95": 0.0,
+      "upper_95": 0.0938
+    },
+    "ndcg_at_10": {
+      "mean": 0.0248,
+      "lower_95": 0.0,
+      "upper_95": 0.0756
+    }
+  },
+  "segments": {
+    "language": {
+      "arabic": {
+        "production": {
+          "queries": 8,
+          "p_at_5": 0.625,
+          "p_at_10": 0.4875,
+          "mrr": 1.0,
+          "recall_at_10": 0.8339,
+          "recall_at_20": 0.8768,
+          "ndcg_at_5": 0.7011,
+          "ndcg_at_10": 0.8095,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 8,
+          "p_at_5": 0.625,
+          "p_at_10": 0.4875,
+          "mrr": 1.0,
+          "recall_at_10": 0.8339,
+          "recall_at_20": 0.8768,
+          "ndcg_at_5": 0.7011,
+          "ndcg_at_10": 0.8095,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "production_candidate_recall": 0.8768,
+        "shadow_candidate_recall": 0.8768
+      },
+      "english": {
+        "production": {
+          "queries": 7,
+          "p_at_5": 0.7714,
+          "p_at_10": 0.5286,
+          "mrr": 1.0,
+          "recall_at_10": 0.8651,
+          "recall_at_20": 0.881,
+          "ndcg_at_5": 0.8251,
+          "ndcg_at_10": 0.8741,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 7,
+          "p_at_5": 0.8286,
+          "p_at_10": 0.5714,
+          "mrr": 1.0,
+          "recall_at_10": 0.9365,
+          "recall_at_20": 0.9524,
+          "ndcg_at_5": 0.8745,
+          "ndcg_at_10": 0.9317,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "production_candidate_recall": 0.881,
+        "shadow_candidate_recall": 0.9524
+      },
+      "mixed": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.6,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8688,
+          "ndcg_at_10": 0.974,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.6,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8688,
+          "ndcg_at_10": 0.974,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "production_candidate_recall": 1.0,
+        "shadow_candidate_recall": 1.0
+      }
+    },
+    "class": {
+      "ambiguous": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 1.0,
+          "p_at_10": 0.8,
+          "mrr": 1.0,
+          "recall_at_10": 0.8889,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 0.9259,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 1.0,
+          "p_at_10": 0.8,
+          "mrr": 1.0,
+          "recall_at_10": 0.8889,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 0.9259,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "entity": {
+        "production": {
+          "queries": 3,
+          "p_at_5": 0.6667,
+          "p_at_10": 0.5667,
+          "mrr": 1.0,
+          "recall_at_10": 0.9524,
+          "recall_at_20": 0.9524,
+          "ndcg_at_5": 0.7557,
+          "ndcg_at_10": 0.909,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 3,
+          "p_at_5": 0.6667,
+          "p_at_10": 0.5667,
+          "mrr": 1.0,
+          "recall_at_10": 0.9524,
+          "recall_at_20": 0.9524,
+          "ndcg_at_5": 0.7557,
+          "ndcg_at_10": 0.909,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "event": {
+        "production": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 0.4405,
+          "recall_at_20": 0.5119,
+          "ndcg_at_5": 0.5848,
+          "ndcg_at_10": 0.5312,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 2,
+          "p_at_5": 0.7,
+          "p_at_10": 0.45,
+          "mrr": 1.0,
+          "recall_at_10": 0.6905,
+          "recall_at_20": 0.7619,
+          "ndcg_at_5": 0.7574,
+          "ndcg_at_10": 0.7329,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "exact_phrase": {
+        "production": {
+          "queries": 2,
+          "p_at_5": 0.7,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 0.9166,
+          "recall_at_20": 0.9166,
+          "ndcg_at_5": 0.7957,
+          "ndcg_at_10": 0.9188,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 2,
+          "p_at_5": 0.7,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 0.9166,
+          "recall_at_20": 0.9166,
+          "ndcg_at_5": 0.7957,
+          "ndcg_at_10": 0.9188,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "handle": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 1.0,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 1.0,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "hashtag": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8539,
+          "ndcg_at_10": 0.967,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8539,
+          "ndcg_at_10": 0.967,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "historical": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6548,
+          "ndcg_at_10": 0.8659,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6548,
+          "ndcg_at_10": 0.8659,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "identifier": {
+        "production": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8688,
+          "ndcg_at_10": 0.9896,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 1,
+          "p_at_5": 0.8,
+          "p_at_10": 0.5,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8688,
+          "ndcg_at_10": 0.9896,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "person": {
+        "production": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.4,
+          "mrr": 1.0,
+          "recall_at_10": 0.7167,
+          "recall_at_20": 0.8167,
+          "ndcg_at_5": 0.6039,
+          "ndcg_at_10": 0.721,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.4,
+          "mrr": 1.0,
+          "recall_at_10": 0.7167,
+          "recall_at_20": 0.8167,
+          "ndcg_at_5": 0.6039,
+          "ndcg_at_10": 0.721,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      },
+      "topic": {
+        "production": {
+          "queries": 2,
+          "p_at_5": 0.8,
+          "p_at_10": 0.65,
+          "mrr": 1.0,
+          "recall_at_10": 0.9166,
+          "recall_at_20": 0.9166,
+          "ndcg_at_5": 0.8199,
+          "ndcg_at_10": 0.8759,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "shadow": {
+          "queries": 2,
+          "p_at_5": 0.8,
+          "p_at_10": 0.65,
+          "mrr": 1.0,
+          "recall_at_10": 0.9166,
+          "recall_at_20": 0.9166,
+          "ndcg_at_5": 0.8199,
+          "ndcg_at_10": 0.8759,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "dev_ar_person_rare",
+      "query": "سارة الخفاجي",
+      "language": "arabic",
+      "class": "person",
+      "time_range": "all",
+      "possible_relevant": 6,
+      "useful_sources": [
+        "bluesky",
+        "x",
+        "github",
+        "youtube",
+        "mastodon"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT",
+        "TRANSLITERATION"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 3,
+          "canonical_relevant": 3,
+          "admitted_relevant": 3,
+          "semantic_relevant": 3,
+          "relevant_ranks": [
+            1,
+            3,
+            8
+          ],
+          "candidate_count": 12,
+          "source_count": 3,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.42,
+          "lexical_semantic_disagreement": 31,
+          "rank_margin": 5,
+          "evidence_completeness": 0.62,
+          "single_engine": false,
+          "new_unique": 12,
+          "new_admitted": 12,
+          "requests": 6,
+          "latency_ms": 780
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 6,
+          "canonical_relevant": 6,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            6,
+            9
+          ],
+          "candidate_count": 20,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.78,
+          "lexical_semantic_disagreement": 18,
+          "rank_margin": 14,
+          "evidence_completeness": 0.71,
+          "single_engine": false,
+          "new_unique": 8,
+          "new_admitted": 8,
+          "requests": 5,
+          "latency_ms": 920
+        }
+      ],
+      "semantic_positive": [
+        "سارة الخفاجي تعرض نتائج مبادرة البيانات المفتوحة في بغداد",
+        "لقاء مع الباحثة سارة الخفاجي حول الحوكمة الرقمية"
+      ],
+      "semantic_negative": [
+        "سارة أخرى تناقش الخفاجي بوصفه اسما لمنطقة قديمة",
+        "تقرير عام عن التحول الرقمي لا يذكر الباحثة"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.8333,
+      "shadow_candidate_recall": 0.8333,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.7227,
+        "ndcg_at_10": 0.8437,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          6,
+          9
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.7227,
+        "ndcg_at_10": 0.8437,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          6,
+          9
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 8,
+            "reasons": [
+              "evidence completeness is moderate",
+              "query-variant agreement is limited",
+              "large lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9818,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      "shadow_lexical_weight": 0.55,
+      "arabic_loss_funnel": {
+        "possible_relevant": 6,
+        "discovered": 6,
+        "canonical": 6,
+        "admitted": 5,
+        "semantic_evaluated": 5,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_ar_person_common",
+      "query": "محمد علي",
+      "language": "arabic",
+      "class": "person",
+      "time_range": "all",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "bluesky",
+        "x",
+        "youtube",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT"
+      ],
+      "fusion_profile": "ambiguous",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 2,
+          "canonical_relevant": 2,
+          "admitted_relevant": 2,
+          "semantic_relevant": 2,
+          "relevant_ranks": [
+            2,
+            9
+          ],
+          "candidate_count": 18,
+          "source_count": 2,
+          "healthy_unqueried": 4,
+          "variant_agreement": 0.25,
+          "lexical_semantic_disagreement": 38,
+          "rank_margin": 2,
+          "evidence_completeness": 0.55,
+          "single_engine": true,
+          "new_unique": 18,
+          "new_admitted": 18,
+          "requests": 5,
+          "latency_ms": 1100
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 4,
+          "canonical_relevant": 4,
+          "admitted_relevant": 4,
+          "semantic_relevant": 4,
+          "relevant_ranks": [
+            1,
+            4,
+            7,
+            12
+          ],
+          "candidate_count": 26,
+          "source_count": 4,
+          "healthy_unqueried": 1,
+          "variant_agreement": 0.48,
+          "lexical_semantic_disagreement": 29,
+          "rank_margin": 6,
+          "evidence_completeness": 0.63,
+          "single_engine": false,
+          "new_unique": 8,
+          "new_admitted": 8,
+          "requests": 5,
+          "latency_ms": 1250
+        }
+      ],
+      "semantic_positive": [
+        "محمد علي الباحث في اقتصاد المياه نشر الدراسة الجديدة",
+        "مقابلة مع الدكتور محمد علي من جامعة بغداد"
+      ],
+      "semantic_negative": [
+        "الملاكم محمد علي في أرشيف الرياضة العالمي",
+        "شركة محمد علي للتجارة تعلن تخفيضات جديدة"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "HIGH",
+      "production_candidate_recall": 0.8,
+      "shadow_candidate_recall": 0.8,
+      "production_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.3,
+        "mrr": 1.0,
+        "recall_at_10": 0.6,
+        "recall_at_20": 0.8,
+        "ndcg_at_5": 0.4852,
+        "ndcg_at_10": 0.5983,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          4,
+          7,
+          12
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.3,
+        "mrr": 1.0,
+        "recall_at_10": 0.6,
+        "recall_at_20": 0.8,
+        "ndcg_at_5": 0.4852,
+        "ndcg_at_10": 0.5983,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          4,
+          7,
+          12
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "MEDIUM",
+            "reasons": [
+              "metadata completeness is moderate",
+              "single discovery-engine dependence",
+              "large lexical/semantic disagreement",
+              "multiple query variants contributed evidence"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 12,
+            "reasons": [
+              "only two independent sources",
+              "evidence completeness is moderate",
+              "query variants disagree",
+              "large lexical/semantic disagreement",
+              "top-rank margin is unstable",
+              "several healthy useful sources remain unqueried",
+              "single discovery-engine dependence",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "4 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 6,
+            "reasons": [
+              "evidence completeness is moderate",
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9651,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          8
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.974,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          9
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 0.9877,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8
+        ]
+      },
+      "shadow_lexical_weight": 0.55,
+      "arabic_loss_funnel": {
+        "possible_relevant": 5,
+        "discovered": 4,
+        "canonical": 4,
+        "admitted": 4,
+        "semantic_evaluated": 4,
+        "top_10": 3
+      }
+    },
+    {
+      "id": "dev_ar_org",
+      "query": "هيئة النزاهة الاتحادية",
+      "language": "arabic",
+      "class": "entity",
+      "time_range": "30d",
+      "possible_relevant": 7,
+      "useful_sources": [
+        "rss",
+        "gdelt",
+        "youtube",
+        "x",
+        "threads"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 4,
+          "canonical_relevant": 4,
+          "admitted_relevant": 3,
+          "semantic_relevant": 3,
+          "relevant_ranks": [
+            1,
+            4,
+            11
+          ],
+          "candidate_count": 14,
+          "source_count": 3,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.51,
+          "lexical_semantic_disagreement": 27,
+          "rank_margin": 4,
+          "evidence_completeness": 0.7,
+          "single_engine": false,
+          "new_unique": 14,
+          "new_admitted": 13,
+          "requests": 6,
+          "latency_ms": 820
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 7,
+          "canonical_relevant": 7,
+          "admitted_relevant": 6,
+          "semantic_relevant": 6,
+          "relevant_ranks": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "candidate_count": 22,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.81,
+          "lexical_semantic_disagreement": 14,
+          "rank_margin": 15,
+          "evidence_completeness": 0.78,
+          "single_engine": false,
+          "new_unique": 8,
+          "new_admitted": 9,
+          "requests": 5,
+          "latency_ms": 970
+        }
+      ],
+      "semantic_positive": [
+        "هيئة النزاهة الاتحادية تعلن تقرير استرداد الأموال",
+        "تقرير جديد صادر عن هيئة النزاهة الاتحادية"
+      ],
+      "semantic_negative": [
+        "ندوة عامة عن النزاهة في المؤسسات الاتحادية",
+        "هيئة رياضية اتحادية تناقش قواعد النزاهة"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.8571,
+      "shadow_candidate_recall": 0.8571,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 0.8571,
+        "recall_at_20": 0.8571,
+        "ndcg_at_5": 0.6992,
+        "ndcg_at_10": 0.8308,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 0.8571,
+        "recall_at_20": 0.8571,
+        "ndcg_at_5": 0.6992,
+        "ndcg_at_10": 0.8308,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 6,
+            "reasons": [
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": {
+        "possible_relevant": 7,
+        "discovered": 7,
+        "canonical": 7,
+        "admitted": 6,
+        "semantic_evaluated": 6,
+        "top_10": 6
+      }
+    },
+    {
+      "id": "dev_ar_exact_diacritics",
+      "query": "\"وِزَارَةُ الصِّحَّة\"",
+      "language": "arabic",
+      "class": "exact_phrase",
+      "time_range": "30d",
+      "possible_relevant": 6,
+      "useful_sources": [
+        "rss",
+        "gdelt",
+        "youtube",
+        "x"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "exact",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 2,
+          "canonical_relevant": 2,
+          "admitted_relevant": 2,
+          "semantic_relevant": 2,
+          "relevant_ranks": [
+            1,
+            7
+          ],
+          "candidate_count": 11,
+          "source_count": 2,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.31,
+          "lexical_semantic_disagreement": 34,
+          "rank_margin": 3,
+          "evidence_completeness": 0.68,
+          "single_engine": false,
+          "new_unique": 11,
+          "new_admitted": 11,
+          "requests": 5,
+          "latency_ms": 740
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            6,
+            8
+          ],
+          "candidate_count": 19,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.84,
+          "lexical_semantic_disagreement": 12,
+          "rank_margin": 17,
+          "evidence_completeness": 0.76,
+          "single_engine": false,
+          "new_unique": 8,
+          "new_admitted": 8,
+          "requests": 4,
+          "latency_ms": 810
+        }
+      ],
+      "semantic_positive": [
+        "وِزَارَةُ الصِّحَّة تعلن خطة الوقاية الموسمية",
+        "وزارة الصحة تنشر تعليمات المستشفيات الجديدة"
+      ],
+      "semantic_negative": [
+        "وزارة البيئة تناقش الصحة العامة في المدارس",
+        "صحة المجتمع موضوع ورشة في وزارة أخرى"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.8333,
+      "shadow_candidate_recall": 0.8333,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.7227,
+        "ndcg_at_10": 0.8481,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          6,
+          8
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.7227,
+        "ndcg_at_10": 0.8481,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          6,
+          8
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 9,
+            "reasons": [
+              "only two independent sources",
+              "query variants disagree",
+              "large lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.4,
+        "mrr": 0.5,
+        "recall_at_10": 0.8,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.3601,
+        "ndcg_at_10": 0.5801,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.55,
+      "arabic_loss_funnel": {
+        "possible_relevant": 6,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_evaluated": 5,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_ar_spelling",
+      "query": "إدارة الأزمات",
+      "language": "arabic",
+      "class": "topic",
+      "time_range": "30d",
+      "possible_relevant": 6,
+      "useful_sources": [
+        "rss",
+        "gdelt",
+        "youtube",
+        "bluesky"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "topic",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 3,
+          "canonical_relevant": 3,
+          "admitted_relevant": 3,
+          "semantic_relevant": 3,
+          "relevant_ranks": [
+            2,
+            5,
+            10
+          ],
+          "candidate_count": 13,
+          "source_count": 3,
+          "healthy_unqueried": 2,
+          "variant_agreement": 0.48,
+          "lexical_semantic_disagreement": 24,
+          "rank_margin": 7,
+          "evidence_completeness": 0.66,
+          "single_engine": false,
+          "new_unique": 13,
+          "new_admitted": 13,
+          "requests": 6,
+          "latency_ms": 790
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "candidate_count": 18,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.72,
+          "lexical_semantic_disagreement": 17,
+          "rank_margin": 11,
+          "evidence_completeness": 0.7,
+          "single_engine": false,
+          "new_unique": 5,
+          "new_admitted": 5,
+          "requests": 4,
+          "latency_ms": 760
+        }
+      ],
+      "semantic_positive": [
+        "إدارة الأزمات تراجع خطة الاستجابة للفيضانات",
+        "ادارة الازمات تنسق فرق الطوارئ المحلية"
+      ],
+      "semantic_negative": [
+        "إدارة شركة خاصة تعلن نتائجها السنوية",
+        "أزمات كرة القدم تتصدر برنامج رياضي"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.8333,
+      "shadow_candidate_recall": 0.8333,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.6399,
+        "ndcg_at_10": 0.7629,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.8333,
+        "recall_at_20": 0.8333,
+        "ndcg_at_5": 0.6399,
+        "ndcg_at_10": 0.7629,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 5,
+            "reasons": [
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "2 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": {
+        "possible_relevant": 6,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_evaluated": 5,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_mixed_entity",
+      "query": "Microsoft العراق",
+      "language": "mixed",
+      "class": "entity",
+      "time_range": "30d",
+      "possible_relevant": 6,
+      "useful_sources": [
+        "github",
+        "youtube",
+        "x",
+        "threads",
+        "rss"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 6,
+          "canonical_relevant": 6,
+          "admitted_relevant": 6,
+          "semantic_relevant": 6,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            9
+          ],
+          "candidate_count": 18,
+          "source_count": 5,
+          "healthy_unqueried": 1,
+          "variant_agreement": 0.79,
+          "lexical_semantic_disagreement": 13,
+          "rank_margin": 16,
+          "evidence_completeness": 0.74,
+          "single_engine": false,
+          "new_unique": 18,
+          "new_admitted": 18,
+          "requests": 7,
+          "latency_ms": 980
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 6,
+          "canonical_relevant": 6,
+          "admitted_relevant": 6,
+          "semantic_relevant": 6,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            9
+          ],
+          "candidate_count": 20,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.8,
+          "lexical_semantic_disagreement": 13,
+          "rank_margin": 16,
+          "evidence_completeness": 0.74,
+          "single_engine": false,
+          "new_unique": 2,
+          "new_admitted": 2,
+          "requests": 4,
+          "latency_ms": 900
+        }
+      ],
+      "semantic_positive": [
+        "Microsoft توسع برنامج المهارات الرقمية في العراق",
+        "العراق يستضيف فعالية Microsoft للمطورين"
+      ],
+      "semantic_negative": [
+        "Microsoft announces retail results in Canada",
+        "تقرير عن شركات تقنية في العراق دون Microsoft"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.974,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          9
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.974,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          9
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "healthy useful sources remain unqueried",
+              "independent sources and coherent complete evidence"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SATISFIED",
+            "evidence": [
+              "low uncertainty",
+              "additional source utility is not expected to justify its cost"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": {
+        "possible_relevant": 6,
+        "discovered": 6,
+        "canonical": 6,
+        "admitted": 6,
+        "semantic_evaluated": 6,
+        "top_10": 6
+      }
+    },
+    {
+      "id": "dev_handle",
+      "query": "@baghdadtech",
+      "language": "english",
+      "class": "handle",
+      "time_range": "7d",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "bluesky",
+        "x",
+        "github",
+        "mastodon"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "HANDLE"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "candidate_count": 12,
+          "source_count": 4,
+          "healthy_unqueried": 1,
+          "variant_agreement": 0.9,
+          "lexical_semantic_disagreement": 8,
+          "rank_margin": 22,
+          "evidence_completeness": 0.77,
+          "single_engine": false,
+          "new_unique": 12,
+          "new_admitted": 12,
+          "requests": 6,
+          "latency_ms": 730
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "candidate_count": 13,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.9,
+          "lexical_semantic_disagreement": 8,
+          "rank_margin": 22,
+          "evidence_completeness": 0.77,
+          "single_engine": false,
+          "new_unique": 1,
+          "new_admitted": 1,
+          "requests": 3,
+          "latency_ms": 680
+        }
+      ],
+      "semantic_positive": [
+        "Official update posted by @baghdadtech",
+        "Archive of public posts from the @baghdadtech account"
+      ],
+      "semantic_negative": [
+        "Baghdad technology conference opens today",
+        "A profile mentions technology but uses another handle"
+      ],
+      "production_stop_round": 1,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 1,
+            "reasons": [
+              "healthy useful sources remain unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SATISFIED",
+            "evidence": [
+              "low uncertainty",
+              "additional source utility is not expected to justify its cost"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_identifier",
+      "query": "CVE-2027-10421",
+      "language": "english",
+      "class": "identifier",
+      "time_range": "all",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "github",
+        "hacker_news",
+        "rss",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "IDENTIFIER",
+        "EXACT"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "candidate_count": 15,
+          "source_count": 4,
+          "healthy_unqueried": 1,
+          "variant_agreement": 0.88,
+          "lexical_semantic_disagreement": 9,
+          "rank_margin": 24,
+          "evidence_completeness": 0.83,
+          "single_engine": false,
+          "new_unique": 15,
+          "new_admitted": 15,
+          "requests": 6,
+          "latency_ms": 760
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "candidate_count": 16,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.88,
+          "lexical_semantic_disagreement": 9,
+          "rank_margin": 24,
+          "evidence_completeness": 0.83,
+          "single_engine": false,
+          "new_unique": 1,
+          "new_admitted": 1,
+          "requests": 3,
+          "latency_ms": 710
+        }
+      ],
+      "semantic_positive": [
+        "Patch released for CVE-2027-10421 authentication bypass",
+        "CVE-2027-10421 advisory and affected versions"
+      ],
+      "semantic_negative": [
+        "General vulnerability management guidance for 2027",
+        "Patch notes for unrelated CVE-2027-10412"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "healthy useful sources remain unqueried",
+              "independent sources and coherent complete evidence"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SATISFIED",
+            "evidence": [
+              "low uncertainty",
+              "additional source utility is not expected to justify its cost"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_recent_event",
+      "query": "آخر أخبار فيضانات البصرة",
+      "language": "arabic",
+      "class": "event",
+      "time_range": "24h",
+      "possible_relevant": 7,
+      "useful_sources": [
+        "gdelt",
+        "rss",
+        "x",
+        "threads",
+        "bluesky",
+        "youtube"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "NORMALIZED",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "topic",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 3,
+          "canonical_relevant": 3,
+          "admitted_relevant": 3,
+          "semantic_relevant": 3,
+          "relevant_ranks": [
+            1,
+            5,
+            12
+          ],
+          "candidate_count": 16,
+          "source_count": 3,
+          "healthy_unqueried": 4,
+          "variant_agreement": 0.39,
+          "lexical_semantic_disagreement": 30,
+          "rank_margin": 4,
+          "evidence_completeness": 0.64,
+          "single_engine": false,
+          "new_unique": 16,
+          "new_admitted": 16,
+          "requests": 6,
+          "latency_ms": 900
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 7,
+          "canonical_relevant": 7,
+          "admitted_relevant": 6,
+          "semantic_relevant": 6,
+          "relevant_ranks": [
+            1,
+            2,
+            4,
+            5,
+            8,
+            11
+          ],
+          "candidate_count": 25,
+          "source_count": 6,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.73,
+          "lexical_semantic_disagreement": 18,
+          "rank_margin": 12,
+          "evidence_completeness": 0.72,
+          "single_engine": false,
+          "new_unique": 9,
+          "new_admitted": 9,
+          "requests": 6,
+          "latency_ms": 1200
+        }
+      ],
+      "semantic_positive": [
+        "آخر أخبار فيضانات البصرة وإجراءات فرق الإنقاذ",
+        "تحديث ميداني عن الفيضانات في محافظة البصرة"
+      ],
+      "semantic_negative": [
+        "أخبار البصرة الرياضية لهذا الأسبوع",
+        "دراسة تاريخية عن فيضانات حدثت قبل عشر سنوات"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.8571,
+      "shadow_candidate_recall": 0.8571,
+      "production_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.7143,
+        "recall_at_20": 0.8571,
+        "ndcg_at_5": 0.8304,
+        "ndcg_at_10": 0.7597,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          5,
+          8,
+          11
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 0.7143,
+        "recall_at_20": 0.8571,
+        "ndcg_at_5": 0.8304,
+        "ndcg_at_10": 0.7597,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          5,
+          8,
+          11
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 7,
+            "reasons": [
+              "evidence completeness is moderate",
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried",
+              "Arabic identity/exact intent still has unqueried coverage"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "4 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": {
+        "possible_relevant": 7,
+        "discovered": 7,
+        "canonical": 7,
+        "admitted": 6,
+        "semantic_evaluated": 6,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_historical",
+      "query": "بغداد 1958 أرشيف",
+      "language": "arabic",
+      "class": "historical",
+      "time_range": "all",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "rss",
+        "gdelt",
+        "youtube",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "NORMALIZED",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "balanced",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 2,
+          "canonical_relevant": 2,
+          "admitted_relevant": 2,
+          "semantic_relevant": 2,
+          "relevant_ranks": [
+            2,
+            8
+          ],
+          "candidate_count": 12,
+          "source_count": 2,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.36,
+          "lexical_semantic_disagreement": 26,
+          "rank_margin": 5,
+          "evidence_completeness": 0.58,
+          "single_engine": false,
+          "new_unique": 12,
+          "new_admitted": 12,
+          "requests": 5,
+          "latency_ms": 850
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            3,
+            4,
+            7,
+            10
+          ],
+          "candidate_count": 20,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.68,
+          "lexical_semantic_disagreement": 16,
+          "rank_margin": 13,
+          "evidence_completeness": 0.69,
+          "single_engine": false,
+          "new_unique": 8,
+          "new_admitted": 8,
+          "requests": 5,
+          "latency_ms": 1050
+        }
+      ],
+      "semantic_positive": [
+        "أرشيف بغداد يوثق أحداث عام 1958",
+        "صور ووثائق تاريخية من بغداد سنة 1958"
+      ],
+      "semantic_negative": [
+        "بغداد تستضيف معرضا حديثا في 2027",
+        "أرشيف عام عن مدينة أخرى سنة 1958"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6548,
+        "ndcg_at_10": 0.8659,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3,
+          4,
+          7,
+          10
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6548,
+        "ndcg_at_10": 0.8659,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          3,
+          4,
+          7,
+          10
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "metadata completeness is moderate",
+              "multiple query variants contributed evidence"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 7,
+            "reasons": [
+              "only two independent sources",
+              "evidence completeness is moderate",
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9747,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9747,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": {
+        "possible_relevant": 5,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_evaluated": 5,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_hashtag",
+      "query": "#التحول_الرقمي",
+      "language": "arabic",
+      "class": "hashtag",
+      "time_range": "7d",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "mastodon",
+        "bluesky",
+        "x",
+        "threads",
+        "youtube"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "HASHTAG",
+        "ARABIC_NORMALIZED"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "candidate_count": 14,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.86,
+          "lexical_semantic_disagreement": 10,
+          "rank_margin": 20,
+          "evidence_completeness": 0.7,
+          "single_engine": false,
+          "new_unique": 14,
+          "new_admitted": 14,
+          "requests": 6,
+          "latency_ms": 800
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "candidate_count": 15,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.86,
+          "lexical_semantic_disagreement": 10,
+          "rank_margin": 20,
+          "evidence_completeness": 0.7,
+          "single_engine": false,
+          "new_unique": 1,
+          "new_admitted": 1,
+          "requests": 3,
+          "latency_ms": 700
+        }
+      ],
+      "semantic_positive": [
+        "#التحول_الرقمي في الخدمات الحكومية",
+        "مناقشة عامة تحت وسم #التحول_الرقمي"
+      ],
+      "semantic_negative": [
+        "التحول الاقتصادي موضوع تقرير بلا وسم",
+        "منشور عن رقمنة صورة شخصية"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.967,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.967,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SOURCE_EXHAUSTION",
+            "evidence": [
+              "no healthy useful source remains"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": {
+        "possible_relevant": 5,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_evaluated": 5,
+        "top_10": 5
+      }
+    },
+    {
+      "id": "dev_entity_en",
+      "query": "Acme Observatory",
+      "language": "english",
+      "class": "entity",
+      "time_range": "all",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "github",
+        "rss",
+        "youtube",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT"
+      ],
+      "fusion_profile": "identity",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 3,
+          "canonical_relevant": 3,
+          "admitted_relevant": 3,
+          "semantic_relevant": 3,
+          "relevant_ranks": [
+            1,
+            6,
+            10
+          ],
+          "candidate_count": 13,
+          "source_count": 2,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.47,
+          "lexical_semantic_disagreement": 23,
+          "rank_margin": 7,
+          "evidence_completeness": 0.67,
+          "single_engine": false,
+          "new_unique": 13,
+          "new_admitted": 13,
+          "requests": 5,
+          "latency_ms": 760
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            4,
+            6,
+            9
+          ],
+          "candidate_count": 19,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.77,
+          "lexical_semantic_disagreement": 14,
+          "rank_margin": 14,
+          "evidence_completeness": 0.74,
+          "single_engine": false,
+          "new_unique": 6,
+          "new_admitted": 6,
+          "requests": 4,
+          "latency_ms": 880
+        }
+      ],
+      "semantic_positive": [
+        "Acme Observatory releases its urban sky survey",
+        "Researchers at Acme Observatory publish a new catalogue"
+      ],
+      "semantic_negative": [
+        "Acme retail group opens an observatory-themed shop",
+        "A general observatory directory omits Acme"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6992,
+        "ndcg_at_10": 0.9221,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          6,
+          9
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6992,
+        "ndcg_at_10": 0.9221,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          4,
+          6,
+          9
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 6,
+            "reasons": [
+              "only two independent sources",
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4704,
+        "ndcg_at_10": 0.7836,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          5,
+          7,
+          9,
+          10
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_lexical_weight": 0.7,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_long_topic",
+      "query": "effects of drought on urban water systems",
+      "language": "english",
+      "class": "topic",
+      "time_range": "30d",
+      "possible_relevant": 8,
+      "useful_sources": [
+        "gdelt",
+        "rss",
+        "youtube",
+        "github",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "NORMALIZED"
+      ],
+      "fusion_profile": "topic",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 8,
+          "canonical_relevant": 8,
+          "admitted_relevant": 8,
+          "semantic_relevant": 8,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "candidate_count": 22,
+          "source_count": 5,
+          "healthy_unqueried": 1,
+          "variant_agreement": 0.82,
+          "lexical_semantic_disagreement": 11,
+          "rank_margin": 18,
+          "evidence_completeness": 0.76,
+          "single_engine": false,
+          "new_unique": 22,
+          "new_admitted": 22,
+          "requests": 7,
+          "latency_ms": 980
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 8,
+          "canonical_relevant": 8,
+          "admitted_relevant": 8,
+          "semantic_relevant": 8,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "candidate_count": 24,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.82,
+          "lexical_semantic_disagreement": 11,
+          "rank_margin": 18,
+          "evidence_completeness": 0.76,
+          "single_engine": false,
+          "new_unique": 2,
+          "new_admitted": 2,
+          "requests": 4,
+          "latency_ms": 930
+        }
+      ],
+      "semantic_positive": [
+        "Drought reduces pressure and quality across urban water systems",
+        "Study measures how prolonged drought affects city water networks"
+      ],
+      "semantic_negative": [
+        "Urban design trends for waterfront housing",
+        "Drought-resistant crops for rural farms"
+      ],
+      "production_stop_round": 1,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.8,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 0.9888,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.8,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 0.9888,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "healthy useful sources remain unqueried",
+              "independent sources and coherent complete evidence"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SATISFIED",
+            "evidence": [
+              "low uncertainty",
+              "additional source utility is not expected to justify its cost"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_ambiguous",
+      "query": "mercury",
+      "language": "english",
+      "class": "ambiguous",
+      "time_range": "all",
+      "possible_relevant": 9,
+      "useful_sources": [
+        "youtube",
+        "bluesky",
+        "rss",
+        "github",
+        "reddit"
+      ],
+      "useful_variants": [
+        "ORIGINAL"
+      ],
+      "fusion_profile": "ambiguous",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 9,
+          "canonical_relevant": 9,
+          "admitted_relevant": 9,
+          "semantic_relevant": 9,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            12
+          ],
+          "candidate_count": 25,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 1,
+          "lexical_semantic_disagreement": 22,
+          "rank_margin": 5,
+          "evidence_completeness": 0.68,
+          "single_engine": false,
+          "new_unique": 25,
+          "new_admitted": 25,
+          "requests": 7,
+          "latency_ms": 920
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 9,
+          "canonical_relevant": 9,
+          "admitted_relevant": 9,
+          "semantic_relevant": 9,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            12
+          ],
+          "candidate_count": 26,
+          "source_count": 5,
+          "healthy_unqueried": 0,
+          "variant_agreement": 1,
+          "lexical_semantic_disagreement": 22,
+          "rank_margin": 5,
+          "evidence_completeness": 0.68,
+          "single_engine": false,
+          "new_unique": 1,
+          "new_admitted": 1,
+          "requests": 3,
+          "latency_ms": 800
+        }
+      ],
+      "semantic_positive": [
+        "Mercury levels measured in river fish",
+        "The planet Mercury will be visible before dawn"
+      ],
+      "semantic_negative": [
+        "Mercury car restoration club meeting",
+        "A singer releases an album titled Mercury"
+      ],
+      "production_stop_round": 1,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.8,
+        "mrr": 1.0,
+        "recall_at_10": 0.8889,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 0.9259,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          12
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.8,
+        "mrr": 1.0,
+        "recall_at_10": 0.8889,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 0.9259,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          12
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 1,
+            "reasons": [
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SOURCE_EXHAUSTION",
+            "evidence": [
+              "no healthy useful source remains"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9651,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          8
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9651,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          8
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.6,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9705,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_exact_en",
+      "query": "\"Civic Data Compact\"",
+      "language": "english",
+      "class": "exact_phrase",
+      "time_range": "all",
+      "possible_relevant": 5,
+      "useful_sources": [
+        "rss",
+        "github",
+        "reddit",
+        "youtube"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "EXACT"
+      ],
+      "fusion_profile": "exact",
+      "optimal_stop_after": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "candidate_count": 14,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.91,
+          "lexical_semantic_disagreement": 7,
+          "rank_margin": 23,
+          "evidence_completeness": 0.79,
+          "single_engine": false,
+          "new_unique": 14,
+          "new_admitted": 14,
+          "requests": 6,
+          "latency_ms": 760
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 5,
+          "canonical_relevant": 5,
+          "admitted_relevant": 5,
+          "semantic_relevant": 5,
+          "relevant_ranks": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "candidate_count": 15,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.91,
+          "lexical_semantic_disagreement": 7,
+          "rank_margin": 23,
+          "evidence_completeness": 0.79,
+          "single_engine": false,
+          "new_unique": 1,
+          "new_admitted": 1,
+          "requests": 3,
+          "latency_ms": 700
+        }
+      ],
+      "semantic_positive": [
+        "The Civic Data Compact publishes its signed principles",
+        "Members adopt the exact Civic Data Compact text"
+      ],
+      "semantic_negative": [
+        "A civic group discusses a compact city data centre",
+        "Data compactness methods for scientific storage"
+      ],
+      "production_stop_round": 2,
+      "shadow_stop_round": 1,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 1.0,
+      "shadow_candidate_recall": 1.0,
+      "production_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": true,
+          "decision": "CONTINUE"
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "multiple query variants contributed evidence",
+              "multi-source yield with useful evidence completeness"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "SOURCE_EXHAUSTION",
+            "evidence": [
+              "no healthy useful source remains"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.4,
+        "p_at_10": 0.4,
+        "mrr": 0.5,
+        "recall_at_10": 0.8,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.3601,
+        "ndcg_at_10": 0.5801,
+        "success_at_1": 0,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          2,
+          4,
+          7,
+          8,
+          12
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 1.0,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.55,
+      "arabic_loss_funnel": null
+    },
+    {
+      "id": "dev_duplicates_outage",
+      "query": "regional heat alert",
+      "language": "english",
+      "class": "event",
+      "time_range": "24h",
+      "possible_relevant": 6,
+      "useful_sources": [
+        "rss",
+        "gdelt",
+        "bluesky",
+        "mastodon"
+      ],
+      "useful_variants": [
+        "ORIGINAL",
+        "NORMALIZED"
+      ],
+      "fusion_profile": "balanced",
+      "optimal_stop_after": 2,
+      "rounds": [
+        {
+          "round": 1,
+          "discovered_relevant": 3,
+          "canonical_relevant": 1,
+          "admitted_relevant": 1,
+          "semantic_relevant": 1,
+          "relevant_ranks": [
+            1
+          ],
+          "candidate_count": 12,
+          "source_count": 1,
+          "healthy_unqueried": 3,
+          "variant_agreement": 0.35,
+          "lexical_semantic_disagreement": 25,
+          "rank_margin": 4,
+          "evidence_completeness": 0.61,
+          "single_engine": true,
+          "new_unique": 10,
+          "new_admitted": 10,
+          "requests": 5,
+          "latency_ms": 880
+        },
+        {
+          "round": 2,
+          "discovered_relevant": 6,
+          "canonical_relevant": 4,
+          "admitted_relevant": 4,
+          "semantic_relevant": 4,
+          "relevant_ranks": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "candidate_count": 19,
+          "source_count": 4,
+          "healthy_unqueried": 0,
+          "variant_agreement": 0.71,
+          "lexical_semantic_disagreement": 16,
+          "rank_margin": 12,
+          "evidence_completeness": 0.7,
+          "single_engine": false,
+          "new_unique": 7,
+          "new_admitted": 7,
+          "requests": 4,
+          "latency_ms": 930
+        }
+      ],
+      "semantic_positive": [
+        "Regional heat alert issued for schools and hospitals",
+        "Public agencies extend the regional heat alert"
+      ],
+      "semantic_negative": [
+        "A historical heat record is discussed in a documentary",
+        "Regional sports results lead the evening bulletin"
+      ],
+      "production_stop_round": 1,
+      "shadow_stop_round": 2,
+      "production_uncertainty": "LOW",
+      "shadow_uncertainty": "LOW",
+      "production_candidate_recall": 0.1667,
+      "shadow_candidate_recall": 0.6667,
+      "production_metrics": {
+        "p_at_5": 0.2,
+        "p_at_10": 0.1,
+        "mrr": 1.0,
+        "recall_at_10": 0.1667,
+        "recall_at_20": 0.1667,
+        "ndcg_at_5": 0.3392,
+        "ndcg_at_10": 0.3026,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1
+        ]
+      },
+      "shadow_metrics": {
+        "p_at_5": 0.6,
+        "p_at_10": 0.4,
+        "mrr": 1.0,
+        "recall_at_10": 0.6667,
+        "recall_at_20": 0.6667,
+        "ndcg_at_5": 0.6844,
+        "ndcg_at_10": 0.706,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          5,
+          8
+        ]
+      },
+      "production_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "LOW",
+            "reasons": [
+              "single-source dependence",
+              "single discovery-engine dependence",
+              "multiple query variants contributed evidence"
+            ]
+          },
+          "must_attempt_more": false,
+          "decision": "SATISFIED"
+        }
+      ],
+      "shadow_trace": [
+        {
+          "round": 1,
+          "uncertainty": {
+            "level": "HIGH",
+            "risk_points": 9,
+            "reasons": [
+              "single-source evidence",
+              "evidence completeness is moderate",
+              "query-variant agreement is limited",
+              "moderate lexical/semantic disagreement",
+              "top-rank margin is narrow",
+              "several healthy useful sources remain unqueried",
+              "single discovery-engine dependence"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "CONTINUE",
+            "reason": "UNCERTAINTY_WITH_AVAILABLE_COVERAGE",
+            "evidence": [
+              "high retrieval uncertainty",
+              "3 healthy useful source(s) remain"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        },
+        {
+          "round": 2,
+          "uncertainty": {
+            "level": "LOW",
+            "risk_points": 0,
+            "reasons": [
+              "independent sources and coherent complete evidence",
+              "no healthy useful source remains unqueried"
+            ],
+            "version": "mafer-shadow-uncertainty-v3.0"
+          },
+          "decision": {
+            "decision": "STOP",
+            "reason": "MAX_ROUNDS",
+            "evidence": [
+              "round budget"
+            ],
+            "version": "mafer-shadow-saturation-v3.0"
+          }
+        }
+      ],
+      "production_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9747,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "shadow_fusion_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8539,
+        "ndcg_at_10": 0.9747,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "shadow_diversity_metrics": {
+        "p_at_5": 0.8,
+        "p_at_10": 0.5,
+        "mrr": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.8688,
+        "ndcg_at_10": 0.9896,
+        "success_at_1": 1,
+        "success_at_3": 1,
+        "success_at_5": 1,
+        "relevant_ranks": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ]
+      },
+      "shadow_lexical_weight": 0.25,
+      "arabic_loss_funnel": null
+    }
+  ]
+}

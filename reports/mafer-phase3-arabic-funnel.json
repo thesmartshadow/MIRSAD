@@ -1,0 +1,526 @@
+{
+  "schema": "mirsad.mafer-phase3-arabic-loss-funnel",
+  "version": "1.0",
+  "development_sha256": "cf5be21e8d87e57599787a12472a0358fc59a67c850dd1f4dc84758c441ebae8",
+  "cases": 9,
+  "totals": {
+    "possible_relevant": 53,
+    "discovered": 50,
+    "canonical": 50,
+    "admitted": 47,
+    "semantic_opportunity": 47,
+    "top_10": 45
+  },
+  "losses": {
+    "source_coverage_or_discovery": 3,
+    "canonicalization_or_duplicate_collapse": 0,
+    "candidate_admission": 3,
+    "semantic_opportunity": 0,
+    "final_top_10": 2
+  },
+  "cases_detail": [
+    {
+      "id": "dev_ar_person_rare",
+      "query": "سارة الخفاجي",
+      "query_class": "person",
+      "stages": {
+        "possible_relevant": 6,
+        "discovered": 6,
+        "canonical": 6,
+        "admitted": 5,
+        "semantic_opportunity": 5,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 1,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "candidate_admission",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "سارة الخفاجي",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "ساره الخفاجي",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"سارة الخفاجي\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "ساره الخفاجي",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "EXACT",
+        "TRANSLITERATION"
+      ]
+    },
+    {
+      "id": "dev_ar_person_common",
+      "query": "محمد علي",
+      "query_class": "person",
+      "stages": {
+        "possible_relevant": 5,
+        "discovered": 4,
+        "canonical": 4,
+        "admitted": 4,
+        "semantic_opportunity": 4,
+        "top_10": 3
+      },
+      "losses": {
+        "source_coverage_or_discovery": 1,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 1
+      },
+      "dominant_loss_stage": "source_coverage_or_discovery",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "محمد علي",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "محمد علي",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"محمد علي\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "محمد علي",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        },
+        {
+          "type": "TRANSLITERATION",
+          "text": "Mohammed Ali",
+          "confidence": 0.78,
+          "drift_risk": 0.18,
+          "round": 2
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "EXACT"
+      ]
+    },
+    {
+      "id": "dev_ar_org",
+      "query": "هيئة النزاهة الاتحادية",
+      "query_class": "entity",
+      "stages": {
+        "possible_relevant": 7,
+        "discovered": 7,
+        "canonical": 7,
+        "admitted": 6,
+        "semantic_opportunity": 6,
+        "top_10": 6
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 1,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "candidate_admission",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "هيئة النزاهة الاتحادية",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "هييه النزاهه الاتحاديه",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"هيئة النزاهة الاتحادية\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "هييه النزاهه الاتحاديه",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_ar_exact_diacritics",
+      "query": "\"وِزَارَةُ الصِّحَّة\"",
+      "query_class": "exact_phrase",
+      "stages": {
+        "possible_relevant": 6,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_opportunity": 5,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 1,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "source_coverage_or_discovery",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "\"وِزَارَةُ الصِّحَّة\"",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "وزاره الصحه",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"وِزَارَةُ الصِّحَّة\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "\"وزاره الصحه\"",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_ar_spelling",
+      "query": "إدارة الأزمات",
+      "query_class": "topic",
+      "stages": {
+        "possible_relevant": 6,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_opportunity": 5,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 1,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "source_coverage_or_discovery",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "إدارة الأزمات",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "اداره الازمات",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"إدارة الأزمات\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "اداره الازمات",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_mixed_entity",
+      "query": "Microsoft العراق",
+      "query_class": "entity",
+      "stages": {
+        "possible_relevant": 6,
+        "discovered": 6,
+        "canonical": 6,
+        "admitted": 6,
+        "semantic_opportunity": 6,
+        "top_10": 6
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "NONE",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "Microsoft العراق",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "microsoft العراق",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"Microsoft العراق\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "Microsoft العراق",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "EXACT",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_recent_event",
+      "query": "آخر أخبار فيضانات البصرة",
+      "query_class": "event",
+      "stages": {
+        "possible_relevant": 7,
+        "discovered": 7,
+        "canonical": 7,
+        "admitted": 6,
+        "semantic_opportunity": 6,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 1,
+        "semantic_opportunity": 0,
+        "final_top_10": 1
+      },
+      "dominant_loss_stage": "candidate_admission",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "آخر أخبار فيضانات البصرة",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "اخر اخبار فيضانات البصره",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "EXACT",
+          "text": "\"آخر أخبار فيضانات البصرة\"",
+          "confidence": 0.97,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "اخر اخبار فيضانات البصره",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "NORMALIZED",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_historical",
+      "query": "بغداد 1958 أرشيف",
+      "query_class": "historical",
+      "stages": {
+        "possible_relevant": 5,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_opportunity": 5,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "NONE",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "بغداد 1958 أرشيف",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "بغداد 1958 ارشيف",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "بغداد 1958 ارشيف",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "NORMALIZED",
+        "ARABIC_NORMALIZED"
+      ]
+    },
+    {
+      "id": "dev_hashtag",
+      "query": "#التحول_الرقمي",
+      "query_class": "hashtag",
+      "stages": {
+        "possible_relevant": 5,
+        "discovered": 5,
+        "canonical": 5,
+        "admitted": 5,
+        "semantic_opportunity": 5,
+        "top_10": 5
+      },
+      "losses": {
+        "source_coverage_or_discovery": 0,
+        "canonicalization_or_duplicate_collapse": 0,
+        "candidate_admission": 0,
+        "semantic_opportunity": 0,
+        "final_top_10": 0
+      },
+      "dominant_loss_stage": "NONE",
+      "production_lattice": [
+        {
+          "type": "ORIGINAL",
+          "text": "#التحول_الرقمي",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        },
+        {
+          "type": "NORMALIZED",
+          "text": "#التحول_الرقمي",
+          "confidence": 0.98,
+          "drift_risk": 0.02,
+          "round": 1
+        },
+        {
+          "type": "ARABIC_NORMALIZED",
+          "text": "#التحول_الرقمي",
+          "confidence": 0.96,
+          "drift_risk": 0.03,
+          "round": 1
+        },
+        {
+          "type": "HASHTAG",
+          "text": "#التحول_الرقمي",
+          "confidence": 1.0,
+          "drift_risk": 0.0,
+          "round": 1
+        }
+      ],
+      "useful_variant_labels": [
+        "ORIGINAL",
+        "HASHTAG",
+        "ARABIC_NORMALIZED"
+      ]
+    }
+  ],
+  "interpretation": "Stage labels identify where judged items disappear; they do not infer why an external source failed to discover an item."
+}

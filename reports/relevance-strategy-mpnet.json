@@ -1,0 +1,1959 @@
+{
+  "schema": "mirsad.relevance-strategy-experiment",
+  "version": "1.0",
+  "dataset": "relevance_tuning",
+  "documents": 80,
+  "queries": 8,
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "dimensions": 768,
+    "declared_size_gib": 1.0
+  },
+  "performance": {
+    "model_initialization_ms": 879.72,
+    "document_encoding_ms": 526.01,
+    "document_encoding_per_item_ms": 6.5751,
+    "query_encoding_mean_ms": 6.8155,
+    "reranking_mean_ms": 1.9298,
+    "peak_rss_before_kib": 102376,
+    "peak_rss_loaded_kib": 1945124,
+    "peak_rss_delta_kib": 1842748
+  },
+  "strategy_metrics": {
+    "current_baseline": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.0,
+        "p_at_10": 0.3,
+        "mrr": 0.1429,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.445,
+        "success_at_1": 0.0,
+        "success_at_3": 0.0,
+        "success_at_5": 0.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4429,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        }
+      }
+    },
+    "improved_lexical": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.125,
+        "p_at_10": 0.3,
+        "mrr": 0.1948,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.1186,
+        "ndcg_at_10": 0.4694,
+        "success_at_1": 0.0,
+        "success_at_3": 0.0,
+        "success_at_5": 0.625
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.225,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1918,
+          "ndcg_at_10": 0.4688,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.12,
+          "p_at_10": 0.3,
+          "mrr": 0.1883,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.113,
+          "ndcg_at_10": 0.4692,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.6
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        }
+      }
+    },
+    "semantic_only": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.425,
+        "p_at_10": 0.3,
+        "mrr": 0.8304,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6869,
+        "ndcg_at_10": 0.8242,
+        "success_at_1": 0.75,
+        "success_at_3": 0.875,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.75,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7081,
+          "ndcg_at_10": 0.7917,
+          "success_at_1": 0.5,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.8286,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6816,
+          "ndcg_at_10": 0.8365,
+          "success_at_1": 0.8,
+          "success_at_3": 0.8,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.25": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.35,
+        "p_at_10": 0.3,
+        "mrr": 0.6324,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5076,
+        "ndcg_at_10": 0.699,
+        "success_at_1": 0.5,
+        "success_at_3": 0.75,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5622,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.32,
+          "p_at_10": 0.3,
+          "mrr": 0.6786,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5114,
+          "ndcg_at_10": 0.7279,
+          "success_at_1": 0.6,
+          "success_at_3": 0.6,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.50": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.4,
+        "p_at_10": 0.3,
+        "mrr": 0.7054,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6036,
+        "ndcg_at_10": 0.7551,
+        "success_at_1": 0.5,
+        "success_at_3": 0.875,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5041,
+          "ndcg_at_10": 0.6502,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.7286,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6298,
+          "ndcg_at_10": 0.7825,
+          "success_at_1": 0.6,
+          "success_at_3": 0.8,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.75": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.4,
+        "p_at_10": 0.3,
+        "mrr": 0.7679,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6319,
+        "ndcg_at_10": 0.7887,
+        "success_at_1": 0.625,
+        "success_at_3": 0.875,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.75,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.601,
+          "ndcg_at_10": 0.7629,
+          "success_at_1": 0.5,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.7286,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6363,
+          "ndcg_at_10": 0.7912,
+          "success_at_1": 0.6,
+          "success_at_3": 0.8,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "rrf_k20": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.375,
+        "p_at_10": 0.3,
+        "mrr": 0.3281,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4033,
+        "ndcg_at_10": 0.573,
+        "success_at_1": 0.0,
+        "success_at_3": 0.625,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.2916,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3999,
+          "ndcg_at_10": 0.5564,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3417,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4384,
+          "ndcg_at_10": 0.5843,
+          "success_at_1": 0.0,
+          "success_at_3": 0.6,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5498,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "rrf_k60": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.375,
+        "p_at_10": 0.3,
+        "mrr": 0.3281,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4033,
+        "ndcg_at_10": 0.573,
+        "success_at_1": 0.0,
+        "success_at_3": 0.625,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.2916,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3999,
+          "ndcg_at_10": 0.5564,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3417,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4384,
+          "ndcg_at_10": 0.5843,
+          "success_at_1": 0.0,
+          "success_at_3": 0.6,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5498,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "two_stage_semantic_20": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.425,
+        "p_at_10": 0.3,
+        "mrr": 0.8304,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6869,
+        "ndcg_at_10": 0.8242,
+        "success_at_1": 0.75,
+        "success_at_3": 0.875,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.75,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7081,
+          "ndcg_at_10": 0.7917,
+          "success_at_1": 0.5,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.8286,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6816,
+          "ndcg_at_10": 0.8365,
+          "success_at_1": 0.8,
+          "success_at_3": 0.8,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    }
+  },
+  "per_query": [
+    {
+      "id": "t01",
+      "query": "municipal water authority",
+      "language": "english",
+      "query_class": "entity",
+      "relevant": [
+        "wa01",
+        "wa02",
+        "wa03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7039,
+          "ndcg_at_10": 0.8711,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            6
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "semantic_scores": {
+        "wa01": 0.702606,
+        "wa02": 0.745614,
+        "wa03": 0.748702,
+        "wa04": 0.573023,
+        "wa05": 0.631553,
+        "wa06": 0.609921,
+        "wa07": 0.699005,
+        "wa08": 0.615197,
+        "wa09": 0.658656,
+        "wa10": 0.671143,
+        "px03": 0.576788,
+        "bo01": 0.227897
+      }
+    },
+    {
+      "id": "t02",
+      "query": "renewable energy storage",
+      "language": "english",
+      "query_class": "topic",
+      "relevant": [
+        "re01",
+        "re02",
+        "re03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5066,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7123,
+          "ndcg_at_10": 0.7123,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            5
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7123,
+          "ndcg_at_10": 0.7123,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            5
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "semantic_scores": {
+        "re01": 0.721292,
+        "re02": 0.740476,
+        "re03": 0.805957,
+        "re04": 0.629459,
+        "re05": 0.614057,
+        "re06": 0.685999,
+        "re07": 0.656109,
+        "re08": 0.537156,
+        "re09": 0.541834,
+        "re10": 0.615767
+      }
+    },
+    {
+      "id": "t03",
+      "query": "National Cyber Center",
+      "language": "english",
+      "query_class": "exact_entity",
+      "relevant": [
+        "nc01",
+        "nc02",
+        "nc03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4844,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7039,
+          "ndcg_at_10": 0.8711,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4693,
+          "ndcg_at_10": 0.7845,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            6,
+            8
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6508,
+          "ndcg_at_10": 0.8072,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            5,
+            7
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6508,
+          "ndcg_at_10": 0.818,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            5,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6257,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            8
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6257,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            8
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7039,
+          "ndcg_at_10": 0.8711,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "nc01": 0.731288,
+        "nc02": 0.656386,
+        "nc03": 0.690466,
+        "nc04": 0.605573,
+        "nc05": 0.685459,
+        "nc06": 0.674314,
+        "nc07": 0.631811,
+        "nc08": 0.713718,
+        "nc09": 0.535215,
+        "nc10": 0.621699
+      }
+    },
+    {
+      "id": "t04",
+      "query": "phoenix",
+      "language": "english",
+      "query_class": "short_ambiguous",
+      "relevant": [
+        "px01",
+        "px02",
+        "px03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.125,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.425,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            8,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4333,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            9,
+            10
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.125,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.425,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            8,
+            9,
+            10
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.125,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.425,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            8,
+            9,
+            10
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        }
+      },
+      "semantic_scores": {
+        "px01": 0.437557,
+        "px02": 0.382683,
+        "px03": 0.436264,
+        "px04": 0.428466,
+        "px05": 0.546982,
+        "px06": 0.610318,
+        "px07": 0.50919,
+        "px08": 0.535493,
+        "px09": 0.604845,
+        "px10": 0.468793
+      }
+    },
+    {
+      "id": "t05",
+      "query": "وزارة الموارد المائية",
+      "language": "arabic",
+      "query_class": "entity",
+      "relevant": [
+        "wm01",
+        "wm02",
+        "wm03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.479,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5726,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            7
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6871,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            7
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5726,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5726,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "wm01": 0.766305,
+        "wm02": 0.819637,
+        "wm03": 0.703314,
+        "wm04": 0.730514,
+        "wm05": 0.847941,
+        "wm06": 0.74941,
+        "wm07": 0.635312,
+        "wm08": 0.547736,
+        "wm09": 0.683369,
+        "wm10": 0.674593
+      }
+    },
+    {
+      "id": "t06",
+      "query": "التعليم الرقمي",
+      "language": "arabic",
+      "query_class": "topic",
+      "relevant": [
+        "de01",
+        "de02",
+        "de03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4585,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8855,
+          "ndcg_at_10": 0.8855,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            5
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5518,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            10
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6133,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            10
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8855,
+          "ndcg_at_10": 0.8855,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            5
+          ]
+        }
+      },
+      "semantic_scores": {
+        "de01": 0.667603,
+        "de02": 0.835475,
+        "de03": 0.765769,
+        "de04": 0.58597,
+        "de05": 0.802741,
+        "de06": 0.660984,
+        "de07": 0.702928,
+        "de08": 0.412467,
+        "de09": 0.657864,
+        "de10": 0.545219
+      }
+    },
+    {
+      "id": "t07",
+      "query": "Baghdad Open Data",
+      "language": "mixed",
+      "query_class": "mixed_entity",
+      "relevant": [
+        "bo01",
+        "bo02",
+        "bo03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5498,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            6,
+            8
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5498,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            6,
+            8
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8278,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            7
+          ]
+        }
+      },
+      "semantic_scores": {
+        "re03": 0.279438,
+        "bo01": 0.779345,
+        "bo02": 0.88585,
+        "bo03": 0.824741,
+        "bo04": 0.798528,
+        "bo05": 0.830086,
+        "bo06": 0.697377,
+        "bo07": 0.382427,
+        "bo08": 0.783325,
+        "bo09": 0.829152,
+        "bo10": 0.760865,
+        "ot01": 0.291334,
+        "ot10": 0.078499
+      }
+    },
+    {
+      "id": "t08",
+      "query": "orion telemetry",
+      "language": "english",
+      "query_class": "rare_topic",
+      "relevant": [
+        "ot01",
+        "ot02",
+        "ot03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4441,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7039,
+          "ndcg_at_10": 0.8711,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7039,
+          "ndcg_at_10": 0.8711,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "ot01": 0.595748,
+        "ot02": 0.620743,
+        "ot03": 0.647786,
+        "ot04": 0.461039,
+        "ot05": 0.641985,
+        "ot06": 0.535776,
+        "ot07": 0.617374,
+        "ot08": 0.523606,
+        "ot09": 0.598571,
+        "ot10": 0.555421
+      }
+    }
+  ]
+}

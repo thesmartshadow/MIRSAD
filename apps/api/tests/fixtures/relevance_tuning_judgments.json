@@ -1,0 +1,14 @@
+{
+  "schema": "mirsad.relevance-tuning-judgments",
+  "version": "1.0",
+  "queries": [
+    {"id":"t01","query":"municipal water authority","exact_phrase":false,"language":"english","query_class":"entity","relevant":["wa01","wa02","wa03"]},
+    {"id":"t02","query":"renewable energy storage","exact_phrase":false,"language":"english","query_class":"topic","relevant":["re01","re02","re03"]},
+    {"id":"t03","query":"National Cyber Center","exact_phrase":true,"language":"english","query_class":"exact_entity","relevant":["nc01","nc02","nc03"]},
+    {"id":"t04","query":"phoenix","exact_phrase":false,"language":"english","query_class":"short_ambiguous","relevant":["px01","px02","px03"]},
+    {"id":"t05","query":"وزارة الموارد المائية","exact_phrase":false,"language":"arabic","query_class":"entity","relevant":["wm01","wm02","wm03"]},
+    {"id":"t06","query":"التعليم الرقمي","exact_phrase":false,"language":"arabic","query_class":"topic","relevant":["de01","de02","de03"]},
+    {"id":"t07","query":"Baghdad Open Data","exact_phrase":false,"language":"mixed","query_class":"mixed_entity","relevant":["bo01","bo02","bo03"]},
+    {"id":"t08","query":"orion telemetry","exact_phrase":false,"language":"english","query_class":"rare_topic","relevant":["ot01","ot02","ot03"]}
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "schema": "mirsad.production-real-data-evidence",
+  "version": "1.0",
+  "generated_at": "2026-08-10T01:40:00.505958+00:00",
+  "production_configuration": {
+    "planner": "mafer-planner-v2.0",
+    "ranking": "mirsad-hybrid-lex25-sem75-v1",
+    "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "semantic_model_version": "fastembed-mean-pooling-v1",
+    "semantic_candidate_limit": 20,
+    "lexical_weight": 0.25,
+    "semantic_weight": 0.75,
+    "secondary_quality_budget": 0.01
+  },
+  "network_budget": {
+    "capture_queries": 15,
+    "capture_sources": 6,
+    "capture_request_limit": 90,
+    "known_item_request_limit": 100,
+    "records_per_capture_request": 15
+  },
+  "corpus": {
+    "records": 480,
+    "by_language": {
+      "arabic": 102,
+      "mixed": 130,
+      "english": 248
+    },
+    "by_source": {
+      "youtube": 215,
+      "bluesky": 157,
+      "hacker_news": 78,
+      "mastodon": 30
+    }
+  },
+  "known_item_cases": {
+    "cases": 100,
+    "by_language": {
+      "arabic": 40,
+      "english": 45,
+      "mixed": 15
+    },
+    "by_class": {
+      "exact_phrase": 56,
+      "hashtag": 8,
+      "handle": 36
+    },
+    "metrics": {
+      "cases": 99,
+      "known_item_recall_at_1": 0.4141,
+      "known_item_recall_at_5": 0.4949,
+      "known_item_recall_at_10": 0.5051,
+      "known_item_recall_at_20": 0.5051,
+      "known_item_mrr": 0.4496,
+      "known_item_success_at_5": 0.4949,
+      "known_item_success_at_10": 0.5051
+    }
+  },
+  "arabic_loss_funnel": {
+    "known_targets": 55,
+    "stage_counts": {
+      "live_request_completed": 54,
+      "discovered": 32,
+      "canonicalized": 32,
+      "matched": 32,
+      "admitted": 32,
+      "semantic_opportunity": 32,
+      "final_top_5": 31,
+      "final_top_10": 31
+    },
+    "misses": [
+      {
+        "case_id": "real-37f9d285df8d34ca",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-d50e1a3d171ba3e9",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-e25e83fcc20dd163",
+        "source": "bluesky",
+        "loss": "live_request_completed"
+      },
+      {
+        "case_id": "real-3a53c178827f57b5",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-44d6dfaf197bd45e",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-afadbf19c79fe969",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-2e294dbb9b6547b6",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-fde30b9652b7b3a3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-30ba076548754f1f",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-05679329e64a02ac",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-866232697abb2cf3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-429dfb31eb073bdd",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-00c3afb1d211a2b4",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-2d0d125e6722928f",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-38950944c5621103",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-8c3de637fab30f8f",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-3cf9183459543673",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-245c7eb24d8cb055",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-65b92f3f31472a52",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-1b1a861a344939b3",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-c2650b5424138701",
+        "source": "bluesky",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-0aae1b3920d7216f",
+        "source": "youtube",
+        "loss": "discovered"
+      },
+      {
+        "case_id": "real-246c90a723a0039b",
+        "source": "bluesky",
+        "loss": "discovered"
+      }
+    ]
+  },
+  "artifacts": {
+    "real-corpus.json": "aa2c627f0aab822c53f76b9599d400b9d25bb0167e944753dd7c2b5058bb3dd0",
+    "known-item-cases.json": "08e66435151d465cebc210532232a2df45b84df3eac53a0a84b47bfa994fb376",
+    "known-item-evaluation.json": "a41f473ca4c4b283bd98430bca25ea430726d53f7ff0a4aafa2c0ea443e53519",
+    "live-connector-telemetry.json": "cc419cedbb3dcef25dd1240f1e68ca21aaa15ad0b9596e71964f50059b49f311"
+  }
+}

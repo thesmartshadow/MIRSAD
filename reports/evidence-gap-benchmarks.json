@@ -1,0 +1,86 @@
+{
+  "schema": "mirsad.evidence-gap-benchmark",
+  "version": "1.0",
+  "gdelt_budget": {
+    "configured_per_attempt_timeout_ms": 1000,
+    "configured_total_connector_budget_ms": 350.0,
+    "searches": [
+      {
+        "query": "public policy",
+        "error_category": "timeout",
+        "attempt_count": 2,
+        "attempt_durations_ms": [
+          20.13,
+          20.16
+        ],
+        "retry_backoff_ms": 250.62,
+        "total_wall_clock_ms": 291.32,
+        "configured_total_budget_ms": 350.0,
+        "circuit_breaker_state": "closed"
+      },
+      {
+        "query": "open data",
+        "error_category": "timeout",
+        "attempt_count": 2,
+        "attempt_durations_ms": [
+          20.14,
+          20.68
+        ],
+        "retry_backoff_ms": 250.99,
+        "total_wall_clock_ms": 292.16,
+        "configured_total_budget_ms": 350.0,
+        "circuit_breaker_state": "open"
+      }
+    ],
+    "open_circuit_response": {
+      "error_category": "circuit_open",
+      "wall_clock_ms": 0.007,
+      "attempt_count": 0,
+      "circuit_breaker_state": "open"
+    }
+  },
+  "first_useful_result": {
+    "source_completion_ms": {
+      "fast": 37.95,
+      "medium": 98.17,
+      "slow": 188.41
+    },
+    "first_useful_source_completion_ms": 37.95,
+    "first_result_available_to_current_api_ms": 980.23,
+    "total_search_completion_ms": 980.23,
+    "incremental_results_exposed": false,
+    "session_status": "partial",
+    "result_count": 2,
+    "warning_sources": [
+      "slow"
+    ]
+  },
+  "backend_memory_observation": {
+    "method": "Linux process VmRSS after explicit Python garbage collection",
+    "formal_leak_proof": false,
+    "snapshots": [
+      {
+        "completed_searches": 1,
+        "rss_kib": 708996
+      },
+      {
+        "completed_searches": 10,
+        "rss_kib": 709316
+      },
+      {
+        "completed_searches": 20,
+        "rss_kib": 709420
+      },
+      {
+        "completed_searches": 30,
+        "rss_kib": 709436
+      },
+      {
+        "completed_searches": 31,
+        "rss_kib": 711836
+      }
+    ],
+    "observed_rss_range_kib": 2840,
+    "persisted_session_count": 32
+  }
+}

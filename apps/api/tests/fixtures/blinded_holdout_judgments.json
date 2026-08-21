@@ -1,0 +1,22 @@
+{
+  "schema": "mirsad.relevance-holdout-judgments",
+  "version": "1.0",
+  "queries": [
+    {"id":"q01","query":"public health agency","exact_phrase":false,"language":"english","slices":["organization","hard","high_engagement_collision","old_relevant","same_story"],"relevant":["ph01","ph02","ph03"]},
+    {"id":"q02","query":"public health agency","exact_phrase":true,"language":"english","slices":["exact_phrase","organization"],"relevant":["ph01","ph02","ph03"]},
+    {"id":"q03","query":"mercury","exact_phrase":false,"language":"english","slices":["ambiguous","short","hard"],"relevant":["me01","me02","me03","me04"]},
+    {"id":"q04","query":"open data","exact_phrase":false,"language":"english","slices":["common","high_engagement_collision","hard"],"relevant":["od01","od02","od03"]},
+    {"id":"q05","query":"open data","exact_phrase":true,"language":"english","slices":["exact_phrase","common"],"relevant":["od01","od02","od03"]},
+    {"id":"q06","query":"quasar telemetry","exact_phrase":false,"language":"english","slices":["rare","hard","old_relevant"],"relevant":["qt01","qt02","qt03"]},
+    {"id":"q07","query":"وزارة التخطيط","exact_phrase":false,"language":"arabic","slices":["organization","arabic_variants","hard","old_relevant"],"relevant":["mp01","mp02","mp03"]},
+    {"id":"q08","query":"وِزَارَةُ التَّخْطِيط","exact_phrase":true,"language":"arabic","slices":["exact_phrase","organization","arabic_variants"],"relevant":["mp01","mp02","mp03"]},
+    {"id":"q09","query":"بغداد","exact_phrase":false,"language":"arabic","slices":["ambiguous","short","hard"],"relevant":["bg01","bg02","bg03","bg04"]},
+    {"id":"q10","query":"الذكاء الاصطناعي","exact_phrase":false,"language":"arabic","slices":["common","high_engagement_collision","hard"],"relevant":["ai01","ai02","ai03"]},
+    {"id":"q11","query":"الذَّكَاءُ الاصْطِنَاعِي","exact_phrase":true,"language":"arabic","slices":["exact_phrase","arabic_variants"],"relevant":["ai01","ai02","ai03"]},
+    {"id":"q12","query":"MIRSAD العراق","exact_phrase":false,"language":"mixed","slices":["organization","mixed_language"],"relevant":["mx01","mx02","mx03"]},
+    {"id":"q13","query":"MIRSAD العراق","exact_phrase":true,"language":"mixed","slices":["exact_phrase","organization","mixed_language","hard"],"relevant":["mx01","mx02","mx03"]},
+    {"id":"q14","query":"العراق technology","exact_phrase":false,"language":"mixed","slices":["mixed_language","hard"],"relevant":["mx01","mx02","mx03","mx04","mx05"]},
+    {"id":"q15","query":"climate adaptation","exact_phrase":false,"language":"english","slices":["high_engagement_collision","old_relevant","hard","same_story"],"relevant":["ca01","ca02","ca03","ca13"]},
+    {"id":"q16","query":"climate adaptation","exact_phrase":true,"language":"english","slices":["exact_phrase","same_story"],"relevant":["ca01","ca02","ca03","ca13"]}
+  ]
+}

@@ -1,0 +1,5718 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-08-21T02:05:46.859362+00:00",
+  "live_public_data": true,
+  "operator_database_reset": false,
+  "base_url": "http://127.0.0.1:8000/api/v1",
+  "cases": [
+    {
+      "query": "بغداد",
+      "session_id": "f46c84b5-5cdc-4ba0-9da1-9b9448af5c62",
+      "job_id": "8607e94b-93a5-4b8e-88e9-706bd10cb52a",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ARABIC",
+        "AMBIGUOUS",
+        "RECENT_INTENT",
+        "TOPIC"
+      ],
+      "selected_sources": [
+        "github",
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "github",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [],
+      "client_timings_ms": {
+        "job_created": 6.65,
+        "first_event_ms": 38.6,
+        "first_source_completion_ms": 427.67,
+        "ranking_started_ms": 1096.65,
+        "final_event_ms": 1283.86
+      },
+      "server_timings_ms": {
+        "planning": 8.54,
+        "collection": 955.76,
+        "persistence": 24.43,
+        "deduplication": 64.08,
+        "semantic": 27.97,
+        "ranking": 53.34,
+        "clustering": 20.01,
+        "total": 1157
+      },
+      "source_funnel": {
+        "github": {
+          "requests": 1,
+          "fetched": 2,
+          "matched": 2,
+          "normalized": 2,
+          "admitted": 2,
+          "final_top_k": 2,
+          "latency_ms": 510.7,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "بغداد"
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "matched": 92,
+          "normalized": 30,
+          "admitted": 30,
+          "final_top_k": 20,
+          "latency_ms": 937.57,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "بغداد"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 394.65,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "بغداد"
+          ]
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.15,
+          "data": {
+            "query": "بغداد",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.24,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 8.8,
+          "data": {
+            "elapsed_ms": 8.54,
+            "intent": [
+              "ARABIC",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "variant_count": 3,
+            "selected_sources": [
+              "github",
+              "youtube",
+              "rss",
+              "hacker_news",
+              "mastodon",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 8.82,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 8.83,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 8.83,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 8.84,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 8.85,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 8.85,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 8.86,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 8.87,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 8.88,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 8.89,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 8.89,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 8.9,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 8.91,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 8.91,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 8.92,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 21.25,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 21.73,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 25.38,
+          "data": {
+            "source": "rss",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 421.65,
+          "data": {
+            "source": "rss",
+            "round": 1,
+            "elapsed_ms": 396.05,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 421.67,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 532.45,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 510.73,
+            "fetched": 2,
+            "matched": 2,
+            "normalized": 2,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 532.48,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 26,
+            "matched": 2
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 960.16,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 938.23,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 960.2,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 56,
+            "matched": 32
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.progress",
+          "elapsed_ms": 994.88,
+          "data": {
+            "source": "bluesky",
+            "matched": 13,
+            "admitted": 13
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.progress",
+          "elapsed_ms": 994.91,
+          "data": {
+            "source": "github",
+            "matched": 2,
+            "admitted": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.progress",
+          "elapsed_ms": 994.91,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.progress",
+          "elapsed_ms": 994.92,
+          "data": {
+            "source": "youtube",
+            "matched": 92,
+            "admitted": 30
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "normalization.completed",
+          "elapsed_ms": 994.93,
+          "data": {
+            "matched": 107,
+            "admitted": 45,
+            "admitted_per_source": {
+              "bluesky": 13,
+              "github": 2,
+              "youtube": 30
+            }
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "persistence.completed",
+          "elapsed_ms": 1019.39,
+          "data": {
+            "elapsed_ms": 24.43,
+            "persisted": 45
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "ranking.started",
+          "elapsed_ms": 1083.52,
+          "data": {
+            "candidates": 45
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "ranking.completed",
+          "elapsed_ms": 1136.87,
+          "data": {
+            "elapsed_ms": 53.34,
+            "semantic_ms": 27.97,
+            "semantic_state": "ready",
+            "semantic_candidates": 20,
+            "cache_hits": 20,
+            "cache_misses": 0
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "clustering.started",
+          "elapsed_ms": 1136.9,
+          "data": {
+            "candidates": 30
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "clustering.completed",
+          "elapsed_ms": 1156.92,
+          "data": {
+            "elapsed_ms": 20.01,
+            "clusters": 27
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "search.completed",
+          "elapsed_ms": 1276.86,
+          "data": {
+            "status": "completed",
+            "result_count": 30,
+            "unique_count": 30,
+            "cluster_count": 27,
+            "duration_ms": 1157,
+            "stop_reason": "USER_LIMIT",
+            "warning_count": 0
+          }
+        }
+      ],
+      "results": 30,
+      "unique": 30,
+      "clusters": 27,
+      "status": "completed",
+      "stop_reason": "USER_LIMIT",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "youtube",
+          "title": "رئيس البرلمان الإيراني محمد باقر قاليباف يصل العاصمة العراقية بغداد #العربية #news",
+          "url": "https://www.youtube.com/watch?v=QGnytINw43w",
+          "relevance": 89.53,
+          "snippet": "رئيس البرلمان الإيراني محمد باقر قاليباف يصل العاصمة العراقية بغداد.. ويؤكد: سنتخذ خطوات لتعزيز العلاقات."
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "من أرياف بغداد وخيراتها نعرضلكم خلية نحل عملاقه وانتاج#ريف #اكسبلور_فولو #بدون_موسيقى #بغداد #تصويري",
+          "url": "https://www.youtube.com/watch?v=HtHeKMd_Zic",
+          "relevance": 89.28,
+          "snippet": "من أرياف بغداد وخيراتها نعرضلكم خلية نحل عملاقه وانتاج#ريف #اكسبلور_فولو #بدون_موسيقى #بغداد #تصويري"
+        },
+        {
+          "rank": 3,
+          "source": "bluesky",
+          "title": "قاآني يزور بغداد في لقاءات مع قادة فصائل",
+          "url": "https://bsky.app/profile/ar-uk.pds.netasgard.com/post/3msutda6ktc2d",
+          "relevance": 88.42,
+          "snippet": "بغداد — قاآني يزور بغداد في لقاءات مع قادة فصائل #بغداد #News"
+        },
+        {
+          "rank": 4,
+          "source": "bluesky",
+          "title": "قاآني في بغداد.. وأنباء عن توافق إيراني عراقي مرتقب حول سلاح الفصائل",
+          "url": "https://bsky.app/profile/mc-doualiya.com/post/3mswef5aukj2f",
+          "relevance": 88.11,
+          "snippet": "قاآني في بغداد.. وأنباء عن توافق إيراني عراقي مرتقب حول سلاح الفصائل"
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "القوات الأمنية العراقية تستنفر وتعزز انتشارها في بغداد تحسباً لمواجهة الفصائل المسلحة #العربية #news",
+          "url": "https://www.youtube.com/watch?v=KZeiPxDBmx4",
+          "relevance": 86.81,
+          "snippet": "القوات الأمنية العراقية تستنفر وتعزز انتشارها في بغداد تحسباً لمواجهة الفصائل المسلحة."
+        }
+      ]
+    },
+    {
+      "query": "الذكاء الاصطناعي",
+      "session_id": "c84d61f0-60f8-4c83-a152-552b55adcfb4",
+      "job_id": "814852c8-85d8-45d4-b09b-dbba32fc2781",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ARABIC",
+        "TOPIC",
+        "RECENT_INTENT",
+        "PERSON_LIKE"
+      ],
+      "selected_sources": [
+        "github",
+        "youtube",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [
+        "gdelt"
+      ],
+      "client_timings_ms": {
+        "job_created": 0.91,
+        "first_event_ms": 24.08,
+        "first_source_completion_ms": 967.25,
+        "ranking_started_ms": 4556.3,
+        "final_event_ms": 7115.72
+      },
+      "server_timings_ms": {
+        "planning": 7.12,
+        "collection": 4348.08,
+        "persistence": 45.74,
+        "deduplication": 123.16,
+        "semantic": 1941.63,
+        "ranking": 1978.59,
+        "clustering": 524.97,
+        "total": 7048
+      },
+      "source_funnel": {
+        "github": {
+          "requests": 2,
+          "fetched": 60,
+          "matched": 30,
+          "normalized": 60,
+          "admitted": 30,
+          "final_top_k": 9,
+          "latency_ms": 2849.33,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "matched": 31,
+          "normalized": 60,
+          "admitted": 30,
+          "final_top_k": 19,
+          "latency_ms": 2317.42,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1961.75,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "الذكاء الاصطناعي",
+            "\"الذكاء الاصطناعي\""
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 705.78,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "الذكاء الاصطناعي"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 901.16,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "الذكاء الاصطناعي"
+          ]
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 3000.64,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "timeout"
+          ],
+          "request_variants": []
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.11,
+          "data": {
+            "query": "الذكاء الاصطناعي",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.18,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 7.34,
+          "data": {
+            "elapsed_ms": 7.12,
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "variant_count": 4,
+            "selected_sources": [
+              "github",
+              "youtube",
+              "hacker_news",
+              "mastodon",
+              "rss",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 7.38,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 7.39,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 7.4,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 7.42,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 7.43,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 7.44,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 7.48,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 7.51,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 7.54,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 7.55,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 7.58,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 7.6,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 7.62,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 7.64,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 7.66,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 12.31,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 12.71,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 16.23,
+          "data": {
+            "source": "hacker_news",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 966.38,
+          "data": {
+            "source": "hacker_news",
+            "round": 1,
+            "elapsed_ms": 949.95,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 966.41,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 0,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 1095.63,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 1082.75,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 1095.66,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 30,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 1337.14,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 1324.44,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 1337.16,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 60,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.started",
+          "elapsed_ms": 1346.85,
+          "data": {
+            "source": "mastodon",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.started",
+          "elapsed_ms": 1347.27,
+          "data": {
+            "source": "rss",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.started",
+          "elapsed_ms": 1347.45,
+          "data": {
+            "source": "gdelt",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.started",
+          "elapsed_ms": 1350.9,
+          "data": {
+            "source": "github",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "source.started",
+          "elapsed_ms": 1351.12,
+          "data": {
+            "source": "youtube",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "source.started",
+          "elapsed_ms": 1354.42,
+          "data": {
+            "source": "hacker_news",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "source.completed",
+          "elapsed_ms": 2055.64,
+          "data": {
+            "source": "mastodon",
+            "round": 2,
+            "elapsed_ms": 708.42,
+            "fetched": 40,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "collection.progress",
+          "elapsed_ms": 2055.67,
+          "data": {
+            "completed_sources": 4,
+            "selected_sources": 6,
+            "fetched": 100,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "source.completed",
+          "elapsed_ms": 2250.08,
+          "data": {
+            "source": "rss",
+            "round": 2,
+            "elapsed_ms": 902.62,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "collection.progress",
+          "elapsed_ms": 2250.11,
+          "data": {
+            "completed_sources": 5,
+            "selected_sources": 6,
+            "fetched": 124,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "source.completed",
+          "elapsed_ms": 2366.55,
+          "data": {
+            "source": "hacker_news",
+            "round": 2,
+            "elapsed_ms": 1011.91,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 39,
+          "event": "collection.progress",
+          "elapsed_ms": 2366.6,
+          "data": {
+            "completed_sources": 6,
+            "selected_sources": 6,
+            "fetched": 124,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 40,
+          "event": "source.completed",
+          "elapsed_ms": 2587.29,
+          "data": {
+            "source": "youtube",
+            "round": 2,
+            "elapsed_ms": 1235.99,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 41,
+          "event": "collection.progress",
+          "elapsed_ms": 2587.32,
+          "data": {
+            "completed_sources": 7,
+            "selected_sources": 6,
+            "fetched": 154,
+            "matched": 90
+          }
+        },
+        {
+          "sequence": 42,
+          "event": "source.completed",
+          "elapsed_ms": 2876.1,
+          "data": {
+            "source": "github",
+            "round": 2,
+            "elapsed_ms": 1524.95,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 43,
+          "event": "collection.progress",
+          "elapsed_ms": 2876.14,
+          "data": {
+            "completed_sources": 8,
+            "selected_sources": 6,
+            "fetched": 184,
+            "matched": 120
+          }
+        },
+        {
+          "sequence": 44,
+          "event": "source.failed",
+          "elapsed_ms": 4348.29,
+          "data": {
+            "source": "gdelt",
+            "round": 2,
+            "elapsed_ms": 3000.67,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "timeout"
+          }
+        },
+        {
+          "sequence": 45,
+          "event": "collection.progress",
+          "elapsed_ms": 4348.33,
+          "data": {
+            "completed_sources": 9,
+            "selected_sources": 6,
+            "fetched": 184,
+            "matched": 120
+          }
+        },
+        {
+          "sequence": 46,
+          "event": "source.progress",
+          "elapsed_ms": 4374.85,
+          "data": {
+            "source": "bluesky",
+            "matched": 2,
+            "admitted": 2
+          }
+        },
+        {
+          "sequence": 47,
+          "event": "source.progress",
+          "elapsed_ms": 4374.88,
+          "data": {
+            "source": "gdelt",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 48,
+          "event": "source.progress",
+          "elapsed_ms": 4374.89,
+          "data": {
+            "source": "github",
+            "matched": 30,
+            "admitted": 30
+          }
+        },
+        {
+          "sequence": 49,
+          "event": "source.progress",
+          "elapsed_ms": 4374.9,
+          "data": {
+            "source": "hacker_news",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 50,
+          "event": "source.progress",
+          "elapsed_ms": 4374.9,
+          "data": {
+            "source": "mastodon",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 51,
+          "event": "source.progress",
+          "elapsed_ms": 4374.91,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 52,
+          "event": "source.progress",
+          "elapsed_ms": 4374.92,
+          "data": {
+            "source": "youtube",
+            "matched": 31,
+            "admitted": 30
+          }
+        },
+        {
+          "sequence": 53,
+          "event": "normalization.completed",
+          "elapsed_ms": 4374.92,
+          "data": {
+            "matched": 63,
+            "admitted": 62,
+            "admitted_per_source": {
+              "bluesky": 2,
+              "github": 30,
+              "youtube": 30
+            }
+          }
+        },
+        {
+          "sequence": 54,
+          "event": "persistence.completed",
+          "elapsed_ms": 4420.69,
+          "data": {
+            "elapsed_ms": 45.74,
+            "persisted": 62
+          }
+        },
+        {
+          "sequence": 55,
+          "event": "ranking.started",
+          "elapsed_ms": 4543.91,
+          "data": {
+            "candidates": 62
+          }
+        },
+        {
+          "sequence": 56,
+          "event": "ranking.completed",
+          "elapsed_ms": 6522.49,
+          "data": {
+            "elapsed_ms": 1978.59,
+            "semantic_ms": 1941.63,
+            "semantic_state": "ready",
+            "semantic_candidates": 20,
+            "cache_hits": 0,
+            "cache_misses": 20
+          }
+        },
+        {
+          "sequence": 57,
+          "event": "clustering.started",
+          "elapsed_ms": 6522.52,
+          "data": {
+            "candidates": 30
+          }
+        },
+        {
+          "sequence": 58,
+          "event": "clustering.completed",
+          "elapsed_ms": 7047.5,
+          "data": {
+            "elapsed_ms": 524.97,
+            "clusters": 29
+          }
+        },
+        {
+          "sequence": 59,
+          "event": "search.partial",
+          "elapsed_ms": 7113.56,
+          "data": {
+            "status": "partial",
+            "result_count": 30,
+            "unique_count": 30,
+            "cluster_count": 29,
+            "duration_ms": 7048,
+            "stop_reason": "USER_LIMIT",
+            "warning_count": 1
+          }
+        }
+      ],
+      "results": 30,
+      "unique": 30,
+      "clusters": 29,
+      "status": "partial",
+      "stop_reason": "USER_LIMIT",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "timeout",
+          "message": "GDELT exceeded the interactive search latency budget",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "youtube",
+          "title": "دورة الذكاء الاصطناعي في ٩ ساعات 🔥 | اساسيات و مشاريع",
+          "url": "https://www.youtube.com/watch?v=iAC1vj0VCI8",
+          "relevance": 87.59,
+          "snippet": "تعلم بايثون و الذكاء الاصطناعي في فيديو واحد من الاساسيات الى المشاريع الحقيقية إذا كنت تريد دخول عالم الذكاء الاصطناعي بطريقة ..."
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "محتوئ مطبخ بل الذكاء الاصطناعي  تقطيع التفاحة بي طريقه ممتازه",
+          "url": "https://www.youtube.com/watch?v=_nVFEwBtC2I",
+          "relevance": 86.98,
+          "snippet": "محتوئ مطبخ بل الذكاء الاصطناعي تقطيع التفاحة بي طريقه ممتازه"
+        },
+        {
+          "rank": 3,
+          "source": "youtube",
+          "title": "الذكاء الاصطناعي يختلق تصريحات سياسية مزيفة على لسان مودي ويثير جدلًا واسعًا",
+          "url": "https://www.youtube.com/watch?v=jXDRQ9SsEyU",
+          "relevance": 86.83,
+          "snippet": "الذكاء الاصطناعي يختلق تصريحات سياسية مزيفة على لسان مودي ويثير جدلًا واسعًا."
+        },
+        {
+          "rank": 4,
+          "source": "youtube",
+          "title": "الذكاء الاصطناعي يراقبكم: التتبع والفخاخ والمراقبة | كليك",
+          "url": "https://www.youtube.com/watch?v=HTqiD9ZqTOs",
+          "relevance": 86.16,
+          "snippet": "كيف يسهّل الذكاء الاصطناعي الاتجار بالبشر والتعقب الرقمي ومراقبة الموظفين، وكيف يُستخدم لكشف الجرائم وحماية الخصوصية."
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "الذكاء الاصطناعي يتحكم في حياتي بالهند😟🇮🇳(ورطني مع الهنود)",
+          "url": "https://www.youtube.com/watch?v=h_060hXzYPY",
+          "relevance": 85.58,
+          "snippet": "رابط قروب الواتس: https://whatsapp.com/channel/0029Vb6rE1XGJP8GlYQ5J00R القناة الثانيه: ..."
+        }
+      ]
+    },
+    {
+      "query": "وزارة التخطيط",
+      "session_id": "e9673b39-790f-4224-b38e-8246c9f06651",
+      "job_id": "95ce8433-c8ec-49ef-82ca-77cd7b720cfb",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ARABIC",
+        "TOPIC",
+        "RECENT_INTENT",
+        "PERSON_LIKE"
+      ],
+      "selected_sources": [
+        "github",
+        "youtube",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [
+        "gdelt"
+      ],
+      "client_timings_ms": {
+        "job_created": 0.95,
+        "first_event_ms": 25.37,
+        "first_source_completion_ms": 514.2,
+        "ranking_started_ms": 4066.22,
+        "final_event_ms": 6719.79
+      },
+      "server_timings_ms": {
+        "planning": 6.9,
+        "collection": 3975.5,
+        "persistence": 16.93,
+        "deduplication": 42.12,
+        "semantic": 1957.16,
+        "ranking": 1981.0,
+        "clustering": 623.99,
+        "total": 6664
+      },
+      "source_funnel": {
+        "github": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1000.28,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "youtube": {
+          "requests": 4,
+          "fetched": 60,
+          "matched": 28,
+          "normalized": 60,
+          "admitted": 28,
+          "final_top_k": 25,
+          "latency_ms": 1918.79,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1434.71,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "وزارة التخطيط",
+            "\"وزارة التخطيط\"",
+            "وزاره التخطيط"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 312.29,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "وزارة التخطيط"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 367.14,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "وزارة التخطيط"
+          ]
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 3000.44,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "timeout"
+          ],
+          "request_variants": []
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.1,
+          "data": {
+            "query": "وزارة التخطيط",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.17,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 7.09,
+          "data": {
+            "elapsed_ms": 6.9,
+            "intent": [
+              "ARABIC",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "variant_count": 4,
+            "selected_sources": [
+              "github",
+              "youtube",
+              "hacker_news",
+              "mastodon",
+              "rss",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 7.11,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 7.12,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 7.13,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 7.13,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 7.14,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 7.15,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 7.16,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 7.17,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 7.18,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 7.18,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 7.19,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 7.2,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 7.21,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 7.21,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 7.22,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 13.08,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 13.55,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 17.44,
+          "data": {
+            "source": "hacker_news",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 513.15,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 499.62,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 513.2,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 0,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 670.31,
+          "data": {
+            "source": "hacker_news",
+            "round": 1,
+            "elapsed_ms": 652.67,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 670.34,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 0,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 952.84,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 939.08,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 952.88,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 30,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.started",
+          "elapsed_ms": 965.04,
+          "data": {
+            "source": "mastodon",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.started",
+          "elapsed_ms": 965.45,
+          "data": {
+            "source": "rss",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.started",
+          "elapsed_ms": 965.63,
+          "data": {
+            "source": "gdelt",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.started",
+          "elapsed_ms": 969.06,
+          "data": {
+            "source": "github",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "source.started",
+          "elapsed_ms": 969.26,
+          "data": {
+            "source": "youtube",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "source.started",
+          "elapsed_ms": 972.51,
+          "data": {
+            "source": "hacker_news",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "source.completed",
+          "elapsed_ms": 1280.96,
+          "data": {
+            "source": "mastodon",
+            "round": 2,
+            "elapsed_ms": 315.56,
+            "fetched": 40,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "collection.progress",
+          "elapsed_ms": 1280.99,
+          "data": {
+            "completed_sources": 4,
+            "selected_sources": 6,
+            "fetched": 70,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "source.completed",
+          "elapsed_ms": 1334.91,
+          "data": {
+            "source": "rss",
+            "round": 2,
+            "elapsed_ms": 369.27,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "collection.progress",
+          "elapsed_ms": 1334.94,
+          "data": {
+            "completed_sources": 5,
+            "selected_sources": 6,
+            "fetched": 94,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "source.completed",
+          "elapsed_ms": 1470.01,
+          "data": {
+            "source": "github",
+            "round": 2,
+            "elapsed_ms": 500.73,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 39,
+          "event": "collection.progress",
+          "elapsed_ms": 1470.06,
+          "data": {
+            "completed_sources": 6,
+            "selected_sources": 6,
+            "fetched": 94,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 40,
+          "event": "source.completed",
+          "elapsed_ms": 1754.87,
+          "data": {
+            "source": "hacker_news",
+            "round": 2,
+            "elapsed_ms": 782.15,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 41,
+          "event": "collection.progress",
+          "elapsed_ms": 1754.9,
+          "data": {
+            "completed_sources": 7,
+            "selected_sources": 6,
+            "fetched": 94,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 42,
+          "event": "source.completed",
+          "elapsed_ms": 1950.77,
+          "data": {
+            "source": "youtube",
+            "round": 2,
+            "elapsed_ms": 981.32,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 43,
+          "event": "collection.progress",
+          "elapsed_ms": 1950.8,
+          "data": {
+            "completed_sources": 8,
+            "selected_sources": 6,
+            "fetched": 124,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 44,
+          "event": "source.failed",
+          "elapsed_ms": 3966.26,
+          "data": {
+            "source": "gdelt",
+            "round": 2,
+            "elapsed_ms": 3000.46,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "timeout"
+          }
+        },
+        {
+          "sequence": 45,
+          "event": "collection.progress",
+          "elapsed_ms": 3966.3,
+          "data": {
+            "completed_sources": 9,
+            "selected_sources": 6,
+            "fetched": 124,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 46,
+          "event": "source.progress",
+          "elapsed_ms": 3999.89,
+          "data": {
+            "source": "bluesky",
+            "matched": 5,
+            "admitted": 5
+          }
+        },
+        {
+          "sequence": 47,
+          "event": "source.progress",
+          "elapsed_ms": 3999.91,
+          "data": {
+            "source": "gdelt",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 48,
+          "event": "source.progress",
+          "elapsed_ms": 3999.92,
+          "data": {
+            "source": "github",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 49,
+          "event": "source.progress",
+          "elapsed_ms": 3999.93,
+          "data": {
+            "source": "hacker_news",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 50,
+          "event": "source.progress",
+          "elapsed_ms": 3999.93,
+          "data": {
+            "source": "mastodon",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 51,
+          "event": "source.progress",
+          "elapsed_ms": 3999.94,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 52,
+          "event": "source.progress",
+          "elapsed_ms": 3999.94,
+          "data": {
+            "source": "youtube",
+            "matched": 28,
+            "admitted": 28
+          }
+        },
+        {
+          "sequence": 53,
+          "event": "normalization.completed",
+          "elapsed_ms": 3999.95,
+          "data": {
+            "matched": 33,
+            "admitted": 33,
+            "admitted_per_source": {
+              "bluesky": 5,
+              "youtube": 28
+            }
+          }
+        },
+        {
+          "sequence": 54,
+          "event": "persistence.completed",
+          "elapsed_ms": 4016.91,
+          "data": {
+            "elapsed_ms": 16.93,
+            "persisted": 33
+          }
+        },
+        {
+          "sequence": 55,
+          "event": "ranking.started",
+          "elapsed_ms": 4059.09,
+          "data": {
+            "candidates": 33
+          }
+        },
+        {
+          "sequence": 56,
+          "event": "ranking.completed",
+          "elapsed_ms": 6040.09,
+          "data": {
+            "elapsed_ms": 1981.0,
+            "semantic_ms": 1957.16,
+            "semantic_state": "ready",
+            "semantic_candidates": 20,
+            "cache_hits": 0,
+            "cache_misses": 20
+          }
+        },
+        {
+          "sequence": 57,
+          "event": "clustering.started",
+          "elapsed_ms": 6040.12,
+          "data": {
+            "candidates": 30
+          }
+        },
+        {
+          "sequence": 58,
+          "event": "clustering.completed",
+          "elapsed_ms": 6664.11,
+          "data": {
+            "elapsed_ms": 623.99,
+            "clusters": 19
+          }
+        },
+        {
+          "sequence": 59,
+          "event": "search.partial",
+          "elapsed_ms": 6718.23,
+          "data": {
+            "status": "partial",
+            "result_count": 30,
+            "unique_count": 30,
+            "cluster_count": 19,
+            "duration_ms": 6664,
+            "stop_reason": "USER_LIMIT",
+            "warning_count": 1
+          }
+        }
+      ],
+      "results": 30,
+      "unique": 30,
+      "clusters": 19,
+      "status": "partial",
+      "stop_reason": "USER_LIMIT",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "timeout",
+          "message": "GDELT exceeded the interactive search latency budget",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "youtube",
+          "title": "وزارة التخطيط تطلع ميدانيا على مشروع  إنشاء بناية مديرية حماية المنشآت  في محافظة صلاح الدين",
+          "url": "https://www.youtube.com/watch?v=CWzS3QxrmdM",
+          "relevance": 86.72,
+          "snippet": "وزارة التخطيط تطلع ميدانيا على مشروع إنشاء بناية مديرية حماية المنشآت في محافظة صلاح الدين"
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "وزارة التخطيط تُتابعُ ميدانياً مشروع إنشاء مُجمع مدارس الأيتام في مُحافظة البصرة",
+          "url": "https://www.youtube.com/watch?v=_w_ap73ayQE",
+          "relevance": 86.53,
+          "snippet": "وزارة التخطيط تُتابعُ ميدانياً مشروع إنشاء مُجمع مدارس الأيتام في مُحافظة البصرة"
+        },
+        {
+          "rank": 3,
+          "source": "youtube",
+          "title": "وزارة التخطيط تطّلع ميدانيا على مشروع بناء مساكن واطئة الكْلفة عدد (438) داراٌ في صلاح الدين",
+          "url": "https://www.youtube.com/watch?v=BwFJbTVayLE",
+          "relevance": 85.88,
+          "snippet": "وزارة التخطيط تطّلع ميدانيا على مشروع بناء مساكن واطئة الكْلفة عدد (438) داراٌ في صلاح الدين"
+        },
+        {
+          "rank": 4,
+          "source": "youtube",
+          "title": "وزارة التخطيط تطّلع ميدانياً على مشروع إنشاء (17) مدرسة بواقع (18) صفا في محافظة صلاح الدين",
+          "url": "https://www.youtube.com/watch?v=egDItnEPLVQ",
+          "relevance": 85.44,
+          "snippet": "وزارة التخطيط تطّلع ميدانياً على مشروع إنشاء (17) مدرسة بواقع (18) صفا في محافظة صلاح الدين"
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "وزارة التخطيط تتابعْ ميدانياٌ مشروع إنشاء مُستشفى عام سعة (100) سرير في قضاء الكُرمة",
+          "url": "https://www.youtube.com/watch?v=TMqe2Nz0FCs",
+          "relevance": 85.33,
+          "snippet": "وزارة التخطيط تتابعْ ميدانياٌ مشروع إنشاء مُستشفى عام سعة (100) سرير في قضاء الكُرمة"
+        }
+      ]
+    },
+    {
+      "query": "#بغداد",
+      "session_id": "c664c713-a390-4372-9f3f-da802007ddfd",
+      "job_id": "1c60a1be-968d-4691-9f44-c3e4699f252c",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ARABIC",
+        "HASHTAG",
+        "AMBIGUOUS",
+        "RECENT_INTENT",
+        "TOPIC"
+      ],
+      "selected_sources": [
+        "youtube",
+        "mastodon",
+        "rss",
+        "github",
+        "hacker_news",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [],
+      "client_timings_ms": {
+        "job_created": 0.97,
+        "first_event_ms": 38.92,
+        "first_source_completion_ms": 572.87,
+        "ranking_started_ms": 1070.51,
+        "final_event_ms": 1544.99
+      },
+      "server_timings_ms": {
+        "planning": 7.28,
+        "collection": 1017.26,
+        "persistence": 11.93,
+        "deduplication": 6.55,
+        "semantic": 0.0,
+        "ranking": 11.57,
+        "clustering": 403.3,
+        "total": 1481
+      },
+      "source_funnel": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "matched": 8,
+          "normalized": 30,
+          "admitted": 8,
+          "final_top_k": 8,
+          "latency_ms": 966.74,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "#بغداد"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 2,
+          "normalized": 2,
+          "admitted": 2,
+          "final_top_k": 2,
+          "latency_ms": 824.04,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "#بغداد"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 539.14,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "#بغداد"
+          ]
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.1,
+          "data": {
+            "query": "#بغداد",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.15,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 7.45,
+          "data": {
+            "elapsed_ms": 7.28,
+            "intent": [
+              "ARABIC",
+              "HASHTAG",
+              "AMBIGUOUS",
+              "RECENT_INTENT",
+              "TOPIC"
+            ],
+            "variant_count": 4,
+            "selected_sources": [
+              "youtube",
+              "mastodon",
+              "rss",
+              "github",
+              "hacker_news",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 7.46,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 7.47,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 7.48,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 7.49,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 7.49,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 7.5,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 7.5,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 7.51,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 7.52,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 7.53,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 7.53,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 7.54,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 7.55,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 7.55,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 7.56,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 26.28,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 30.16,
+          "data": {
+            "source": "mastodon",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 30.53,
+          "data": {
+            "source": "rss",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 571.95,
+          "data": {
+            "source": "rss",
+            "round": 1,
+            "elapsed_ms": 541.22,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 571.99,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 863.85,
+          "data": {
+            "source": "mastodon",
+            "round": 1,
+            "elapsed_ms": 833.36,
+            "fetched": 40,
+            "matched": 40,
+            "normalized": 2,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 863.9,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 64,
+            "matched": 40
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 994.2,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 967.55,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 994.23,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 94,
+            "matched": 70
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.progress",
+          "elapsed_ms": 1047.92,
+          "data": {
+            "source": "bluesky",
+            "matched": 4,
+            "admitted": 4
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.progress",
+          "elapsed_ms": 1047.98,
+          "data": {
+            "source": "mastodon",
+            "matched": 2,
+            "admitted": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.progress",
+          "elapsed_ms": 1047.99,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.progress",
+          "elapsed_ms": 1047.99,
+          "data": {
+            "source": "youtube",
+            "matched": 8,
+            "admitted": 8
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "normalization.completed",
+          "elapsed_ms": 1048.0,
+          "data": {
+            "matched": 14,
+            "admitted": 14,
+            "admitted_per_source": {
+              "bluesky": 4,
+              "mastodon": 2,
+              "youtube": 8
+            }
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "persistence.completed",
+          "elapsed_ms": 1059.95,
+          "data": {
+            "elapsed_ms": 11.93,
+            "persisted": 14
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "ranking.started",
+          "elapsed_ms": 1066.52,
+          "data": {
+            "candidates": 14
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "ranking.completed",
+          "elapsed_ms": 1078.1,
+          "data": {
+            "elapsed_ms": 11.57,
+            "semantic_ms": 0.0,
+            "semantic_state": "lexical_only",
+            "semantic_candidates": 14,
+            "cache_hits": 0,
+            "cache_misses": 0
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "clustering.started",
+          "elapsed_ms": 1078.13,
+          "data": {
+            "candidates": 14
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "clustering.completed",
+          "elapsed_ms": 1481.44,
+          "data": {
+            "elapsed_ms": 403.3,
+            "clusters": 13
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "search.completed",
+          "elapsed_ms": 1543.58,
+          "data": {
+            "status": "completed",
+            "result_count": 14,
+            "unique_count": 14,
+            "cluster_count": 13,
+            "duration_ms": 1481,
+            "stop_reason": "SATISFIED",
+            "warning_count": 0
+          }
+        }
+      ],
+      "results": 14,
+      "unique": 14,
+      "clusters": 13,
+      "status": "completed",
+      "stop_reason": "SATISFIED",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "youtube",
+          "title": "شموسه والرياضة 🤣🤣🎥 اشتركو✅ #ضحك #اكسبلور #بغداد #funny #اهميه #تيك_توك #شلتنا #فولو",
+          "url": "https://www.youtube.com/watch?v=T9ZCfaBQgSs",
+          "relevance": 100.0,
+          "snippet": "شموسه والرياضة 🤣🤣🎥 اشتركو✅ #ضحك #اكسبلور #بغداد #funny #اهميه #تيك_توك #شلتنا #فولو"
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "مصرع شخص وإصابة 4 بحادث سير مرعب في #بغداد",
+          "url": "https://www.youtube.com/watch?v=95WCf79BXDg",
+          "relevance": 100.0,
+          "snippet": "مصرع شخص وإصابة 4 بحادث سير مرعب في #بغداد #Alsharqiya_Tube #الشرقية #أخبار_الشرقية #الحصاد #حصاد_الشرقية للاشتراك ..."
+        },
+        {
+          "rank": 3,
+          "source": "youtube",
+          "title": "مساء الخير احبتي #اكسبلور #ترند #العراق #بغداد #ميرا",
+          "url": "https://www.youtube.com/watch?v=yrDlkIfTG7E",
+          "relevance": 100.0,
+          "snippet": "مساء الخير احبتي #اكسبلور #ترند #العراق #بغداد #ميرا"
+        },
+        {
+          "rank": 4,
+          "source": "youtube",
+          "title": "من أرياف بغداد وخيراتها نعرضلكم خلية نحل عملاقه وانتاج#ريف #اكسبلور_فولو #بدون_موسيقى #بغداد #تصويري",
+          "url": "https://www.youtube.com/watch?v=HtHeKMd_Zic",
+          "relevance": 100.0,
+          "snippet": "من أرياف بغداد وخيراتها نعرضلكم خلية نحل عملاقه وانتاج#ريف #اكسبلور_فولو #بدون_موسيقى #بغداد #تصويري"
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "القبض على بعض المتورطين في حادثة تحرش بشابة عراقية في بغداد",
+          "url": "https://www.youtube.com/watch?v=Azbiu5kd69k",
+          "relevance": 100.0,
+          "snippet": "القبض على بعض المتورطين في حادثة تحرش بشابة عراقية في بغداد #بي_بي_سي_ترندينغ #العراق #بغداد #تحرش هذه القناة الرسمية ..."
+        }
+      ]
+    },
+    {
+      "query": "Linux kernel security",
+      "session_id": "2549fe80-2969-4841-aa05-9e931b4db20c",
+      "job_id": "5e0c77d6-bb1e-4c94-886c-57c99425dd2d",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ENGLISH",
+        "ENTITY_LIKE",
+        "TOPIC",
+        "RECENT_INTENT",
+        "PERSON_LIKE"
+      ],
+      "selected_sources": [
+        "youtube",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [
+        "gdelt"
+      ],
+      "client_timings_ms": {
+        "job_created": 0.87,
+        "first_event_ms": 20.14,
+        "first_source_completion_ms": 1154.42,
+        "ranking_started_ms": 3014.41,
+        "final_event_ms": 6110.12
+      },
+      "server_timings_ms": {
+        "planning": 4.95,
+        "collection": 2643.56,
+        "persistence": 68.82,
+        "deduplication": 247.67,
+        "semantic": 2072.4,
+        "ranking": 2134.71,
+        "clustering": 914.67,
+        "total": 6042
+      },
+      "source_funnel": {
+        "youtube": {
+          "requests": 4,
+          "fetched": 53,
+          "matched": 29,
+          "normalized": 53,
+          "admitted": 29,
+          "final_top_k": 12,
+          "latency_ms": 2433.97,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "Linux kernel security",
+            "\"Linux kernel security\""
+          ]
+        },
+        "github": {
+          "requests": 2,
+          "fetched": 31,
+          "matched": 27,
+          "normalized": 31,
+          "admitted": 27,
+          "final_top_k": 16,
+          "latency_ms": 2028.38,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "Linux kernel security",
+            "\"Linux kernel security\""
+          ]
+        },
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 30,
+          "matched": 30,
+          "normalized": 30,
+          "admitted": 30,
+          "final_top_k": 2,
+          "latency_ms": 2087.35,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "Linux kernel security",
+            "\"Linux kernel security\""
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 731.08,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "Linux kernel security"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 462.39,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "Linux kernel security"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "request_variants": []
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.1,
+          "data": {
+            "query": "Linux kernel security",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.14,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 5.1,
+          "data": {
+            "elapsed_ms": 4.95,
+            "intent": [
+              "ENGLISH",
+              "ENTITY_LIKE",
+              "TOPIC",
+              "RECENT_INTENT",
+              "PERSON_LIKE"
+            ],
+            "variant_count": 3,
+            "selected_sources": [
+              "youtube",
+              "github",
+              "hacker_news",
+              "mastodon",
+              "rss",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 5.11,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 5.12,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 5.13,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 5.14,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 5.14,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 5.15,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 5.15,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 5.16,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 5.17,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 5.18,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 5.18,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 5.19,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 5.2,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 5.2,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 5.21,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 7.17,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 10.97,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 11.2,
+          "data": {
+            "source": "hacker_news",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 1153.6,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 1146.14,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 1153.63,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 30,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 1339.97,
+          "data": {
+            "source": "hacker_news",
+            "round": 1,
+            "elapsed_ms": 1328.59,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 1340.0,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 60,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 1341.0,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 1329.81,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 1341.01,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 90,
+            "matched": 90
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.started",
+          "elapsed_ms": 1352.59,
+          "data": {
+            "source": "mastodon",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.started",
+          "elapsed_ms": 1353.07,
+          "data": {
+            "source": "rss",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.started",
+          "elapsed_ms": 1353.27,
+          "data": {
+            "source": "gdelt",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.failed",
+          "elapsed_ms": 1353.45,
+          "data": {
+            "source": "gdelt",
+            "round": 2,
+            "elapsed_ms": 0.02,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "circuit_open"
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "collection.progress",
+          "elapsed_ms": 1353.46,
+          "data": {
+            "completed_sources": 4,
+            "selected_sources": 6,
+            "fetched": 90,
+            "matched": 90
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "source.started",
+          "elapsed_ms": 1353.47,
+          "data": {
+            "source": "youtube",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "source.started",
+          "elapsed_ms": 1357.66,
+          "data": {
+            "source": "github",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "source.started",
+          "elapsed_ms": 1357.88,
+          "data": {
+            "source": "hacker_news",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "source.completed",
+          "elapsed_ms": 1817.12,
+          "data": {
+            "source": "rss",
+            "round": 2,
+            "elapsed_ms": 463.85,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "collection.progress",
+          "elapsed_ms": 1817.14,
+          "data": {
+            "completed_sources": 5,
+            "selected_sources": 6,
+            "fetched": 114,
+            "matched": 90
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "source.completed",
+          "elapsed_ms": 2056.49,
+          "data": {
+            "source": "github",
+            "round": 2,
+            "elapsed_ms": 698.62,
+            "fetched": 1,
+            "matched": 1,
+            "normalized": 1,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 39,
+          "event": "collection.progress",
+          "elapsed_ms": 2056.52,
+          "data": {
+            "completed_sources": 6,
+            "selected_sources": 6,
+            "fetched": 115,
+            "matched": 91
+          }
+        },
+        {
+          "sequence": 40,
+          "event": "source.completed",
+          "elapsed_ms": 2086.9,
+          "data": {
+            "source": "mastodon",
+            "round": 2,
+            "elapsed_ms": 733.9,
+            "fetched": 40,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 41,
+          "event": "collection.progress",
+          "elapsed_ms": 2086.92,
+          "data": {
+            "completed_sources": 7,
+            "selected_sources": 6,
+            "fetched": 155,
+            "matched": 91
+          }
+        },
+        {
+          "sequence": 42,
+          "event": "source.completed",
+          "elapsed_ms": 2117.49,
+          "data": {
+            "source": "hacker_news",
+            "round": 2,
+            "elapsed_ms": 759.43,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 43,
+          "event": "collection.progress",
+          "elapsed_ms": 2117.51,
+          "data": {
+            "completed_sources": 8,
+            "selected_sources": 6,
+            "fetched": 155,
+            "matched": 91
+          }
+        },
+        {
+          "sequence": 44,
+          "event": "source.completed",
+          "elapsed_ms": 2642.53,
+          "data": {
+            "source": "youtube",
+            "round": 2,
+            "elapsed_ms": 1288.88,
+            "fetched": 23,
+            "matched": 23,
+            "normalized": 23,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 45,
+          "event": "collection.progress",
+          "elapsed_ms": 2642.55,
+          "data": {
+            "completed_sources": 9,
+            "selected_sources": 6,
+            "fetched": 178,
+            "matched": 114
+          }
+        },
+        {
+          "sequence": 46,
+          "event": "source.progress",
+          "elapsed_ms": 2676.13,
+          "data": {
+            "source": "gdelt",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 47,
+          "event": "source.progress",
+          "elapsed_ms": 2676.16,
+          "data": {
+            "source": "github",
+            "matched": 27,
+            "admitted": 27
+          }
+        },
+        {
+          "sequence": 48,
+          "event": "source.progress",
+          "elapsed_ms": 2676.17,
+          "data": {
+            "source": "hacker_news",
+            "matched": 30,
+            "admitted": 30
+          }
+        },
+        {
+          "sequence": 49,
+          "event": "source.progress",
+          "elapsed_ms": 2676.17,
+          "data": {
+            "source": "mastodon",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 50,
+          "event": "source.progress",
+          "elapsed_ms": 2676.18,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 51,
+          "event": "source.progress",
+          "elapsed_ms": 2676.18,
+          "data": {
+            "source": "youtube",
+            "matched": 29,
+            "admitted": 29
+          }
+        },
+        {
+          "sequence": 52,
+          "event": "normalization.completed",
+          "elapsed_ms": 2676.19,
+          "data": {
+            "matched": 86,
+            "admitted": 86,
+            "admitted_per_source": {
+              "github": 27,
+              "hacker_news": 30,
+              "youtube": 29
+            }
+          }
+        },
+        {
+          "sequence": 53,
+          "event": "persistence.completed",
+          "elapsed_ms": 2745.04,
+          "data": {
+            "elapsed_ms": 68.82,
+            "persisted": 86
+          }
+        },
+        {
+          "sequence": 54,
+          "event": "ranking.started",
+          "elapsed_ms": 2992.78,
+          "data": {
+            "candidates": 86
+          }
+        },
+        {
+          "sequence": 55,
+          "event": "ranking.completed",
+          "elapsed_ms": 5127.49,
+          "data": {
+            "elapsed_ms": 2134.71,
+            "semantic_ms": 2072.4,
+            "semantic_state": "ready",
+            "semantic_candidates": 20,
+            "cache_hits": 0,
+            "cache_misses": 20
+          }
+        },
+        {
+          "sequence": 56,
+          "event": "clustering.started",
+          "elapsed_ms": 5127.52,
+          "data": {
+            "candidates": 30
+          }
+        },
+        {
+          "sequence": 57,
+          "event": "clustering.completed",
+          "elapsed_ms": 6042.2,
+          "data": {
+            "elapsed_ms": 914.67,
+            "clusters": 29
+          }
+        },
+        {
+          "sequence": 58,
+          "event": "search.partial",
+          "elapsed_ms": 6107.89,
+          "data": {
+            "status": "partial",
+            "result_count": 30,
+            "unique_count": 30,
+            "cluster_count": 29,
+            "duration_ms": 6042,
+            "stop_reason": "USER_LIMIT",
+            "warning_count": 1
+          }
+        }
+      ],
+      "results": 30,
+      "unique": 30,
+      "clusters": 29,
+      "status": "partial",
+      "stop_reason": "USER_LIMIT",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "github",
+          "title": "lizuan7811/liyong-linux-KSGuard_pub",
+          "url": "https://github.com/lizuan7811/liyong-linux-KSGuard_pub",
+          "relevance": 85.82,
+          "snippet": "Linux kernel security monitoring framework with kernel module sensors and kernel-to-userspace event processing."
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "How to fine tune linux kernel for production security",
+          "url": "https://www.youtube.com/watch?v=EUoau_sKI_s",
+          "relevance": 81.98,
+          "snippet": "How to fine tune linux kernel for production security"
+        },
+        {
+          "rank": 3,
+          "source": "youtube",
+          "title": "Assisted-by: The New Rule Saving Open Source",
+          "url": "https://www.youtube.com/watch?v=7Y90noaPBFk",
+          "relevance": 81.43,
+          "snippet": "www.youtube.com/channel/UCGP4DyZp0masAPploOTNX2Q The Linux kernel security mailing list now takes five to ten ..."
+        },
+        {
+          "rank": 4,
+          "source": "youtube",
+          "title": "Mastering Linux Kernel Patches: Security, Performance, &amp; Stability",
+          "url": "https://www.youtube.com/watch?v=B28zWACfM1g",
+          "relevance": 79.86,
+          "snippet": "Discover how kernel patches shape your system's security, performance, and stability and why staying current is crucial."
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "Meet Farid Ullah Mohmand – a highly skilled Linux Kernel Security Engineer &amp; Cloud Security",
+          "url": "https://www.youtube.com/watch?v=OHu9rBkNus0",
+          "relevance": 79.55,
+          "snippet": "Professional from Halamzai, District Mohmand, Khyber Pakhtunkhwa. He specializes in Linux Kernel Security and Cloud Security, ..."
+        }
+      ]
+    },
+    {
+      "query": "OpenAI",
+      "session_id": "30a2427d-9a32-4a92-b939-2c1735de2e7d",
+      "job_id": "13a1a2f1-ad4b-42f7-818f-fed29b7efe8a",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "ENGLISH",
+        "RECENT_INTENT",
+        "AMBIGUOUS",
+        "TOPIC"
+      ],
+      "selected_sources": [
+        "github",
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "github",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [],
+      "client_timings_ms": {
+        "job_created": 1.02,
+        "first_event_ms": 19.0,
+        "first_source_completion_ms": 557.22,
+        "ranking_started_ms": 1315.56,
+        "final_event_ms": 2965.78
+      },
+      "server_timings_ms": {
+        "planning": 4.46,
+        "collection": 1195.95,
+        "persistence": 38.69,
+        "deduplication": 58.76,
+        "semantic": 1026.45,
+        "ranking": 1052.18,
+        "clustering": 532.78,
+        "total": 2894
+      },
+      "source_funnel": {
+        "github": {
+          "requests": 1,
+          "fetched": 30,
+          "matched": 24,
+          "normalized": 30,
+          "admitted": 24,
+          "final_top_k": 10,
+          "latency_ms": 1188.77,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "OpenAI"
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "matched": 28,
+          "normalized": 30,
+          "admitted": 28,
+          "final_top_k": 20,
+          "latency_ms": 1148.9,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "OpenAI"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 544.11,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "OpenAI"
+          ]
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.12,
+          "data": {
+            "query": "OpenAI",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.18,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 4.65,
+          "data": {
+            "elapsed_ms": 4.46,
+            "intent": [
+              "ENGLISH",
+              "RECENT_INTENT",
+              "AMBIGUOUS",
+              "TOPIC"
+            ],
+            "variant_count": 2,
+            "selected_sources": [
+              "github",
+              "youtube",
+              "rss",
+              "hacker_news",
+              "mastodon",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 4.66,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 4.67,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 4.68,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 4.68,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 4.69,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 4.7,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 4.7,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 4.71,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 4.72,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 4.73,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 4.73,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 4.74,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 4.75,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 4.75,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 4.77,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 6.53,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 6.84,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 10.42,
+          "data": {
+            "source": "rss",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 556.24,
+          "data": {
+            "source": "rss",
+            "round": 1,
+            "elapsed_ms": 545.62,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 556.27,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 1156.9,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 1149.86,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 1156.94,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 54,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 1195.64,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 1188.8,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 1195.67,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 84,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.progress",
+          "elapsed_ms": 1210.87,
+          "data": {
+            "source": "github",
+            "matched": 24,
+            "admitted": 24
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.progress",
+          "elapsed_ms": 1210.89,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.progress",
+          "elapsed_ms": 1210.9,
+          "data": {
+            "source": "youtube",
+            "matched": 28,
+            "admitted": 28
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "normalization.completed",
+          "elapsed_ms": 1210.91,
+          "data": {
+            "matched": 52,
+            "admitted": 52,
+            "admitted_per_source": {
+              "github": 24,
+              "youtube": 28
+            }
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "persistence.completed",
+          "elapsed_ms": 1249.62,
+          "data": {
+            "elapsed_ms": 38.69,
+            "persisted": 52
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "ranking.started",
+          "elapsed_ms": 1308.43,
+          "data": {
+            "candidates": 52
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "ranking.completed",
+          "elapsed_ms": 2360.61,
+          "data": {
+            "elapsed_ms": 1052.18,
+            "semantic_ms": 1026.45,
+            "semantic_state": "ready",
+            "semantic_candidates": 20,
+            "cache_hits": 0,
+            "cache_misses": 20
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "clustering.started",
+          "elapsed_ms": 2360.64,
+          "data": {
+            "candidates": 30
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "clustering.completed",
+          "elapsed_ms": 2893.44,
+          "data": {
+            "elapsed_ms": 532.78,
+            "clusters": 29
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "search.completed",
+          "elapsed_ms": 2963.72,
+          "data": {
+            "status": "completed",
+            "result_count": 30,
+            "unique_count": 30,
+            "cluster_count": 29,
+            "duration_ms": 2894,
+            "stop_reason": "USER_LIMIT",
+            "warning_count": 0
+          }
+        }
+      ],
+      "results": 30,
+      "unique": 30,
+      "clusters": 29,
+      "status": "completed",
+      "stop_reason": "USER_LIMIT",
+      "outcome_reason": "RESULTS_AVAILABLE",
+      "warnings": [],
+      "top_results": [
+        {
+          "rank": 1,
+          "source": "youtube",
+          "title": "OpenAI: A Bubble Bigger Than Dotcom",
+          "url": "https://www.youtube.com/watch?v=zDtvrme-L-0",
+          "relevance": 82.94,
+          "snippet": "OpenAI is at the helm of the AI bubble but zoom out and we see an industry running out of demand, borrowing billions in debt, ..."
+        },
+        {
+          "rank": 2,
+          "source": "youtube",
+          "title": "OpenAI Student Internship 2026 🔥 100% Remote + FREE ChatGPT | Apply Now",
+          "url": "https://www.youtube.com/watch?v=ZzCIBMUmZdU",
+          "relevance": 80.13,
+          "snippet": "OpenAI Student Internship 2026 is here! Looking for a remote internship opportunity with OpenAI? In this video, I'll explain the ..."
+        },
+        {
+          "rank": 3,
+          "source": "youtube",
+          "title": "Что будет с человечеством? Глава OpenAI раскрыл страшное будущее ИИ",
+          "url": "https://www.youtube.com/watch?v=DmFl83oEfKU",
+          "relevance": 79.6,
+          "snippet": "Глава OpenAI Сэм Альтман сделал пугающее заявление о будущем искусственного интеллекта. По его словам, развитие ..."
+        },
+        {
+          "rank": 4,
+          "source": "youtube",
+          "title": "OpenAI Astra new model explained..",
+          "url": "https://www.youtube.com/watch?v=O1JMZvgFxKE",
+          "relevance": 79.12,
+          "snippet": "Zo Computer: https://zo-computer.cello.so/2XNkhpgqHRy OpenAI Astra just solved 10 open problems in math and theoretical ..."
+        },
+        {
+          "rank": 5,
+          "source": "youtube",
+          "title": "OpenAI’s iPhone Killer Just Got Real",
+          "url": "https://www.youtube.com/watch?v=XuqOkQrtb_I",
+          "relevance": 78.9,
+          "snippet": "OpenAI's hardware ambitions are finally coming into focus. New reports reveal an AI-powered phone, a screenless smart ..."
+        }
+      ]
+    },
+    {
+      "query": "@openai",
+      "session_id": "0dfe5994-980e-4a80-9c09-ebf15aa95d71",
+      "job_id": "e49c560c-25a9-4bb5-9b95-1a78fa7a765a",
+      "time_range": "30d",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": false,
+      "intent": [
+        "HANDLE",
+        "ENGLISH",
+        "IDENTIFIER",
+        "RECENT_INTENT",
+        "AMBIGUOUS"
+      ],
+      "selected_sources": [
+        "github",
+        "hacker_news",
+        "youtube",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [
+        "gdelt",
+        "github"
+      ],
+      "client_timings_ms": {
+        "job_created": 0.96,
+        "first_event_ms": 28.46,
+        "first_source_completion_ms": 379.43,
+        "ranking_started_ms": 1736.85,
+        "final_event_ms": 1744.97
+      },
+      "server_timings_ms": {
+        "planning": 8.48,
+        "collection": 1700.92,
+        "persistence": 5.38,
+        "deduplication": 0.01,
+        "semantic": 0.0,
+        "ranking": 2.8,
+        "clustering": 1.3,
+        "total": 1739
+      },
+      "source_funnel": {
+        "github": {
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 361.8,
+          "statuses": [
+            "external_limit"
+          ],
+          "errors": [
+            "http_403"
+          ],
+          "request_variants": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 30,
+          "matched": 0,
+          "normalized": 30,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1155.29,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "@openai"
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 30,
+          "matched": 0,
+          "normalized": 30,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1200.6,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "@openai"
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 367.7,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "@openai"
+          ]
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 24,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 436.24,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "@openai"
+          ]
+        },
+        "gdelt": {
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 0.02,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "circuit_open"
+          ],
+          "request_variants": []
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.11,
+          "data": {
+            "query": "@openai",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.16,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 8.65,
+          "data": {
+            "elapsed_ms": 8.48,
+            "intent": [
+              "HANDLE",
+              "ENGLISH",
+              "IDENTIFIER",
+              "RECENT_INTENT",
+              "AMBIGUOUS"
+            ],
+            "variant_count": 4,
+            "selected_sources": [
+              "github",
+              "hacker_news",
+              "youtube",
+              "mastodon",
+              "rss",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 8.67,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 8.68,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 8.69,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 8.69,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 8.7,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.selected",
+          "elapsed_ms": 8.71,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 8.71,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 8.72,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 8.73,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 8.74,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 8.75,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 8.75,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 8.76,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 8.77,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 8.77,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 16.22,
+          "data": {
+            "source": "github",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 16.73,
+          "data": {
+            "source": "hacker_news",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 20.35,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.failed",
+          "elapsed_ms": 378.5,
+          "data": {
+            "source": "github",
+            "round": 1,
+            "elapsed_ms": 361.8,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "http_403"
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 378.53,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 6,
+            "fetched": 0,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 1172.73,
+          "data": {
+            "source": "hacker_news",
+            "round": 1,
+            "elapsed_ms": 1155.8,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 1172.77,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 6,
+            "fetched": 30,
+            "matched": 30
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 1221.7,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 1201.13,
+            "fetched": 30,
+            "matched": 30,
+            "normalized": 30,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 1221.72,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 6,
+            "fetched": 60,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.started",
+          "elapsed_ms": 1254.64,
+          "data": {
+            "source": "mastodon",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.started",
+          "elapsed_ms": 1255.09,
+          "data": {
+            "source": "rss",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.started",
+          "elapsed_ms": 1255.27,
+          "data": {
+            "source": "gdelt",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.failed",
+          "elapsed_ms": 1255.44,
+          "data": {
+            "source": "gdelt",
+            "round": 2,
+            "elapsed_ms": 0.02,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "circuit_open"
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "collection.progress",
+          "elapsed_ms": 1255.45,
+          "data": {
+            "completed_sources": 4,
+            "selected_sources": 6,
+            "fetched": 60,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "source.completed",
+          "elapsed_ms": 1625.47,
+          "data": {
+            "source": "mastodon",
+            "round": 2,
+            "elapsed_ms": 370.42,
+            "fetched": 40,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "collection.progress",
+          "elapsed_ms": 1625.5,
+          "data": {
+            "completed_sources": 5,
+            "selected_sources": 6,
+            "fetched": 100,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "source.completed",
+          "elapsed_ms": 1692.93,
+          "data": {
+            "source": "rss",
+            "round": 2,
+            "elapsed_ms": 437.65,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "collection.progress",
+          "elapsed_ms": 1692.96,
+          "data": {
+            "completed_sources": 6,
+            "selected_sources": 6,
+            "fetched": 124,
+            "matched": 60
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "source.progress",
+          "elapsed_ms": 1730.3,
+          "data": {
+            "source": "gdelt",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "source.progress",
+          "elapsed_ms": 1730.32,
+          "data": {
+            "source": "github",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 39,
+          "event": "source.progress",
+          "elapsed_ms": 1730.33,
+          "data": {
+            "source": "hacker_news",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 40,
+          "event": "source.progress",
+          "elapsed_ms": 1730.34,
+          "data": {
+            "source": "mastodon",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 41,
+          "event": "source.progress",
+          "elapsed_ms": 1730.34,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 42,
+          "event": "source.progress",
+          "elapsed_ms": 1730.35,
+          "data": {
+            "source": "youtube",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 43,
+          "event": "normalization.completed",
+          "elapsed_ms": 1730.35,
+          "data": {
+            "matched": 0,
+            "admitted": 0,
+            "admitted_per_source": {}
+          }
+        },
+        {
+          "sequence": 44,
+          "event": "persistence.completed",
+          "elapsed_ms": 1735.75,
+          "data": {
+            "elapsed_ms": 5.38,
+            "persisted": 0
+          }
+        },
+        {
+          "sequence": 45,
+          "event": "ranking.started",
+          "elapsed_ms": 1735.78,
+          "data": {
+            "candidates": 0
+          }
+        },
+        {
+          "sequence": 46,
+          "event": "ranking.completed",
+          "elapsed_ms": 1738.6,
+          "data": {
+            "elapsed_ms": 2.8,
+            "semantic_ms": 0.0,
+            "semantic_state": "lexical_only",
+            "semantic_candidates": 0,
+            "cache_hits": 0,
+            "cache_misses": 0
+          }
+        },
+        {
+          "sequence": 47,
+          "event": "clustering.started",
+          "elapsed_ms": 1738.61,
+          "data": {
+            "candidates": 0
+          }
+        },
+        {
+          "sequence": 48,
+          "event": "clustering.completed",
+          "elapsed_ms": 1739.92,
+          "data": {
+            "elapsed_ms": 1.3,
+            "clusters": 0
+          }
+        },
+        {
+          "sequence": 49,
+          "event": "search.partial",
+          "elapsed_ms": 1743.72,
+          "data": {
+            "status": "partial",
+            "result_count": 0,
+            "unique_count": 0,
+            "cluster_count": 0,
+            "duration_ms": 1739,
+            "stop_reason": "LOW_MARGINAL_GAIN",
+            "warning_count": 2
+          }
+        }
+      ],
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "status": "partial",
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "outcome_reason": "NO_MATCHES",
+      "warnings": [
+        {
+          "source": "github",
+          "code": "http_403",
+          "message": "Source access is unavailable from this environment",
+          "retryable": false,
+          "status_code": 403
+        },
+        {
+          "source": "gdelt",
+          "code": "circuit_open",
+          "message": "GDELT is temporarily degraded after repeated timeouts",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    },
+    {
+      "query": "CVE-2026-61371",
+      "session_id": "7a349b5f-23c4-49d2-a4e6-94c9d3ccf8fb",
+      "job_id": "00a90e54-1685-4419-ab83-fcf46e3c813e",
+      "time_range": "all",
+      "search_mode": "balanced",
+      "source_selection": "auto",
+      "exact_phrase": true,
+      "intent": [
+        "IDENTIFIER",
+        "EXACT_PHRASE",
+        "ENGLISH",
+        "ENTITY_LIKE"
+      ],
+      "selected_sources": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "mastodon",
+        "gdelt"
+      ],
+      "searched_sources": [
+        "gdelt",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube"
+      ],
+      "not_selected_sources": [],
+      "unavailable_sources": [],
+      "external_limit_sources": [
+        "gdelt"
+      ],
+      "client_timings_ms": {
+        "job_created": 5.06,
+        "first_event_ms": 50.18,
+        "first_source_completion_ms": 456.13,
+        "ranking_started_ms": 3851.34,
+        "final_event_ms": 3858.83
+      },
+      "server_timings_ms": {
+        "planning": 14.07,
+        "collection": 3812.31,
+        "persistence": 9.11,
+        "deduplication": 0.01,
+        "semantic": 0.0,
+        "ranking": 1.34,
+        "clustering": 2.28,
+        "total": 3848
+      },
+      "source_funnel": {
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 1463.89,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 975.94,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 48,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 774.11,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "CVE-2026-61371",
+            "\"CVE-2026-61371\""
+          ]
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 567.88,
+          "statuses": [
+            "healthy"
+          ],
+          "errors": [],
+          "request_variants": [
+            "CVE-2026-61371"
+          ]
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "normalized": 0,
+          "admitted": 0,
+          "final_top_k": 0,
+          "latency_ms": 3001.62,
+          "statuses": [
+            "degraded"
+          ],
+          "errors": [
+            "timeout"
+          ],
+          "request_variants": []
+        }
+      },
+      "events": [
+        {
+          "sequence": 1,
+          "event": "search.started",
+          "elapsed_ms": 0.15,
+          "data": {
+            "query": "CVE-2026-61371",
+            "mode": "balanced"
+          }
+        },
+        {
+          "sequence": 2,
+          "event": "planning.started",
+          "elapsed_ms": 0.21,
+          "data": {
+            "source_selection": "auto"
+          }
+        },
+        {
+          "sequence": 3,
+          "event": "planning.completed",
+          "elapsed_ms": 14.29,
+          "data": {
+            "elapsed_ms": 14.07,
+            "intent": [
+              "IDENTIFIER",
+              "EXACT_PHRASE",
+              "ENGLISH",
+              "ENTITY_LIKE"
+            ],
+            "variant_count": 4,
+            "selected_sources": [
+              "hacker_news",
+              "youtube",
+              "rss",
+              "mastodon",
+              "gdelt"
+            ],
+            "round_count": 2
+          }
+        },
+        {
+          "sequence": 4,
+          "event": "source.selected",
+          "elapsed_ms": 14.32,
+          "data": {
+            "source": "hacker_news",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 5,
+          "event": "source.selected",
+          "elapsed_ms": 14.33,
+          "data": {
+            "source": "youtube",
+            "acquisition_mode": "DIRECT_API"
+          }
+        },
+        {
+          "sequence": 6,
+          "event": "source.selected",
+          "elapsed_ms": 14.33,
+          "data": {
+            "source": "rss",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 7,
+          "event": "source.selected",
+          "elapsed_ms": 14.34,
+          "data": {
+            "source": "mastodon",
+            "acquisition_mode": "PUBLIC_TIMELINE"
+          }
+        },
+        {
+          "sequence": 8,
+          "event": "source.selected",
+          "elapsed_ms": 14.35,
+          "data": {
+            "source": "gdelt",
+            "acquisition_mode": "PUBLIC_API"
+          }
+        },
+        {
+          "sequence": 9,
+          "event": "source.skipped",
+          "elapsed_ms": 14.36,
+          "data": {
+            "source": "bluesky",
+            "acquisition_mode": "PUBLIC_API",
+            "error_category": "not_selected",
+            "reason": null
+          }
+        },
+        {
+          "sequence": 10,
+          "event": "source.skipped",
+          "elapsed_ms": 14.37,
+          "data": {
+            "source": "facebook",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post keyword search is not available with the configured API access"
+          }
+        },
+        {
+          "sequence": 11,
+          "event": "source.skipped",
+          "elapsed_ms": 14.38,
+          "data": {
+            "source": "github",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "not_selected",
+            "reason": "Anonymous requests have a lower rate limit"
+          }
+        },
+        {
+          "sequence": 12,
+          "event": "source.skipped",
+          "elapsed_ms": 14.38,
+          "data": {
+            "source": "instagram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Professional account hashtag access not configured"
+          }
+        },
+        {
+          "sequence": 13,
+          "event": "source.skipped",
+          "elapsed_ms": 14.39,
+          "data": {
+            "source": "linkedin",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Global public-post search is unavailable through configured API access"
+          }
+        },
+        {
+          "sequence": 14,
+          "event": "source.skipped",
+          "elapsed_ms": 14.4,
+          "data": {
+            "source": "reddit",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Approved API credentials required; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 15,
+          "event": "source.skipped",
+          "elapsed_ms": 14.41,
+          "data": {
+            "source": "telegram",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "unconfigured",
+            "reason": "Public-channel user session not configured"
+          }
+        },
+        {
+          "sequence": 16,
+          "event": "source.skipped",
+          "elapsed_ms": 14.41,
+          "data": {
+            "source": "threads",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Access token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 17,
+          "event": "source.skipped",
+          "elapsed_ms": 14.42,
+          "data": {
+            "source": "tiktok",
+            "acquisition_mode": "DIRECT_API",
+            "error_category": "restricted",
+            "reason": "Research API approval and credentials required"
+          }
+        },
+        {
+          "sequence": 18,
+          "event": "source.skipped",
+          "elapsed_ms": 14.43,
+          "data": {
+            "source": "x",
+            "acquisition_mode": "WEB_INDEX",
+            "error_category": "web_discovery_disabled",
+            "reason": "Bearer token not configured; local SearXNG discovery is disabled"
+          }
+        },
+        {
+          "sequence": 19,
+          "event": "source.started",
+          "elapsed_ms": 21.81,
+          "data": {
+            "source": "hacker_news",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 20,
+          "event": "source.started",
+          "elapsed_ms": 36.59,
+          "data": {
+            "source": "youtube",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 21,
+          "event": "source.started",
+          "elapsed_ms": 40.46,
+          "data": {
+            "source": "rss",
+            "round": 1
+          }
+        },
+        {
+          "sequence": 22,
+          "event": "source.completed",
+          "elapsed_ms": 451.24,
+          "data": {
+            "source": "rss",
+            "round": 1,
+            "elapsed_ms": 410.42,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 23,
+          "event": "collection.progress",
+          "elapsed_ms": 451.28,
+          "data": {
+            "completed_sources": 1,
+            "selected_sources": 5,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 24,
+          "event": "source.completed",
+          "elapsed_ms": 533.92,
+          "data": {
+            "source": "youtube",
+            "round": 1,
+            "elapsed_ms": 496.91,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 25,
+          "event": "collection.progress",
+          "elapsed_ms": 533.96,
+          "data": {
+            "completed_sources": 2,
+            "selected_sources": 5,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 26,
+          "event": "source.completed",
+          "elapsed_ms": 828.55,
+          "data": {
+            "source": "hacker_news",
+            "round": 1,
+            "elapsed_ms": 806.34,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 27,
+          "event": "collection.progress",
+          "elapsed_ms": 828.59,
+          "data": {
+            "completed_sources": 3,
+            "selected_sources": 5,
+            "fetched": 24,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 28,
+          "event": "source.started",
+          "elapsed_ms": 829.8,
+          "data": {
+            "source": "mastodon",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 29,
+          "event": "source.started",
+          "elapsed_ms": 830.28,
+          "data": {
+            "source": "gdelt",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 30,
+          "event": "source.started",
+          "elapsed_ms": 834.15,
+          "data": {
+            "source": "hacker_news",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 31,
+          "event": "source.started",
+          "elapsed_ms": 837.72,
+          "data": {
+            "source": "youtube",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 32,
+          "event": "source.started",
+          "elapsed_ms": 841.32,
+          "data": {
+            "source": "rss",
+            "round": 2
+          }
+        },
+        {
+          "sequence": 33,
+          "event": "source.completed",
+          "elapsed_ms": 1207.96,
+          "data": {
+            "source": "rss",
+            "round": 2,
+            "elapsed_ms": 366.42,
+            "fetched": 24,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 34,
+          "event": "collection.progress",
+          "elapsed_ms": 1207.99,
+          "data": {
+            "completed_sources": 4,
+            "selected_sources": 5,
+            "fetched": 48,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 35,
+          "event": "source.completed",
+          "elapsed_ms": 1317.11,
+          "data": {
+            "source": "youtube",
+            "round": 2,
+            "elapsed_ms": 479.18,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 36,
+          "event": "collection.progress",
+          "elapsed_ms": 1317.15,
+          "data": {
+            "completed_sources": 5,
+            "selected_sources": 5,
+            "fetched": 48,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 37,
+          "event": "source.completed",
+          "elapsed_ms": 1399.9,
+          "data": {
+            "source": "mastodon",
+            "round": 2,
+            "elapsed_ms": 569.66,
+            "fetched": 40,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 38,
+          "event": "collection.progress",
+          "elapsed_ms": 1399.92,
+          "data": {
+            "completed_sources": 6,
+            "selected_sources": 5,
+            "fetched": 88,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 39,
+          "event": "source.completed",
+          "elapsed_ms": 1492.05,
+          "data": {
+            "source": "hacker_news",
+            "round": 2,
+            "elapsed_ms": 657.69,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": null
+          }
+        },
+        {
+          "sequence": 40,
+          "event": "collection.progress",
+          "elapsed_ms": 1492.09,
+          "data": {
+            "completed_sources": 7,
+            "selected_sources": 5,
+            "fetched": 88,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 41,
+          "event": "source.failed",
+          "elapsed_ms": 3832.18,
+          "data": {
+            "source": "gdelt",
+            "round": 2,
+            "elapsed_ms": 3001.65,
+            "fetched": 0,
+            "matched": 0,
+            "normalized": 0,
+            "error_category": "timeout"
+          }
+        },
+        {
+          "sequence": 42,
+          "event": "collection.progress",
+          "elapsed_ms": 3832.23,
+          "data": {
+            "completed_sources": 8,
+            "selected_sources": 5,
+            "fetched": 88,
+            "matched": 0
+          }
+        },
+        {
+          "sequence": 43,
+          "event": "source.progress",
+          "elapsed_ms": 3835.83,
+          "data": {
+            "source": "bluesky",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 44,
+          "event": "source.progress",
+          "elapsed_ms": 3835.85,
+          "data": {
+            "source": "gdelt",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 45,
+          "event": "source.progress",
+          "elapsed_ms": 3835.85,
+          "data": {
+            "source": "github",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 46,
+          "event": "source.progress",
+          "elapsed_ms": 3835.86,
+          "data": {
+            "source": "hacker_news",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 47,
+          "event": "source.progress",
+          "elapsed_ms": 3835.87,
+          "data": {
+            "source": "mastodon",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 48,
+          "event": "source.progress",
+          "elapsed_ms": 3835.87,
+          "data": {
+            "source": "rss",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 49,
+          "event": "source.progress",
+          "elapsed_ms": 3835.88,
+          "data": {
+            "source": "youtube",
+            "matched": 0,
+            "admitted": 0
+          }
+        },
+        {
+          "sequence": 50,
+          "event": "normalization.completed",
+          "elapsed_ms": 3835.89,
+          "data": {
+            "matched": 0,
+            "admitted": 0,
+            "admitted_per_source": {}
+          }
+        },
+        {
+          "sequence": 51,
+          "event": "persistence.completed",
+          "elapsed_ms": 3845.02,
+          "data": {
+            "elapsed_ms": 9.11,
+            "persisted": 0
+          }
+        },
+        {
+          "sequence": 52,
+          "event": "ranking.started",
+          "elapsed_ms": 3845.05,
+          "data": {
+            "candidates": 0
+          }
+        },
+        {
+          "sequence": 53,
+          "event": "ranking.completed",
+          "elapsed_ms": 3846.4,
+          "data": {
+            "elapsed_ms": 1.34,
+            "semantic_ms": 0.0,
+            "semantic_state": "empty",
+            "semantic_candidates": 0,
+            "cache_hits": 0,
+            "cache_misses": 0
+          }
+        },
+        {
+          "sequence": 54,
+          "event": "clustering.started",
+          "elapsed_ms": 3846.41,
+          "data": {
+            "candidates": 0
+          }
+        },
+        {
+          "sequence": 55,
+          "event": "clustering.completed",
+          "elapsed_ms": 3848.71,
+          "data": {
+            "elapsed_ms": 2.28,
+            "clusters": 0
+          }
+        },
+        {
+          "sequence": 56,
+          "event": "search.partial",
+          "elapsed_ms": 3853.93,
+          "data": {
+            "status": "partial",
+            "result_count": 0,
+            "unique_count": 0,
+            "cluster_count": 0,
+            "duration_ms": 3848,
+            "stop_reason": "LOW_MARGINAL_GAIN",
+            "warning_count": 1
+          }
+        }
+      ],
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "status": "partial",
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "outcome_reason": "NO_MATCHES",
+      "warnings": [
+        {
+          "source": "gdelt",
+          "code": "timeout",
+          "message": "GDELT exceeded the interactive search latency budget",
+          "retryable": true,
+          "status_code": null
+        }
+      ],
+      "top_results": []
+    }
+  ]
+}

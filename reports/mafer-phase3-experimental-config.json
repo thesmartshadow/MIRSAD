@@ -1,0 +1,22 @@
+{
+  "schema": "mirsad.mafer-phase3-experimental-configuration",
+  "version": "1.0",
+  "status": "experimental_shadow",
+  "development_sha256": "cf5be21e8d87e57599787a12472a0358fc59a67c850dd1f4dc84758c441ebae8",
+  "holdout_sha256": "50b06e990e39e41995893b4de288553d16d4f575ca2d825554039004b23b5ca2",
+  "fusion_weights": {
+    "ambiguous": 0.25,
+    "entity": 0.7,
+    "event": 0.25,
+    "exact_phrase": 0.55,
+    "handle": 0.7,
+    "hashtag": 0.7,
+    "historical": 0.25,
+    "identifier": 0.7,
+    "person": 0.55,
+    "topic": 0.25
+  },
+  "uncertainty_version": "mafer-shadow-uncertainty-v3.0",
+  "stop_model_version": "mafer-shadow-saturation-v3.0",
+  "reason": "Development-set calibration only; no production promotion"
+}

@@ -1,0 +1,403 @@
+{
+  "schema": "mirsad.clustering-documents",
+  "version": "1.0",
+  "documents": [
+    {
+      "id": "ai-orion-news",
+      "source": "gdelt",
+      "url": "https://news.example/openai-orion-launch",
+      "title": "OpenAI launches Orion model for public agencies",
+      "text": "OpenAI unveiled the Orion multilingual model on Tuesday for public-sector document analysis.",
+      "published_at": "2026-06-10T09:00:00Z"
+    },
+    {
+      "id": "ai-orion-social",
+      "source": "x",
+      "url": "https://x.example/post/orion-1",
+      "title": null,
+      "text": "OpenAI just unveiled Orion, its new multilingual AI model for government document workflows.",
+      "published_at": "2026-06-10T09:20:00Z"
+    },
+    {
+      "id": "ai-orion-ar",
+      "source": "telegram",
+      "url": "https://t.me/publictech/501",
+      "title": "إطلاق نموذج Orion الجديد",
+      "text": "أطلقت شركة OpenAI نموذج Orion متعدد اللغات لتحليل وثائق القطاع العام.",
+      "published_at": "2026-06-10T10:05:00Z"
+    },
+    {
+      "id": "ai-orion-video",
+      "source": "youtube",
+      "url": "https://youtube.example/watch/orion",
+      "title": "OpenAI Orion launch explained",
+      "text": "Coverage of OpenAI's Orion multilingual model announcement for public agencies.",
+      "published_at": "2026-06-10T13:00:00Z"
+    },
+    {
+      "id": "ai-openai-office",
+      "source": "rss",
+      "url": "https://business.example/openai-baghdad-office",
+      "title": "OpenAI opens a regional office in Baghdad",
+      "text": "The company opened a new office and announced local hiring plans.",
+      "published_at": "2026-06-10T11:00:00Z"
+    },
+    {
+      "id": "ai-openai-grant",
+      "source": "rss",
+      "url": "https://research.example/openai-grants",
+      "title": "OpenAI funds independent safety research",
+      "text": "A new grant program will support university research teams next year.",
+      "published_at": "2026-06-10T12:00:00Z"
+    },
+    {
+      "id": "ai-toolbox-repo",
+      "source": "github",
+      "url": "https://github.com/kamranahammedaman/AiTooLBox",
+      "title": "kamranahammedaman/AiTooLBox",
+      "text": "Artificial Intelligence Tools Box",
+      "published_at": "2026-06-10T09:02:00Z"
+    },
+    {
+      "id": "ai-course-repo",
+      "source": "github",
+      "url": "https://github.com/example/CSA1709-Artificial-intelligence",
+      "title": "example/CSA1709-Artificial-intelligence",
+      "text": "example/CSA1709-Artificial-intelligence",
+      "published_at": "2026-06-10T09:04:00Z"
+    },
+    {
+      "id": "ai-revolution-essay",
+      "source": "hacker_news",
+      "url": "https://wait.example/artificial-intelligence-revolution-2015",
+      "title": "The Artificial Intelligence Revolution (2015)",
+      "text": "The Artificial Intelligence Revolution (2015)",
+      "published_at": "2026-06-10T09:01:00Z"
+    },
+    {
+      "id": "ai-blockchain-repo",
+      "source": "github",
+      "url": "https://github.com/example/artificial-intelligence-black-chain",
+      "title": "example/artificial-intelligence-and-black-chain-system",
+      "text": "example/artificial-intelligence-and-black-chain-system",
+      "published_at": "2026-06-10T09:05:00Z"
+    },
+    {
+      "id": "ai-mccarthy-essay",
+      "source": "hacker_news",
+      "url": "https://archive.example/mccarthy-common-sense",
+      "title": "Artificial Intelligence, Logic and Formalizing Common Sense (John McCarthy)",
+      "text": "Artificial Intelligence, Logic and Formalizing Common Sense (John McCarthy)",
+      "published_at": "2026-06-10T09:06:00Z"
+    },
+    {
+      "id": "ai-virus-news",
+      "source": "rss",
+      "url": "https://science.example/ai-designed-viruses?utm_source=feed",
+      "title": "Artificial intelligence used to design new viruses",
+      "text": "Researchers reported an artificial intelligence system used to design candidate viruses in a controlled laboratory study.",
+      "published_at": "2026-06-11T08:00:00Z"
+    },
+    {
+      "id": "ai-virus-copy",
+      "source": "hacker_news",
+      "url": "https://science.example/ai-designed-viruses",
+      "title": "AI system used to design new viruses",
+      "text": "A controlled lab study reports that researchers used artificial intelligence to design candidate viruses.",
+      "published_at": "2026-06-11T08:25:00Z"
+    },
+
+    {
+      "id": "ms-cloud-news",
+      "source": "gdelt",
+      "url": "https://news.example/microsoft-iraq-cloud-deal",
+      "title": "Microsoft and Iraq ministry sign cloud agreement",
+      "text": "Microsoft signed a five-year cloud services agreement with Iraq's communications ministry in Baghdad.",
+      "published_at": "2026-05-03T08:00:00Z"
+    },
+    {
+      "id": "ms-cloud-ar",
+      "source": "telegram",
+      "url": "https://t.me/iraqtech/882",
+      "title": "اتفاقية سحابية مع Microsoft",
+      "text": "وقعت وزارة الاتصالات العراقية اتفاقية خدمات سحابية لمدة خمس سنوات مع Microsoft في بغداد.",
+      "published_at": "2026-05-03T08:40:00Z"
+    },
+    {
+      "id": "ms-cloud-video",
+      "source": "youtube",
+      "url": "https://youtube.example/watch/ms-cloud-iraq",
+      "title": "Iraq ministry Microsoft cloud deal explained",
+      "text": "A briefing on the five-year Microsoft cloud agreement signed by the communications ministry in Baghdad.",
+      "published_at": "2026-05-03T12:00:00Z"
+    },
+    {
+      "id": "ms-windows-news",
+      "source": "rss",
+      "url": "https://software.example/windows-security-update",
+      "title": "Microsoft releases Windows security update",
+      "text": "The monthly Windows patch fixes two authentication vulnerabilities.",
+      "published_at": "2026-05-03T09:00:00Z"
+    },
+    {
+      "id": "ms-windows-social",
+      "source": "reddit",
+      "url": "https://reddit.example/r/windows/update",
+      "title": "New Windows security patch is available",
+      "text": "Microsoft's monthly Windows update fixes two authentication flaws.",
+      "published_at": "2026-05-03T09:30:00Z"
+    },
+    {
+      "id": "ms-basra-center",
+      "source": "rss",
+      "url": "https://education.example/microsoft-basra-center",
+      "title": "Microsoft opens training center in Basra",
+      "text": "A technical skills center opened for university students in southern Iraq.",
+      "published_at": "2026-05-03T10:00:00Z"
+    },
+    {
+      "id": "ms-acquisition",
+      "source": "gdelt",
+      "url": "https://markets.example/microsoft-acquisition",
+      "title": "Microsoft completes gaming studio acquisition",
+      "text": "Regulators approved the company's acquisition of an independent game studio.",
+      "published_at": "2026-05-03T10:30:00Z"
+    },
+    {
+      "id": "ms-earnings",
+      "source": "hacker_news",
+      "url": "https://finance.example/microsoft-quarterly-earnings",
+      "title": "Microsoft reports quarterly cloud revenue",
+      "text": "Quarterly revenue increased after enterprise cloud subscriptions grew.",
+      "published_at": "2026-05-03T11:00:00Z"
+    },
+
+    {
+      "id": "iraq-bridge-ar-news",
+      "source": "rss",
+      "url": "https://baghdad.example/jumhuriya-bridge-reopens?ref=rss",
+      "title": "إعادة افتتاح جسر الجمهورية في بغداد",
+      "text": "أعلنت أمانة بغداد إعادة افتتاح جسر الجمهورية بعد اكتمال أعمال الصيانة مساء اليوم.",
+      "published_at": "2026-04-14T15:00:00Z"
+    },
+    {
+      "id": "iraq-bridge-ar-social",
+      "source": "telegram",
+      "url": "https://t.me/baghdadpublic/300",
+      "title": null,
+      "text": "جسرُ الجمهورية يُفتتح مجدداً بعد انتهاء أعمال الصيانة، بحسب أمانة بغداد.",
+      "published_at": "2026-04-14T15:20:00Z"
+    },
+    {
+      "id": "iraq-bridge-en",
+      "source": "gdelt",
+      "url": "https://wire.example/baghdad-republic-bridge",
+      "title": "Baghdad reopens Jumhuriya Bridge after maintenance",
+      "text": "Baghdad Municipality reopened the Jumhuriya Bridge after maintenance work was completed.",
+      "published_at": "2026-04-14T16:00:00Z"
+    },
+    {
+      "id": "iraq-basra-hospital",
+      "source": "rss",
+      "url": "https://health.example/basra-hospital",
+      "title": "وزارة الصحة تفتتح مستشفى جديداً في البصرة",
+      "text": "افتتحت وزارة الصحة العراقية مستشفى تخصصياً جديداً في محافظة البصرة.",
+      "published_at": "2026-04-14T15:10:00Z"
+    },
+    {
+      "id": "iraq-budget",
+      "source": "gdelt",
+      "url": "https://economy.example/iraq-budget",
+      "title": "العراق يناقش تعديلات الموازنة العامة",
+      "text": "ناقش مجلس النواب تعديلات الموازنة وأسعار النفط المتوقعة.",
+      "published_at": "2026-04-14T15:30:00Z"
+    },
+    {
+      "id": "iraq-election",
+      "source": "rss",
+      "url": "https://politics.example/iraq-election",
+      "title": "مفوضية الانتخابات في العراق تعلن جدول التسجيل",
+      "text": "نشرت المفوضية مواعيد تحديث سجل الناخبين للمحافظات.",
+      "published_at": "2026-04-14T15:40:00Z"
+    },
+    {
+      "id": "iraq-football",
+      "source": "reddit",
+      "url": "https://reddit.example/r/iraq/football",
+      "title": "منتخب العراق يستعد للمباراة المقبلة",
+      "text": "بدأ المنتخب الوطني تدريباته استعداداً لمباراة التصفيات.",
+      "published_at": "2026-04-14T16:10:00Z"
+    },
+    {
+      "id": "iraq-tech-event",
+      "source": "github",
+      "url": "https://github.com/example/iraq-technology-conference",
+      "title": "Iraq technology conference schedule",
+      "text": "Open source schedule for a technology conference in Baghdad, Iraq.",
+      "published_at": "2026-04-14T17:00:00Z"
+    },
+
+    {
+      "id": "ar-ai-law-news",
+      "source": "rss",
+      "url": "https://law.example/ai-safety-act",
+      "title": "البرلمان يقر قانون سلامة الذكاء الاصطناعي",
+      "text": "أقر البرلمان قانون سلامة الذكاء الاصطناعي بعد التصويت النهائي مساء الثلاثاء.",
+      "published_at": "2026-03-20T18:00:00Z"
+    },
+    {
+      "id": "ar-ai-law-social",
+      "source": "x",
+      "url": "https://x.example/post/ai-law",
+      "title": null,
+      "text": "إقرار قانون سلامة الذكاء الاصطناعي بعد التصويت النهائي في البرلمان اليوم.",
+      "published_at": "2026-03-20T18:20:00Z"
+    },
+    {
+      "id": "ar-ai-law-en",
+      "source": "gdelt",
+      "url": "https://wire.example/parliament-ai-safety-law",
+      "title": "Parliament passes Artificial Intelligence Safety Act",
+      "text": "Lawmakers approved the Artificial Intelligence Safety Act in a final vote on Tuesday.",
+      "published_at": "2026-03-20T19:00:00Z"
+    },
+    {
+      "id": "ar-ai-education",
+      "source": "rss",
+      "url": "https://education.example/ai-curriculum",
+      "title": "جامعة تطلق منهجاً لتعليم الذكاء الاصطناعي",
+      "text": "أعلنت الجامعة منهجاً دراسياً جديداً لطلبة علوم الحاسوب.",
+      "published_at": "2026-03-20T18:05:00Z"
+    },
+    {
+      "id": "ar-ai-medical",
+      "source": "rss",
+      "url": "https://science.example/ai-medical-paper",
+      "title": "بحث عن الذكاء الاصطناعي في تشخيص الأمراض",
+      "text": "نشر باحثون دراسة حول استخدام خوارزمية لتشخيص صور الأشعة.",
+      "published_at": "2026-03-20T18:10:00Z"
+    },
+    {
+      "id": "ar-ai-chatbot",
+      "source": "github",
+      "url": "https://github.com/example/arabic-ai-chatbot",
+      "title": "Arabic artificial intelligence chatbot",
+      "text": "مشروع روبوت محادثة عربي يعتمد على الذكاء الاصطناعي.",
+      "published_at": "2026-03-20T18:15:00Z"
+    },
+    {
+      "id": "ar-ai-strategy",
+      "source": "telegram",
+      "url": "https://t.me/publicministry/901",
+      "title": "استراتيجية وطنية للذكاء الاصطناعي",
+      "text": "أعلنت الوزارة إعداد استراتيجية وطنية لتطبيقات الذكاء الاصطناعي في الخدمات.",
+      "published_at": "2026-03-20T18:30:00Z"
+    },
+    {
+      "id": "ar-ai-art",
+      "source": "youtube",
+      "url": "https://youtube.example/watch/ai-art",
+      "title": "معرض فني يستخدم الذكاء الاصطناعي",
+      "text": "تقرير عن معرض صور رقمية أُنتجت بأدوات الذكاء الاصطناعي.",
+      "published_at": "2026-03-20T19:20:00Z"
+    },
+
+    {
+      "id": "baghdad-water-news",
+      "source": "rss",
+      "url": "https://city.example/baghdad-water-outage",
+      "title": "انقطاع المياه في أحياء من بغداد مساء الجمعة",
+      "text": "أعلنت دائرة الماء توقف الضخ ست ساعات بسبب صيانة محطة رئيسية.",
+      "published_at": "2026-02-08T12:00:00Z"
+    },
+    {
+      "id": "baghdad-water-social",
+      "source": "telegram",
+      "url": "https://t.me/baghdadpublic/990",
+      "title": null,
+      "text": "توقف ضخ الماء في عدد من أحياء بغداد لمدة ست ساعات لصيانة المحطة الرئيسية.",
+      "published_at": "2026-02-08T12:20:00Z"
+    },
+    {
+      "id": "baghdad-airport-news",
+      "source": "gdelt",
+      "url": "https://transport.example/baghdad-airport-terminal",
+      "title": "Baghdad airport begins terminal expansion",
+      "text": "Construction started on a new passenger terminal at Baghdad International Airport.",
+      "published_at": "2026-02-08T12:10:00Z"
+    },
+    {
+      "id": "baghdad-airport-ar",
+      "source": "rss",
+      "url": "https://transport-ar.example/baghdad-airport-terminal",
+      "title": "بدء توسعة صالة مطار بغداد الدولي",
+      "text": "بدأت أعمال إنشاء صالة جديدة للمسافرين في مطار بغداد الدولي.",
+      "published_at": "2026-02-08T12:35:00Z"
+    },
+    {
+      "id": "baghdad-book-fair",
+      "source": "reddit",
+      "url": "https://reddit.example/r/baghdad/books",
+      "title": "افتتاح معرض بغداد الدولي للكتاب",
+      "text": "يشارك ناشرون من عدة دول في معرض الكتاب هذا الأسبوع.",
+      "published_at": "2026-02-08T12:15:00Z"
+    },
+    {
+      "id": "baghdad-weather",
+      "source": "x",
+      "url": "https://x.example/post/baghdad-weather",
+      "title": null,
+      "text": "غبار كثيف متوقع في بغداد مساء اليوم مع انخفاض الرؤية.",
+      "published_at": "2026-02-08T12:25:00Z"
+    },
+
+    {
+      "id": "tech-chip-news",
+      "source": "rss",
+      "url": "https://hardware.example/novachip-z7-launch",
+      "title": "NovaChip launches Z7 processor for edge devices",
+      "text": "NovaChip unveiled the Z7 low-power processor for industrial edge computing.",
+      "published_at": "2026-01-15T07:00:00Z"
+    },
+    {
+      "id": "tech-chip-social",
+      "source": "threads",
+      "url": "https://threads.example/post/z7",
+      "title": null,
+      "text": "NovaChip unveiled its Z7 low-power edge processor today. First devices ship next quarter.",
+      "published_at": "2026-01-15T07:15:00Z"
+    },
+    {
+      "id": "tech-chip-ar",
+      "source": "youtube",
+      "url": "https://youtube.example/watch/z7-ar",
+      "title": "إطلاق معالج NovaChip Z7 الجديد",
+      "text": "تغطية إعلان معالج Z7 منخفض الطاقة لأجهزة الحوسبة الطرفية الصناعية.",
+      "published_at": "2026-01-15T08:00:00Z"
+    },
+    {
+      "id": "tech-training",
+      "source": "rss",
+      "url": "https://education.example/technology-training",
+      "title": "Technology training initiative opens applications",
+      "text": "A workforce program opened applications for software development courses.",
+      "published_at": "2026-01-15T07:05:00Z"
+    },
+    {
+      "id": "tech-paper",
+      "source": "hacker_news",
+      "url": "https://research.example/technology-adoption-paper",
+      "title": "Study measures technology adoption in small firms",
+      "text": "Researchers published survey results about business technology adoption.",
+      "published_at": "2026-01-15T07:10:00Z"
+    },
+    {
+      "id": "tech-conference",
+      "source": "github",
+      "url": "https://github.com/example/technology-conference",
+      "title": "Technology conference website",
+      "text": "Source code for an independent technology conference schedule.",
+      "published_at": "2026-01-15T07:20:00Z"
+    }
+  ]
+}

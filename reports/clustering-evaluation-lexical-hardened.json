@@ -1,0 +1,1552 @@
+{
+  "schema": "mirsad.clustering-evaluation",
+  "version": "1.0",
+  "label": "lexical-hardened",
+  "fixture_hashes": {
+    "clustering_quality_documents.json": "431094b8180a73b1091ec194199c157443953a4b786c3318e98e751c5d4cc452",
+    "clustering_quality_judgments.json": "d9844f64311cfc888994ea2c46dac6a910256db69c1d66d3a930e69ff4f1ba0a"
+  },
+  "summary": {
+    "cases": 6,
+    "documents": 49,
+    "expected_positive_pairs": 22,
+    "predicted_positive_pairs": 7,
+    "true_positive_pairs": 7,
+    "false_merges": 0,
+    "missed_merges": 15,
+    "pairwise_precision": 1.0,
+    "pairwise_recall": 0.3182,
+    "pairwise_f1": 0.4828,
+    "total_duration_ms": 1.172,
+    "semantic_duration_ms": 0.0,
+    "candidate_pairs": 73
+  },
+  "cases": [
+    {
+      "id": "english_broad_ai",
+      "query": "artificial intelligence",
+      "language": "en",
+      "documents": 13,
+      "clusters": 11,
+      "largest_cluster": 2,
+      "duration_ms": 0.357,
+      "candidate_pairs": 22,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 2,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 5,
+      "expected_positive_pairs": 7,
+      "predicted_positive_pairs": 2,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "ai-orion-ar",
+          "ai-orion-news"
+        ],
+        [
+          "ai-orion-ar",
+          "ai-orion-social"
+        ],
+        [
+          "ai-orion-ar",
+          "ai-orion-video"
+        ],
+        [
+          "ai-orion-news",
+          "ai-orion-video"
+        ],
+        [
+          "ai-orion-social",
+          "ai-orion-video"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "ai-mccarthy-essay"
+          ],
+          "representative_title": "Artificial Intelligence, Logic and Formalizing Common Sense (John McCarthy)",
+          "source_distribution": {
+            "hacker_news": 1
+          },
+          "earliest_at": "2026-06-10T09:06:00+00:00",
+          "latest_at": "2026-06-10T09:06:00+00:00",
+          "terms": [
+            "common",
+            "formalizing",
+            "john",
+            "logic",
+            "mccarthy",
+            "sense"
+          ],
+          "member_similarities": {
+            "11": 1.0
+          },
+          "member_reasons": {
+            "11": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-openai-office"
+          ],
+          "representative_title": "OpenAI opens a regional office in Baghdad",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-06-10T11:00:00+00:00",
+          "latest_at": "2026-06-10T11:00:00+00:00",
+          "terms": [
+            "announced",
+            "baghdad",
+            "company",
+            "hiring",
+            "local",
+            "office",
+            "opened",
+            "opens"
+          ],
+          "member_similarities": {
+            "5": 1.0
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-course-repo"
+          ],
+          "representative_title": "example/CSA1709-Artificial-intelligence",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-06-10T09:04:00+00:00",
+          "latest_at": "2026-06-10T09:04:00+00:00",
+          "terms": [
+            "csa1709"
+          ],
+          "member_similarities": {
+            "8": 1.0
+          },
+          "member_reasons": {
+            "8": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-blockchain-repo"
+          ],
+          "representative_title": "example/artificial-intelligence-and-black-chain-system",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-06-10T09:05:00+00:00",
+          "latest_at": "2026-06-10T09:05:00+00:00",
+          "terms": [
+            "black",
+            "chain",
+            "system"
+          ],
+          "member_similarities": {
+            "10": 1.0
+          },
+          "member_reasons": {
+            "10": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-toolbox-repo"
+          ],
+          "representative_title": "kamranahammedaman/AiTooLBox",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-06-10T09:02:00+00:00",
+          "latest_at": "2026-06-10T09:02:00+00:00",
+          "terms": [
+            "aitoolbox",
+            "box",
+            "kamranahammedaman",
+            "tools"
+          ],
+          "member_similarities": {
+            "7": 1.0
+          },
+          "member_reasons": {
+            "7": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-orion-news",
+            "ai-orion-social"
+          ],
+          "representative_title": "OpenAI launches Orion model for public agencies",
+          "source_distribution": {
+            "gdelt": 1,
+            "x": 1
+          },
+          "earliest_at": "2026-06-10T09:00:00+00:00",
+          "latest_at": "2026-06-10T09:20:00+00:00",
+          "terms": [
+            "document",
+            "unveiled",
+            "model",
+            "multilingual",
+            "orion",
+            "analysis",
+            "government",
+            "its"
+          ],
+          "member_similarities": {
+            "1": 1.0,
+            "2": 0.174543
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ],
+            "2": [
+              "shared_distinctive_terms",
+              "entity_overlap",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-openai-grant"
+          ],
+          "representative_title": "OpenAI funds independent safety research",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-06-10T12:00:00+00:00",
+          "latest_at": "2026-06-10T12:00:00+00:00",
+          "terms": [
+            "funds",
+            "grant",
+            "independent",
+            "next",
+            "program",
+            "research",
+            "safety",
+            "support"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-virus-news",
+            "ai-virus-copy"
+          ],
+          "representative_title": "Artificial intelligence used to design new viruses",
+          "source_distribution": {
+            "hacker_news": 1,
+            "rss": 1
+          },
+          "earliest_at": "2026-06-11T08:00:00+00:00",
+          "latest_at": "2026-06-11T08:25:00+00:00",
+          "terms": [
+            "candidate",
+            "controlled",
+            "design",
+            "laboratory",
+            "reported",
+            "researchers",
+            "study",
+            "used"
+          ],
+          "member_similarities": {
+            "12": 1.0,
+            "13": 1.0
+          },
+          "member_reasons": {
+            "12": [
+              "cluster_seed"
+            ],
+            "13": [
+              "duplicate_component"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-orion-ar"
+          ],
+          "representative_title": "إطلاق نموذج Orion الجديد",
+          "source_distribution": {
+            "telegram": 1
+          },
+          "earliest_at": "2026-06-10T10:05:00+00:00",
+          "latest_at": "2026-06-10T10:05:00+00:00",
+          "terms": [
+            "اطلاق",
+            "اطلقت",
+            "الجديد",
+            "العام",
+            "القطاع",
+            "اللغات",
+            "شركه",
+            "لتحليل"
+          ],
+          "member_similarities": {
+            "3": 1.0
+          },
+          "member_reasons": {
+            "3": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-revolution-essay"
+          ],
+          "representative_title": "The Artificial Intelligence Revolution (2015)",
+          "source_distribution": {
+            "hacker_news": 1
+          },
+          "earliest_at": "2026-06-10T09:01:00+00:00",
+          "latest_at": "2026-06-10T09:01:00+00:00",
+          "terms": [
+            "2015",
+            "revolution"
+          ],
+          "member_similarities": {
+            "9": 1.0
+          },
+          "member_reasons": {
+            "9": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ai-orion-video"
+          ],
+          "representative_title": "OpenAI Orion launch explained",
+          "source_distribution": {
+            "youtube": 1
+          },
+          "earliest_at": "2026-06-10T13:00:00+00:00",
+          "latest_at": "2026-06-10T13:00:00+00:00",
+          "terms": [
+            "announcement",
+            "coverage",
+            "explained",
+            "launch",
+            "agencies",
+            "public",
+            "model",
+            "multilingual"
+          ],
+          "member_similarities": {
+            "4": 1.0
+          },
+          "member_reasons": {
+            "4": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    },
+    {
+      "id": "english_entity_microsoft",
+      "query": "Microsoft",
+      "language": "en",
+      "documents": 8,
+      "clusters": 6,
+      "largest_cluster": 2,
+      "duration_ms": 0.208,
+      "candidate_pairs": 13,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 2,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 2,
+      "expected_positive_pairs": 4,
+      "predicted_positive_pairs": 2,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "ms-cloud-ar",
+          "ms-cloud-news"
+        ],
+        [
+          "ms-cloud-ar",
+          "ms-cloud-video"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "ms-basra-center"
+          ],
+          "representative_title": "Microsoft opens training center in Basra",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-05-03T10:00:00+00:00",
+          "latest_at": "2026-05-03T10:00:00+00:00",
+          "terms": [
+            "basra",
+            "center",
+            "opened",
+            "opens",
+            "skills",
+            "southern",
+            "students",
+            "technical"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ms-earnings"
+          ],
+          "representative_title": "Microsoft reports quarterly cloud revenue",
+          "source_distribution": {
+            "hacker_news": 1
+          },
+          "earliest_at": "2026-05-03T11:00:00+00:00",
+          "latest_at": "2026-05-03T11:00:00+00:00",
+          "terms": [
+            "enterprise",
+            "grew",
+            "increased",
+            "quarterly",
+            "reports",
+            "revenue",
+            "subscriptions",
+            "cloud"
+          ],
+          "member_similarities": {
+            "8": 1.0
+          },
+          "member_reasons": {
+            "8": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ms-acquisition"
+          ],
+          "representative_title": "Microsoft completes gaming studio acquisition",
+          "source_distribution": {
+            "gdelt": 1
+          },
+          "earliest_at": "2026-05-03T10:30:00+00:00",
+          "latest_at": "2026-05-03T10:30:00+00:00",
+          "terms": [
+            "acquisition",
+            "approved",
+            "company",
+            "completes",
+            "game",
+            "gaming",
+            "independent",
+            "regulators"
+          ],
+          "member_similarities": {
+            "7": 1.0
+          },
+          "member_reasons": {
+            "7": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ms-cloud-news",
+            "ms-cloud-video"
+          ],
+          "representative_title": "Iraq ministry Microsoft cloud deal explained",
+          "source_distribution": {
+            "gdelt": 1,
+            "youtube": 1
+          },
+          "earliest_at": "2026-05-03T08:00:00+00:00",
+          "latest_at": "2026-05-03T12:00:00+00:00",
+          "terms": [
+            "agreement",
+            "baghdad",
+            "communications",
+            "five",
+            "ministry",
+            "signed",
+            "year",
+            "cloud"
+          ],
+          "member_similarities": {
+            "1": 1.0,
+            "3": 0.472249
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ],
+            "3": [
+              "shared_distinctive_terms",
+              "entity_overlap",
+              "title_phrase_overlap",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ms-windows-news",
+            "ms-windows-social"
+          ],
+          "representative_title": "Microsoft releases Windows security update",
+          "source_distribution": {
+            "reddit": 1,
+            "rss": 1
+          },
+          "earliest_at": "2026-05-03T09:00:00+00:00",
+          "latest_at": "2026-05-03T09:30:00+00:00",
+          "terms": [
+            "authentication",
+            "fixes",
+            "monthly",
+            "patch",
+            "security",
+            "two",
+            "update",
+            "windows"
+          ],
+          "member_similarities": {
+            "5": 1.0,
+            "4": 0.448061
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ],
+            "4": [
+              "shared_distinctive_terms",
+              "entity_overlap",
+              "title_phrase_overlap",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ms-cloud-ar"
+          ],
+          "representative_title": "اتفاقية سحابية مع Microsoft",
+          "source_distribution": {
+            "telegram": 1
+          },
+          "earliest_at": "2026-05-03T08:40:00+00:00",
+          "latest_at": "2026-05-03T08:40:00+00:00",
+          "terms": [
+            "اتفاقيه",
+            "الاتصالات",
+            "العراقيه",
+            "بغداد",
+            "خدمات",
+            "خمس",
+            "سحابيه",
+            "سنوات"
+          ],
+          "member_similarities": {
+            "2": 1.0
+          },
+          "member_reasons": {
+            "2": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    },
+    {
+      "id": "arabic_broad_iraq",
+      "query": "العراق",
+      "language": "ar",
+      "documents": 8,
+      "clusters": 7,
+      "largest_cluster": 2,
+      "duration_ms": 0.194,
+      "candidate_pairs": 14,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 1,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 2,
+      "expected_positive_pairs": 3,
+      "predicted_positive_pairs": 1,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "iraq-bridge-ar-news",
+          "iraq-bridge-en"
+        ],
+        [
+          "iraq-bridge-ar-social",
+          "iraq-bridge-en"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "iraq-bridge-ar-news",
+            "iraq-bridge-ar-social"
+          ],
+          "representative_title": "إعادة افتتاح جسر الجمهورية في بغداد",
+          "source_distribution": {
+            "rss": 1,
+            "telegram": 1
+          },
+          "earliest_at": "2026-04-14T15:00:00+00:00",
+          "latest_at": "2026-04-14T15:20:00+00:00",
+          "terms": [
+            "اعمال",
+            "الجمهوريه",
+            "امانه",
+            "بغداد",
+            "جسر",
+            "اعاده",
+            "اعلنت",
+            "افتتاح"
+          ],
+          "member_similarities": {
+            "1": 1.0,
+            "2": 0.139683
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ],
+            "2": [
+              "shared_distinctive_terms",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-budget"
+          ],
+          "representative_title": "العراق يناقش تعديلات الموازنة العامة",
+          "source_distribution": {
+            "gdelt": 1
+          },
+          "earliest_at": "2026-04-14T15:30:00+00:00",
+          "latest_at": "2026-04-14T15:30:00+00:00",
+          "terms": [
+            "العامه",
+            "المتوقعه",
+            "الموازنه",
+            "النفط",
+            "النواب",
+            "تعديلات",
+            "مجلس",
+            "ناقش"
+          ],
+          "member_similarities": {
+            "5": 1.0
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-tech-event"
+          ],
+          "representative_title": "Iraq technology conference schedule",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-04-14T17:00:00+00:00",
+          "latest_at": "2026-04-14T17:00:00+00:00",
+          "terms": [
+            "conference",
+            "iraq",
+            "open",
+            "schedule",
+            "source",
+            "technology",
+            "baghdad"
+          ],
+          "member_similarities": {
+            "8": 1.0
+          },
+          "member_reasons": {
+            "8": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-basra-hospital"
+          ],
+          "representative_title": "وزارة الصحة تفتتح مستشفى جديداً في البصرة",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-04-14T15:10:00+00:00",
+          "latest_at": "2026-04-14T15:10:00+00:00",
+          "terms": [
+            "افتتحت",
+            "البصره",
+            "الصحه",
+            "العراقيه",
+            "تخصصيا",
+            "تفتتح",
+            "جديدا",
+            "محافظه"
+          ],
+          "member_similarities": {
+            "4": 1.0
+          },
+          "member_reasons": {
+            "4": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-election"
+          ],
+          "representative_title": "مفوضية الانتخابات في العراق تعلن جدول التسجيل",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-04-14T15:40:00+00:00",
+          "latest_at": "2026-04-14T15:40:00+00:00",
+          "terms": [
+            "الانتخابات",
+            "التسجيل",
+            "المفوضيه",
+            "الناخبين",
+            "تحديث",
+            "تعلن",
+            "جدول",
+            "سجل"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-football"
+          ],
+          "representative_title": "منتخب العراق يستعد للمباراة المقبلة",
+          "source_distribution": {
+            "reddit": 1
+          },
+          "earliest_at": "2026-04-14T16:10:00+00:00",
+          "latest_at": "2026-04-14T16:10:00+00:00",
+          "terms": [
+            "استعدادا",
+            "التصفيات",
+            "المقبله",
+            "المنتخب",
+            "الوطني",
+            "بدا",
+            "تدريباته",
+            "للمباراه"
+          ],
+          "member_similarities": {
+            "7": 1.0
+          },
+          "member_reasons": {
+            "7": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "iraq-bridge-en"
+          ],
+          "representative_title": "Baghdad reopens Jumhuriya Bridge after maintenance",
+          "source_distribution": {
+            "gdelt": 1
+          },
+          "earliest_at": "2026-04-14T16:00:00+00:00",
+          "latest_at": "2026-04-14T16:00:00+00:00",
+          "terms": [
+            "bridge",
+            "completed",
+            "jumhuriya",
+            "maintenance",
+            "municipality",
+            "reopened",
+            "reopens",
+            "work"
+          ],
+          "member_similarities": {
+            "3": 1.0
+          },
+          "member_reasons": {
+            "3": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    },
+    {
+      "id": "arabic_broad_ai",
+      "query": "الذكاء الاصطناعي",
+      "language": "ar",
+      "documents": 8,
+      "clusters": 7,
+      "largest_cluster": 2,
+      "duration_ms": 0.165,
+      "candidate_pairs": 10,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 1,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 2,
+      "expected_positive_pairs": 3,
+      "predicted_positive_pairs": 1,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "ar-ai-law-en",
+          "ar-ai-law-news"
+        ],
+        [
+          "ar-ai-law-en",
+          "ar-ai-law-social"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "ar-ai-education"
+          ],
+          "representative_title": "جامعة تطلق منهجاً لتعليم الذكاء الاصطناعي",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-03-20T18:05:00+00:00",
+          "latest_at": "2026-03-20T18:05:00+00:00",
+          "terms": [
+            "الجامعه",
+            "الحاسوب",
+            "تطلق",
+            "جامعه",
+            "جديدا",
+            "دراسيا",
+            "علوم",
+            "لتعليم"
+          ],
+          "member_similarities": {
+            "4": 1.0
+          },
+          "member_reasons": {
+            "4": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-chatbot"
+          ],
+          "representative_title": "Arabic artificial intelligence chatbot",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-03-20T18:15:00+00:00",
+          "latest_at": "2026-03-20T18:15:00+00:00",
+          "terms": [
+            "arabic",
+            "chatbot",
+            "روبوت",
+            "عربي",
+            "محادثه",
+            "مشروع",
+            "يعتمد",
+            "artificial"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-law-news",
+            "ar-ai-law-social"
+          ],
+          "representative_title": "البرلمان يقر قانون سلامة الذكاء الاصطناعي",
+          "source_distribution": {
+            "rss": 1,
+            "x": 1
+          },
+          "earliest_at": "2026-03-20T18:00:00+00:00",
+          "latest_at": "2026-03-20T18:20:00+00:00",
+          "terms": [
+            "البرلمان",
+            "التصويت",
+            "النهايي",
+            "سلامه",
+            "قانون",
+            "اقر",
+            "اقرار",
+            "الثلاثاء"
+          ],
+          "member_similarities": {
+            "1": 1.0,
+            "2": 0.239781
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ],
+            "2": [
+              "shared_distinctive_terms",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-medical"
+          ],
+          "representative_title": "بحث عن الذكاء الاصطناعي في تشخيص الأمراض",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-03-20T18:10:00+00:00",
+          "latest_at": "2026-03-20T18:10:00+00:00",
+          "terms": [
+            "استخدام",
+            "الاشعه",
+            "الامراض",
+            "باحثون",
+            "بحث",
+            "تشخيص",
+            "حول",
+            "خوارزميه"
+          ],
+          "member_similarities": {
+            "5": 1.0
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-strategy"
+          ],
+          "representative_title": "استراتيجية وطنية للذكاء الاصطناعي",
+          "source_distribution": {
+            "telegram": 1
+          },
+          "earliest_at": "2026-03-20T18:30:00+00:00",
+          "latest_at": "2026-03-20T18:30:00+00:00",
+          "terms": [
+            "استراتيجيه",
+            "اعداد",
+            "الخدمات",
+            "الوزاره",
+            "لتطبيقات",
+            "للذكاء",
+            "وطنيه",
+            "اعلنت"
+          ],
+          "member_similarities": {
+            "7": 1.0
+          },
+          "member_reasons": {
+            "7": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-law-en"
+          ],
+          "representative_title": "Parliament passes Artificial Intelligence Safety Act",
+          "source_distribution": {
+            "gdelt": 1
+          },
+          "earliest_at": "2026-03-20T19:00:00+00:00",
+          "latest_at": "2026-03-20T19:00:00+00:00",
+          "terms": [
+            "act",
+            "approved",
+            "final",
+            "lawmakers",
+            "parliament",
+            "passes",
+            "safety",
+            "tuesday"
+          ],
+          "member_similarities": {
+            "3": 1.0
+          },
+          "member_reasons": {
+            "3": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "ar-ai-art"
+          ],
+          "representative_title": "معرض فني يستخدم الذكاء الاصطناعي",
+          "source_distribution": {
+            "youtube": 1
+          },
+          "earliest_at": "2026-03-20T19:20:00+00:00",
+          "latest_at": "2026-03-20T19:20:00+00:00",
+          "terms": [
+            "انتجت",
+            "بادوات",
+            "تقرير",
+            "رقميه",
+            "فني",
+            "معرض",
+            "يستخدم",
+            "صور"
+          ],
+          "member_similarities": {
+            "8": 1.0
+          },
+          "member_reasons": {
+            "8": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    },
+    {
+      "id": "arabic_broad_baghdad",
+      "query": "بغداد",
+      "language": "ar",
+      "documents": 6,
+      "clusters": 6,
+      "largest_cluster": 1,
+      "duration_ms": 0.126,
+      "candidate_pairs": 8,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 0,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 2,
+      "expected_positive_pairs": 2,
+      "predicted_positive_pairs": 0,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "baghdad-airport-ar",
+          "baghdad-airport-news"
+        ],
+        [
+          "baghdad-water-news",
+          "baghdad-water-social"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "baghdad-water-news"
+          ],
+          "representative_title": "انقطاع المياه في أحياء من بغداد مساء الجمعة",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-02-08T12:00:00+00:00",
+          "latest_at": "2026-02-08T12:00:00+00:00",
+          "terms": [
+            "اعلنت",
+            "الجمعه",
+            "الضخ",
+            "المياه",
+            "انقطاع",
+            "بسبب",
+            "دايره",
+            "رييسيه"
+          ],
+          "member_similarities": {
+            "1": 1.0
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "baghdad-book-fair"
+          ],
+          "representative_title": "افتتاح معرض بغداد الدولي للكتاب",
+          "source_distribution": {
+            "reddit": 1
+          },
+          "earliest_at": "2026-02-08T12:15:00+00:00",
+          "latest_at": "2026-02-08T12:15:00+00:00",
+          "terms": [
+            "افتتاح",
+            "الاسبوع",
+            "الكتاب",
+            "دول",
+            "عده",
+            "للكتاب",
+            "معرض",
+            "ناشرون"
+          ],
+          "member_similarities": {
+            "5": 1.0
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "baghdad-water-social"
+          ],
+          "representative_title": "توقف ضخ الماء في عدد من أحياء بغداد لمدة ست ساعات لصيانة المحطة الرئيسية.",
+          "source_distribution": {
+            "telegram": 1
+          },
+          "earliest_at": "2026-02-08T12:20:00+00:00",
+          "latest_at": "2026-02-08T12:20:00+00:00",
+          "terms": [
+            "الرييسيه",
+            "المحطه",
+            "عدد",
+            "لصيانه",
+            "لمده",
+            "احياء",
+            "الماء",
+            "توقف"
+          ],
+          "member_similarities": {
+            "2": 1.0
+          },
+          "member_reasons": {
+            "2": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "baghdad-airport-ar"
+          ],
+          "representative_title": "بدء توسعة صالة مطار بغداد الدولي",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-02-08T12:35:00+00:00",
+          "latest_at": "2026-02-08T12:35:00+00:00",
+          "terms": [
+            "اعمال",
+            "انشاء",
+            "بدء",
+            "بدات",
+            "توسعه",
+            "جديده",
+            "صاله",
+            "للمسافرين"
+          ],
+          "member_similarities": {
+            "4": 1.0
+          },
+          "member_reasons": {
+            "4": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "baghdad-airport-news"
+          ],
+          "representative_title": "Baghdad airport begins terminal expansion",
+          "source_distribution": {
+            "gdelt": 1
+          },
+          "earliest_at": "2026-02-08T12:10:00+00:00",
+          "latest_at": "2026-02-08T12:10:00+00:00",
+          "terms": [
+            "airport",
+            "baghdad",
+            "begins",
+            "construction",
+            "expansion",
+            "international",
+            "passenger",
+            "started"
+          ],
+          "member_similarities": {
+            "3": 1.0
+          },
+          "member_reasons": {
+            "3": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "baghdad-weather"
+          ],
+          "representative_title": "غبار كثيف متوقع في بغداد مساء اليوم مع انخفاض الرؤية.",
+          "source_distribution": {
+            "x": 1
+          },
+          "earliest_at": "2026-02-08T12:25:00+00:00",
+          "latest_at": "2026-02-08T12:25:00+00:00",
+          "terms": [
+            "الرويه",
+            "اليوم",
+            "انخفاض",
+            "غبار",
+            "كثيف",
+            "متوقع",
+            "مساء"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    },
+    {
+      "id": "mixed_broad_technology",
+      "query": "technology التكنولوجيا",
+      "language": "mixed",
+      "documents": 6,
+      "clusters": 5,
+      "largest_cluster": 2,
+      "duration_ms": 0.122,
+      "candidate_pairs": 6,
+      "semantic_state": "not_requested",
+      "semantic_duration_ms": 0.0,
+      "true_positive_pairs": 1,
+      "false_positive_pairs": 0,
+      "false_negative_pairs": 2,
+      "expected_positive_pairs": 3,
+      "predicted_positive_pairs": 1,
+      "false_merges": [],
+      "missed_merges": [
+        [
+          "tech-chip-ar",
+          "tech-chip-news"
+        ],
+        [
+          "tech-chip-ar",
+          "tech-chip-social"
+        ]
+      ],
+      "cluster_assignments": [
+        {
+          "members": [
+            "tech-training"
+          ],
+          "representative_title": "Technology training initiative opens applications",
+          "source_distribution": {
+            "rss": 1
+          },
+          "earliest_at": "2026-01-15T07:05:00+00:00",
+          "latest_at": "2026-01-15T07:05:00+00:00",
+          "terms": [
+            "applications",
+            "courses",
+            "development",
+            "initiative",
+            "opened",
+            "opens",
+            "program",
+            "software"
+          ],
+          "member_similarities": {
+            "4": 1.0
+          },
+          "member_reasons": {
+            "4": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "tech-conference"
+          ],
+          "representative_title": "Technology conference website",
+          "source_distribution": {
+            "github": 1
+          },
+          "earliest_at": "2026-01-15T07:20:00+00:00",
+          "latest_at": "2026-01-15T07:20:00+00:00",
+          "terms": [
+            "code",
+            "conference",
+            "independent",
+            "schedule",
+            "source",
+            "website"
+          ],
+          "member_similarities": {
+            "6": 1.0
+          },
+          "member_reasons": {
+            "6": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "tech-chip-news",
+            "tech-chip-social"
+          ],
+          "representative_title": "NovaChip launches Z7 processor for edge devices",
+          "source_distribution": {
+            "rss": 1,
+            "threads": 1
+          },
+          "earliest_at": "2026-01-15T07:00:00+00:00",
+          "latest_at": "2026-01-15T07:15:00+00:00",
+          "terms": [
+            "devices",
+            "edge",
+            "low",
+            "power",
+            "processor",
+            "unveiled",
+            "novachip",
+            "computing"
+          ],
+          "member_similarities": {
+            "1": 1.0,
+            "2": 0.183439
+          },
+          "member_reasons": {
+            "1": [
+              "cluster_seed"
+            ],
+            "2": [
+              "shared_distinctive_terms",
+              "entity_overlap",
+              "temporal_proximity",
+              "lexical_story_identity"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "tech-paper"
+          ],
+          "representative_title": "Study measures technology adoption in small firms",
+          "source_distribution": {
+            "hacker_news": 1
+          },
+          "earliest_at": "2026-01-15T07:10:00+00:00",
+          "latest_at": "2026-01-15T07:10:00+00:00",
+          "terms": [
+            "adoption",
+            "business",
+            "firms",
+            "measures",
+            "published",
+            "researchers",
+            "results",
+            "small"
+          ],
+          "member_similarities": {
+            "5": 1.0
+          },
+          "member_reasons": {
+            "5": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        },
+        {
+          "members": [
+            "tech-chip-ar"
+          ],
+          "representative_title": "إطلاق معالج NovaChip Z7 الجديد",
+          "source_distribution": {
+            "youtube": 1
+          },
+          "earliest_at": "2026-01-15T08:00:00+00:00",
+          "latest_at": "2026-01-15T08:00:00+00:00",
+          "terms": [
+            "اطلاق",
+            "اعلان",
+            "الجديد",
+            "الحوسبه",
+            "الصناعيه",
+            "الطاقه",
+            "الطرفيه",
+            "تغطيه"
+          ],
+          "member_similarities": {
+            "3": 1.0
+          },
+          "member_reasons": {
+            "3": [
+              "cluster_seed"
+            ]
+          },
+          "suspicious": false,
+          "suspicious_reason": null
+        }
+      ]
+    }
+  ]
+}

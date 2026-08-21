@@ -1,0 +1,22 @@
+services:
+  searxng:
+    image: ${SEARXNG_IMAGE:-docker.io/searxng/searxng:latest}
+    environment:
+      SEARXNG_BASE_URL: http://127.0.0.1:8080/
+      SEARXNG_SECRET: ${SEARXNG_SECRET:-mirsad-local-only-change-before-sharing}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro
+      - searxng-cache:/var/cache/searxng
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -qO- 'http://127.0.0.1:8080/search?q=MIRSAD&format=json' >/dev/null
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  searxng-cache:

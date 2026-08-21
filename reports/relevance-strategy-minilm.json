@@ -1,0 +1,4839 @@
+{
+  "schema": "mirsad.relevance-strategy-experiment",
+  "version": "1.0",
+  "dataset": "relevance_tuning",
+  "documents": 80,
+  "queries": 8,
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dimensions": 384,
+    "declared_size_gib": 0.22
+  },
+  "performance": {
+    "model_initialization_ms": 459.57,
+    "document_encoding_ms": 149.02,
+    "document_encoding_per_item_ms": 1.8627,
+    "query_encoding_mean_ms": 2.2388,
+    "reranking_mean_ms": 2.0303,
+    "peak_rss_before_kib": 102456,
+    "peak_rss_loaded_kib": 737668,
+    "peak_rss_delta_kib": 635212
+  },
+  "strategy_metrics": {
+    "current_baseline": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.0,
+        "p_at_10": 0.3,
+        "mrr": 0.1429,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.445,
+        "success_at_1": 0.0,
+        "success_at_3": 0.0,
+        "success_at_5": 0.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4429,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        }
+      }
+    },
+    "improved_lexical": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.125,
+        "p_at_10": 0.3,
+        "mrr": 0.1948,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.1186,
+        "ndcg_at_10": 0.4694,
+        "success_at_1": 0.0,
+        "success_at_3": 0.0,
+        "success_at_5": 0.625
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.225,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1918,
+          "ndcg_at_10": 0.4688,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.12,
+          "p_at_10": 0.3,
+          "mrr": 0.1883,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.113,
+          "ndcg_at_10": 0.4692,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.6
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.0
+        }
+      }
+    },
+    "semantic_only": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.475,
+        "p_at_10": 0.3,
+        "mrr": 0.6292,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6501,
+        "ndcg_at_10": 0.7521,
+        "success_at_1": 0.375,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6155,
+          "ndcg_at_10": 0.699,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.6067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6004,
+          "ndcg_at_10": 0.7303,
+          "success_at_1": 0.4,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.25": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.375,
+        "p_at_10": 0.3,
+        "mrr": 0.4104,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4521,
+        "ndcg_at_10": 0.6292,
+        "success_at_1": 0.125,
+        "success_at_3": 0.5,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.3,
+          "p_at_10": 0.3,
+          "mrr": 0.375,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3398,
+          "ndcg_at_10": 0.5748,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.36,
+          "p_at_10": 0.3,
+          "mrr": 0.4067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4408,
+          "ndcg_at_10": 0.6303,
+          "success_at_1": 0.2,
+          "success_at_3": 0.4,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.50": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.45,
+        "p_at_10": 0.3,
+        "mrr": 0.4833,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5525,
+        "ndcg_at_10": 0.6702,
+        "success_at_1": 0.25,
+        "success_at_3": 0.625,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.375,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4571,
+          "ndcg_at_10": 0.6086,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.4233,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5199,
+          "ndcg_at_10": 0.6477,
+          "success_at_1": 0.2,
+          "success_at_3": 0.6,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "weighted_semantic_0.75": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.45,
+        "p_at_10": 0.3,
+        "mrr": 0.5667,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6031,
+        "ndcg_at_10": 0.7215,
+        "success_at_1": 0.25,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5144,
+          "ndcg_at_10": 0.6686,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.5067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5657,
+          "ndcg_at_10": 0.6935,
+          "success_at_1": 0.2,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.50_q0.01": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.425,
+        "p_at_10": 0.3,
+        "mrr": 0.4104,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5041,
+        "ndcg_at_10": 0.6427,
+        "success_at_1": 0.125,
+        "success_at_3": 0.5,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.375,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4571,
+          "ndcg_at_10": 0.6086,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.4067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4771,
+          "ndcg_at_10": 0.6383,
+          "success_at_1": 0.2,
+          "success_at_3": 0.4,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.50_q0.02": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.425,
+        "p_at_10": 0.3,
+        "mrr": 0.4208,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5041,
+        "ndcg_at_10": 0.6416,
+        "success_at_1": 0.125,
+        "success_at_3": 0.625,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.375,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4409,
+          "ndcg_at_10": 0.5923,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.4233,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4836,
+          "ndcg_at_10": 0.6431,
+          "success_at_1": 0.2,
+          "success_at_3": 0.6,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.50_q0.05": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.35,
+        "p_at_10": 0.3,
+        "mrr": 0.3896,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4074,
+        "ndcg_at_10": 0.6015,
+        "success_at_1": 0.125,
+        "success_at_3": 0.625,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.2916,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4102,
+          "ndcg_at_10": 0.5616,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.32,
+          "p_at_10": 0.3,
+          "mrr": 0.4067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3881,
+          "ndcg_at_10": 0.6047,
+          "success_at_1": 0.2,
+          "success_at_3": 0.6,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.50_q0.10": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.275,
+        "p_at_10": 0.3,
+        "mrr": 0.2437,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.2691,
+        "ndcg_at_10": 0.5202,
+        "success_at_1": 0.0,
+        "success_at_3": 0.125,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5297,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.24,
+          "p_at_10": 0.3,
+          "mrr": 0.24,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2367,
+          "ndcg_at_10": 0.5153,
+          "success_at_1": 0.0,
+          "success_at_3": 0.2,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5257,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.50_q0.15": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.175,
+        "p_at_10": 0.3,
+        "mrr": 0.2,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.164,
+        "ndcg_at_10": 0.4925,
+        "success_at_1": 0.0,
+        "success_at_3": 0.0,
+        "success_at_5": 0.625
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.3,
+          "p_at_10": 0.3,
+          "mrr": 0.225,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2825,
+          "ndcg_at_10": 0.5122,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.12,
+          "p_at_10": 0.3,
+          "mrr": 0.19,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.113,
+          "ndcg_at_10": 0.4859,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 0.4
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.75_q0.01": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.45,
+        "p_at_10": 0.3,
+        "mrr": 0.5458,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5786,
+        "ndcg_at_10": 0.697,
+        "success_at_1": 0.25,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5041,
+          "ndcg_at_10": 0.6584,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.4733,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5428,
+          "ndcg_at_10": 0.6706,
+          "success_at_1": 0.2,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.75_q0.02": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.45,
+        "p_at_10": 0.3,
+        "mrr": 0.4521,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5426,
+        "ndcg_at_10": 0.661,
+        "success_at_1": 0.125,
+        "success_at_3": 0.75,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.4166,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4734,
+          "ndcg_at_10": 0.6277,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.4567,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5322,
+          "ndcg_at_10": 0.66,
+          "success_at_1": 0.2,
+          "success_at_3": 0.6,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.75_q0.05": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.45,
+        "p_at_10": 0.3,
+        "mrr": 0.4312,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5375,
+        "ndcg_at_10": 0.6535,
+        "success_at_1": 0.125,
+        "success_at_3": 0.75,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.4166,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4734,
+          "ndcg_at_10": 0.6277,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.4233,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.524,
+          "ndcg_at_10": 0.648,
+          "success_at_1": 0.2,
+          "success_at_3": 0.6,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.75_q0.10": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.35,
+        "p_at_10": 0.3,
+        "mrr": 0.4,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4084,
+        "ndcg_at_10": 0.6043,
+        "success_at_1": 0.125,
+        "success_at_3": 0.5,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.375,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4409,
+          "ndcg_at_10": 0.5951,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.32,
+          "p_at_10": 0.3,
+          "mrr": 0.39,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3816,
+          "ndcg_at_10": 0.5998,
+          "success_at_1": 0.2,
+          "success_at_3": 0.4,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s0.75_q0.15": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.275,
+        "p_at_10": 0.3,
+        "mrr": 0.2479,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.2732,
+        "ndcg_at_10": 0.5258,
+        "success_at_1": 0.0,
+        "success_at_3": 0.25,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.2916,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3999,
+          "ndcg_at_10": 0.5488,
+          "success_at_1": 0.0,
+          "success_at_3": 0.5,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.24,
+          "p_at_10": 0.3,
+          "mrr": 0.23,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2367,
+          "ndcg_at_10": 0.5166,
+          "success_at_1": 0.0,
+          "success_at_3": 0.2,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5257,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s1.00_q0.01": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.475,
+        "p_at_10": 0.3,
+        "mrr": 0.6292,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.646,
+        "ndcg_at_10": 0.748,
+        "success_at_1": 0.375,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6155,
+          "ndcg_at_10": 0.699,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.6067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5939,
+          "ndcg_at_10": 0.7238,
+          "success_at_1": 0.4,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s1.00_q0.02": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.475,
+        "p_at_10": 0.3,
+        "mrr": 0.6292,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6331,
+        "ndcg_at_10": 0.7352,
+        "success_at_1": 0.375,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6052,
+          "ndcg_at_10": 0.6888,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.6067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5898,
+          "ndcg_at_10": 0.7197,
+          "success_at_1": 0.4,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s1.00_q0.05": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.475,
+        "p_at_10": 0.3,
+        "mrr": 0.5042,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.5898,
+        "ndcg_at_10": 0.6906,
+        "success_at_1": 0.125,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6052,
+          "ndcg_at_10": 0.6888,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.5067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5551,
+          "ndcg_at_10": 0.6829,
+          "success_at_1": 0.2,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s1.00_q0.10": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.375,
+        "p_at_10": 0.3,
+        "mrr": 0.4583,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.4679,
+        "ndcg_at_10": 0.6485,
+        "success_at_1": 0.125,
+        "success_at_3": 0.875,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.4166,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5479,
+          "ndcg_at_10": 0.6315,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.32,
+          "p_at_10": 0.3,
+          "mrr": 0.4667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4233,
+          "ndcg_at_10": 0.6454,
+          "success_at_1": 0.2,
+          "success_at_3": 0.8,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "bounded_s1.00_q0.15": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.325,
+        "p_at_10": 0.3,
+        "mrr": 0.3479,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.3681,
+        "ndcg_at_10": 0.5868,
+        "success_at_1": 0.0,
+        "success_at_3": 0.625,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.4166,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4572,
+          "ndcg_at_10": 0.6243,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.28,
+          "p_at_10": 0.3,
+          "mrr": 0.29,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3106,
+          "ndcg_at_10": 0.5602,
+          "success_at_1": 0.0,
+          "success_at_3": 0.4,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "rrf_k20": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.325,
+        "p_at_10": 0.3,
+        "mrr": 0.3688,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.3648,
+        "ndcg_at_10": 0.576,
+        "success_at_1": 0.125,
+        "success_at_3": 0.375,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5359,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.28,
+          "p_at_10": 0.3,
+          "mrr": 0.39,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3305,
+          "ndcg_at_10": 0.5763,
+          "success_at_1": 0.2,
+          "success_at_3": 0.4,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6546,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "rrf_k60": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.325,
+        "p_at_10": 0.3,
+        "mrr": 0.3688,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.3648,
+        "ndcg_at_10": 0.576,
+        "success_at_1": 0.125,
+        "success_at_3": 0.375,
+        "success_at_5": 0.875
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5359,
+          "success_at_1": 0.0,
+          "success_at_3": 0.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.28,
+          "p_at_10": 0.3,
+          "mrr": 0.39,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3305,
+          "ndcg_at_10": 0.5763,
+          "success_at_1": 0.2,
+          "success_at_3": 0.4,
+          "success_at_5": 0.8
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6546,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    },
+    "two_stage_semantic_20": {
+      "overall": {
+        "queries": 8,
+        "p_at_5": 0.475,
+        "p_at_10": 0.3,
+        "mrr": 0.6292,
+        "recall_at_10": 1.0,
+        "recall_at_20": 1.0,
+        "ndcg_at_5": 0.6501,
+        "ndcg_at_10": 0.7521,
+        "success_at_1": 0.375,
+        "success_at_3": 0.875,
+        "success_at_5": 1.0
+      },
+      "language": {
+        "arabic": {
+          "queries": 2,
+          "p_at_5": 0.5,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6155,
+          "ndcg_at_10": 0.699,
+          "success_at_1": 0.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        },
+        "english": {
+          "queries": 5,
+          "p_at_5": 0.44,
+          "p_at_10": 0.3,
+          "mrr": 0.6067,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6004,
+          "ndcg_at_10": 0.7303,
+          "success_at_1": 0.4,
+          "success_at_3": 0.8,
+          "success_at_5": 1.0
+        },
+        "mixed": {
+          "queries": 1,
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1.0,
+          "success_at_3": 1.0,
+          "success_at_5": 1.0
+        }
+      }
+    }
+  },
+  "per_query": [
+    {
+      "id": "t01",
+      "query": "municipal water authority",
+      "language": "english",
+      "query_class": "entity",
+      "relevant": [
+        "wa01",
+        "wa02",
+        "wa03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5932,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            7
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.6039,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.6039,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5642,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5249,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            9
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4565,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            8,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.5051,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            7
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5582,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            6,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5582,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            6,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6183,
+          "ndcg_at_10": 0.6183,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "semantic_scores": {
+        "wa01": 0.693478,
+        "wa02": 0.678597,
+        "wa03": 0.687484,
+        "wa04": 0.563087,
+        "wa05": 0.712,
+        "wa06": 0.640569,
+        "wa07": 0.748595,
+        "wa08": 0.651984,
+        "wa09": 0.598708,
+        "wa10": 0.567696,
+        "px03": 0.479135,
+        "bo01": 0.245428
+      }
+    },
+    {
+      "id": "t02",
+      "query": "renewable energy storage",
+      "language": "english",
+      "query_class": "topic",
+      "relevant": [
+        "re01",
+        "re02",
+        "re03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5066,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8529,
+          "ndcg_at_10": 0.8529,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            5
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.8529,
+          "ndcg_at_10": 0.8529,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            5
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "semantic_scores": {
+        "re01": 0.716463,
+        "re02": 0.68384,
+        "re03": 0.728297,
+        "re04": 0.545303,
+        "re05": 0.63521,
+        "re06": 0.63742,
+        "re07": 0.666252,
+        "re08": 0.553309,
+        "re09": 0.393199,
+        "re10": 0.570052
+      }
+    },
+    {
+      "id": "t03",
+      "query": "National Cyber Center",
+      "language": "english",
+      "query_class": "exact_entity",
+      "relevant": [
+        "nc01",
+        "nc02",
+        "nc03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4844,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5173,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            6,
+            8
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5726,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            7
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6871,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            7
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5317,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.634,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.634,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5317,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.634,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            7
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2961,
+          "ndcg_at_10": 0.6113,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            6,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5066,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            7,
+            8
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "nc01": 0.661444,
+        "nc02": 0.632921,
+        "nc03": 0.699361,
+        "nc04": 0.627886,
+        "nc05": 0.655504,
+        "nc06": 0.658776,
+        "nc07": 0.618792,
+        "nc08": 0.705097,
+        "nc09": 0.552189,
+        "nc10": 0.588307
+      }
+    },
+    {
+      "id": "t04",
+      "query": "phoenix",
+      "language": "english",
+      "query_class": "short_ambiguous",
+      "relevant": [
+        "px01",
+        "px02",
+        "px03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.125,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.425,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            8,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.49,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            9
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4441,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            9,
+            10
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4441,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            9,
+            10
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4967,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            8
+          ]
+        }
+      },
+      "semantic_scores": {
+        "px01": 0.471161,
+        "px02": 0.424572,
+        "px03": 0.480636,
+        "px04": 0.29339,
+        "px05": 0.450326,
+        "px06": 0.490045,
+        "px07": 0.481946,
+        "px08": 0.588909,
+        "px09": 0.512079,
+        "px10": 0.414081
+      }
+    },
+    {
+      "id": "t05",
+      "query": "وزارة الموارد المائية",
+      "language": "arabic",
+      "query_class": "entity",
+      "relevant": [
+        "wm01",
+        "wm02",
+        "wm03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.479,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5317,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            8
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5317,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            8
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "wm01": 0.672328,
+        "wm02": 0.709928,
+        "wm03": 0.663832,
+        "wm04": 0.686683,
+        "wm05": 0.713652,
+        "wm06": 0.668394,
+        "wm07": 0.485576,
+        "wm08": 0.447851,
+        "wm09": 0.577274,
+        "wm10": 0.624505
+      }
+    },
+    {
+      "id": "t06",
+      "query": "التعليم الرقمي",
+      "language": "arabic",
+      "query_class": "topic",
+      "relevant": [
+        "de01",
+        "de02",
+        "de03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            10
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4585,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2961,
+          "ndcg_at_10": 0.5989,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            6,
+            10
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6664,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            10
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.672,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            9
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6664,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            10
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6338,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            10
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5724,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            10
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5193,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            10
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4844,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            6,
+            10
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.672,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.672,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.672,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6395,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5574,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            9
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6797,
+          "ndcg_at_10": 0.6797,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            5
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5401,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "semantic_scores": {
+        "de01": 0.749207,
+        "de02": 0.780607,
+        "de03": 0.750175,
+        "de04": 0.636421,
+        "de05": 0.8332,
+        "de06": 0.714822,
+        "de07": 0.678249,
+        "de08": 0.64879,
+        "de09": 0.631206,
+        "de10": 0.544065
+      }
+    },
+    {
+      "id": "t07",
+      "query": "Baghdad Open Data",
+      "language": "mixed",
+      "query_class": "mixed_entity",
+      "relevant": [
+        "bo01",
+        "bo02",
+        "bo03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4716,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            7,
+            8
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            4
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            4
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            4
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5257,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            6,
+            7
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2021,
+          "ndcg_at_10": 0.5257,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            6,
+            7
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.906,
+          "ndcg_at_10": 0.906,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            3,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.7328,
+          "ndcg_at_10": 0.7328,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.5307,
+          "ndcg_at_10": 0.6979,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            3,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4776,
+          "ndcg_at_10": 0.6448,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            5,
+            6
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6546,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            7
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6546,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            7
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.6,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.9675,
+          "ndcg_at_10": 0.9675,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            2,
+            4
+          ]
+        }
+      },
+      "semantic_scores": {
+        "re03": 0.192855,
+        "bo01": 0.807757,
+        "bo02": 0.821469,
+        "bo03": 0.821799,
+        "bo04": 0.7624,
+        "bo05": 0.814419,
+        "bo06": 0.702866,
+        "bo07": 0.397869,
+        "bo08": 0.738047,
+        "bo09": 0.770757,
+        "bo10": 0.74784,
+        "ot01": 0.224075,
+        "ot10": 0.144903
+      }
+    },
+    {
+      "id": "t08",
+      "query": "orion telemetry",
+      "language": "english",
+      "query_class": "rare_topic",
+      "relevant": [
+        "ot01",
+        "ot02",
+        "ot03"
+      ],
+      "strategies": {
+        "current_baseline": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1429,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4457,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            7,
+            8,
+            9
+          ]
+        },
+        "improved_lexical": {
+          "p_at_5": 0.0,
+          "p_at_10": 0.3,
+          "mrr": 0.1667,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.4441,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 0,
+          "relevant_ranks": [
+            6,
+            9,
+            10
+          ]
+        },
+        "semantic_only": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8385,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            6
+          ]
+        },
+        "weighted_semantic_0.25": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "weighted_semantic_0.50": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "weighted_semantic_0.75": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4162,
+          "ndcg_at_10": 0.5833,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.50_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5848,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            8
+          ]
+        },
+        "bounded_s0.50_q0.10": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.2346,
+          "ndcg_at_10": 0.5431,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            6,
+            9
+          ]
+        },
+        "bounded_s0.50_q0.15": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.4792,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            9
+          ]
+        },
+        "bounded_s0.75_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.6039,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.25,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.3836,
+          "ndcg_at_10": 0.5508,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            4,
+            5,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.6039,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            6
+          ]
+        },
+        "bounded_s0.75_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5848,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            8
+          ]
+        },
+        "bounded_s0.75_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.578,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            9
+          ]
+        },
+        "bounded_s1.00_q0.01": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8385,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.02": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8385,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.05": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.5,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4982,
+          "ndcg_at_10": 0.6653,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            2,
+            4,
+            6
+          ]
+        },
+        "bounded_s1.00_q0.10": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5932,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            7
+          ]
+        },
+        "bounded_s1.00_q0.15": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 0.3333,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.4367,
+          "ndcg_at_10": 0.5848,
+          "success_at_1": 0,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            3,
+            4,
+            8
+          ]
+        },
+        "rrf_k20": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "rrf_k60": {
+          "p_at_5": 0.2,
+          "p_at_10": 0.3,
+          "mrr": 0.2,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.1815,
+          "ndcg_at_10": 0.486,
+          "success_at_1": 0,
+          "success_at_3": 0,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            5,
+            7,
+            8
+          ]
+        },
+        "two_stage_semantic_20": {
+          "p_at_5": 0.4,
+          "p_at_10": 0.3,
+          "mrr": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_20": 1.0,
+          "ndcg_at_5": 0.6714,
+          "ndcg_at_10": 0.8385,
+          "success_at_1": 1,
+          "success_at_3": 1,
+          "success_at_5": 1,
+          "relevant_ranks": [
+            1,
+            4,
+            6
+          ]
+        }
+      },
+      "semantic_scores": {
+        "ot01": 0.3994,
+        "ot02": 0.454292,
+        "ot03": 0.46716,
+        "ot04": 0.274606,
+        "ot05": 0.454664,
+        "ot06": 0.331467,
+        "ot07": 0.448068,
+        "ot08": 0.368575,
+        "ot09": 0.373372,
+        "ot10": 0.465048
+      }
+    }
+  ]
+}

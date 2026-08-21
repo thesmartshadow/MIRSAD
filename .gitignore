@@ -1,0 +1,55 @@
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.run/
+data/models/
+.DS_Store
+
+# MIRSAD local/private runtime
+.env
+.venv/
+.run/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+apps/web/node_modules/
+
+# Local databases
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/*.sqlite
+data/*.sqlite3
+
+# Local runtime/temp
+*.log
+.DS_Store
+
+# Generated Python/package/session artifacts
+*.egg-info/
+:memory:.ses
+
+# Test/build artifacts
+coverage/
+dist/
+playwright-report/
+test-results/

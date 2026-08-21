@@ -1,0 +1,3542 @@
+[
+  {
+    "queue_id": "04fcdf06f9ab0c1be481",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "85010b81-2cc6-4fcb-9bd7-b4ab97036c61",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تعلن إنجاز عدد من المراكز الصحية ووحدات الماء بقرى ميسان ضمن مشاريع الصندوق الاجتماعي",
+    "text": "وزارة التخطيط تعلن إنجاز عدد من المراكز الصحية ووحدات الماء بقرى ميسان ضمن مشاريع الصندوق الاجتماعي",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=bEoA91drquc",
+    "production_rank": null,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "0792b7b9d9755b6df6f1",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "efd062ac-5db3-4d7b-8177-5aea4a2d6fc7",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Deletes all instances of Microsoft's GDID and prevents minting of new ones",
+    "text": "Trying to make windows work differently than what Microsoft wants is a losing proposition.<p>It would make more sense just not use windows to begin with.",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://github.com/yegors/deGDID",
+    "production_rank": null,
+    "shadow_fusion_rank": 10,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "086d9d3f81c36992b02d",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "ba0d013b-60f3-418c-8f14-54dbae47cd02",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "الفرق المتخصصة في وزارة التخطيط تطّلع ميدانيا على مشروع تجهيز وتنفيذ محطتي معالجة مجاري الناصرية",
+    "text": "الفرق المتخصصة في وزارة التخطيط تطّلع ميدانيا على مشروع تجهيز وتنفيذ محطتي معالجة مجاري الناصرية",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=8C2Sx9Vth2I",
+    "production_rank": null,
+    "shadow_fusion_rank": 5,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "19a07392eadc51cb0e5c",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "95e5655a-740a-4423-9a35-ebcc1760d1a3",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "فلوق توأم الذكاء الاصطناعي | من المستشفى الى الفضاء!",
+    "text": "لا تنسى تشترك بكذا تدعمني استمر وانزل محتوى افضل واجمل وفعل جرس التنبيهات❤️   - تعلم أساسيات عمل مقاطع بالذكاء ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=gs_1XxNeVsI",
+    "production_rank": null,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "211f226b38dcec6eea2c",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "7f6a1892-158a-44d9-86dd-ad4418a1d6a8",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "دور وزارة التخطيط في تنفيذ البرنامج الحكومي",
+    "text": "تعمل وزارة التخطيط العراقية مع الوزارات والمؤسسات الحكومية الأخرى لضمان التنفيذ الفعال والسريع والناجح لبرنامج الحكومة العراقية ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=HeDVGvvVhFU",
+    "production_rank": null,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "25a7e25ad5f9010535f4",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "0014a179-1b06-416f-bb8f-589bd9efb74a",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "٧ أدوات من الذكاء الاصطناعي ستفجر مشروعك وتضاعف انتاجيتك!!",
+    "text": "عشان البرومبتس اكتب (برومبت) عالخاص عندي في الانستا وتوصلك: https://www.instagram.com/sahelmahdi الاداة الأولى: ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=lKJMzAwrfwc",
+    "production_rank": null,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "26b1edc16ca95d292907",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "26a240a6-33b2-4a6e-ab34-7457cdb7d39e",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "The Truth About AI - الذكاء الاصطناعي | #ABtalks Special with Mo Gawdat | مع محمد جودت",
+    "text": "Mo Gawdat, Egyptian entrepreneur and former Chief Business Officer at Google X, breaks down the true meaning of AI and its ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=7WvKcFsAj6E",
+    "production_rank": null,
+    "shadow_fusion_rank": 7,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "33dbbf77d783ec407a89",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "2a820a50-727f-4995-a390-0ab9897b7e26",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "خليت الذكاء الاصطناعي يصمم أغرب  الكيكات | صدمه ! 🤯",
+    "text": "في فيديو اليوم خليت شات جي بي تي يصمم كيكات غريبه ورحت الى اسواء وافضل محل ! سبسكريب لقناتي: ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=J_gtYOB-1t4",
+    "production_rank": null,
+    "shadow_fusion_rank": 2,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "34f50c77af0d275eea8f",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "4b3df0b8-8982-4902-9a90-e5e7f697104c",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Deletes all instances of Microsoft's GDID and prevents minting of new ones",
+    "text": "<a href=\"https:&#x2F;&#x2F;www.ghacks.net&#x2F;2026&#x2F;07&#x2F;12&#x2F;microsoft-confirms-windows-gdid-device-identifier-that-cannot-be-disabled-documented-in-fbi-case-filing&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.ghacks.net&#x2F;2026&#x2F;07&#x2F;12&#x2F;microsoft-confirms-windows...</a>",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://github.com/yegors/deGDID",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "5d653adfbd42dffd108a",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "444d7c3e-bf3a-4244-b1aa-d0e3ba3b80a9",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Microsoft Windows Edit Trend #windows #shorts #edit",
+    "text": "MS-Edit will become the best Windows editor someday, make sure to subscribe!",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=nnL2T8VjScs",
+    "production_rank": null,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "761125c5de84cdecc044",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "ba8606a9-67f3-4e60-9f98-51e6f531c529",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "محور توطين الرواتب مع المتحدث باسم وزارة التخطيط",
+    "text": "محور توطين الرواتب مع المتحدث باسم وزارة التخطيط #حديث_بغداد #MBC_العراق شاهد الحلقات : http://onshahid.net/61871InRZ MBC ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=RCr9MSEMxE8",
+    "production_rank": null,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "7afeb4ea60f36a835020",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "9b3fd472-ee15-446b-9d67-05671943c675",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تعلنُ عن قرب إنجاز مشروع تبطين جدول ري الحويجة الرئيسي في مُحافظة كركوك",
+    "text": "وزارة التخطيط تعلنُ عن قرب إنجاز مشروع تبطين جدول ري الحويجة الرئيسي في مُحافظة كركوك",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=LC-ckhGW8JE",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "818df0e84de1654d55ed",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "04db7089-aeaf-4443-9c72-78a70ede57e5",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "محاكي الطائرات العراق رحلة من اربيل الى الموصل microsoft flight simulator 2020 Iraq Mosul",
+    "text": "الدسكور:https://discord.com/invite/GpctfJGuHd للتواصل معي :https://www.instagram.com/fiqar.2021/ رابط البيج بثوث ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=ExljxTwBAsk",
+    "production_rank": null,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "86d45959176130d516a1",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "9b3fd472-ee15-446b-9d67-05671943c675",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تعلنُ عن قرب إنجاز مشروع تبطين جدول ري الحويجة الرئيسي في مُحافظة كركوك",
+    "text": "وزارة التخطيط تعلنُ عن قرب إنجاز مشروع تبطين جدول ري الحويجة الرئيسي في مُحافظة كركوك",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=LC-ckhGW8JE",
+    "production_rank": null,
+    "shadow_fusion_rank": 7,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "9eed596a91ed10ec7ff9",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "5bf5e911-0d0c-4aed-a183-e828bdc71fd6",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "Njmawad4/-",
+    "text": "اريد تجميع وسائل وادوات الذكاء الاصطناعي المجاني ",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/Njmawad4/-",
+    "production_rank": null,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a3a5a38f7d96f9459b0d",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "1f26b76f-23b6-4c83-a157-79dcc7089c4c",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "صادم: هل الذكاء الاصطناعي اختراع شيطاني؟  وهل تم التلاعب بجينات البشر ونعيش في &quot;أرض تانية&quot;؟!",
+    "text": "في هذه الحلقة من \"حقيقة ولا خيال\"، نغوص في تساؤلات وجودية صادمة حول ما إذا كنا نعيش في واقع زائف، حيث نستكشف فرضيات مثيرة ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=rZnCBgPn36w",
+    "production_rank": null,
+    "shadow_fusion_rank": 10,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a4c2a1b39fb5c5e63723",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "7f6a1892-158a-44d9-86dd-ad4418a1d6a8",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "دور وزارة التخطيط في تنفيذ البرنامج الحكومي",
+    "text": "تعمل وزارة التخطيط العراقية مع الوزارات والمؤسسات الحكومية الأخرى لضمان التنفيذ الفعال والسريع والناجح لبرنامج الحكومة العراقية ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=HeDVGvvVhFU",
+    "production_rank": null,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b135234385c5235c18ef",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "c57f74ad-aa52-47b4-8611-b4b952ed7a3b",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "خارطة الطريق لتعلم الذكاء الإصطناعي لتحقيق دخل في 2025 - مدرسة المال",
+    "text": "حقق دخل جانبي بالذكاء الاصطناعي! إنضم للأكاديمية اليوم مجانا : (MONITIZE AI سابقا) tg-academy.ai للتواصل على الانستاجرام ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=wEQlr9n6hII",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "bb83769b9a10c94a8277",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "f63dd625-7fca-43c5-8073-133ecc8b2ea6",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "فلوق توأم الذكاء الاصطناعي | اخطر سرقة في التاريخ!",
+    "text": "لا تنسى تشترك بكذا تدعمني استمر وانزل محتوى افضل واجمل وفعل جرس التنبيهات❤️   - تعلم أساسيات عمل مقاطع بالذكاء ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=y9dUAxnn8wk",
+    "production_rank": null,
+    "shadow_fusion_rank": 1,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "c7c889d5d8bd44548f74",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "b51ae8e7-2b9f-4c5f-96fc-4cd9ab853703",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "الصين على وشك تفجير فقاعة الذكاء الاصطناعي!",
+    "text": "ماذا لو كانت طفرة الذكاء الاصطناعي التي دفعت أسهم التكنولوجيا الأمريكية إلى مستويات قياسية مبنية على افتراض قد لا يستمر طويلًا؟",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=Wmw44ZtxdHU",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "c95d58e7518a8c8eb9ac",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "5547a685-3c91-4457-9c3f-ae0115a6ac56",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "الذكاء الاصطناعي القديم مات!.. عملاق الـ AI Agents نظام Manus يدير شغلك بالكامل وأنت نائم!",
+    "text": "شرح عملي وتفصيلي شامل لعملاق الـ AI Agents أداة Manus AI بتحديثات عام 2026 الثورية. في هذا الفيديو، ستتعلم كيف تنتقل من ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=rGs9wwLRae8",
+    "production_rank": null,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "dc21c59b45353a3f2071",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "85010b81-2cc6-4fcb-9bd7-b4ab97036c61",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تعلن إنجاز عدد من المراكز الصحية ووحدات الماء بقرى ميسان ضمن مشاريع الصندوق الاجتماعي",
+    "text": "وزارة التخطيط تعلن إنجاز عدد من المراكز الصحية ووحدات الماء بقرى ميسان ضمن مشاريع الصندوق الاجتماعي",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=bEoA91drquc",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "e0be400a1c82cef34850",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "ba8606a9-67f3-4e60-9f98-51e6f531c529",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "محور توطين الرواتب مع المتحدث باسم وزارة التخطيط",
+    "text": "محور توطين الرواتب مع المتحدث باسم وزارة التخطيط #حديث_بغداد #MBC_العراق شاهد الحلقات : http://onshahid.net/61871InRZ MBC ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=RCr9MSEMxE8",
+    "production_rank": null,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "e449076d2a8c81317617",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "ba0d013b-60f3-418c-8f14-54dbae47cd02",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "الفرق المتخصصة في وزارة التخطيط تطّلع ميدانيا على مشروع تجهيز وتنفيذ محطتي معالجة مجاري الناصرية",
+    "text": "الفرق المتخصصة في وزارة التخطيط تطّلع ميدانيا على مشروع تجهيز وتنفيذ محطتي معالجة مجاري الناصرية",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=8C2Sx9Vth2I",
+    "production_rank": null,
+    "shadow_fusion_rank": 6,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "ecee58dea7b025cfa35b",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "ecc3bb82-fd61-4b47-b23d-7221d65e015d",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "Almlek/-",
+    "text": "تحضير الدروس المدرسية للمعلمين بواسطة الذكاء الاصطناعي ",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/Almlek/-",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "f95b0a157c0dbadc499a",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "e3b38729-fba7-47f1-9f62-59354c9d2a29",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "خليت الذكاء الاصطناعي يتحكم بينا",
+    "text": "اشترك الان بقناة يوميات واحد عراقي لكي يصلك كل جديد https://goo.gl/anVc0j فيس بوك http://facebook.com/iraqDAYiraq تابعونا على ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=vzmDUiDplGo",
+    "production_rank": null,
+    "shadow_fusion_rank": 6,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 20,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "0959cc6507e9b0c522d9",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "b7d0bbbd-ced3-4fcf-86e1-ef5655a58534",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": null,
+    "text": "ناقصكم الصورة تبع انا وزارة التخطيط وهي وزارة التنفيذ",
+    "source": "bluesky",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://bsky.app/profile/kaya.sysky.club/post/3mdggdxf5222t",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 14,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "1a456082fd50ef3df580",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "b7d0bbbd-ced3-4fcf-86e1-ef5655a58534",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": null,
+    "text": "ناقصكم الصورة تبع انا وزارة التخطيط وهي وزارة التنفيذ",
+    "source": "bluesky",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://bsky.app/profile/kaya.sysky.club/post/3mdggdxf5222t",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 13,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b4f773b0d8ac7c6a8dff",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "35f35fd2-ae14-4b32-8496-63e03f0d0aab",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Download &amp; Install Microsoft Office 2024 on Windows 10 / 11 PC or Laptop (Official Guide)",
+    "text": "Want to Download & install Microsoft Office 2024 on your Windows 10 and Windows 11 PC or laptop? In this step by step guide, ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=kdK5oZD_d_c",
+    "production_rank": 10,
+    "shadow_fusion_rank": 7,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 13,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "38508bc18e727f44ab73",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "15310b78-d480-4f3c-a950-598590fd689d",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "alyagoutmohammed66-ai/ai-for-everyone-notes",
+    "text": "ملخصات و ملاحظات كورس الذكاء الاصطناعي للجميع ",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/alyagoutmohammed66-ai/ai-for-everyone-notes",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "466fecf92f6a91ceef44",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "7ad78b4d-5c0e-4fa2-958a-537a79ea259e",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابعُ ميدانياً مشروع بناء عدد من المدارس في محافظة النجف الأشرف",
+    "text": "وزارة التخطيط تتابعُ ميدانياً مشروع بناء عدد من المدارس في محافظة النجف الأشرف",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=lJeqCP865Uw",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "51e0a7062dfd99a8ef68",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "7ad78b4d-5c0e-4fa2-958a-537a79ea259e",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابعُ ميدانياً مشروع بناء عدد من المدارس في محافظة النجف الأشرف",
+    "text": "وزارة التخطيط تتابعُ ميدانياً مشروع بناء عدد من المدارس في محافظة النجف الأشرف",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=lJeqCP865Uw",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a38c5799eac9266fb2f7",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "d8a77d04-d2ec-4a68-bbc6-d22fb9719809",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابع ميدانياً مشروع إنشاء 33 مدرسة بالكونكريت الجاهز في كربلاء المقدسة",
+    "text": "وزارة التخطيط تتابع ميدانياً مشروع إنشاء 33 مدرسة بالكونكريت الجاهز في كربلاء المقدسة",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=wGcwK_CJ0IU",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b279362af6bb35420c20",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "c42ac81a-f75f-4d55-a29b-17dc95b2f87a",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "رستم: التقرير الوطني الطوعي الرابع لمصر يمثل تطورًا نوعيًا ويقدم تحليلاً أعمق يربط بين التخطيط والتمويل 121NEWS",
+    "text": "نظمت وزارة التخطيط والتنمية الاقتصادية، بالشراكة مع برنامج الأمم المتحدة الإنمائي (UNDP)، حدثًا جانبيًا رفيع المستوى بعنوان “تسريع تنفيذ أهداف التنمية المستدامة من خلال تكامل التقارير والتمويل والتنمية على المستوى المحلي”، وذلك ضمن فعاليات المنتدى السياسي رفيع المستوى المعني بالتنمية المستدامة (HLPF 2026)، بمقر الأمم المتحدة في نيويورك. شهد الحدث حضورًا استثنائيًا لنخبة من صناع […]",
+    "source": "bluesky",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://bsky.app/profile/onnews.bsky.social/post/3mqrm2zlspn2j",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b669a1f0b6bcd2a4dbee",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "340c7c35-8b97-4574-9551-d12f4a449205",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "الذكاء الاصطناعي يتحكم في حياتي بالهند😟🇮🇳(ورطني مع الهنود)",
+    "text": "رابط قروب الواتس: https://whatsapp.com/channel/0029Vb6rE1XGJP8GlYQ5J00R القناة الثانيه: ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=h_060hXzYPY",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 12,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "070ca55c08cecbd610a7",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "c42ac81a-f75f-4d55-a29b-17dc95b2f87a",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "رستم: التقرير الوطني الطوعي الرابع لمصر يمثل تطورًا نوعيًا ويقدم تحليلاً أعمق يربط بين التخطيط والتمويل 121NEWS",
+    "text": "نظمت وزارة التخطيط والتنمية الاقتصادية، بالشراكة مع برنامج الأمم المتحدة الإنمائي (UNDP)، حدثًا جانبيًا رفيع المستوى بعنوان “تسريع تنفيذ أهداف التنمية المستدامة من خلال تكامل التقارير والتمويل والتنمية على المستوى المحلي”، وذلك ضمن فعاليات المنتدى السياسي رفيع المستوى المعني بالتنمية المستدامة (HLPF 2026)، بمقر الأمم المتحدة في نيويورك. شهد الحدث حضورًا استثنائيًا لنخبة من صناع […]",
+    "source": "bluesky",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://bsky.app/profile/onnews.bsky.social/post/3mqrm2zlspn2j",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "3082e16533931bb2c2e8",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "99468c5d-533d-4457-b45c-09a4796a0a1e",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابع ميدانيًا مشروع بناء (25) مدرسة في محافظة ديالى",
+    "text": "وزارة التخطيط تتابع ميدانيًا مشروع بناء (25) مدرسة في محافظة ديالى",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=5Ot1yI2yYdM",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "4377bda98f8379e773b0",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "c8a04317-b60c-445d-92db-65ebbc83d273",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "microsoft/winget-pkgs",
+    "text": "The Microsoft community Windows Package Manager manifest repository",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/microsoft/winget-pkgs",
+    "production_rank": 4,
+    "shadow_fusion_rank": 5,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "4958a625501723767656",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "a53fcdd6-5fe1-46c1-89a8-3822fc4041e7",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط: قرب إنجاز مشروع مجمع ماء “يا حسين” في النجف الأشرف",
+    "text": "وزارة التخطيط: قرب إنجاز مشروع مجمع ماء “يا حسين” في النجف الأشرف",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=6jD4WQav79k",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "5a861efeb9f08e00f091",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "7f7eb404-bc33-4a9c-8eb5-a15ff157f8bf",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "الورشة الافتراضية في كلية العراق الجامعة بعنوان (Microsoft office 365 &amp; its modules) على منصة ZOOM",
+    "text": "اعلام_الجامعة يرجى المتابعة والاشتراك في الصفحات الرسمية لكلية العراق الجامعة ليصلكم كل ما هو جديدنا .. كونوا معنا .. مع تمنياتنا ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=M-Pu66srbkE",
+    "production_rank": 1,
+    "shadow_fusion_rank": 2,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "7c0d2542452cea03cfda",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "146bcbd0-572c-4988-900e-0ac2c896233f",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Windows Edit // #edit #microsoft #windows #foryou #viral #fyp #trend",
+    "text": "Windows Edit // #edit #microsoft #windows #foryou #viral #fyp #trend",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=VQ3t7XokFoI",
+    "production_rank": 7,
+    "shadow_fusion_rank": 6,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "d70fab47f3c03a3edd3c",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "3dd6df4a-0bea-489e-92a0-ef9ee0cbb5d0",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "محاكي الطائرات من الكويت الى كربلاء العراق microsoft flight simulator 2020 Iraq",
+    "text": "الدسكور:https://discord.com/invite/GpctfJGuHd للتواصل معي :https://www.instagram.com/fiqar.2021/ رابط البيج بثوث ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=kjRbj8pAZSY",
+    "production_rank": 2,
+    "shadow_fusion_rank": 1,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "ee9216e2a832d62e0ad0",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "51fb87e1-9a7e-401f-b04f-c4ffd528409a",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تُقدم الخِدمات الأساسية لعدد من المدارس في أطراف بغداد",
+    "text": "وزارة التخطيط تُقدم الخِدمات الأساسية لعدد من المدارس في أطراف بغداد",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=v8RBwTMDRIw",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "f0f9a153d9e3ab2956f2",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "bca17b5c-8ee8-47af-9b0c-6d28795ff950",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Install Microsoft Office FREE on Windows (Official Method)",
+    "text": "Full step-by-step Guide: https://techydruid.com/office-free/ In this video, I show how to use Microsoft Office Apps for free on any ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=8Aw8LqBhdzE",
+    "production_rank": 3,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "f9891e7c3654c04411fc",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "a53fcdd6-5fe1-46c1-89a8-3822fc4041e7",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط: قرب إنجاز مشروع مجمع ماء “يا حسين” في النجف الأشرف",
+    "text": "وزارة التخطيط: قرب إنجاز مشروع مجمع ماء “يا حسين” في النجف الأشرف",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=6jD4WQav79k",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 11,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "0534583d61a2a584a73c",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "6b486a29-36c1-4d91-a552-9b01e3837333",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Climate Adaptation is About People",
+    "text": "Around the world, climate change is already impacting lives and livelihoods, especially in the world's poorest countries.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=mbHIzuFTAAg",
+    "production_rank": null,
+    "shadow_fusion_rank": 6,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "09c205491e48cbcf6c90",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "2ea43285-58bb-4274-8c3a-a801b176ae49",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "سبع معلومات لا تشاركها أبدا مع الذكاء الاصطناعي .. ما هي؟ | تواصل",
+    "text": "سبع معلومات لا تشاركها أبدا مع الذكاء الاصطناعي .. ما هي؟ | تواصل تابعوا أبرز الأخبار، وآخر مستجدات الأحداث العربية والعالمية، عبر ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=6Fam15F4zSE",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "0d53023484e30e65b8a5",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "c1a44fd7-6b98-4569-91cc-dcf1452e2796",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Deletes all instances of Microsoft's GDID and prevents minting of new ones",
+    "text": "Unless they just hardcode an IP to their DNS server of choice or even hardcode an IP to a specific Microsoft tracking host",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://github.com/yegors/deGDID",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "151045f6b4ca45da3fa7",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "99468c5d-533d-4457-b45c-09a4796a0a1e",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابع ميدانيًا مشروع بناء (25) مدرسة في محافظة ديالى",
+    "text": "وزارة التخطيط تتابع ميدانيًا مشروع بناء (25) مدرسة في محافظة ديالى",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=5Ot1yI2yYdM",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "151fa7777db2bf617209",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "cd101cb4-49f5-4cfd-b19b-be3a6502ead2",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "ROBLOX WILL STOP WORKING ON THE MICROSOFT STORE😭",
+    "text": "roblox will stop working after the upcoming update for the microsoft store.. ❤️ HELP ME REACH 200000 SUBSCRIBERS: ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=kzWsQrjPkvg",
+    "production_rank": null,
+    "shadow_fusion_rank": 7,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "1c2d418b0671251f26d0",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "d6f722c4-9896-42f3-9fa7-f71e77353ec4",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط العراقية",
+    "text": "وزارة التخطيط العراقية",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/channel/UCaXoeg81TCcViwq6dmrUkYg",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "1f3629ee6eb327ed1b8d",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "c1cf9ad5-d818-4bf1-a4b8-caf1a54adc1c",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "99% of People Use Microsoft Loop Wrong",
+    "text": "Get your time and headspace back — my full Microsoft 365 Masterclass: https://link.m365coaching.com/4wdRVKa Stop drowning ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=2NFkFhhaX0g",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "225f7b888b7e429a0c94",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "7dc77678-b743-44c1-a6c7-7c30e1e26db5",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "OpenAI is 70% of Microsoft AI Revenue - Circular Financing All the Way Down",
+    "text": "Spotify - https://open.spotify.com/show/1KkKuQe82tf1bW78ReQ0wM Apple Podcasts ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=GV08yxqwnA4",
+    "production_rank": null,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "22a37e7bdd3e2dcecd1a",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "ac8770d8-063d-4630-95bd-2f3d6a306f02",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "How to Create Microsoft Account in Laptop 2026 | Microsoft Account Kaise Banaye🔥 Microsoft ID Create",
+    "text": "How to Create Microsoft Account in Laptop 2026 | Microsoft Account Kaise Banaye   Microsoft ID Create 🛠️ Accidentally got a ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=B7pTlmjsZSU",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "22e55171f5bb860c978b",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "c2897be2-c84f-4765-99a2-c9b0bd940a6b",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Slow Microsoft Tokens",
+    "text": "Writer: Kyler Himes Editor: Rikus Strauss Music by: @UFD-Music.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=eIZMzaS2y4I",
+    "production_rank": null,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "2fdd3cb7f2dd59d0d57e",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "9a7e3e08-792a-41d4-bfb0-245cd7bbefc0",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "فرق وزارة التخطيط تتابع ميدانيا محطة الكفيل الثانوية وتطّلع على مراحل سير العمل فيها",
+    "text": "فرق وزارة التخطيط تتابع ميدانيا محطة الكفيل الثانوية وتطّلع على مراحل سير العمل فيها",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=-qQ1n7lJ4qg",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "365c5d090f6a3cd60947",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "5072a8c0-6d24-494d-8569-3bf671438583",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "شرح كل نماذج الذكاء الاصطناعي في 16 دقيقة",
+    "text": "الذكاء الاصطناعي أصبح في كل مكان… لكن أغلب الناس لا يعرفون الفرق بين النماذج المختلفة وكيف تعمل فعلًا. في هذا الفيديو هنشرح ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=IbCO5fAL3hw",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "37686e5c9bd82758f667",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "151b585c-8ec7-4362-981d-6f68bbf08f96",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "How to Create Microsoft Account in mobile phone | microsoft account create",
+    "text": "How to Create Microsoft Account In this video, I'll show you how to quickly and easily create a Microsoft account using your mobile ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=32Tlp0cXcPc",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "446bd876479d11c61e79",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "8a2b45c3-e8ba-4f97-96ff-b623f3741624",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "What on Earth is Climate Adaptation",
+    "text": "Climate change has become the single largest health threat facing humanity — we need to start adapting. But, WHAT ON EARTH ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=FyuLdMWxYZY",
+    "production_rank": null,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "57fb61274b1a60310d7f",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "8d345191-7e8c-4935-a8ec-960a87f004ca",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "فيلم الذكاء الاصطناعي #مهيمن_علاء ",
+    "text": "فيلم الذكاء الاصطناعي #مهيمن_علاء ",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=eaIJW3HxGzg",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "5daf4e24cc4387d5c94f",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "52e17585-a336-400c-ae98-14261c60f61e",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Climate adaptation: how can we build resilience?",
+    "text": "The Commission, on 24 February 2021, adopted the new EU strategy on climate change adaptation which aims at enhancing the ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=mvrbyKDDgmw",
+    "production_rank": null,
+    "shadow_fusion_rank": 5,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "65814ba728712a0bebf4",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "9a7e3e08-792a-41d4-bfb0-245cd7bbefc0",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "فرق وزارة التخطيط تتابع ميدانيا محطة الكفيل الثانوية وتطّلع على مراحل سير العمل فيها",
+    "text": "فرق وزارة التخطيط تتابع ميدانيا محطة الكفيل الثانوية وتطّلع على مراحل سير العمل فيها",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=-qQ1n7lJ4qg",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "682e8f717cd73fe1fd51",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "a17c5fd1-cfca-4e61-b4ac-8a2b3be486d3",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تطلق برنامج “المُبتكر الجديد – مُستقبل العراق 2025”",
+    "text": "وزارة التخطيط تطلق برنامج “المُبتكر الجديد – مُستقبل العراق 2025”",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=kKvIBDmVts8",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "6c3b7e8c10a778442bf5",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "7ff5e0f1-f1b7-47e0-b4c8-c2def1d9f2ad",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "الذكاء الاصطناعي اخطر مما تتوقع",
+    "text": "الهدف 7 مليون مشترك https://www.youtube.com/@AbulSadiq ✓ حساباتي فيسبوك: https://www.facebook.com/abulsadiqofficial/ ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=vd4lNrPwYp8",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "6c699c899f7da442a1a7",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "d6f722c4-9896-42f3-9fa7-f71e77353ec4",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط العراقية",
+    "text": "وزارة التخطيط العراقية",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/channel/UCaXoeg81TCcViwq6dmrUkYg",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "6e4558010068cf1cf48f",
+    "search_session_id": "e5b9485e-cacd-4c99-bb4b-8cd650bec806",
+    "content_id": "51fb87e1-9a7e-401f-b04f-c4ffd528409a",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تُقدم الخِدمات الأساسية لعدد من المدارس في أطراف بغداد",
+    "text": "وزارة التخطيط تُقدم الخِدمات الأساسية لعدد من المدارس في أطراف بغداد",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=v8RBwTMDRIw",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "6f1be32e60963e7a693e",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "c6b0247a-5e79-466d-b57f-7ab4a552e2db",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "What is Climate Adaptation?",
+    "text": "Climate adaptation is not just a choice, it's a necessity. Floods, heat waves, rising sea levels — these impacts are already here, ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=zMJkBB4xHxo",
+    "production_rank": null,
+    "shadow_fusion_rank": 2,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "72d23a4742e96987f53b",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "d1463d67-420d-460f-b7b4-7db6ad1c95ef",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "How to Create Microsoft Account in Laptop 2026 | Microsoft Account Kaise Banaye🔥 Microsoft ID Create",
+    "text": "manish4u Hello & Namaste Everyone, How to Create Microsoft Account in Laptop 2026 | Microsoft Account Kaise Banaye   ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=ylwdPoabXuQ",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "751ef63498b4a3b6984b",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "6120fa29-5588-40d5-b4fe-331df2e144db",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "What is Climate Adaptation?",
+    "text": "Climate change is not just a challenge for the future—it's with us today, causing more frequent storms, prolonging droughts, and ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=tn0IYD3D31U",
+    "production_rank": null,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "80b03b1dd8fedbc86933",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "916b1ae7-d68d-4151-b7a0-e6f6813f9101",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "MN4s1R/SoftMicro_Drapes_Server_2003",
+    "text": "🟥️🟨️🟩️🟦️🪟️2️⃣️0️⃣️0️⃣️3️⃣️ The official source repository for SoftMicro Drapes Server 2003, a parody of Microsoft Windows Server 2003",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/MN4s1R/SoftMicro_Drapes_Server_2003",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "8c3efe536c616eafae37",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "a0ce96f8-3d66-4667-a202-9b98f6403466",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Excel for beginners in hindi || excel basic knowledge || microsoft excel",
+    "text": "Excel for beginners in hindi || excel basic knowledge || microsoft excel WhatsApp Join ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=eeDKm9iTE3U",
+    "production_rank": null,
+    "shadow_fusion_rank": 5,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "9419f80cad2d83cc77d5",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "bbadd2eb-b573-4591-a147-e35e2ef07e77",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "manuelmoreno20/SoftMicro_Drapes_Veeestah",
+    "text": "🟥️🟨️🟩️🟦️🪟️🇻 The official source repository for SoftMicro Drapes Veeestah, a parody of Microsoft Windows Vista.",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/manuelmoreno20/SoftMicro_Drapes_Veeestah",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a709d65803ebf402d4cf",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "9dafa49e-7496-40b2-ab6c-1d427a14c93c",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "How Microsoft feeds gamepass",
+    "text": "Shorts Gamepass is the greatest gift to gamers, but will Microsoft ever be able to fully satisfy the gamepass beast they created? lol ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=yoFHOUmaqQQ",
+    "production_rank": null,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "ae9456ef18ca369c71b3",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "146bcbd0-572c-4988-900e-0ac2c896233f",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Windows Edit // #edit #microsoft #windows #foryou #viral #fyp #trend",
+    "text": "Windows Edit // #edit #microsoft #windows #foryou #viral #fyp #trend",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=VQ3t7XokFoI",
+    "production_rank": null,
+    "shadow_fusion_rank": 1,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b5ed62fce5e6b1ee9f19",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "cdcd588c-f800-4b63-8d7a-d1181ef7c3a1",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "تعلم الذكاء الاصطناعي و تعلم الالة",
+    "text": "تعلم الذكاء الاصطناعي و تعلم الالة مجال الذكاء الاصطناعي من افضل المجالات في العالم و هو المستقبل الفترة الجاية و الناس الي بتشتغل ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=0I9qt2YQlvM",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "bd80cd04a2a5ab37ef3d",
+    "search_session_id": "87080773-4608-4f19-92f9-8a5ee749198f",
+    "content_id": "9431efa1-14aa-40a0-8310-85e378429c95",
+    "query": "الذكاء الاصطناعي",
+    "query_class": "ARABIC",
+    "title": "الذكاء الاصطناعي صار سلاح حرب خطير جدًا.",
+    "text": "الذكاء الاصطناعي لم يعد مجرد تقنية — صار سلاح حرب يقرر من يعيش ومن يموت. في هذا الفيديو نكشف كيف تستخدم الجيوش العالمية ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=NH1vuM42eNU",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "be1dc00f77bbdd9a3e79",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "a17c5fd1-cfca-4e61-b4ac-8a2b3be486d3",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تطلق برنامج “المُبتكر الجديد – مُستقبل العراق 2025”",
+    "text": "وزارة التخطيط تطلق برنامج “المُبتكر الجديد – مُستقبل العراق 2025”",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=kKvIBDmVts8",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "bf28327e77851111ea06",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "38c22b99-c6aa-4c5e-9ec9-88dd4745fc66",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "BlitzAcademy123/SoftMicro_Drapes_95",
+    "text": "🟥️🟨️🟩️🟦️🪟️9️⃣️5️⃣️ The official source repository for SoftMicro Drapes 95, a parody of Microsoft Windows 95",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/BlitzAcademy123/SoftMicro_Drapes_95",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "bf4d939b7814feddb236",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "8c848ad7-1d4e-4f72-aaaa-da13b04e5429",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Nexus: Scaling Climate Adaptation and Mitigation in Programming | APSSF 2026",
+    "text": "How can climate adaptation and mitigation move beyond policy commitments into everyday practice? At APSSF 2026 in Karachi, ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=LdXqBixR6hU",
+    "production_rank": null,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "c35513ef714056c22866",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "444d7c3e-bf3a-4244-b1aa-d0e3ba3b80a9",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Microsoft Windows Edit Trend #windows #shorts #edit",
+    "text": "MS-Edit will become the best Windows editor someday, make sure to subscribe!",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=nnL2T8VjScs",
+    "production_rank": null,
+    "shadow_fusion_rank": 10,
+    "shadow_diversity_rank": null,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "f12562c84476ffbca8ff",
+    "search_session_id": "20902841-08e8-4c95-bb91-70115caced73",
+    "content_id": "90a6c735-83d9-4658-bc7d-382b97e4e9b2",
+    "query": "Microsoft العراق",
+    "query_class": "MIXED_LANGUAGE",
+    "title": "Windows 11's built-in Weather app wastes more than 1 GB of RAM",
+    "text": "In a parallel universe Microsoft would have never killed Windows phone and they would have been forced to keep these apps a little more memory&#x2F;performance friendly.",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://www.notebookcheck.net/Windows-11-s-built-in-Weather-app-wastes-more-than-1-GB-of-RAM.1364205.0.html",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "f3b0b1872d4dabff74b5",
+    "search_session_id": "3fabbd03-74ae-4aee-8fba-7b81b4bcda5c",
+    "content_id": "d8a77d04-d2ec-4a68-bbc6-d22fb9719809",
+    "query": "وزارة التخطيط",
+    "query_class": "ARABIC",
+    "title": "وزارة التخطيط تتابع ميدانياً مشروع إنشاء 33 مدرسة بالكونكريت الجاهز في كربلاء المقدسة",
+    "text": "وزارة التخطيط تتابع ميدانياً مشروع إنشاء 33 مدرسة بالكونكريت الجاهز في كربلاء المقدسة",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=wGcwK_CJ0IU",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 10,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "248b8bf1ad28ef420379",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "d967ab33-ff93-486e-bd02-ba850bb03da0",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "So many features 😯 #tech #tablet #ipad #technology",
+    "text": "So many features 😯 #tech #tablet #ipad #technology",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=Pm1fXSsxU5E",
+    "production_rank": 9,
+    "shadow_fusion_rank": 2,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 7,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "bd7bead4ad211f39c63b",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "969e297d-af62-4346-b46f-db33839032fe",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "Great Innovation🫡 #scienceproject #innovation #youtubeshorts #shortvideo #viralshort #technology",
+    "text": "Great Innovation🫡 #scienceproject #innovation #youtubeshorts #shortvideo #viralshort #technology",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=t1WFpObvsRA",
+    "production_rank": 8,
+    "shadow_fusion_rank": 1,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 7,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "e331cdd1e6a8291394e3",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "d1ea4e51-0944-483d-81a9-a12a1b0d02f5",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "React2shell: CVE-2025-55182 Technical Breakdown",
+    "text": "React2shell: CVE-2025-55182 Technical Breakdown",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://www.miggo.io/post/react2shell-cve-2025-55182-technical-breakdown",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 6,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "e155cbe34f5fccdbca95",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "2667d43a-4bdd-4997-b344-16bdbb4fe753",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "How Samsung Fooled Apple #shorts #technology #apple",
+    "text": "How Samsung Fooled Apple #shorts #technology #apple.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=fONjYctB0a8",
+    "production_rank": 1,
+    "shadow_fusion_rank": 6,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 5,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a1fd9733251ff1065a97",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "35ed4d4f-8064-49bc-a431-74dff705dbb5",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Microsoft Build 2025 | Satya Nadella Opening Keynote",
+    "text": "Join the Microsoft Build 2025 opening keynote, streamed live from Seattle. Follow along as Satya Nadella and other top Microsoft ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=ceV3RsG946s",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 4,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "05bb873af4c5c8c84646",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "50669c7e-0c33-4f5a-be86-060c67f4e128",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "automation solution for machine design #mechanical #machinedesign #mechanism #automation #technology",
+    "text": "must-have mechanism for every machine designer #mechanism #machinedesign #mechanical #solidworks.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=7bHs2SlUMNQ",
+    "production_rank": 5,
+    "shadow_fusion_rank": 8,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "50152f667870fd06e7b5",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "96929e40-ce3f-486a-a3a2-61de465ca39f",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "USB in USB #charger #technology #electronic #funny",
+    "text": "Maybe stop plugging things into each other to see when they fail!!!",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=KArch4rjU_0",
+    "production_rank": 4,
+    "shadow_fusion_rank": 7,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "714deda9f45416ad10bc",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "11ffec36-f166-454d-9051-85f73927629f",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "China&#39;s smallest drone. #Military #drones #equipments #army #technology",
+    "text": "China&#39;s smallest drone. #Military #drones #equipments #army #technology",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=OWZSIhyNovc",
+    "production_rank": 6,
+    "shadow_fusion_rank": 3,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "79e434c16194d1999206",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "3ca0f6d1-195c-4f29-abe2-094edcfe77b7",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Contour Agroforestry Systems for Climate Adaptation and Dryland Ecosystems",
+    "text": "Contour Agroforestry Systems for Climate Adaptation and Dryland Ecosystems",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://www.dar.eco/cascade",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "89cbf6fc396232b5fd2c",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "c56f9b4e-7e32-4cb3-afb3-a7b3c75ac6a3",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "What is Climate Adaptation, Mitigation &amp; Resilience? | Climate Vocabulary | The Climate Explainers",
+    "text": "In the latest episode of #TheClimateExplainers, Anubha Bhonsle and Pallavi Prasad break down three critical words at the heart ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=MGdeXn3YV4w",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "be5624fa4d84ce8b3bdf",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "2ab961f0-2fab-4dba-9d7f-07d1c0ecc0ba",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "Broken Flex Repair #mobilerepair #technology",
+    "text": "Broken Flex Repair #mobilerepair #technology #microsoldering #shortfeed.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=7C1LaLc8RjE",
+    "production_rank": 2,
+    "shadow_fusion_rank": 5,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 3,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "15e77b56b602ef3befd6",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "c8a04317-b60c-445d-92db-65ebbc83d273",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "microsoft/winget-pkgs",
+    "text": "The Microsoft community Windows Package Manager manifest repository",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/microsoft/winget-pkgs",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "394eebdc55ab0fa89e4b",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "8629f1e5-1413-40f5-b93b-707ef19b455c",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "HeeLeeOss/climate-adaptation-guides",
+    "text": "**climate-adaptation-guides** is an open commons of **practical, region-specific, evidence-based climate-adaptation and resilience playbooks** — step-by-step \"how a community actually does this\" guide",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/HeeLeeOss/climate-adaptation-guides",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "7323afef0d47f67851bd",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "4dc6dd59-2a9a-4fef-99ca-7c7d647d7e16",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "hongquy191/microsoft-yhjcf",
+    "text": "🎲 Explore demo files in this randomly created repository inspired by Microsoft, ideal for testing and experimentation.",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/hongquy191/microsoft-yhjcf",
+    "production_rank": 4,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "a2410d752e12d8900966",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "7dfa8dca-df69-40e0-801a-b972de432868",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "cc3305/CVE-2025-55182",
+    "text": "CVE-2025-55182 exploit script",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/cc3305/CVE-2025-55182",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "ba483aba7d7c9d52f31c",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "cc162ef5-3416-46fe-a86b-617384c89e90",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "GenesisAeon/adaptation-resilience-utac",
+    "text": "GenesisAeon P95 -- real climate adaptation cost-benefit science (Reguero 2018, GCA 2019), no UTAC/CREP bridge",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/GenesisAeon/adaptation-resilience-utac",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "cd9be06afad4844f472c",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "9b4db132-f16d-441a-bfba-91cbd970a03a",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "CampillayLLanos/Biomathematical-Phenology-Climate-Adaptation",
+    "text": "Biomathematical phenology models and technological tools for climate adaptation in the fruit and wine industries.",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/CampillayLLanos/Biomathematical-Phenology-Climate-Adaptation",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "e0c60465e7247ad19f6a",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "407b1404-7f0d-4916-a965-9f0e8819bec4",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "Digital farming in China #technology #shorts",
+    "text": "Check out this factory in Shandong where cultivation of soil-free veggies are automated by robots. While soil-free cultivation tech ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=Z7mKa8x2Vwo",
+    "production_rank": 7,
+    "shadow_fusion_rank": 9,
+    "shadow_diversity_rank": 7,
+    "uncertainty": "LOW",
+    "priority": 2,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "2ad08b41a028519e8ebb",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "d8185e71-2b05-4e96-a517-e557a8c33908",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "CVE-2025-55182 – RCE in React Server Components",
+    "text": "CVE-2025-55182 – RCE in React Server Components",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://github.com/msanft/CVE-2025-55182",
+    "production_rank": 10,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "541e059cb0276e181966",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "3bbe8b1f-770d-4464-bf03-9af4464d575a",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Microsoft Build 2026 | Satya Nadella Opening Keynote",
+    "text": "Join the Microsoft Build 2026 opening keynote, streamed live from San Francisco. Follow along as Microsoft CEO Satya Nadella ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=FFMm454fxNA",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "60bc71568715f4a0a221",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "6303bfd6-550c-4f18-9ef0-596958623767",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": "This is genius  #casio #retrotech #technology #80s",
+    "text": "This is genius  #casio #retrotech #technology #80s",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=-UYTweO06v0",
+    "production_rank": 3,
+    "shadow_fusion_rank": 4,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "72e20b381410eed43f5d",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "bb69bacd-bd36-4f3b-b1bf-70f4c5208bf8",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "POC - CVE-2025-55182 - React2Shell",
+    "text": "react2shell #CVE-2025-55182 Pada video ini kita akan melakukan POC CVE-2025-55182 == Support ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=TKamcYy55QE",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "79ce22a3449f610563a7",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "9bc099d9-6b70-4e16-a34c-60c9b24d186f",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "eujoel1998-sudo/Dortmund-Climate-Adaptation-Webmap",
+    "text": "Interactive Leaflet webmap of Dortmund climate-adaptation land-use metrics (2015/2025 observed, 2035 spatial-IV scenario forecast).",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/eujoel1998-sudo/Dortmund-Climate-Adaptation-Webmap",
+    "production_rank": 7,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 6,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "7d265752a160b5534575",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "e3a44d57-30d5-4f66-95a6-fcbafdf2acd4",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "Fomovet/cve-2025-55182",
+    "text": "POC for CVE-2025-55182",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/Fomovet/cve-2025-55182",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 2,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "817aaa5fe7fd6472e0a9",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "9a5a1922-c350-4fb0-bd5b-bb5277fe0b64",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "High fidelity check for Next.js/RSC RCE (CVE-2025-55182 and CVE-2025-66478)",
+    "text": "High fidelity check for Next.js/RSC RCE (CVE-2025-55182 and CVE-2025-66478)",
+    "source": "hacker_news",
+    "acquisition_mode": "PUBLIC_API",
+    "canonical_url": "https://slcyber.io/research-center/high-fidelity-detection-mechanism-for-rsc-next-js-rce-cve-2025-55182-cve-2025-66478",
+    "production_rank": 5,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 4,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "9d21ab861df50a912ad5",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "b498de4b-d0eb-4b01-97d5-e5686a6143b7",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "theman001/CVE-2025-55182",
+    "text": "CVE-2025-55182 React RCE Test Program",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/theman001/CVE-2025-55182",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "d59d24eecb14352e91c7",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "6af72012-a67c-4f40-a9c0-e691f1f1bb00",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "Phucc29/CVE-2025-55182",
+    "text": "Phucc29/CVE-2025-55182",
+    "source": "github",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://github.com/Phucc29/CVE-2025-55182",
+    "production_rank": 2,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "d992f777675a8fdabeee",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "f8d09e2e-04a0-4a94-aa58-bb9d4a0a1deb",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Climate Change and Existential Threats I Warming Future I Climate Adaptation I Climate in 2025",
+    "text": "climatechange #adaptation #warming In this episode, I invited Dr. Daniel Swain to talk about the state of the climate as we close ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=MOihmtuDFcM",
+    "production_rank": 6,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 5,
+    "uncertainty": "LOW",
+    "priority": 1,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "1ebc76c884b17f4be8c0",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "86fdf684-4194-4d8b-883e-e221ba0abf66",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "Climate Adaptation and Resilience",
+    "text": "Dr. Laura Kuhl discusses climate adaptation and resilience planning. Learn how trends in renewable energy impact ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=5Hp1oq3pkLM",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "606a60d40dfb8076a344",
+    "search_session_id": "fe79e6cf-53a2-46ac-be7f-22b15bad28c4",
+    "content_id": "0f805eb7-cf96-41dc-9ea5-b78212af4964",
+    "query": "#technology",
+    "query_class": "HASHTAG",
+    "title": null,
+    "text": "https://www. europesays.com/at/324892/ Xiaomi Aktie: Xring O3 ersetzt Qualcomm # AT # Austria # Österreich # Science # Science &Technology # Technik # Technology # Wissenschaft # Wissenschaft &Technik",
+    "source": "mastodon",
+    "acquisition_mode": "PUBLIC_TIMELINE",
+    "canonical_url": "https://pubeurope.com/@at/117068543266825117",
+    "production_rank": 10,
+    "shadow_fusion_rank": 10,
+    "shadow_diversity_rank": 10,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "8db1386a0c35562e7dae",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "b95f6b5c-2170-46d5-b3e7-6776a138a15c",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "UMN Climate Adaptation Partnership",
+    "text": "The Minnesota Climate Adaptation Partnership (MCAP) is a partnership among university, public, non-profit, and private sector ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/channel/UC6DF7474AJiWl_Zkn7MZymg",
+    "production_rank": 9,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 9,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "8e154146ee20b4900396",
+    "search_session_id": "0074bc14-a273-4bec-979c-56a2ac877fd9",
+    "content_id": "a6a1ead4-6f14-4934-ae2c-08f7550f3400",
+    "query": "climate adaptation",
+    "query_class": "ENGLISH",
+    "title": "What is Climate Adaptation? | The Rundown",
+    "text": "Anabela Bonada is managing director of climate science at the Intact Centre on Climate Adaptation. Based at the University of ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=-tP5MJm0AoM",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "b72412e2beb040fe6c4c",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "076a8cd8-d5f9-4b4b-b384-9589b28188f7",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Microsoft Helps",
+    "text": "Tips & tricks, self-help, and troubleshooting guidance from Microsoft.",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/channel/UCBoc5dePAjkGJMmqHJdp9_Q",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "d0a2b4add11d71c918b5",
+    "search_session_id": "7b287c90-2a62-4dab-a70b-de303ffa0434",
+    "content_id": "ca272734-52ae-4f20-bdf7-eb5e80c57787",
+    "query": "Microsoft",
+    "query_class": "ENGLISH",
+    "title": "Microsoft ​⁠@surface Laptop 13” is built for the back to school grind. #backtoschool #microsoft",
+    "text": "Microsoft ​⁠@surface Laptop 13” is built for the back to school grind. #backtoschool #microsoft",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=Sl_3Xo9g80M",
+    "production_rank": 3,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 3,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "d998e7c41d00630ed8d6",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "a4975fb2-dd88-49ee-b394-7bef9f2d40c1",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "CVE-2025-55182 Attack tool",
+    "text": "CVE-2025-55182 CVE-2025-55182 is a critical remote code execution (RCE) vulnerability affecting applications that use React ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=KBB5Js0fvWk",
+    "production_rank": 1,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 1,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  },
+  {
+    "queue_id": "de7b22d02f451c43524e",
+    "search_session_id": "a08b168a-9057-42e3-9f4a-12a31eaa2ed1",
+    "content_id": "31bc8562-2f7a-4e94-86b5-f600f92085f5",
+    "query": "CVE-2025-55182",
+    "query_class": "IDENTIFIER",
+    "title": "🚨CVE-2025-55182 - React2Shell - Remote Code Execution (RCE) - Mass Deface",
+    "text": "link : CoomingSoon tag : cve 2025, sse 2025, new cve 2025, wordpress cve 2025, windows cve 2025, sharepoint cve 2025, ...",
+    "source": "youtube",
+    "acquisition_mode": "DIRECT_API",
+    "canonical_url": "https://www.youtube.com/watch?v=-F1AX8_6Mgo",
+    "production_rank": 8,
+    "shadow_fusion_rank": null,
+    "shadow_diversity_rank": 8,
+    "uncertainty": "LOW",
+    "priority": 0,
+    "judgment": null,
+    "allowed_judgments": [
+      "RELEVANT",
+      "NOT_RELEVANT",
+      "SKIP_UNSURE"
+    ],
+    "blind_display_fields": [
+      "query",
+      "title",
+      "text",
+      "source",
+      "canonical_url"
+    ]
+  }
+]

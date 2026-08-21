@@ -1,0 +1,41 @@
+use_default_settings:
+  engines:
+    keep_only:
+      - brave
+      - duckduckgo
+      - qwant
+      - startpage
+
+general:
+  debug: false
+  instance_name: "MIRSAD Discovery"
+
+search:
+  safe_search: 1
+  autocomplete: ""
+  max_page: 1
+  ban_time_on_fail: 30
+  max_ban_time_on_fail: 3600
+  formats:
+    - html
+    - json
+
+server:
+  limiter: false
+  image_proxy: false
+
+outgoing:
+  request_timeout: 3.0
+  max_request_timeout: 5.0
+  pool_connections: 20
+  pool_maxsize: 20
+
+engines:
+  - name: brave
+    retries: 0
+  - name: duckduckgo
+    retries: 0
+  - name: qwant
+    retries: 0
+  - name: startpage
+    retries: 0

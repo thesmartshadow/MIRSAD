@@ -1,0 +1,1266 @@
+{
+  "schema": "mirsad.mixed-source-cap-audit.v1",
+  "query_count": 11,
+  "global_limit": 30,
+  "semantic_candidate_limit": 20,
+  "source_pre_candidate_limit": 50,
+  "sources": [
+    "youtube",
+    "bluesky",
+    "mastodon",
+    "github",
+    "hacker_news",
+    "rss"
+  ],
+  "all_completion_shuffles_invariant": true,
+  "all_source_admission_intact": true,
+  "comparable_fixture_sources_present": true,
+  "queries": [
+    {
+      "query": "artificial intelligence",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 71.701,
+          "p75": 76.7,
+          "max": 81.12
+        },
+        "github": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 85.23,
+          "mean": 82.495,
+          "p75": 91.952,
+          "max": 99.88
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.65,
+          "p25": 66.755,
+          "median": 85.21,
+          "mean": 82.42,
+          "p75": 91.922,
+          "max": 99.82
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 71.701,
+          "p75": 76.7,
+          "max": 81.12
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 85.23,
+          "mean": 81.698,
+          "p75": 90.387,
+          "max": 99.76
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 85.23,
+          "mean": 81.698,
+          "p75": 90.387,
+          "max": 99.76
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "open source",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 71.711,
+          "p75": 75.965,
+          "max": 82.66
+        },
+        "github": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 84.465,
+          "mean": 82.407,
+          "p75": 92.575,
+          "max": 99.88
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.65,
+          "p25": 66.755,
+          "median": 84.455,
+          "mean": 82.335,
+          "p75": 92.545,
+          "max": 99.82
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 71.711,
+          "p75": 75.965,
+          "max": 82.66
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 84.465,
+          "mean": 81.349,
+          "p75": 90.488,
+          "max": 99.76
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 84.465,
+          "mean": 81.349,
+          "p75": 90.488,
+          "max": 99.76
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "climate adaptation",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 73.748,
+          "p75": 83.64,
+          "max": 85.09
+        },
+        "github": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 91.48,
+          "mean": 84.519,
+          "p75": 94.72,
+          "max": 99.88
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.65,
+          "p25": 66.755,
+          "median": 91.465,
+          "mean": 84.445,
+          "p75": 94.69,
+          "max": 99.82
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 73.748,
+          "p75": 83.64,
+          "max": 85.09
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 91.48,
+          "mean": 84.024,
+          "p75": 93.76,
+          "max": 99.76
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 91.48,
+          "mean": 84.024,
+          "p75": 93.76,
+          "max": 99.76
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "public health",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 6,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 72.898,
+          "p75": 79.65,
+          "max": 83.97
+        },
+        "github": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 74.395,
+          "median": 88.825,
+          "mean": 85.588,
+          "p75": 93.865,
+          "max": 99.88
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.65,
+          "p25": 74.255,
+          "median": 88.815,
+          "mean": 85.516,
+          "p75": 93.843,
+          "max": 99.82
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.895,
+          "median": 68.41,
+          "mean": 72.898,
+          "p75": 79.65,
+          "max": 83.97
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 74.395,
+          "median": 88.825,
+          "mean": 84.67,
+          "p75": 92.06,
+          "max": 99.76
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 74.395,
+          "median": 88.825,
+          "mean": 84.67,
+          "p75": 92.06,
+          "max": 99.76
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "technology",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.81,
+          "p25": 66.922,
+          "median": 68.505,
+          "mean": 70.28,
+          "p75": 73.142,
+          "max": 77.14
+        },
+        "github": {
+          "count": 8,
+          "min": 66.81,
+          "p25": 66.922,
+          "median": 81.565,
+          "mean": 81.045,
+          "p75": 88.71,
+          "max": 99.87
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.66,
+          "p25": 66.773,
+          "median": 81.55,
+          "mean": 80.969,
+          "p75": 88.688,
+          "max": 99.81
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.81,
+          "p25": 66.922,
+          "median": 68.505,
+          "mean": 70.28,
+          "p75": 73.142,
+          "max": 77.14
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.81,
+          "p25": 66.922,
+          "median": 81.565,
+          "mean": 79.603,
+          "p75": 85.855,
+          "max": 99.75
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.81,
+          "p25": 66.922,
+          "median": 81.565,
+          "mean": 79.603,
+          "p75": 85.855,
+          "max": 99.75
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "#technology",
+      "matched_per_source": {
+        "bluesky": 6,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 6,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 6,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 6,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 6,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 6,
+          "min": 66.79,
+          "p25": 66.828,
+          "median": 67.66,
+          "mean": 67.748,
+          "p75": 68.642,
+          "max": 68.86
+        },
+        "github": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.903,
+          "median": 99.81,
+          "mean": 87.502,
+          "p75": 99.94,
+          "max": 100
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.64,
+          "p25": 66.752,
+          "median": 99.75,
+          "mean": 87.406,
+          "p75": 99.87,
+          "max": 99.94
+        },
+        "mastodon": {
+          "count": 6,
+          "min": 66.79,
+          "p25": 66.828,
+          "median": 67.66,
+          "mean": 67.748,
+          "p75": 68.642,
+          "max": 68.86
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.903,
+          "median": 99.81,
+          "mean": 87.502,
+          "p75": 99.94,
+          "max": 100
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.79,
+          "p25": 66.903,
+          "median": 99.81,
+          "mean": 87.502,
+          "p75": 99.94,
+          "max": 100
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "lexical_only",
+      "semantic_model": null,
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "بغداد",
+      "matched_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.882,
+          "median": 68.48,
+          "mean": 73.189,
+          "p75": 79.657,
+          "max": 85.84
+        },
+        "github": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.882,
+          "median": 88.34,
+          "mean": 83.787,
+          "p75": 95.097,
+          "max": 99.87
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.62,
+          "p25": 66.733,
+          "median": 88.32,
+          "mean": 83.71,
+          "p75": 95.075,
+          "max": 99.81
+        },
+        "mastodon": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.882,
+          "median": 68.48,
+          "mean": 73.189,
+          "p75": 79.657,
+          "max": 85.84
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.882,
+          "median": 88.34,
+          "mean": 83.2,
+          "p75": 93.955,
+          "max": 99.74
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.882,
+          "median": 88.34,
+          "mean": 83.2,
+          "p75": 93.955,
+          "max": 99.74
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "الذكاء الاصطناعي",
+      "matched_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "admitted_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "final_top_30_per_source": {
+        "youtube": 11,
+        "rss": 6,
+        "github": 4,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 68.37,
+          "mean": 70.154,
+          "p75": 68.6,
+          "max": 83.61
+        },
+        "github": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 90.63,
+          "mean": 85.295,
+          "p75": 99.87,
+          "max": 99.94
+        },
+        "hacker_news": {
+          "count": 16,
+          "min": 66.58,
+          "p25": 66.685,
+          "median": 90.615,
+          "mean": 85.21,
+          "p75": 99.81,
+          "max": 99.87
+        },
+        "mastodon": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 68.37,
+          "mean": 70.154,
+          "p75": 68.6,
+          "max": 83.61
+        },
+        "rss": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 86.7,
+          "mean": 84.183,
+          "p75": 99.78,
+          "max": 99.94
+        },
+        "youtube": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 86.7,
+          "mean": 84.183,
+          "p75": 99.78,
+          "max": 99.94
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube",
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "#بغداد",
+      "matched_per_source": {
+        "bluesky": 6,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 6,
+        "rss": 8,
+        "youtube": 8
+      },
+      "admitted_per_source": {
+        "bluesky": 6,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 6,
+        "rss": 8,
+        "youtube": 8
+      },
+      "final_top_30_per_source": {
+        "youtube": 8,
+        "rss": 6,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 6,
+          "min": 66.77,
+          "p25": 66.81,
+          "median": 67.65,
+          "mean": 67.737,
+          "p75": 68.64,
+          "max": 68.85
+        },
+        "github": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.89,
+          "median": 99.81,
+          "mean": 87.496,
+          "p75": 99.94,
+          "max": 100
+        },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.63,
+          "p25": 66.735,
+          "median": 99.745,
+          "mean": 87.4,
+          "p75": 99.87,
+          "max": 99.94
+        },
+        "mastodon": {
+          "count": 6,
+          "min": 66.77,
+          "p25": 66.81,
+          "median": 67.65,
+          "mean": 67.737,
+          "p75": 68.64,
+          "max": 68.85
+        },
+        "rss": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.89,
+          "median": 99.81,
+          "mean": 87.496,
+          "p75": 99.94,
+          "max": 100
+        },
+        "youtube": {
+          "count": 8,
+          "min": 66.77,
+          "p25": 66.89,
+          "median": 99.81,
+          "mean": 87.496,
+          "p75": 99.94,
+          "max": 100
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "lexical_only",
+      "semantic_model": null,
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "Microsoft العراق",
+      "matched_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "admitted_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "final_top_30_per_source": {
+        "youtube": 11,
+        "rss": 6,
+        "github": 4,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 68.37,
+          "mean": 70.209,
+          "p75": 68.6,
+          "max": 86.38
+        },
+        "github": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 89.535,
+          "mean": 85.263,
+          "p75": 99.87,
+          "max": 99.94
+        },
+        "hacker_news": {
+          "count": 16,
+          "min": 66.58,
+          "p25": 66.685,
+          "median": 89.515,
+          "mean": 85.177,
+          "p75": 99.81,
+          "max": 99.87
+        },
+        "mastodon": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 68.37,
+          "mean": 70.209,
+          "p75": 68.6,
+          "max": 86.38
+        },
+        "rss": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 85.955,
+          "mean": 84.358,
+          "p75": 99.78,
+          "max": 99.94
+        },
+        "youtube": {
+          "count": 16,
+          "min": 66.72,
+          "p25": 66.833,
+          "median": 85.955,
+          "mean": 84.358,
+          "p75": 99.78,
+          "max": 99.94
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube",
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    },
+    {
+      "query": "AI بغداد",
+      "matched_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "admitted_per_source": {
+        "bluesky": 16,
+        "github": 16,
+        "hacker_news": 16,
+        "mastodon": 16,
+        "rss": 16,
+        "youtube": 16
+      },
+      "final_top_30_per_source": {
+        "youtube": 11,
+        "rss": 6,
+        "github": 4,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      },
+      "relevance_distribution_by_source": {
+        "bluesky": {
+          "count": 16,
+          "min": 66.73,
+          "p25": 66.843,
+          "median": 68.38,
+          "mean": 70.873,
+          "p75": 68.61,
+          "max": 86.67
+        },
+        "github": {
+          "count": 16,
+          "min": 66.73,
+          "p25": 66.843,
+          "median": 93.275,
+          "mean": 85.93,
+          "p75": 99.87,
+          "max": 99.94
+        },
+        "hacker_news": {
+          "count": 16,
+          "min": 66.59,
+          "p25": 66.695,
+          "median": 93.26,
+          "mean": 85.845,
+          "p75": 99.81,
+          "max": 99.87
+        },
+        "mastodon": {
+          "count": 16,
+          "min": 66.73,
+          "p25": 66.843,
+          "median": 68.38,
+          "mean": 70.873,
+          "p75": 68.61,
+          "max": 86.67
+        },
+        "rss": {
+          "count": 16,
+          "min": 66.73,
+          "p25": 66.843,
+          "median": 90.65,
+          "mean": 85.181,
+          "p75": 99.78,
+          "max": 99.94
+        },
+        "youtube": {
+          "count": 16,
+          "min": 66.73,
+          "p25": 66.843,
+          "median": 90.65,
+          "mean": 85.181,
+          "p75": 99.78,
+          "max": 99.94
+        }
+      },
+      "completion_order_a": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss"
+      ],
+      "completion_order_b": [
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube",
+        "rss",
+        "hacker_news",
+        "github",
+        "mastodon",
+        "bluesky",
+        "youtube"
+      ],
+      "final_results_unchanged": true,
+      "semantic_state": "ready",
+      "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "semantic_candidates_per_source": {
+        "youtube": 4,
+        "rss": 4,
+        "github": 3,
+        "hacker_news": 3,
+        "mastodon": 3,
+        "bluesky": 3
+      }
+    }
+  ]
+}

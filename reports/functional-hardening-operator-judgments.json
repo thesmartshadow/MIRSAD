@@ -1,0 +1,67 @@
+{
+  "artifact": "observational final functional-hardening sanity judgments",
+  "labels": ["RELEVANT", "NOT_RELEVANT", "UNSURE"],
+  "purpose": "Operator sanity evidence only; not a benchmark and not used for tuning.",
+  "judgments": {
+    "baghdad": {
+      "1": "RELEVANT",
+      "2": "RELEVANT",
+      "3": "RELEVANT",
+      "4": "RELEVANT",
+      "5": "RELEVANT"
+    },
+    "planning_ministry": {
+      "1": "RELEVANT",
+      "2": "RELEVANT",
+      "3": "RELEVANT",
+      "4": "RELEVANT"
+    },
+    "abwab": {
+      "1": "RELEVANT",
+      "2": "RELEVANT",
+      "3": "RELEVANT"
+    },
+    "arabic_ai": {
+      "1": "RELEVANT",
+      "2": "RELEVANT",
+      "3": "RELEVANT",
+      "4": "RELEVANT",
+      "5": "RELEVANT"
+    },
+    "microsoft_iraq": {},
+    "cve_recent": {},
+    "cve_exact_all": {},
+    "handle_plain": {},
+    "handle_at": {},
+    "hashtag_baghdad": {
+      "1": "RELEVANT",
+      "2": "RELEVANT"
+    },
+    "arabic_person": {
+      "1": "RELEVANT",
+      "2": "NOT_RELEVANT",
+      "3": "NOT_RELEVANT",
+      "4": "NOT_RELEVANT",
+      "5": "NOT_RELEVANT"
+    },
+    "arabic_person_full": {
+      "1": "NOT_RELEVANT",
+      "2": "NOT_RELEVANT",
+      "3": "NOT_RELEVANT",
+      "4": "NOT_RELEVANT",
+      "5": "NOT_RELEVANT"
+    },
+    "arabic_diacritized_exact": {
+      "1": "RELEVANT",
+      "2": "RELEVANT",
+      "3": "RELEVANT",
+      "4": "RELEVANT",
+      "5": "RELEVANT"
+    }
+  },
+  "observations": [
+    "Broad Baghdad, Arabic AI, hashtag, Platform Abwab, and diacritized ministry results were visibly on-topic.",
+    "The full Arabic personal name produced common-name/token collisions; this was documented and not used to tune the frozen ranker.",
+    "CVE, mixed Microsoft/Iraq, and handle cases returned no result, so no result judgment was fabricated. Their stage telemetry identifies discovery coverage rather than ranking as the loss point."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "MIRSAD Browser Capture",
+  "version": "1.1.0",
+  "description": "Import one operator-selected public X, Threads, or Reddit item into local MIRSAD.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "action": {
+    "default_title": "Capture public item to MIRSAD",
+    "default_popup": "popup.html"
+  }
+}

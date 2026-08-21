@@ -1,0 +1,899 @@
+{
+  "suite": "mirsad-search-quality",
+  "version": "2.0",
+  "fixture_records": 30,
+  "query_count": 20,
+  "metrics": {
+    "mean_precision_at_5": 0.25,
+    "mean_precision_at_10": 0.125,
+    "mean_returned_set_precision_at_5": 1.0,
+    "mean_returned_set_precision_at_10": 1.0,
+    "mean_strict_precision_at_5": 0.25,
+    "mean_strict_precision_at_10": 0.125,
+    "mean_reciprocal_rank": 1.0,
+    "duplicate_records_detected": 2,
+    "duplicate_reduction_rate": 0.0667,
+    "duplicate_pair_quality": {
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "cluster_pair_quality": {
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "exact_phrase_cases": 7,
+    "exact_phrase_mean_precision_at_5": 0.2857,
+    "exact_phrase_mean_returned_set_precision_at_5": 1.0
+  },
+  "baseline_metrics": {
+    "mean_precision_at_5": 0.25,
+    "mean_precision_at_10": 0.125,
+    "mean_returned_set_precision_at_5": 0.885,
+    "mean_returned_set_precision_at_10": 0.885,
+    "mean_strict_precision_at_5": 0.25,
+    "mean_strict_precision_at_10": 0.125,
+    "mean_reciprocal_rank": 1.0
+  },
+  "language_metrics": {
+    "arabic": {
+      "mean_precision_at_5": 0.2286,
+      "mean_precision_at_10": 0.1143,
+      "mean_returned_set_precision_at_5": 1.0,
+      "mean_returned_set_precision_at_10": 1.0,
+      "mean_strict_precision_at_5": 0.2286,
+      "mean_strict_precision_at_10": 0.1143,
+      "mean_reciprocal_rank": 1.0
+    },
+    "english": {
+      "mean_precision_at_5": 0.2667,
+      "mean_precision_at_10": 0.1333,
+      "mean_returned_set_precision_at_5": 1.0,
+      "mean_returned_set_precision_at_10": 1.0,
+      "mean_strict_precision_at_5": 0.2667,
+      "mean_strict_precision_at_10": 0.1333,
+      "mean_reciprocal_rank": 1.0
+    },
+    "mixed": {
+      "mean_precision_at_5": 0.2,
+      "mean_precision_at_10": 0.1,
+      "mean_returned_set_precision_at_5": 1.0,
+      "mean_returned_set_precision_at_10": 1.0,
+      "mean_strict_precision_at_5": 0.2,
+      "mean_strict_precision_at_10": 0.1,
+      "mean_reciprocal_rank": 1.0
+    }
+  },
+  "hard_evaluation": {
+    "fixture_records": 40,
+    "query_count": 16,
+    "baseline_metrics": {
+      "mean_precision_at_5": 0.28,
+      "mean_precision_at_10": 0.14,
+      "mean_returned_set_precision_at_5": 0.6711,
+      "mean_returned_set_precision_at_10": 0.6667,
+      "mean_strict_precision_at_5": 0.28,
+      "mean_strict_precision_at_10": 0.14,
+      "mean_reciprocal_rank": 0.8022
+    },
+    "metrics": {
+      "mean_precision_at_5": 0.28,
+      "mean_precision_at_10": 0.14,
+      "mean_returned_set_precision_at_5": 0.8333,
+      "mean_returned_set_precision_at_10": 0.8333,
+      "mean_strict_precision_at_5": 0.28,
+      "mean_strict_precision_at_10": 0.14,
+      "mean_reciprocal_rank": 0.9222
+    },
+    "error_analysis": [
+      {
+        "query": "climate",
+        "document": "e17",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      },
+      {
+        "query": "climate",
+        "document": "e03",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      },
+      {
+        "query": "open source",
+        "document": "h01",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      },
+      {
+        "query": "open source",
+        "document": "e06",
+        "category": "AMBIGUOUS_QUERY"
+      },
+      {
+        "query": "artificial intelligence governance",
+        "document": "h03",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      },
+      {
+        "query": "وزارة الصحة",
+        "document": "h05",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      },
+      {
+        "query": "وِزَارَةُ الصِّحَّة",
+        "document": "h05",
+        "category": "ENGAGEMENT_OVERWEIGHTED"
+      }
+    ],
+    "cases": [
+      {
+        "query": "climate",
+        "exact_phrase": false,
+        "relevant": [
+          "e01",
+          "e02"
+        ],
+        "ranked": [
+          "e17",
+          "e03",
+          "e02",
+          "e01"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.4,
+        "returned_set_precision_at_5": 0.5,
+        "strict_precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "returned_set_precision_at_10": 0.5,
+        "strict_precision_at_10": 0.2,
+        "reciprocal_rank": 0.3333
+      },
+      {
+        "query": "\"climate policy\"",
+        "exact_phrase": false,
+        "relevant": [
+          "e01",
+          "e02"
+        ],
+        "ranked": [
+          "e02",
+          "e01"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.4,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.2,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "open source",
+        "exact_phrase": false,
+        "relevant": [
+          "h02"
+        ],
+        "ranked": [
+          "h01",
+          "h02",
+          "e06"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 0.3333,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 0.3333,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query": "artificial intelligence governance",
+        "exact_phrase": false,
+        "relevant": [
+          "e15",
+          "h04"
+        ],
+        "ranked": [
+          "e15",
+          "h04",
+          "h03"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.4,
+        "returned_set_precision_at_5": 0.6667,
+        "strict_precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "returned_set_precision_at_10": 0.6667,
+        "strict_precision_at_10": 0.2,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "وزارة الصحة",
+        "exact_phrase": true,
+        "relevant": [
+          "a01"
+        ],
+        "ranked": [
+          "a01",
+          "h05"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 0.5,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 0.5,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "وِزَارَةُ الصِّحَّة",
+        "exact_phrase": false,
+        "relevant": [
+          "a01"
+        ],
+        "ranked": [
+          "a01",
+          "h05"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 0.5,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 0.5,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "#بغداد",
+        "exact_phrase": false,
+        "relevant": [
+          "h06"
+        ],
+        "ranked": [
+          "h06"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "@analyst",
+        "exact_phrase": false,
+        "relevant": [
+          "h08"
+        ],
+        "ranked": [
+          "h08"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "MIRSAD العراق",
+        "exact_phrase": false,
+        "relevant": [
+          "m01"
+        ],
+        "ranked": [
+          "m01"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "open data portal",
+        "exact_phrase": true,
+        "relevant": [
+          "e06",
+          "e07",
+          "h09"
+        ],
+        "ranked": [
+          "e06",
+          "e07",
+          "h09"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.6,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.3,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "Iraq investment",
+        "exact_phrase": false,
+        "relevant": [
+          "e11"
+        ],
+        "ranked": [
+          "e11"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "Acme Organization",
+        "exact_phrase": true,
+        "relevant": [
+          "e04"
+        ],
+        "ranked": [
+          "e04"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "Apple",
+        "exact_phrase": false,
+        "relevant": [
+          "e13",
+          "e14"
+        ],
+        "ranked": [
+          "e13",
+          "e14"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.4,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.2,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "الامن السيبراني",
+        "exact_phrase": false,
+        "relevant": [
+          "a06"
+        ],
+        "ranked": [
+          "a06"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "quantum sensor",
+        "exact_phrase": false,
+        "relevant": [
+          "e09"
+        ],
+        "ranked": [
+          "e09"
+        ],
+        "no_result_success": false,
+        "precision_at_5": 0.2,
+        "returned_set_precision_at_5": 1.0,
+        "strict_precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "returned_set_precision_at_10": 1.0,
+        "strict_precision_at_10": 0.1,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "مصطلح نادر غير موجود",
+        "exact_phrase": false,
+        "relevant": [],
+        "ranked": [],
+        "no_result_success": true,
+        "precision_at_5": 0.0,
+        "returned_set_precision_at_5": 0.0,
+        "strict_precision_at_5": 0.0,
+        "precision_at_10": 0.0,
+        "returned_set_precision_at_10": 0.0,
+        "strict_precision_at_10": 0.0,
+        "reciprocal_rank": 0.0
+      }
+    ]
+  },
+  "score_component_statistics": {
+    "final_score": {
+      "min": 22.27,
+      "max": 86.71,
+      "mean": 62.26,
+      "median": 70.61,
+      "stddev": 17.78,
+      "p10": 32.26,
+      "p25": 52.47,
+      "p75": 72.53,
+      "p90": 73.92
+    },
+    "relevance": {
+      "min": 40.0,
+      "max": 100.0,
+      "mean": 88.89,
+      "median": 100.0,
+      "stddev": 16.8,
+      "p10": 57.5,
+      "p25": 77.5,
+      "p75": 100.0,
+      "p90": 100.0
+    },
+    "freshness": {
+      "min": 0.78,
+      "max": 98.57,
+      "mean": 79.79,
+      "median": 93.03,
+      "stddev": 26.66,
+      "p10": 35.36,
+      "p25": 70.71,
+      "p75": 95.76,
+      "p90": 98.57
+    },
+    "engagement": {
+      "min": 1.0,
+      "max": 100.0,
+      "mean": 34.79,
+      "median": 17.5,
+      "stddev": 34.92,
+      "p10": 3.0,
+      "p25": 11.0,
+      "p75": 45.0,
+      "p90": 98.0
+    },
+    "source_confidence": {
+      "min": 70.0,
+      "max": 70.0,
+      "mean": 70.0,
+      "median": 70.0,
+      "stddev": 0.0,
+      "p10": 70.0,
+      "p25": 70.0,
+      "p75": 70.0,
+      "p90": 70.0
+    },
+    "cross_source_presence": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "stddev": 0.0,
+      "p10": 0.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
+    },
+    "novelty": {
+      "min": 100.0,
+      "max": 100.0,
+      "mean": 100.0,
+      "median": 100.0,
+      "stddev": 0.0,
+      "p10": 100.0,
+      "p25": 100.0,
+      "p75": 100.0,
+      "p90": 100.0
+    },
+    "spam_penalty": {
+      "min": 0.0,
+      "max": 5.0,
+      "mean": 0.36,
+      "median": 0.0,
+      "stddev": 1.29,
+      "p10": 0.0,
+      "p25": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
+    }
+  },
+  "signal_checks": {
+    "title_boost_relevance_delta": 30.0,
+    "freshness_final_score_delta": 18.74,
+    "engagement_final_score_delta": 12.12,
+    "relevant_beats_high_engagement_collision": true,
+    "irrelevant_collision_excluded": true
+  },
+  "cases": [
+    {
+      "query": "climate policy",
+      "exact_phrase": false,
+      "relevant": [
+        "e01",
+        "e02"
+      ],
+      "ranked": [
+        "e02",
+        "e01"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.4,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.2,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "Climate Policy",
+      "exact_phrase": true,
+      "relevant": [
+        "e01",
+        "e02"
+      ],
+      "ranked": [
+        "e02",
+        "e01"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.4,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.2,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "Acme Organization",
+      "exact_phrase": true,
+      "relevant": [
+        "e04"
+      ],
+      "ranked": [
+        "e04"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "open data portal",
+      "exact_phrase": true,
+      "relevant": [
+        "e06",
+        "e07"
+      ],
+      "ranked": [
+        "e06",
+        "e07"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.4,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.2,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "cyber security",
+      "exact_phrase": false,
+      "relevant": [
+        "e08"
+      ],
+      "ranked": [
+        "e08"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "quantum sensor",
+      "exact_phrase": false,
+      "relevant": [
+        "e09"
+      ],
+      "ranked": [
+        "e09"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "Baghdad summit",
+      "exact_phrase": false,
+      "relevant": [
+        "e10"
+      ],
+      "ranked": [
+        "e10"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "Iraq investment",
+      "exact_phrase": false,
+      "relevant": [
+        "e11"
+      ],
+      "ranked": [
+        "e11"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "oil market",
+      "exact_phrase": true,
+      "relevant": [
+        "e12"
+      ],
+      "ranked": [
+        "e12"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "Apple",
+      "exact_phrase": false,
+      "relevant": [
+        "e13",
+        "e14"
+      ],
+      "ranked": [
+        "e13",
+        "e14"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.4,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.2,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "artificial intelligence governance",
+      "exact_phrase": false,
+      "relevant": [
+        "e15"
+      ],
+      "ranked": [
+        "e15"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "health ministry",
+      "exact_phrase": false,
+      "relevant": [
+        "e16"
+      ],
+      "ranked": [
+        "e16"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "وزارة الصحة",
+      "exact_phrase": true,
+      "relevant": [
+        "a01"
+      ],
+      "ranked": [
+        "a01"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "وزاره الصحه",
+      "exact_phrase": false,
+      "relevant": [
+        "a01"
+      ],
+      "ranked": [
+        "a01"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "مرصد العراق",
+      "exact_phrase": true,
+      "relevant": [
+        "a03"
+      ],
+      "ranked": [
+        "a03"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "تغير المناخ",
+      "exact_phrase": false,
+      "relevant": [
+        "a04"
+      ],
+      "ranked": [
+        "a04"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "مؤتمر بغداد",
+      "exact_phrase": true,
+      "relevant": [
+        "a05",
+        "a09"
+      ],
+      "ranked": [
+        "a05",
+        "a09"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.4,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.4,
+      "precision_at_10": 0.2,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.2,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "الامن السيبراني",
+      "exact_phrase": false,
+      "relevant": [
+        "a06"
+      ],
+      "ranked": [
+        "a06"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "الذكاء الاصطناعي",
+      "exact_phrase": false,
+      "relevant": [
+        "a07"
+      ],
+      "ranked": [
+        "a07"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "query": "MIRSAD العراق",
+      "exact_phrase": false,
+      "relevant": [
+        "m01"
+      ],
+      "ranked": [
+        "m01"
+      ],
+      "no_result_success": false,
+      "precision_at_5": 0.2,
+      "returned_set_precision_at_5": 1.0,
+      "strict_precision_at_5": 0.2,
+      "precision_at_10": 0.1,
+      "returned_set_precision_at_10": 1.0,
+      "strict_precision_at_10": 0.1,
+      "reciprocal_rank": 1.0
+    }
+  ]
+}
