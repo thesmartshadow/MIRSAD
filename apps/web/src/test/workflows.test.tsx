@@ -27,6 +27,7 @@ describe("application workflows", () => {
     localStorage.clear();
     vi.restoreAllMocks();
   });
+  afterEach(() => vi.unstubAllGlobals());
 
   it("runs a search and renders partial results", async () => {
     vi.stubGlobal(
@@ -56,6 +57,17 @@ describe("application workflows", () => {
     expect(
       screen.getByText(/requires a YouTube Data API key/i),
     ).toBeInTheDocument();
+    expect(screen.getByLabelText("Search results workspace").parentElement).toHaveAttribute(
+      "data-workspace-state",
+      "results-first",
+    );
+    expect(screen.getByTestId("desktop-filter-rail")).toHaveClass("hidden");
+    expect(screen.getByTestId("desktop-trace-rail")).toHaveClass("hidden");
+    await user.click(screen.getByTestId("filters-toggle"));
+    expect(await screen.findByRole("dialog", { name: "Search parameters" })).toBeInTheDocument();
+    await user.keyboard("{Escape}");
+    await user.click(screen.getByTestId("trace-toggle"));
+    expect(await screen.findByRole("dialog", { name: "Live search" })).toBeInTheDocument();
   });
 
   it("records a reformulation without delaying the replacement search", async () => {
@@ -105,6 +117,49 @@ describe("application workflows", () => {
     ).toBeInTheDocument();
   });
 
+  it("restores the three-panel active state when a new streamed search starts", async () => {
+    class PendingEventSource {
+      static instances: PendingEventSource[] = [];
+      onerror: (() => void) | null = null;
+      constructor(_url: string) {
+        PendingEventSource.instances.push(this);
+      }
+      addEventListener() {}
+      close() {}
+    }
+    vi.stubGlobal("EventSource", PendingEventSource);
+    vi.stubGlobal(
+      "fetch",
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input);
+        if (url.endsWith("/sources")) return jsonResponse([sourceFixture]);
+        if (url.endsWith("/bookmarks")) return jsonResponse([]);
+        if (url.endsWith("/quality/events")) return jsonResponse({}, 201);
+        if (url.endsWith("/search/jobs")) {
+          return jsonResponse(
+            { job_id: "job-b", session_id: "session-b", status: "started" },
+            202,
+          );
+        }
+        return jsonResponse(searchResponse);
+      }),
+    );
+    renderWithProviders(<SearchPage />, { initialSearch: searchResponse });
+    const user = userEvent.setup();
+    const input = screen.getByLabelText(/keyword or phrase/i);
+    await user.clear(input);
+    await user.type(input, "new streamed query");
+    const runSearch = screen.getByRole("button", { name: /run search/i });
+    await waitFor(() => expect(runSearch).toBeEnabled());
+    await user.click(runSearch);
+
+    const workspace = await screen.findByLabelText("Search results workspace");
+    expect(workspace.parentElement).toHaveAttribute("data-workspace-state", "active");
+    expect(screen.getByTestId("desktop-filter-rail")).toHaveClass("xl:block");
+    expect(screen.getByTestId("desktop-trace-rail")).toHaveClass("xl:block");
+    expect(PendingEventSource.instances).toHaveLength(1);
+  });
+
   it("loads persisted history", async () => {
     vi.stubGlobal(
       "fetch",
@@ -147,7 +202,7 @@ describe("application workflows", () => {
       database_integrity: "ok",
       foreign_key_violations: 0,
       capabilities: ["fts5"],
-      version: "1.1.0",
+      version: "1.1.1",
     };
     const quality = {
       search_count: 4,

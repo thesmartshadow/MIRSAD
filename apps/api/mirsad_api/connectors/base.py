@@ -98,6 +98,8 @@ class ConnectorItem:
     raw_metrics: dict[str, Any] = field(default_factory=dict)
     raw_metadata: dict[str, Any] = field(default_factory=dict)
     acquisition_mode: AcquisitionMode = AcquisitionMode.DIRECT_API
+    # Per-search path; persisted content keeps its original acquisition_mode.
+    acquisition_path: AcquisitionMode | None = None
 
 
 @dataclass(frozen=True, slots=True)

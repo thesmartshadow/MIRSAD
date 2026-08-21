@@ -148,6 +148,8 @@ async def run_case(client: httpx.AsyncClient, query: str) -> dict[str, Any]:
     mafer = diagnostics.get("mafer") or {}
     fingerprint = mafer.get("intent_fingerprint") or {}
     phase = diagnostics.get("phase_timings_ms") or {}
+    ranking = diagnostics.get("ranking") or {}
+    preparation = ranking.get("semantic_preparation") or {}
     outcome = diagnostics.get("outcome") or {}
     session = final["session"]
     return {
@@ -191,11 +193,18 @@ async def run_case(client: httpx.AsyncClient, query: str) -> dict[str, Any]:
             "persistence": phase.get("persistence"),
             "deduplication": phase.get("deduplication"),
             "semantic": phase.get("semantic_reranking"),
+            "precompute_wall": preparation.get("precompute_wall_ms"),
+            "overlap_window": preparation.get("overlap_window_ms"),
+            "semantic_work_hidden": preparation.get("semantic_work_hidden_ms"),
+            "semantic_critical_path": ranking.get("semantic_critical_path_ms"),
+            "ranking_cache_hits": ranking.get("ranking_cache_hits"),
+            "ranking_cache_misses": ranking.get("ranking_cache_misses"),
             "ranking": phase.get("ranking"),
             "clustering": phase.get("clustering"),
             "total": phase.get("total"),
         },
         "source_funnel": _source_totals(diagnostics.get("connectors") or []),
+        "acquisition_funnel": diagnostics.get("acquisition_funnel") or [],
         "events": [
             {
                 "sequence": event["sequence"],

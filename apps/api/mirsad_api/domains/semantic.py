@@ -66,6 +66,16 @@ class EmbeddingBatchStats:
     batch_size: int
 
 
+@dataclass(frozen=True, slots=True)
+class SemanticPreparationStats:
+    state: str
+    duration_ms: float
+    cache_hits: int = 0
+    cache_misses: int = 0
+    batch_size: int = 0
+    detail: str | None = None
+
+
 class SemanticRanker(Protocol):
     def score(
         self,
@@ -82,6 +92,25 @@ async def score_in_worker(
     """Run bounded model work outside the event loop without its default executor."""
 
     future = _SEMANTIC_EXECUTOR.submit(ranker.score, query, documents)
+    while not future.done():
+        await asyncio.sleep(0.002)
+    return future.result()
+
+
+async def prepare_in_worker(
+    ranker: SemanticRanker,
+    documents: list[SemanticDocument],
+) -> SemanticPreparationStats:
+    """Populate the authoritative bounded cache on the single model worker."""
+
+    method = getattr(ranker, "prepare", None)
+    if not callable(method):
+        return SemanticPreparationStats(
+            state="unsupported",
+            duration_ms=0.0,
+            detail="Semantic ranker does not expose preparation",
+        )
+    future = _SEMANTIC_EXECUTOR.submit(method, documents)
     while not future.done():
         await asyncio.sleep(0.002)
     return future.result()
@@ -214,6 +243,39 @@ class LocalSemanticRanker:
         except Exception as error:
             self._model_error = self._safe_error(error)
             return self._empty("unavailable", query_type, started, self._model_error)
+
+    def prepare(self, documents: list[SemanticDocument]) -> SemanticPreparationStats:
+        """Prepare content vectors only; authoritative scoring still owns query inference."""
+
+        started = perf_counter()
+        if not self.enabled:
+            return SemanticPreparationStats("disabled", 0.0)
+        if not documents:
+            return SemanticPreparationStats("empty", 0.0)
+        if self._model_error:
+            return SemanticPreparationStats(
+                "unavailable", 0.0, detail=self._model_error
+            )
+        try:
+            model = self._load_model()
+            _vectors, hits, misses, batch = self._document_vectors(model, documents)
+            return SemanticPreparationStats(
+                state="ready",
+                duration_ms=round((perf_counter() - started) * 1000, 2),
+                cache_hits=hits,
+                cache_misses=misses,
+                batch_size=batch.batch_size,
+            )
+        except Exception as error:
+            # Preparation is speculative. Do not poison the authoritative score fallback.
+            return SemanticPreparationStats(
+                state="failed",
+                duration_ms=round((perf_counter() - started) * 1000, 2),
+                detail=self._safe_error(error),
+            )
+
+    def cache_identity(self, document: SemanticDocument) -> str:
+        return self._content_key(document)
 
     def cluster_similarities(
         self,

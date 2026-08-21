@@ -10,12 +10,21 @@ import httpx
 import pytest
 from sqlalchemy.orm import Session, sessionmaker
 
-from mirsad_api.connectors import ConnectorError, ConnectorMetadata, MockConnector
+from mirsad_api.connectors import (
+    ConnectorCapabilities,
+    ConnectorError,
+    ConnectorItem,
+    ConnectorMetadata,
+    MockConnector,
+)
 from mirsad_api.database import get_db
 from mirsad_api.main import app
+from mirsad_api.models import SearchSession
+from mirsad_api.provenance import AcquisitionMode
 from mirsad_api.schemas import SearchRequest
 from mirsad_api.services.bootstrap import seed_database
-from mirsad_api.services.read_models import relevant_snippet
+from mirsad_api.services.read_models import get_search_response, relevant_snippet
+from mirsad_api.services.search import SearchService
 from mirsad_api.services.search_jobs import SearchJobCapacityError, SearchJobRegistry
 
 
@@ -45,6 +54,21 @@ class SlowConnector(MockConnector):
             replace(item, source="slow")
             for item in await super().search(query, limit=limit, since=since)
         ]
+
+
+class MemoryOnlyBlueskyConnector(MockConnector):
+    metadata = ConnectorMetadata(
+        key="bluesky",
+        name="Bluesky",
+        kind="social",
+        base_url="https://api.bsky.app",
+        capabilities=ConnectorCapabilities(
+            keyword_search=True,
+            phrase_search=True,
+            public_posts=True,
+            acquisition_modes=(AcquisitionMode.PUBLIC_API.value,),
+        ),
+    )
 
 
 def event_payloads(body: str) -> list[dict[str, object]]:
@@ -101,7 +125,18 @@ async def test_search_job_sse_orders_progress_and_finalizes_partial(
             events = event_payloads(response.text)
             names = [event["event"] for event in events]
             assert names[0] == "search.started"
-            assert names.index("planning.started") < names.index("planning.completed")
+            assert names.index("planning.started") < names.index(
+                "acquisition.local_memory.started"
+            )
+            assert names.index("acquisition.local_memory.started") < names.index(
+                "acquisition.local_memory.completed"
+            )
+            assert names.index("acquisition.local_memory.completed") < names.index(
+                "planning.completed"
+            )
+            assert names.index("semantic.preparation.completed") < names.index(
+                "ranking.started"
+            )
             assert "source.completed" in names
             assert "source.failed" in names
             assert names[-1] == "search.partial"
@@ -145,3 +180,69 @@ async def test_search_job_registry_is_bounded_expires_and_disconnect_is_safe(
     job.created_monotonic -= 61
     registry.cleanup()
     assert registry.get(first.job_id) is None
+
+
+@pytest.mark.asyncio
+async def test_unselected_bluesky_memory_result_keeps_connector_events_truthful(
+    db: Session, settings
+) -> None:
+    connectors = {"mock": MockConnector(), "bluesky": MemoryOnlyBlueskyConnector()}
+    seed_database(db, connectors)
+    setup_service = SearchService(db, settings, connectors)
+    setup_service._persist_item(
+        ConnectorItem(
+            source="bluesky",
+            external_id="memory-post",
+            canonical_url="https://bsky.app/profile/example.test/post/memory-post",
+            author="Memory author",
+            title="Precision memory evidence",
+            text="Precision memory evidence from a previously collected public post.",
+            published_at=None,
+            language="en",
+            acquisition_mode=AcquisitionMode.PUBLIC_API,
+        )
+    )
+    db.commit()
+    events: list[tuple[str, dict[str, object]]] = []
+    service = SearchService(
+        db,
+        settings,
+        connectors,
+        event_sink=lambda name, data: events.append((name, data)),
+    )
+
+    session_id = await service.execute(
+        SearchRequest(
+            query="precision memory evidence",
+            sources=["mock"],
+            source_selection="explicit",
+            time_range="all",
+            limit=10,
+        )
+    )
+    response = get_search_response(db, session_id)
+    bluesky = next(item for item in response.results if item.source == "bluesky")
+    session = db.get(SearchSession, session_id)
+    assert session is not None
+
+    assert session.sources == ["mock"]
+    assert not any(
+        name in {"source.started", "source.completed", "source.degraded"}
+        and data.get("source") == "bluesky"
+        for name, data in events
+    )
+    assert any(name == "acquisition.local_memory.completed" for name, _data in events)
+    assert bluesky.acquisition_mode == AcquisitionMode.PUBLIC_API.value
+    assert bluesky.acquisition_path == AcquisitionMode.LOCAL_MEMORY.value
+    assert bluesky.acquisition_paths == [AcquisitionMode.LOCAL_MEMORY.value]
+    assert all(row["source"] != "bluesky" for row in session.diagnostics["connectors"])
+    memory_funnel = next(
+        row
+        for row in session.diagnostics["acquisition_funnel"]
+        if row["platform"] == "bluesky"
+        and row["acquisition_path"] == AcquisitionMode.LOCAL_MEMORY.value
+    )
+    assert memory_funnel["network_requests"] == 0
+    assert memory_funnel["network_latency_ms"] is None
+    assert memory_funnel["admitted"] >= 1
+    assert memory_funnel["final_top_k"] >= 1

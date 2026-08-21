@@ -158,6 +158,10 @@ def apply_schema_migrations(target_engine: Engine) -> None:
             "attempt_latencies_ms": "JSON NOT NULL DEFAULT '[]'",
             "circuit_breaker_state": "VARCHAR(20) NOT NULL DEFAULT 'closed'",
         },
+        "search_results": {
+            "acquisition_path": "VARCHAR(30)",
+            "acquisition_paths": "JSON",
+        },
     }
     with target_engine.begin() as connection:
         for table, columns in additions.items():

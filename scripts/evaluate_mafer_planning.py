@@ -449,7 +449,7 @@ def _aggregate(cases: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def evaluate() -> dict[str, Any]:
+def evaluate(*, output_path: Path | None = JSON_REPORT) -> dict[str, Any]:
     payload = json.loads(FIXTURE.read_text(encoding="utf-8"))
     queries = payload["queries"]
     started = time.perf_counter()
@@ -488,10 +488,11 @@ def evaluate() -> dict[str, Any]:
             "zero-result judgments; this deterministic benchmark injects healthy transport."
         ),
     }
-    JSON_REPORT.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    if output_path is not None:
+        output_path.write_text(
+            json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     return result
 
 

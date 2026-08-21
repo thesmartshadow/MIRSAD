@@ -1,0 +1,32 @@
+{
+  "schema": "mirsad.precision-hardening-visual",
+  "captured_at": "2026-08-21T06:56:47.999Z",
+  "active": {
+    "renderer_info": {
+      "render_calls": 15,
+      "triangles": 1076,
+      "geometries": 15,
+      "textures": 0
+    },
+    "frame_timing": {
+      "sample_count": 30,
+      "average_frame_ms": 22.529999999900657,
+      "maximum_frame_ms": 66.80000000000018,
+      "frames_over_25_ms": 6
+    }
+  },
+  "lifecycle": {
+    "repeated_mount_cycles": 3,
+    "canvas_counts_after_unmount": [
+      0,
+      0,
+      0
+    ],
+    "heap_before_bytes": 76600000,
+    "heap_after_bytes": 76600000
+  },
+  "fallback": {
+    "forced": true,
+    "canvas_count": 0
+  }
+}

@@ -84,6 +84,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.86 0.018 205);
   --sidebar-ring: oklch(0.52 0.075 205);
+  --surface-instrument: oklch(0.968 0.01 205);
+  --status-healthy: oklch(0.52 0.11 158);
+  --status-degraded: oklch(0.62 0.12 70);
+  --status-failed: oklch(0.58 0.18 28);
+  --status-memory: oklch(0.52 0.075 258);
+  --score-lexical: oklch(0.58 0.08 205);
+  --score-semantic: oklch(0.38 0.075 205);
+  --score-secondary: oklch(0.68 0.08 70);
 }
 
 .dark {
@@ -118,6 +126,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --surface-instrument: oklch(0.225 0.025 220);
+  --status-healthy: oklch(0.7 0.11 158);
+  --status-degraded: oklch(0.75 0.11 70);
+  --status-failed: oklch(0.72 0.16 28);
+  --status-memory: oklch(0.7 0.075 258);
+  --score-lexical: oklch(0.68 0.075 205);
+  --score-semantic: oklch(0.88 0.045 205);
+  --score-secondary: oklch(0.76 0.09 70);
 }
 
 @layer base {
@@ -133,12 +149,27 @@
   html[lang="ar"] {
     font-family: "IBM Plex Sans Arabic", "IBM Plex Sans Variable", sans-serif;
   }
+  bdi,
+  [dir="ltr"] {
+    unicode-bidi: isolate;
+  }
   button,
   a,
   input,
   textarea,
   select {
     @apply focus-visible:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
 

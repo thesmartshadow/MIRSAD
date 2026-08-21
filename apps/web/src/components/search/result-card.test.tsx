@@ -73,6 +73,7 @@ describe("ResultCard", () => {
         ...searchResponse.results[0].explanation,
         lexical_relevance: 91,
         semantic_relevance: 76,
+        semantic_state: "ready" as const,
         semantic_similarity: 0.52,
         semantic_weight: 0.75,
         secondary_quality_budget: 0.01,
@@ -88,6 +89,39 @@ describe("ResultCard", () => {
     expect(screen.getByText("Semantic Relevance")).toBeInTheDocument();
     expect(screen.getByText("Phrase Match")).toBeInTheDocument();
     expect(screen.getByText("Query Coverage")).toBeInTheDocument();
+    expect(screen.getByText(/25% lexical/)).toBeInTheDocument();
+    expect(screen.getByText(/Maximum total budget/)).toHaveTextContent("1%");
+  });
+
+  it("does not fabricate a semantic percentage for a lexical-only path", async () => {
+    const item = {
+      ...searchResponse.results[0],
+      explanation: {
+        ...searchResponse.results[0].explanation,
+        semantic_state: "lexical_only" as const,
+        semantic_relevance: null,
+      },
+    };
+    renderWithProviders(<ResultCard item={item} />);
+    await userEvent.click(screen.getByRole("button", { name: /explain score/i }));
+
+    expect(await screen.findByText("Lexical-only path")).toBeInTheDocument();
+    expect(screen.getByText(/Semantic reranking was not applied/)).toBeInTheDocument();
+    expect(screen.queryByText("Semantic Relevance")).not.toBeInTheDocument();
+  });
+
+  it("renders platform and this-search acquisition path independently", () => {
+    const item = {
+      ...searchResponse.results[0],
+      source: "bluesky",
+      acquisition_mode: "PUBLIC_API",
+      acquisition_path: "LOCAL_MEMORY",
+      acquisition_paths: ["LOCAL_MEMORY"],
+    };
+    renderWithProviders(<ResultCard item={item} />);
+
+    expect(screen.getByText(/Platform:/)).toHaveTextContent("bluesky");
+    expect(screen.getByTestId("result-acquisition-path")).toHaveTextContent("LOCAL MEMORY");
   });
 
   it("identifies indexed web provenance without claiming direct API access", async () => {

@@ -1,0 +1,22 @@
+# MIRSAD v1.1.1 Design Research Sources
+
+Research date: 2026-08-21. Only current primary documentation informed implementation decisions.
+
+| Source | Topic | Decision derived | MIRSAD application |
+|---|---|---|---|
+| [GSAP core documentation](https://gsap.com/docs/v3/) | Core animation, timelines, cleanup and responsive motion | Use timelines for semantic multi-element transitions; do not scatter unrelated animation mechanisms | One scoped motion layer drives search phase, result reveal and panel transitions |
+| [GSAP `context()`](https://gsap.com/docs/v3/GSAP/gsap.context%28%29/) | Scope and automatic animation cleanup | Every React-owned animation must be created in a component-scoped context and reverted on unmount | Workspace, topology and score-instrument animations use scoped cleanup |
+| [GSAP `matchMedia()`](https://gsap.com/docs/v3/GSAP/gsap.matchMedia%28%29/) | Responsive and reduced-motion animation conditions | Motion conditions should follow native media queries and be reverted when conditions change | Desktop transitions and `prefers-reduced-motion` behavior share one scoped policy |
+| [Three.js `WebGLRenderer`](https://threejs.org/docs/pages/WebGLRenderer.html) | Animation loop, renderer statistics and disposal | Use `setAnimationLoop`, inspect bounded `renderer.info`, stop terminal/hidden loops and call `dispose()` | A single lazy topology renderer is mounted only in the live trace, then settles to on-demand rendering |
+| [Three.js renderer lifecycle](https://threejs.org/docs/pages/Renderer.html) | On-demand rendering and animation-loop contract | Active state may use a loop; settled state should render on demand | Terminal searches do not consume permanent 60 FPS rendering |
+| [MDN WebGL best practices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices) | Resource limits, pixel ratio, draw calls, readbacks and context behavior | Cap device pixel ratio, reuse geometry/material, avoid textures and blocking GPU reads, dispose eagerly | The topology uses simple primitives, no textures/postprocessing, bounded pixel density and no hot-loop diagnostics |
+| [MDN Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) | Pausing nonessential background work | Hidden documents must stop nonessential rendering | Visibility changes pause and resume only active-search rendering |
+| [MDN `prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-motion) | User motion preference | Replace spatial movement with immediate state changes rather than merely slowing it | Reduced-motion mode uses static SVG/topology state and immediate panel/result transitions |
+| [MDN SVG `<title>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/title) | Accessible SVG naming | Informational SVG requires an accessible name and description | Retrieval topology supplies `<title>`, `<desc>` and `aria-labelledby`; decorative marks are hidden |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) | Keyboard, focus, animation and status messages | Motion must not trap focus, hide focus or become the sole state cue; updates require readable status text | Buttons/Sheets retain shadcn focus management and live search uses text/icon/color plus an ARIA status region |
+| [WCAG focus-visible guidance](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible) | Visible keyboard focus | Never animate away focus indicators | Trace, Filters, result actions and score controls retain tokenized `focus-visible` rings |
+| [WCAG techniques](https://www.w3.org/WAI/WCAG22/Techniques/) | Reflow, reduced motion and focus techniques | DOM order must remain logical; responsive layout must reflow without horizontal scrolling | Results precede secondary Sheet content in reading order and remain central on narrow screens |
+| [shadcn/ui Sheet](https://ui.shadcn.com/docs/components/aria/sheet) | Accessible complementary panels | Use Sheet for secondary filters/trace on medium/mobile and reopened terminal panels | Radix/shadcn continues to own focus trap, dismissal and accessibility behavior; GSAP does not replace it |
+| [shadcn/ui components](https://ui.shadcn.com/docs/components) | Current Dialog, Tabs, Command, ScrollArea and Sheet patterns | Keep shadcn as the sole component system | Existing primitives structure search, tabs, score explanation, trace and mobile controls |
+
+No implementation decision was derived from design galleries, templates, generated imagery, or third-party tutorials.

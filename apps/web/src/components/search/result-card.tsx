@@ -15,8 +15,6 @@ import { useEffect, useState } from "react";
 import { HighlightedSnippet } from "@/components/search/highlighted-snippet";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import {
   Dialog,
   DialogContent,
@@ -52,15 +50,13 @@ import { formatDate, formatNumber } from "@/lib/format";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import type { DuplicateGroup, SearchResultItem } from "@/types/api";
 
-const signals: Array<[keyof SearchResultItem["explanation"], TranslationKey]> =
-  [
-    ["relevance", "score.relevance"],
-    ["freshness", "score.freshness"],
-    ["engagement", "score.engagement"],
-    ["source_confidence", "score.confidence"],
-    ["cross_source_presence", "score.presence"],
-    ["novelty", "score.novelty"],
-  ];
+const secondarySignals: Array<[string, TranslationKey]> = [
+  ["freshness", "score.freshness"],
+  ["engagement", "score.engagement"],
+  ["source_confidence", "score.confidence"],
+  ["cross_source_presence", "score.presence"],
+  ["novelty", "score.novelty"],
+];
 
 const duplicateStageKeys: Record<string, TranslationKey> = {
   canonical: "duplicates.stage.canonical",
@@ -71,6 +67,12 @@ const duplicateStageKeys: Record<string, TranslationKey> = {
 
 function ScoreSheet({ item }: { item: SearchResultItem }) {
   const { direction, locale, t } = useI18n();
+  const explanation = item.explanation;
+  const semanticState =
+    explanation.semantic_state ??
+    (explanation.semantic_relevance === null ? "lexical_only" : "ready");
+  const semanticReady = semanticState === "ready";
+  const lexicalWeight = semanticReady ? 1 - explanation.semantic_weight : 1;
   return (
     <Sheet>
       <SheetTrigger render={<Button variant="outline" size="sm" />}>
@@ -85,65 +87,74 @@ function ScoreSheet({ item }: { item: SearchResultItem }) {
           <SheetDescription>{t("score.description")}</SheetDescription>
         </SheetHeader>
         <ScrollArea className="min-h-0 flex-1 px-4">
-          <div className="space-y-5 pb-6">
-            <div className="flex items-end justify-between border-b pb-4">
-              <span className="text-sm font-medium">{t("score.final")}</span>
-              <span className="font-heading text-4xl font-semibold tabular-nums">
-                {formatNumber(item.explanation.final_score, locale, 1)}
-              </span>
+          <div className="space-y-6 pb-6" data-testid="score-instrument">
+            <div className="border-b py-5">
+              <div className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">{t("score.final")}</div>
+              <div className="mt-1 font-heading text-5xl font-semibold tabular-nums">
+                {formatNumber(explanation.final_score, locale, 1)}
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">{t("score.notProbability")}</p>
             </div>
-            <div className="space-y-4">
-              {item.explanation.semantic_relevance !== null && (
-                <div className="rounded-md border p-3">
-                  <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div>
-                      <div className="text-muted-foreground">
-                        {t("score.lexicalRelevance")}
-                      </div>
-                      <div className="mt-1 font-medium tabular-nums">
-                        {formatNumber(
-                          item.explanation.lexical_relevance,
-                          locale,
-                          1,
-                        )}
-                      </div>
+
+            <section aria-labelledby={`core-score-${item.id}`}>
+              <div className="mb-3 flex items-center justify-between border-b pb-2">
+                <h3 id={`core-score-${item.id}`} className="text-xs font-semibold uppercase tracking-[0.14em]">{t("score.core")}</h3>
+                <span className="text-[11px] text-muted-foreground">{t(semanticReady ? "score.coreArchitecture" : "score.coreLexical")}</span>
+              </div>
+              {semanticReady ? (
+                <div className="space-y-4">
+                  <svg viewBox="0 0 100 8" role="img" aria-label={t("score.composition")} className="h-2 w-full">
+                    <rect width={lexicalWeight * 100} height="8" className="fill-[var(--score-lexical)]" />
+                    <rect x={lexicalWeight * 100} width={explanation.semantic_weight * 100} height="8" className="fill-[var(--score-semantic)]" />
+                  </svg>
+                  {[
+                    [t("score.lexicalRelevance"), explanation.lexical_relevance, lexicalWeight],
+                    [t("score.semanticRelevance"), explanation.semantic_relevance, explanation.semantic_weight],
+                  ].map(([label, value, weight]) => (
+                    <div key={String(label)} className="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1">
+                      <div className="text-sm font-medium">{label}</div>
+                      <div className="font-semibold tabular-nums">{formatNumber(Number(value), locale, 1)}</div>
+                      <div className="text-[11px] text-muted-foreground">{formatNumber(Number(weight) * 100, locale, 0)}% {t("score.modelWeight")}</div>
                     </div>
-                    <div>
-                      <div className="text-muted-foreground">
-                        {t("score.semanticRelevance")}
-                      </div>
-                      <div className="mt-1 font-medium tabular-nums">
-                        {formatNumber(
-                          item.explanation.semantic_relevance,
-                          locale,
-                          1,
-                        )}
-                      </div>
-                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="border-s-2 border-muted-foreground/40 ps-3">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <span className="text-sm font-medium">{t("score.lexicalRelevance")}</span>
+                    <strong className="tabular-nums">{formatNumber(explanation.lexical_relevance, locale, 1)}</strong>
                   </div>
+                  <p className="mt-2 text-xs text-muted-foreground">{t(`score.semanticState.${semanticState}`)}</p>
                 </div>
               )}
-              {signals.map(([key, label]) => {
-                const value = Number(item.explanation[key]);
-                return (
-                  <div key={key} className="space-y-1.5">
-                    <div className="flex justify-between gap-3 text-sm">
-                      <span>{t(label)}</span>
-                      <span className="tabular-nums text-muted-foreground">
-                        {formatNumber(value, locale, 1)}
-                      </span>
-                    </div>
-                    <Progress value={value} />
-                  </div>
-                );
-              })}
-              <div className="flex items-center justify-between border-t pt-3 text-sm">
-                <span>{t("score.spam")}</span>
-                <span className="tabular-nums text-destructive">
-                  -{formatNumber(item.explanation.spam_penalty, locale, 1)}
-                </span>
+            </section>
+
+            <section aria-labelledby={`secondary-score-${item.id}`} className="border-t pt-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 id={`secondary-score-${item.id}`} className="text-xs font-semibold uppercase tracking-[0.14em]">{t("score.secondary")}</h3>
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    {t("score.secondaryBudget")} {formatNumber(explanation.secondary_quality_budget * 100, locale, 1)}%
+                  </p>
+                </div>
+                <span className="h-1.5 w-12 bg-[var(--score-secondary)]" aria-hidden="true" />
               </div>
-            </div>
+              <dl className="mt-4 grid grid-cols-[1fr_auto] gap-x-4 gap-y-2 text-xs">
+                {secondarySignals.map(([key, label]) => (
+                  <div key={key} className="contents">
+                    <dt className="text-muted-foreground">{t(label)}</dt>
+                    <dd className="text-end tabular-nums">
+                      {formatNumber(Number(explanation.weighted_components[key] ?? 0), locale, 3)}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            <section className="flex items-center justify-between border-y py-3 text-sm">
+              <span className="font-medium">{t("score.penalty")}</span>
+              <span className="tabular-nums text-destructive">-{formatNumber(explanation.spam_penalty, locale, 1)}</span>
+            </section>
             <Separator />
             <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">{t("result.source")}</dt>
@@ -169,7 +180,7 @@ function ScoreSheet({ item }: { item: SearchResultItem }) {
               </dt>
               <dd className="tabular-nums">
                 {formatNumber(
-                  item.explanation.relevance_features.exact_full_query ?? 0,
+                  explanation.relevance_features.exact_full_query ?? 0,
                   locale,
                   0,
                 )}
@@ -179,7 +190,7 @@ function ScoreSheet({ item }: { item: SearchResultItem }) {
               </dt>
               <dd className="tabular-nums">
                 {formatNumber(
-                  item.explanation.relevance_features.query_token_coverage ?? 0,
+                  explanation.relevance_features.query_token_coverage ?? 0,
                   locale,
                   0,
                 )}
@@ -189,7 +200,7 @@ function ScoreSheet({ item }: { item: SearchResultItem }) {
               </dt>
               <dd>
                 {t(
-                  item.explanation.semantic_relevance === null
+                  !semanticReady
                     ? "score.strategy.lexical"
                     : "score.strategy.semantic",
                 )}
@@ -355,6 +366,7 @@ export function ResultCard({
   const author = displayText(item.author) || t("result.unknownAuthor");
   const externalUrl = safeExternalUrl(item.canonical_url);
   const domain = externalUrl ? new URL(externalUrl).hostname.replace(/^www\./, "") : "";
+  const acquisitionPath = item.acquisition_path || item.acquisition_mode;
   const publicMetrics = (
     [
       ["result.metric.likes", item.like_count],
@@ -366,17 +378,17 @@ export function ResultCard({
     ] as Array<[TranslationKey, number | null]>
   ).filter((entry): entry is [TranslationKey, number] => entry[1] !== null);
   return (
-    <Card className="shadow-none transition-colors hover:border-primary/35">
-      <CardContent className={density === "compact" ? "space-y-2 py-3" : "space-y-3"}>
+    <article
+      className={`group border-s-2 border-transparent px-1 transition-colors hover:border-s-primary hover:bg-muted/20 sm:px-3 ${density === "compact" ? "space-y-2 py-3" : "space-y-3 py-5"}`}
+      data-testid="evidence-record"
+    >
         <div className="flex items-start gap-3">
-          <div className="flex size-9 shrink-0 items-center justify-center rounded-md border bg-muted text-xs font-semibold uppercase">
+          <div className="flex size-8 shrink-0 items-center justify-center border-b-2 border-primary/40 text-[11px] font-semibold uppercase">
             {item.source.slice(0, 2)}
           </div>
           <div className="min-w-0 flex-1">
             <div className="mb-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-              <Badge variant="outline" className="font-medium">
-                {item.source}
-              </Badge>
+              <span className="font-semibold uppercase tracking-[0.08em] text-foreground" dir="ltr">{item.source}</span>
               {item.acquisition_mode === "WEB_INDEX" && (
                 <Tooltip>
                   <TooltipTrigger
@@ -443,7 +455,23 @@ export function ResultCard({
               {domain}
             </span>
           )}
-          <span>{item.acquisition_mode.replaceAll("_", " ")}</span>
+          <span>
+            {t("result.platform")}: <bdi className="font-medium text-foreground">{item.source}</bdi>
+          </span>
+          <span
+            className={acquisitionPath === "LOCAL_MEMORY" ? "font-medium text-[var(--status-memory)]" : undefined}
+            data-testid="result-acquisition-path"
+          >
+            {t("result.acquiredThrough")}: <bdi>{acquisitionPath.replaceAll("_", " ")}</bdi>
+          </span>
+          {acquisitionPath !== item.acquisition_mode && (
+            <Tooltip>
+              <TooltipTrigger render={<span className="cursor-help border-b border-dotted" />}>
+                {t("result.originalAcquisition")}
+              </TooltipTrigger>
+              <TooltipContent>{item.acquisition_mode.replaceAll("_", " ")}</TooltipContent>
+            </Tooltip>
+          )}
           {item.cluster_id && (
             <span>
               {t("result.cluster")}: <bdi>{item.cluster_id.slice(0, 8)}</bdi>
@@ -623,7 +651,6 @@ export function ResultCard({
             {bookmarkError}
           </p>
         )}
-      </CardContent>
-    </Card>
+    </article>
   );
 }

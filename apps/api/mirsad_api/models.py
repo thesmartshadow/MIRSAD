@@ -201,6 +201,8 @@ class SearchResult(Base):
     rank: Mapped[int] = mapped_column(Integer)
     duplicate_group_id: Mapped[str | None] = mapped_column(String(36), index=True)
     cluster_id: Mapped[str | None] = mapped_column(String(36), index=True)
+    acquisition_path: Mapped[str | None] = mapped_column(String(30))
+    acquisition_paths: Mapped[list[str] | None] = mapped_column(JSON)
 
 
 class DuplicateGroup(Base):

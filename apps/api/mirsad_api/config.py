@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     )
 
     app_name: str = "MIRSAD"
-    version: str = "1.1.0"
+    version: str = "1.1.1"
     api_host: str = "127.0.0.1"
     api_port: int = 8000
     database_url: str = "sqlite:///./data/mirsad.db"
@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     )
     reddit_client_id: str | None = Field(default=None, validation_alias="REDDIT_CLIENT_ID")
     reddit_client_secret: str | None = Field(default=None, validation_alias="REDDIT_CLIENT_SECRET")
-    reddit_user_agent: str = "MIRSAD/1.1.0 local institutional research"
+    reddit_user_agent: str = "MIRSAD/1.1.1 local institutional research"
     mastodon_base_url: str | None = Field(default=None, validation_alias="MASTODON_BASE_URL")
     mastodon_access_token: str | None = Field(
         default=None, validation_alias="MASTODON_ACCESS_TOKEN"

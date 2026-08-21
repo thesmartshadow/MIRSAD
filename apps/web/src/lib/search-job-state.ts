@@ -22,6 +22,7 @@ export type LiveSourceState = {
   elapsedMs: number | null;
   errorCategory: string | null;
   acquisitionMode: string | null;
+  wasSelected: boolean;
 };
 
 export type SearchJobState = {
@@ -31,6 +32,21 @@ export type SearchJobState = {
   jobId: string | null;
   sessionId: string | null;
   sources: Record<string, LiveSourceState>;
+  memory: {
+    status: "idle" | "searching" | "completed" | "failed";
+    candidates: number;
+    elapsedMs: number | null;
+    platforms: Record<string, number>;
+  };
+  semanticPreparation: {
+    status: "idle" | "preparing" | "completed" | "failed";
+    eligible: number;
+    completed: number;
+    cacheHits: number;
+    cacheMisses: number;
+    wallMs: number | null;
+    hiddenMs: number | null;
+  };
   selectedSourceCount: number;
   completedSourceCount: number;
   fetched: number;
@@ -55,6 +71,16 @@ export const idleSearchJob: SearchJobState = {
   jobId: null,
   sessionId: null,
   sources: {},
+  memory: { status: "idle", candidates: 0, elapsedMs: null, platforms: {} },
+  semanticPreparation: {
+    status: "idle",
+    eligible: 0,
+    completed: 0,
+    cacheHits: 0,
+    cacheMisses: 0,
+    wallMs: null,
+    hiddenMs: null,
+  },
   selectedSourceCount: 0,
   completedSourceCount: 0,
   fetched: 0,
@@ -93,6 +119,7 @@ export function applySearchEvent(
   if (message.event === "planning.started") phase = "planning";
   if (message.event === "source.started" || message.event === "collection.progress")
     phase = "collecting";
+  if (message.event === "acquisition.local_memory.started") phase = "planning";
   if (message.event === "normalization.completed" || message.event === "persistence.completed")
     phase = "normalizing";
   if (message.event === "ranking.started" || message.event === "ranking.completed")
@@ -115,6 +142,7 @@ export function applySearchEvent(
       elapsedMs: null,
       errorCategory: null,
       acquisitionMode: null,
+      wasSelected: false,
     };
     const status =
       message.event === "source.started"
@@ -137,9 +165,41 @@ export function applySearchEvent(
       admitted: numeric(data.admitted) || previous.admitted,
       elapsedMs:
         typeof data.elapsed_ms === "number" ? data.elapsed_ms : previous.elapsedMs,
-      errorCategory: text(data.error_category) ?? previous.errorCategory,
+      errorCategory:
+        text(data.error_category) ?? text(data.reason) ?? previous.errorCategory,
       acquisitionMode: text(data.acquisition_mode) ?? previous.acquisitionMode,
+      wasSelected: previous.wasSelected || message.event === "source.selected",
     };
+  }
+
+  const memory = { ...current.memory };
+  if (message.event === "acquisition.local_memory.started") {
+    memory.status = "searching";
+  }
+  if (message.event === "acquisition.local_memory.completed") {
+    memory.status = "completed";
+    memory.candidates = numeric(data.candidates);
+    memory.elapsedMs = numeric(data.elapsed_ms);
+    memory.platforms =
+      data.platforms && typeof data.platforms === "object"
+        ? (data.platforms as Record<string, number>)
+        : {};
+  }
+
+  const semanticPreparation = { ...current.semanticPreparation };
+  if (message.event === "semantic.preparation.started") {
+    semanticPreparation.status = "preparing";
+    semanticPreparation.eligible =
+      numeric(data.precompute_eligible_candidates) || numeric(data.eligible_candidates);
+  }
+  if (message.event === "semantic.preparation.completed") {
+    semanticPreparation.status = data.precompute_failed ? "failed" : "completed";
+    semanticPreparation.eligible = numeric(data.precompute_eligible_candidates);
+    semanticPreparation.completed = numeric(data.precompute_completed);
+    semanticPreparation.cacheHits = numeric(data.precompute_cache_hits);
+    semanticPreparation.cacheMisses = numeric(data.precompute_cache_misses);
+    semanticPreparation.wallMs = numeric(data.precompute_wall_ms);
+    semanticPreparation.hiddenMs = numeric(data.semantic_work_hidden_ms);
   }
 
   const terminal = ["search.completed", "search.partial", "search.failed"].includes(
@@ -149,13 +209,16 @@ export function applySearchEvent(
     ...current,
     phase,
     sources,
+    memory,
+    semanticPreparation,
     selectedSourceCount:
       numeric(data.selected_sources) ||
-      Object.values(sources).filter((item) => item.status !== "skipped").length,
+      current.selectedSourceCount ||
+      Object.values(sources).filter((item) => item.wasSelected).length,
     completedSourceCount:
       numeric(data.completed_sources) ||
       Object.values(sources).filter((item) =>
-        ["completed", "degraded", "failed"].includes(item.status),
+        item.wasSelected && ["completed", "degraded", "failed", "skipped"].includes(item.status),
       ).length,
     fetched: numeric(data.fetched) || current.fetched,
     matched: numeric(data.matched) || current.matched,

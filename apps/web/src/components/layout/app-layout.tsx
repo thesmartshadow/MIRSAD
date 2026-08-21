@@ -142,7 +142,7 @@ function ApplicationSidebar() {
       <SidebarFooter>
         <div className="flex items-center justify-between gap-2 px-2 group-data-[collapsible=icon]:hidden">
           <span className="text-xs text-muted-foreground">
-            {t("app.local")} v1.1.0
+            {t("app.local")} v1.1.1
           </span>
           <span
             className="size-2 rounded-full bg-chart-4"

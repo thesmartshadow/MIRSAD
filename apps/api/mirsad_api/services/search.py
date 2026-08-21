@@ -34,6 +34,7 @@ from ..domains.deduplication import (
 from ..domains.engagement import normalize_engagement, social_reach
 from ..domains.query import (
     ProcessedQuery,
+    classify_query,
     fts_query,
     normalize_text,
     process_query,
@@ -46,6 +47,7 @@ from ..domains.ranking import (
     relevance_score,
 )
 from ..domains.semantic import (
+    LEXICAL_ONLY_QUERY_TYPES,
     SemanticDocument,
     SemanticRanker,
     SemanticScores,
@@ -107,7 +109,9 @@ from ..models import (
     SourceHealth,
     SourceUtilityObservation,
 )
+from ..provenance import AcquisitionMode
 from ..schemas import SearchRequest, SortMode
+from .semantic_preparation import SemanticPreparationCoordinator
 
 
 @dataclass(slots=True)
@@ -163,6 +167,8 @@ class SearchService:
         processed = process_query(request.query, exact_phrase=request.exact_phrase)
         planning_started = perf_counter()
         self._emit("planning.started", source_selection=request.source_selection)
+        memory_started = perf_counter()
+        self._emit("acquisition.local_memory.started")
         planning = AdaptiveSearchPlanner(self.db, self.connectors).prepare(
             processed,
             selected_sources=request.sources,
@@ -171,6 +177,15 @@ class SearchService:
             explicit_time_range=request.time_range.value,
         )
         lattice = planning.lattice
+        memory_lookup_ms = round((perf_counter() - memory_started) * 1000, 2)
+        memory_platforms = Counter(item.source for item in planning.local_memory.items)
+        self._emit(
+            "acquisition.local_memory.completed",
+            elapsed_ms=memory_lookup_ms,
+            candidates=len(planning.local_memory.items),
+            platforms=dict(memory_platforms),
+            requests=0,
+        )
         search_trace = planning.initial_trace()
         planning_duration_ms = round((perf_counter() - planning_started) * 1000, 2)
         planned_sources = [
@@ -274,6 +289,36 @@ class SearchService:
 
         collection_since = _since(request.time_range.value)
         connector_started = perf_counter()
+        preparation = SemanticPreparationCoordinator(
+            self.semantic_ranker,
+            max_candidates=(
+                self.settings.semantic_candidate_limit
+                if getattr(self.semantic_ranker, "enabled", True)
+                and classify_query(processed) not in LEXICAL_ONLY_QUERY_TYPES
+                else 0
+            ),
+        )
+        preparation_event_started = False
+
+        async def submit_preparation(items: list[ConnectorItem]) -> None:
+            nonlocal preparation_event_started
+            documents = self._preparation_documents(
+                processed,
+                items,
+                lattice,
+                request,
+                collection_since,
+            )
+            accepted = await preparation.submit(documents)
+            if accepted and not preparation_event_started:
+                preparation_event_started = True
+                self._emit(
+                    "semantic.preparation.started",
+                    precompute_eligible_candidates=accepted,
+                    limit=self.settings.semantic_candidate_limit,
+                )
+
+        await submit_preparation(list(planning.local_memory.items))
         completion_order: list[str] = []
         runs: list[ConnectorRun] = []
         accumulated_items = list(planning.local_memory.items)
@@ -400,6 +445,7 @@ class SearchService:
                     max_historical_calls=historical_allowances.get(source, 0),
                     first_attempt=attempt_map[source],
                 )
+                await submit_preparation(run.items)
                 completion_order.append(source)
                 source_completions += 1
                 source_fetched += run.fetched_result_count
@@ -642,7 +688,21 @@ class SearchService:
                 stop_reason = StopReason.SATISFIED
             else:
                 stop_reason = StopReason.SOURCE_EXHAUSTION
-        connector_duration_ms = round((perf_counter() - connector_started) * 1000, 2)
+        connector_finished = perf_counter()
+        connector_duration_ms = round((connector_finished - connector_started) * 1000, 2)
+        preparation_summary = await preparation.finish(
+            collection_started=connector_started,
+            collection_finished=connector_finished,
+        )
+        self._emit("semantic.preparation.completed", **preparation_summary.as_dict())
+        for source in sorted(set(planned_sources) - queried_sources):
+            self._emit(
+                "source.skipped",
+                source=source,
+                acquisition_mode=self.connectors[source].active_acquisition_mode(),
+                error_category="stopped_before_execution",
+                reason=stop_reason.value,
+            )
         search_trace["stop_reason"] = stop_reason.value
         search_trace["requests_used"] = requests_used
         search_trace["discovery_budget"] = {
@@ -684,11 +744,23 @@ class SearchService:
                 )
 
         items_by_source: dict[str, list[ConnectorItem]] = {}
+        acquisition_paths_by_identity: dict[tuple[str, str], set[str]] = {}
+        retrieved_by_acquisition: Counter[tuple[str, str]] = Counter()
         for item in planning.local_memory.items:
             if item.source in self.connectors:
                 items_by_source.setdefault(item.source, []).append(item)
+                identity = (item.source, item.external_id)
+                acquisition_paths_by_identity.setdefault(identity, set()).add(
+                    AcquisitionMode.LOCAL_MEMORY.value
+                )
+                retrieved_by_acquisition[(item.source, AcquisitionMode.LOCAL_MEMORY.value)] += 1
         for run in runs:
             items_by_source.setdefault(run.source, []).extend(run.items)
+            for item in run.items:
+                identity = (item.source, item.external_id)
+                path = (item.acquisition_path or item.acquisition_mode).value
+                acquisition_paths_by_identity.setdefault(identity, set()).add(path)
+                retrieved_by_acquisition[(item.source, path)] += 1
         eligible_by_source: dict[str, list[ConnectorItem]] = {}
         for source_key, raw_items in items_by_source.items():
             source_items: list[ConnectorItem] = []
@@ -720,6 +792,10 @@ class SearchService:
         eligible_count_by_source = {
             source: len(items) for source, items in sorted(eligible_by_source.items())
         }
+        eligible_by_acquisition: Counter[tuple[str, str]] = Counter()
+        for source, items in eligible_by_source.items():
+            for item in items:
+                eligible_by_acquisition[(source, self._item_acquisition_path(item))] += 1
         per_source_limit = min(
             self.settings.max_result_limit,
             self.settings.source_pre_candidate_limit,
@@ -757,29 +833,83 @@ class SearchService:
                 break
             position += 1
         alias_edges_added = self._observe_alias_evidence(planning, collected)
+        admitted_by_source = Counter(item.source for item in collected)
+        admitted_by_acquisition: Counter[tuple[str, str]] = Counter()
+        admitted_candidates = {
+            (item.source, item.external_id): item for item in collected
+        }
+        for (source, external_id), candidate in admitted_candidates.items():
+            for path in acquisition_paths_by_identity.get(
+                (source, external_id),
+                {self._item_acquisition_path(candidate)},
+            ):
+                admitted_by_acquisition[(source, path)] += 1
         search_trace["alias_edges_added"] = alias_edges_added
         search_trace["final_candidate_pool"] = {
             "matched_per_source": eligible_count_by_source,
             "admitted_per_source": dict(Counter(item.source for item in collected)),
+            "matched_by_acquisition": self._serialize_acquisition_counts(
+                eligible_by_acquisition
+            ),
+            "admitted_by_acquisition": self._serialize_acquisition_counts(
+                admitted_by_acquisition
+            ),
             "admitted_total": len(collected),
         }
-        admitted_by_source = Counter(item.source for item in collected)
-        for source in sorted(set(eligible_count_by_source) | set(admitted_by_source)):
+        live_eligible_by_source = Counter(
+            {
+                source: sum(
+                    count
+                    for (platform, path), count in eligible_by_acquisition.items()
+                    if platform == source and path != AcquisitionMode.LOCAL_MEMORY.value
+                )
+                for source in queried_sources
+            }
+        )
+        live_admitted_by_source = Counter(
+            {
+                source: sum(
+                    count
+                    for (platform, path), count in admitted_by_acquisition.items()
+                    if platform == source and path != AcquisitionMode.LOCAL_MEMORY.value
+                )
+                for source in queried_sources
+            }
+        )
+        for source in sorted(queried_sources):
             self._emit(
                 "source.progress",
                 source=source,
-                matched=eligible_count_by_source.get(source, 0),
-                admitted=admitted_by_source.get(source, 0),
+                matched=live_eligible_by_source.get(source, 0),
+                admitted=live_admitted_by_source.get(source, 0),
             )
         self._emit(
             "normalization.completed",
             matched=sum(eligible_count_by_source.values()),
             admitted=len(collected),
             admitted_per_source=dict(admitted_by_source),
+            admitted_by_acquisition=self._serialize_acquisition_counts(
+                admitted_by_acquisition
+            ),
         )
         persistence_started = perf_counter()
         collected_count_by_source = Counter(item.source for item in collected)
-        persisted = [self._persist_item(item) for item in collected]
+        persisted_with_candidates = [
+            (candidate, self._persist_item(candidate)) for candidate in collected
+        ]
+        persisted = [value for _candidate, value in persisted_with_candidates]
+        acquisition_paths_by_item_id = {
+            item.id: tuple(
+                sorted(
+                    acquisition_paths_by_identity.get(
+                        (candidate.source, candidate.external_id),
+                        {self._item_acquisition_path(candidate)},
+                    ),
+                    key=self._acquisition_path_order,
+                )
+            )
+            for candidate, (item, _source) in persisted_with_candidates
+        }
         self.db.commit()
         persistence_duration_ms = round((perf_counter() - persistence_started) * 1000, 2)
         self._emit(
@@ -878,7 +1008,15 @@ class SearchService:
                     novelty=score.novelty,
                     spam_penalty=score.spam_penalty,
                     matched_terms=list(score.matched_terms),
-                    explanation=score.explanation(),
+                    explanation={
+                        **score.explanation(),
+                        "semantic_state": (
+                            semantic.state
+                            if item.id in semantic_candidate_ids
+                            or semantic.state != "ready"
+                            else "not_applied"
+                        ),
+                    },
                 )
             )
         ranking_duration_ms = round((perf_counter() - ranking_started) * 1000, 2)
@@ -890,6 +1028,9 @@ class SearchService:
             semantic_candidates=len(semantic_candidates),
             cache_hits=semantic.cache_hits,
             cache_misses=semantic.cache_misses,
+            precompute_cache_hits=preparation_summary.cache_hits,
+            precompute_cache_misses=preparation_summary.cache_misses,
+            semantic_work_hidden_ms=preparation_summary.hidden_work_ms,
         )
 
         clustering_started = perf_counter()
@@ -989,6 +1130,7 @@ class SearchService:
             for item, source in final_ordered
         ]
         search_trace["post_ranking_uncertainty"] = assess_uncertainty(final_evidence).as_dict()
+        search_trace["semantic_preparation"] = preparation_summary.as_dict()
         search_trace["final_ranking_pipeline"] = {
             "candidate_admission": "bounded_fair_per_source_union",
             "lexical_admission": True,
@@ -1002,7 +1144,14 @@ class SearchService:
             "stories_identified": len(clusters),
             "aliases_observed": alias_edges_added,
         }
+        final_by_acquisition: Counter[tuple[str, str]] = Counter()
+        for item, source_key in final_ordered:
+            for path in acquisition_paths_by_item_id.get(
+                item.id, (item.acquisition_mode,)
+            ):
+                final_by_acquisition[(source_key, path)] += 1
         for rank, (item, _source_key) in enumerate(final_ordered, start=1):
+            paths = acquisition_paths_by_item_id.get(item.id, (item.acquisition_mode,))
             self.db.add(
                 SearchResult(
                     search_session_id=session.id,
@@ -1010,6 +1159,8 @@ class SearchService:
                     rank=rank,
                     duplicate_group_id=group_by_item.get(item.id),
                     cluster_id=cluster_by_item.get(item.id),
+                    acquisition_path=self._primary_acquisition_path(paths),
+                    acquisition_paths=list(paths),
                 )
             )
 
@@ -1039,6 +1190,24 @@ class SearchService:
         )
         public_id_by_database_id = {item.id: item.public_id for item, _source in final_ordered}
         final_count_by_source = Counter(source for _item, source in final_ordered)
+        final_live_by_source = Counter(
+            {
+                source: sum(
+                    count
+                    for (platform, path), count in final_by_acquisition.items()
+                    if platform == source and path != AcquisitionMode.LOCAL_MEMORY.value
+                )
+                for source in queried_sources
+            }
+        )
+        acquisition_funnel = self._acquisition_funnel(
+            runs=runs,
+            retrieved=retrieved_by_acquisition,
+            matched=eligible_by_acquisition,
+            admitted=admitted_by_acquisition,
+            final=final_by_acquisition,
+            local_lookup_latency_ms=memory_lookup_ms,
+        )
         completion_positions: list[int] = []
         consumed_completion_positions: Counter[str] = Counter()
         positions_by_source = {
@@ -1084,10 +1253,10 @@ class SearchService:
                     "time_eligible_results": run.time_eligible_count,
                     "raw_results": run.raw_result_count,
                     "normalized_results": run.normalized_result_count,
-                    "final_matching_results": eligible_count_by_source.get(run.source, 0),
-                    "collected_results": collected_count_by_source.get(run.source, 0),
-                    "candidate_admitted_results": collected_count_by_source.get(run.source, 0),
-                    "final_top_results": final_count_by_source.get(run.source, 0),
+                    "final_matching_results": live_eligible_by_source.get(run.source, 0),
+                    "collected_results": live_admitted_by_source.get(run.source, 0),
+                    "candidate_admitted_results": live_admitted_by_source.get(run.source, 0),
+                    "final_top_results": final_live_by_source.get(run.source, 0),
                     "completion_position": completion_position,
                     "malformed_records": run.malformed_count,
                     "attempt_count": run.attempt_count,
@@ -1112,6 +1281,7 @@ class SearchService:
                 }
                 for run, completion_position in zip(runs, completion_positions, strict=True)
             ],
+            "acquisition_funnel": acquisition_funnel,
             "candidate_admission": {
                 "per_source_limit": per_source_limit,
                 "matched_per_source": eligible_count_by_source,
@@ -1119,6 +1289,7 @@ class SearchService:
                 "final_top_per_source": dict(final_count_by_source),
                 "admitted_total": len(persisted),
                 "final_global_cap": request.limit,
+                "by_acquisition_path": acquisition_funnel,
                 "relevance_distribution_by_source": self._source_relevance_distributions(
                     persisted, scores
                 ),
@@ -1132,12 +1303,18 @@ class SearchService:
                 "deduplication": dedupe_duration_ms,
                 "ranking": ranking_duration_ms,
                 "semantic_reranking": semantic.duration_ms,
+                "semantic_preparation": preparation_summary.wall_ms,
+                "semantic_work_hidden": preparation_summary.hidden_work_ms,
                 "clustering": clustering_duration_ms,
                 "total": duration_ms,
             },
             "score_component_distributions": self._score_distributions(scores),
             "ranking": {
                 **self._semantic_diagnostics(semantic),
+                "semantic_preparation": preparation_summary.as_dict(),
+                "ranking_cache_hits": semantic.cache_hits,
+                "ranking_cache_misses": semantic.cache_misses,
+                "semantic_critical_path_ms": semantic.duration_ms,
                 "semantic_candidates_per_source": dict(
                     Counter(source for _item, source in semantic_candidates)
                 ),
@@ -2319,6 +2496,135 @@ class SearchService:
             )
             observed += int(edge is not None)
         return observed
+
+    def _preparation_documents(
+        self,
+        processed: ProcessedQuery,
+        items: list[ConnectorItem],
+        lattice: QueryLattice,
+        request: SearchRequest,
+        since: datetime | None,
+    ) -> list[SemanticDocument]:
+        """Select only cheap, plausible candidates; preparation never admits content."""
+
+        eligible = [
+            item
+            for item in items
+            if self._matches_lattice(item, lattice)
+            and (request.language == "all" or item.language == request.language)
+            and self._within_time_range(item.published_at, since)
+            and self._matches_filters(item, request)
+        ]
+        ordered = sorted(
+            eligible,
+            key=lambda item: self._candidate_order_key(processed, item),
+            reverse=True,
+        )
+        queues: dict[str, list[ConnectorItem]] = {}
+        source_order: list[str] = []
+        for item in ordered:
+            if item.source not in queues:
+                queues[item.source] = []
+                source_order.append(item.source)
+            queues[item.source].append(item)
+        selected: list[ConnectorItem] = []
+        position = 0
+        while len(selected) < self.settings.semantic_candidate_limit:
+            added = False
+            for source in source_order:
+                if position < len(queues[source]):
+                    selected.append(queues[source][position])
+                    added = True
+                    if len(selected) >= self.settings.semantic_candidate_limit:
+                        break
+            if not added:
+                break
+            position += 1
+        return [
+            SemanticDocument(key=-(index + 1), title=item.title, text=item.text)
+            for index, item in enumerate(selected)
+        ]
+
+    @staticmethod
+    def _item_acquisition_path(item: ConnectorItem) -> str:
+        return (item.acquisition_path or item.acquisition_mode).value
+
+    @staticmethod
+    def _acquisition_path_order(path: str) -> tuple[int, str]:
+        return (int(path == AcquisitionMode.LOCAL_MEMORY.value), path)
+
+    @classmethod
+    def _primary_acquisition_path(cls, paths: tuple[str, ...]) -> str:
+        return min(paths, key=cls._acquisition_path_order)
+
+    @staticmethod
+    def _serialize_acquisition_counts(
+        counts: Counter[tuple[str, str]],
+    ) -> list[dict[str, int | str]]:
+        return [
+            {"platform": platform, "acquisition_path": path, "count": count}
+            for (platform, path), count in sorted(counts.items())
+        ]
+
+    def _acquisition_funnel(
+        self,
+        *,
+        runs: list[ConnectorRun],
+        retrieved: Counter[tuple[str, str]],
+        matched: Counter[tuple[str, str]],
+        admitted: Counter[tuple[str, str]],
+        final: Counter[tuple[str, str]],
+        local_lookup_latency_ms: float,
+    ) -> list[dict[str, Any]]:
+        requests: Counter[tuple[str, str]] = Counter()
+        latency: Counter[tuple[str, str]] = Counter()
+        connector_runs: Counter[tuple[str, str]] = Counter()
+        for run in runs:
+            paths = {
+                self._item_acquisition_path(item)
+                for item in run.items
+                if self._item_acquisition_path(item) != AcquisitionMode.LOCAL_MEMORY.value
+            }
+            if not paths:
+                configured_path = str(
+                    run.details.get("acquisition_mode")
+                    or self.connectors[run.source].active_acquisition_mode()
+                )
+                paths = {configured_path}
+            for path in paths:
+                key = (run.source, path)
+                connector_runs[key] += 1
+                requests[key] += run.attempt_count
+                latency[key] += run.total_latency_ms or run.latency_ms
+        keys = set(retrieved) | set(matched) | set(admitted) | set(final) | set(connector_runs)
+        return [
+            {
+                "platform": platform,
+                "acquisition_path": path,
+                "connector_executed": path != AcquisitionMode.LOCAL_MEMORY.value,
+                "connector_runs": connector_runs.get((platform, path), 0),
+                "network_requests": (
+                    0
+                    if path == AcquisitionMode.LOCAL_MEMORY.value
+                    else requests.get((platform, path), 0)
+                ),
+                "network_latency_ms": (
+                    None
+                    if path == AcquisitionMode.LOCAL_MEMORY.value
+                    else round(latency.get((platform, path), 0.0), 2)
+                ),
+                "local_lookup_latency_ms": (
+                    local_lookup_latency_ms
+                    if path == AcquisitionMode.LOCAL_MEMORY.value
+                    else None
+                ),
+                "retrieved": retrieved.get((platform, path), 0),
+                "matched": matched.get((platform, path), 0),
+                "admitted": admitted.get((platform, path), 0),
+                "final_top_k": final.get((platform, path), 0),
+            }
+            for platform, path in sorted(keys)
+        ]
 
     @staticmethod
     def _within_time_range(published_at: datetime | None, since: datetime | None) -> bool:

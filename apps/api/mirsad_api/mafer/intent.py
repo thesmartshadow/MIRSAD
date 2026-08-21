@@ -173,11 +173,24 @@ ORG_TERMS = {
     "agency",
     "organization",
     "وزارة",
+    "وزاره",
     "جامعة",
     "شركة",
     "هيئة",
     "مؤسسة",
     "منظمة",
+}
+TOPIC_MARKERS = {
+    "ai",
+    "artificial",
+    "intelligence",
+    "security",
+    "technology",
+    "الذكاء",
+    "الاصطناعي",
+    "التقنيه",
+    "التقنية",
+    "التكنولوجيا",
 }
 COMMON_AMBIGUOUS = {
     "apple",
@@ -276,14 +289,22 @@ class QueryIntentAnalyzer:
             add(IntentLabel.ENGLISH, 0.95, "Latin-script letters dominate the query")
 
         organization_term = next((term for term in lowered if term in ORG_TERMS), None)
-        title_like = 1 < len(sequence) <= 6 and any(
-            token[:1].isupper() for token in original.split() if token
+        literal_words = [
+            token.strip("'\".,:;!?()[]{}")
+            for token in original.split()
+            if token.strip("'\".,:;!?()[]{}")
+        ]
+        title_like = (
+            1 < len(sequence) <= 6
+            and len(literal_words) == len(sequence)
+            and all(token[:1].isupper() for token in literal_words)
         )
         arabic_name_like = (
             has_arabic
             and not has_latin
             and 2 <= len(sequence) <= 5
             and not organization_term
+            and not (lowered & TOPIC_MARKERS)
             and not (lowered & (RECENT_TERMS | HISTORICAL_TERMS | EVENT_TERMS))
         )
         if organization_term or title_like or (has_arabic and has_latin and len(sequence) <= 6):

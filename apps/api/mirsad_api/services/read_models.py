@@ -356,6 +356,11 @@ def get_search_response(db: Session, session_id: str) -> SearchResponse:
                 source=source.key,
                 source_type=str((item.raw_metadata or {}).get("source_type", "record")),
                 acquisition_mode=item.acquisition_mode,
+                acquisition_path=result.acquisition_path or item.acquisition_mode,
+                acquisition_paths=list(
+                    result.acquisition_paths
+                    or [result.acquisition_path or item.acquisition_mode]
+                ),
                 acquisition_modes_seen=list(
                     (item.raw_metadata or {}).get("acquisition_modes_seen")
                     or [item.acquisition_mode]
@@ -436,6 +441,9 @@ def get_search_response(db: Session, session_id: str) -> SearchResponse:
                     ),
                     ranking_strategy=str(
                         (score.explanation or {}).get("ranking_strategy", "lexical_explainable")
+                    ),
+                    semantic_state=str(
+                        (score.explanation or {}).get("semantic_state", "not_applied")
                     ),
                     relevance_features=(score.explanation or {}).get("relevance_features", {}),
                     matched_terms=score.matched_terms,

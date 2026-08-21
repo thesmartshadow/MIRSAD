@@ -143,6 +143,7 @@ class LocalMemorySearch:
             raw_metrics=dict(metric.raw_metrics or {}) if metric else {},
             raw_metadata=metadata,
             acquisition_mode=acquisition,
+            acquisition_path=AcquisitionMode.LOCAL_MEMORY,
         )
 
     @staticmethod
@@ -172,4 +173,5 @@ class LocalMemorySearch:
                 "last_seen_by_mirsad": record.last_seen_at.isoformat(),
             },
             acquisition_mode=acquisition,
+            acquisition_path=AcquisitionMode.LOCAL_MEMORY,
         )

@@ -81,6 +81,10 @@ SearchEventName = Literal[
     "search.started",
     "planning.started",
     "planning.completed",
+    "acquisition.local_memory.started",
+    "acquisition.local_memory.completed",
+    "semantic.preparation.started",
+    "semantic.preparation.completed",
     "source.selected",
     "source.started",
     "source.progress",
@@ -143,6 +147,7 @@ class ScoreExplanation(BaseModel):
     semantic_weight: float = 0.0
     secondary_quality_budget: float = 0.0
     ranking_strategy: str = "lexical_explainable"
+    semantic_state: str = "not_applied"
     relevance_features: dict[str, float] = Field(default_factory=dict)
     matched_terms: list[str]
     source: str
@@ -161,6 +166,8 @@ class SearchResultItem(BaseModel):
     source: str
     source_type: str
     acquisition_mode: str
+    acquisition_path: str
+    acquisition_paths: list[str] = Field(default_factory=list)
     acquisition_modes_seen: list[str] = Field(default_factory=list)
     indexed_public_web_coverage: bool = False
     discovery_support: int | None = None

@@ -47,4 +47,81 @@ describe("search job state", () => {
     expect(completed.resultCount).toBe(8);
     expect(completed.uniqueCount).toBe(7);
   });
+
+  it("keeps local-memory acquisition separate from connector execution", () => {
+    const running = { ...idleSearchJob, phase: "planning" as const, jobId: "a" };
+    const withMemory = applySearchEvent(
+      running,
+      message("a", "acquisition.local_memory.completed", {
+        candidates: 13,
+        elapsed_ms: 8,
+        platforms: { bluesky: 13 },
+        requests: 0,
+      }),
+      12,
+    );
+
+    expect(withMemory.memory).toMatchObject({
+      status: "completed",
+      candidates: 13,
+      elapsedMs: 8,
+      platforms: { bluesky: 13 },
+    });
+    expect(withMemory.sources.bluesky).toBeUndefined();
+    expect(withMemory.selectedSourceCount).toBe(0);
+  });
+
+  it("records bounded semantic preparation without changing search results", () => {
+    const current = { ...idleSearchJob, phase: "collecting" as const, jobId: "a" };
+    const prepared = applySearchEvent(
+      current,
+      message("a", "semantic.preparation.completed", {
+        precompute_eligible_candidates: 20,
+        precompute_completed: 20,
+        precompute_cache_hits: 4,
+        precompute_cache_misses: 16,
+        precompute_wall_ms: 910,
+        semantic_work_hidden_ms: 700,
+      }),
+      950,
+    );
+
+    expect(prepared.semanticPreparation).toMatchObject({
+      status: "completed",
+      eligible: 20,
+      completed: 20,
+      cacheHits: 4,
+      cacheMisses: 16,
+      hiddenMs: 700,
+    });
+    expect(prepared.resultCount).toBe(0);
+  });
+
+  it("finishes planner-selected connectors skipped by stop logic without inventing execution", () => {
+    const planned = applySearchEvent(
+      { ...idleSearchJob, phase: "planning", jobId: "a" },
+      message("a", "source.selected", {
+        source: "gdelt",
+        acquisition_mode: "PUBLIC_API",
+      }),
+      10,
+    );
+    const stopped = applySearchEvent(
+      { ...planned, selectedSourceCount: 1 },
+      message("a", "source.skipped", {
+        source: "gdelt",
+        error_category: "stopped_before_execution",
+      }),
+      20,
+    );
+
+    expect(stopped.sources.gdelt).toMatchObject({
+      status: "skipped",
+      wasSelected: true,
+      fetched: 0,
+      errorCategory: "stopped_before_execution",
+    });
+    expect(stopped.selectedSourceCount).toBe(1);
+    expect(stopped.completedSourceCount).toBe(1);
+  });
 });

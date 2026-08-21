@@ -1,0 +1,42 @@
+{
+  "schema": "mirsad.precision-hardening-performance",
+  "network_wait_ms": 1400,
+  "candidate_count": 20,
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "model_version": "fastembed-mean-pooling-v1",
+  "v1_1_sequential": {
+    "total_ms": 2074.59,
+    "semantic_critical_path_ms": 673.11,
+    "ranking_cache_hits": 0,
+    "ranking_cache_misses": 20
+  },
+  "v1_1_1_overlap": {
+    "total_ms": 1432.38,
+    "precompute_wall_ms": 620.34,
+    "overlap_window_ms": 621.14,
+    "semantic_work_hidden_ms": 620.34,
+    "semantic_critical_path_ms": 30.78,
+    "ranking_cache_hits": 20,
+    "ranking_cache_misses": 0
+  },
+  "comparison": {
+    "critical_path_reduction_ms": 642.22,
+    "critical_path_reduction_percent": 30.96,
+    "scores_exact": true,
+    "similarities_exact": true,
+    "order_exact": true,
+    "meaningful_improvement": true,
+    "memory_bounded": true
+  },
+  "memory": {
+    "rss_before_mb": 632.06,
+    "rss_after_sequential_mb": 669.73,
+    "rss_after_overlap_mb": 690.36,
+    "overlap_delta_mb": 20.63,
+    "rss_after_three_repeat_jobs_mb": 690.36,
+    "steady_state_growth_mb": 0.0,
+    "cache_bound": 5000,
+    "cache_entries": 20
+  },
+  "gate": "ship"
+}

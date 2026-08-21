@@ -221,7 +221,7 @@ export function SearchDiagnostics({ sessionId }: { sessionId: string }) {
               </Card>
             )}
             <Card className="overflow-x-auto py-0 shadow-none">
-              <Table>
+              <Table aria-label={t("diagnostics.sourceFunnel")}>
                 <TableHeader>
                   <TableRow>
                     <TableHead>{t("result.source")}</TableHead>
@@ -377,6 +377,43 @@ export function SearchDiagnostics({ sessionId }: { sessionId: string }) {
                 </TableBody>
               </Table>
             </Card>
+            {diagnostics.acquisition_funnel?.length ? (
+              <Card className="overflow-x-auto py-0 shadow-none">
+                <CardHeader>
+                  <CardTitle>{t("diagnostics.acquisitionFunnel")}</CardTitle>
+                </CardHeader>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>{t("result.platform")}</TableHead>
+                      <TableHead>{t("result.acquiredThrough")}</TableHead>
+                      <TableHead>{t("diagnostics.connectorExecuted")}</TableHead>
+                      <TableHead className="text-end">{t("diagnostics.attempts")}</TableHead>
+                      <TableHead className="text-end">{t("diagnostics.fetched")}</TableHead>
+                      <TableHead className="text-end">{t("diagnostics.matching")}</TableHead>
+                      <TableHead className="text-end">{t("diagnostics.admitted")}</TableHead>
+                      <TableHead className="text-end">{t("diagnostics.finalTop")}</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {diagnostics.acquisition_funnel.map((row) => (
+                      <TableRow key={`${row.platform}-${row.acquisition_path}`}>
+                        <TableCell dir="ltr">{row.platform}</TableCell>
+                        <TableCell className={row.acquisition_path === "LOCAL_MEMORY" ? "font-medium text-[var(--status-memory)]" : undefined}>
+                          {row.acquisition_path.replaceAll("_", " ")}
+                        </TableCell>
+                        <TableCell>{row.connector_executed ? t("common.yes") : t("common.no")}</TableCell>
+                        <TableCell className="text-end tabular-nums">{formatNumber(row.network_requests, locale)}</TableCell>
+                        <TableCell className="text-end tabular-nums">{formatNumber(row.retrieved, locale)}</TableCell>
+                        <TableCell className="text-end tabular-nums">{formatNumber(row.matched, locale)}</TableCell>
+                        <TableCell className="text-end tabular-nums">{formatNumber(row.admitted, locale)}</TableCell>
+                        <TableCell className="text-end tabular-nums">{formatNumber(row.final_top_k, locale)}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Card>
+            ) : null}
             <div className="grid gap-4 lg:grid-cols-2">
               <Card className="shadow-none">
                 <CardHeader>

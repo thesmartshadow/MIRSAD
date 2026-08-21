@@ -8,6 +8,8 @@ MIRSAD does not assign truth scores. Source Confidence is an editable ranking pr
 
 - Search from a responsive analyst workspace with source, time, language, limit, exact-phrase, and sort controls.
 - Observe bounded real-time planning, per-source acquisition, ranking, and clustering progress while the final deterministic result order remains authoritative.
+- Distinguish the content platform from the current execution's acquisition path, including local-memory contributions from a platform whose live connector was not selected.
+- Use a results-first completed workspace, with reversible Filters and Trace sheets, truthful score composition, and a bounded data-driven retrieval topology with SVG fallback and reduced-motion support.
 - Select capability-driven source presets for Social Media, News, Developer & Community, All Sources, or a custom set.
 - Inspect score components, duplicate groups, clusters, connector telemetry, and per-session search diagnostics.
 - Persist and reopen history, saved search configurations, bookmarks, and bookmark notes locally.

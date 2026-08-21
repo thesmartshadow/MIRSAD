@@ -234,7 +234,11 @@ test("search, explanation, diagnostics, export, history, saved search and bookma
 
   await page.getByRole("button", { name: "Search diagnostics" }).click();
   await expect(page.getByText("Phase timings")).toBeVisible();
-  await expect(page.getByRole("cell", { name: "mock" })).toBeVisible();
+  await expect(
+    page
+      .getByRole("table", { name: "Source funnel" })
+      .getByRole("cell", { name: "mock" }),
+  ).toBeVisible();
   await page.keyboard.press("Escape");
 
   const downloadPromise = page.waitForEvent("download");

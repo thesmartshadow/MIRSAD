@@ -139,6 +139,29 @@ def test_intent_fingerprint_is_multilabel_and_explainable(
     assert 0.99 <= sum(value.script_distribution.values()) <= 1.01
 
 
+@pytest.mark.parametrize(
+    ("query", "present", "absent"),
+    [
+        ("الذكاء الاصطناعي", {IntentLabel.TOPIC}, {IntentLabel.PERSON_LIKE}),
+        ("وزارة التخطيط", {IntentLabel.ENTITY_LIKE}, {IntentLabel.PERSON_LIKE}),
+        ("علي فراس محمد رضا", {IntentLabel.PERSON_LIKE}, set()),
+        ("علي فراس", {IntentLabel.PERSON_LIKE}, set()),
+        ("Linux kernel security", {IntentLabel.TOPIC}, {IntentLabel.PERSON_LIKE}),
+        ("@openai", {IntentLabel.HANDLE}, {IntentLabel.PERSON_LIKE}),
+        ("#بغداد", {IntentLabel.HASHTAG}, {IntentLabel.PERSON_LIKE}),
+        ("CVE-2026-61371", {IntentLabel.IDENTIFIER}, {IntentLabel.PERSON_LIKE}),
+    ],
+)
+def test_intent_person_gating_preserves_names_without_topic_false_positives(
+    query: str,
+    present: set[IntentLabel],
+    absent: set[IntentLabel],
+) -> None:
+    value = fingerprint(query)
+    assert present <= set(value.labels)
+    assert not (absent & set(value.labels))
+
+
 @pytest.mark.parametrize("query", ["CVE-2026-61371", "GHSA-xxxx-xxxx-xxxx", "CWE-59"])
 def test_distinctive_identifiers_are_preserved_without_semantic_rewriting(query: str) -> None:
     processed = process_query(query)

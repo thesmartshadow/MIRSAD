@@ -4,8 +4,8 @@ from scripts.evaluate_mafer_planning import evaluate
 
 
 def test_phase2_planning_benchmark_is_deterministic_and_measures_tradeoffs() -> None:
-    first = evaluate()
-    second = evaluate()
+    first = evaluate(output_path=None)
+    second = evaluate(output_path=None)
 
     assert first["fixture_sha256"] == second["fixture_sha256"]
     assert first["queries"] == second["queries"] == 20

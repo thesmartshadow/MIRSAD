@@ -29,7 +29,7 @@ The REST API is versioned under `/api/v1`. FastAPI serves interactive documentat
 }
 ```
 
-Sort values are `best_match`, `newest`, `most_engaged`, and `cross_platform`. Search modes are `fast`, `balanced`, and `deep`; they are bounded effort profiles, not completeness claims. `source_selection=auto` enables capability/intent routing, while `explicit` preserves the supplied source set. A partial search returns HTTP 201, successful results, status `partial`, and safe connector warnings. Result records include `acquisition_mode`, `acquisition_modes_seen`, `indexed_public_web_coverage`, `discovery_support`, `discovery_engines`, and `evidence_completeness`; these fields distinguish direct/public collection from indexed-web discovery without exposing discovery infrastructure secrets.
+Sort values are `best_match`, `newest`, `most_engaged`, and `cross_platform`. Search modes are `fast`, `balanced`, and `deep`; they are bounded effort profiles, not completeness claims. `source_selection=auto` enables capability/intent routing, while `explicit` preserves the supplied source set. A partial search returns HTTP 201, successful results, status `partial`, and safe connector warnings. Result records include `acquisition_mode` (original ingestion), `acquisition_modes_seen`, `acquisition_path` and `acquisition_paths` (how this execution obtained the candidate), `indexed_public_web_coverage`, `discovery_support`, `discovery_engines`, and `evidence_completeness`. A result may therefore have `platform=bluesky` and `acquisition_path=LOCAL_MEMORY` without implying that the live Bluesky connector executed.
 
 For responsive clients, `POST /api/v1/search/jobs` accepts the same request and returns HTTP 202 with
 `job_id`, the reserved `session_id`, and status `started`. Consume
@@ -37,8 +37,10 @@ For responsive clients, `POST /api/v1/search/jobs` accepts the same request and 
 response from `/api/v1/searches/{session_id}` after `search.completed` or `search.partial`. Event names are:
 
 - `search.started`, `planning.started`, `planning.completed`
+- `acquisition.local_memory.started`, `acquisition.local_memory.completed`
 - `source.selected`, `source.started`, `source.progress`, `source.completed`, `source.degraded`, `source.failed`, `source.skipped`
 - `collection.progress`, `normalization.completed`, `persistence.completed`
+- `semantic.preparation.started`, `semantic.preparation.completed`
 - `ranking.started`, `ranking.completed`, `clustering.started`, `clustering.completed`
 - `search.partial`, `search.completed`, `search.failed`
 
@@ -49,7 +51,7 @@ persisted search. The synchronous endpoint remains supported.
 
 - `GET /api/v1/searches?limit=50&offset=0`: paginated summaries.
 - `GET /api/v1/searches/{session_id}`: stored results, explanations, clusters, and analytics.
-- `GET /api/v1/searches/{session_id}/diagnostics`: stored query, MAFER intent/lattice/resource plan/rounds/budget/uncertainty/gain/stop trace, connector completion order, matched/admitted/final per-source counts, acquisition/cache state, per-engine web-discovery telemetry, phase, duplicate, and score-distribution diagnostics.
+- `GET /api/v1/searches/{session_id}/diagnostics`: stored query, MAFER intent/lattice/resource plan/rounds/budget/uncertainty/gain/stop trace, connector completion order, live connector funnels, platform-plus-acquisition funnels, semantic-preparation/cache state, per-engine web-discovery telemetry, phase, duplicate, and score-distribution diagnostics. Local-memory rows always report zero network requests.
 - `GET /api/v1/searches/{session_id}/export?format=csv|json`: direct download; no filesystem path is accepted.
 
 JSON exports use schema `mirsad.search-export`, version `1.0`, and contain generated time, session/filter metadata, analytics, acquisition/discovery provenance, and records. CSV includes the same acquisition/discovery fields, is UTF-8 with BOM for Arabic interoperability, and prevents formula-like content from being interpreted by spreadsheets.

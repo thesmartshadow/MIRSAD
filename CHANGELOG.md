@@ -1,5 +1,17 @@
 # Changelog
 
+## MIRSAD 1.1.1 - 2026-08-21
+
+- Separates content platform from per-search acquisition path so local-memory evidence cannot masquerade as a live connector execution; adds truthful local-memory SSE and acquisition-funnel diagnostics.
+- Narrows deterministic `PERSON_LIKE` intent evidence for Arabic/English topic and organization phrases while preserving tested Arabic person names and literal handles, hashtags, and identifiers.
+- Overlaps one bounded, non-fatal semantic-preparation worker with connector I/O through the existing authoritative cache; final candidate admission, 25/75 scoring, top-20 opportunity, and ordering remain unchanged.
+- Makes terminal searches results-first while preserving the three-panel active trace, and redesigns Explain Score around the real 25% lexical / 75% semantic core plus the at-most-1% secondary adjustment.
+- Adds scoped GSAP state motion, an accessible runtime-backed SVG flow, and one lazy disposable Three.js topology with reduced-motion, visibility, context-loss, and static fallback behavior.
+
+Known limitations: external collection remains the dominant variable; Bluesky AppView may return an
+environment-specific `403`, and optional SearXNG remains disabled by default. Three.js is a lazy optional
+visual layer and adds a separate compressed chunk; search and trace remain fully functional through SVG.
+
 ## MIRSAD 1.1.0 - 2026-08-21
 
 - Evolves Search into a responsive analyst workspace with immediate feedback, live source progress, contextual Results/Clusters/Timeline/Analysis views, compact density, and safe relevant-term highlighting.

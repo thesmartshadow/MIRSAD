@@ -3,6 +3,7 @@ import {
   CheckCircle2,
   Download,
   ListFilter,
+  PanelRightOpen,
   Printer,
   Save,
   SlidersHorizontal,
@@ -11,6 +12,7 @@ import { startTransition, useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 import { LiveSearchTrace } from "@/components/search/live-search-trace";
+import { RetrievalFlowSvg } from "@/components/search/retrieval-flow-svg";
 import { ResultCard } from "@/components/search/result-card";
 import { SearchDiagnostics } from "@/components/search/search-diagnostics";
 import { SearchForm } from "@/components/search/search-form";
@@ -53,6 +55,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { api } from "@/lib/api";
 import { formatDate, formatDuration, formatNumber } from "@/lib/format";
 import { useI18n } from "@/lib/i18n";
+import { loadGsap, motion } from "@/lib/motion";
 import {
   applySearchEvent,
   idleSearchJob,
@@ -64,6 +67,54 @@ import type { SearchJobEvent, SearchRequest } from "@/types/api";
 
 const terminalEvents = ["search.completed", "search.partial", "search.failed"];
 
+function FiltersPanel({
+  activeRequest,
+  density,
+  onDensity,
+}: {
+  activeRequest: SearchRequest | null;
+  density: "comfortable" | "compact";
+  onDensity: (value: "comfortable" | "compact") => void;
+}) {
+  const { t } = useI18n();
+  return (
+    <section className="space-y-4" aria-label={t("search.filtersSummary")}>
+      <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        <SlidersHorizontal className="size-4" />
+        {t("search.filtersSummary")}
+      </h2>
+      {activeRequest ? (
+        <dl className="divide-y text-xs">
+          {[
+            [t("search.sourcePreset"), activeRequest.source_selection === "auto" ? t("search.presetAutomatic") : t("search.presetCustom")],
+            [t("search.timeRange"), activeRequest.time_range],
+            [t("search.mode"), activeRequest.search_mode],
+            [t("search.language"), activeRequest.language],
+            [t("search.resultLimit"), activeRequest.limit],
+          ].map(([label, value]) => (
+            <div className="grid grid-cols-[1fr_auto] gap-3 py-2.5" key={String(label)}>
+              <dt className="text-muted-foreground">{label}</dt>
+              <dd className="font-medium" dir="auto">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : (
+        <p className="text-xs text-muted-foreground">{t("search.configurePrompt")}</p>
+      )}
+      <div className="border-t pt-3">
+        <div className="mb-2 text-xs text-muted-foreground">{t("search.density")}</div>
+        <div className="grid grid-cols-2 gap-1">
+          {(["comfortable", "compact"] as const).map((value) => (
+            <Button key={value} variant={density === value ? "secondary" : "ghost"} size="sm" onClick={() => onDensity(value)}>
+              {t(`search.density.${value}`)}
+            </Button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SearchPage() {
   const { t, locale } = useI18n();
   const { currentSearch, setCurrentSearch } = useSearchState();
@@ -74,6 +125,11 @@ export function SearchPage() {
   const [page, setPage] = useState(1);
   const [savedName, setSavedName] = useState("");
   const [saveOpen, setSaveOpen] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [traceOpen, setTraceOpen] = useState(false);
+  const [wideWorkspace, setWideWorkspace] = useState(() =>
+    typeof window !== "undefined" ? window.matchMedia("(min-width: 1280px)").matches : false,
+  );
   const [jobState, setJobState] = useState<SearchJobState>(idleSearchJob);
   const [density, setDensity] = useState<"comfortable" | "compact">(() =>
     localStorage.getItem("mirsad.search-density") === "compact"
@@ -86,7 +142,46 @@ export function SearchPage() {
   const requestGeneration = useRef(0);
   const activeSearch = useRef<AbortController | null>(null);
   const activeEvents = useRef<EventSource | null>(null);
+  const workspace = useRef<HTMLDivElement>(null);
+  const resultList = useRef<HTMLDivElement>(null);
   const pageSize = 20;
+
+  const terminalWithResults = !loading && Boolean(currentSearch?.results.length);
+
+  useEffect(() => {
+    let disposed = false;
+    let revert: () => void = () => undefined;
+    void loadGsap().then((gsap) => {
+      if (disposed || !workspace.current) return;
+      const context = gsap.context(() => {
+        const media = gsap.matchMedia();
+        media.add("(prefers-reduced-motion: no-preference)", () => {
+          gsap.fromTo(
+            workspace.current,
+            { opacity: 0.82, y: 5 },
+            { opacity: 1, y: 0, duration: motion.standard, ease: motion.ease },
+          );
+          if (terminalWithResults && resultList.current) {
+            gsap.fromTo(
+              Array.from(resultList.current.children).slice(0, 6),
+              { opacity: 0, y: 7 },
+              { opacity: 1, y: 0, duration: motion.quick, stagger: 0.018, ease: motion.ease },
+            );
+          }
+        });
+        revert = () => media.revert();
+      }, workspace);
+      const nested = revert;
+      revert = () => {
+        nested();
+        context.revert();
+      };
+    });
+    return () => {
+      disposed = true;
+      revert();
+    };
+  }, [loading, terminalWithResults, currentSearch?.session.id]);
 
   useEffect(
     () => () => {
@@ -96,6 +191,13 @@ export function SearchPage() {
     },
     [],
   );
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1280px)");
+    const update = () => setWideWorkspace(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const focusSearch = (event: KeyboardEvent) => {
@@ -116,7 +218,22 @@ export function SearchPage() {
     const controller = new AbortController();
     api
       .getSearch(sessionId, controller.signal)
-      .then((response) => startTransition(() => setCurrentSearch(response)))
+      .then((response) =>
+        startTransition(() => {
+          setCurrentSearch(response);
+          setJobState({
+            ...idleSearchJob,
+            phase: response.session.status === "partial" ? "partial" : response.session.status === "failed" ? "failed" : "completed",
+            query: response.session.original_query,
+            request: response.session.parameters,
+            sessionId: response.session.id,
+            resultCount: response.session.result_count,
+            uniqueCount: response.session.unique_count,
+            clusterCount: response.clusters.length,
+            serverElapsedMs: response.session.duration_ms,
+          });
+        }),
+      )
       .catch((reason: Error) => {
         if (reason.name !== "AbortError") setError(reason.message);
       });
@@ -176,6 +293,8 @@ export function SearchPage() {
     const generation = ++requestGeneration.current;
     const interactionStarted = performance.now();
     setLoading(true);
+    setFiltersOpen(false);
+    setTraceOpen(false);
     setCurrentSearch(null);
     setError("");
     setPage(1);
@@ -244,6 +363,8 @@ export function SearchPage() {
         "search.started",
         "planning.started",
         "planning.completed",
+        "acquisition.local_memory.started",
+        "acquisition.local_memory.completed",
         "source.selected",
         "source.started",
         "source.progress",
@@ -254,6 +375,8 @@ export function SearchPage() {
         "collection.progress",
         "normalization.completed",
         "persistence.completed",
+        "semantic.preparation.started",
+        "semantic.preparation.completed",
         "ranking.started",
         "ranking.completed",
         "clustering.started",
@@ -360,40 +483,36 @@ export function SearchPage() {
         onSearch={runSearch}
       />
 
-      <div className="mb-3 flex justify-end xl:hidden">
-        <Sheet>
-          <SheetTrigger render={<Button variant="outline" size="sm" />}><ListFilter />{t("live.title")}</SheetTrigger>
-          <SheetContent side="right" className="w-[min(92vw,340px)]">
+      <div className={`mb-3 flex flex-wrap items-center gap-2 ${loading ? "justify-end xl:hidden" : "justify-end"}`}>
+        <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
+          <SheetTrigger render={<Button variant="outline" size="sm" data-testid="filters-toggle" />}>
+            <ListFilter />{t("search.filters")}
+          </SheetTrigger>
+          <SheetContent side={locale === "ar" ? "right" : "left"} className="w-[min(92vw,340px)]">
+            <SheetHeader><SheetTitle>{t("search.filtersSummary")}</SheetTitle><SheetDescription>{t("search.configurePrompt")}</SheetDescription></SheetHeader>
+            <div className="px-4"><FiltersPanel activeRequest={activeRequest} density={density} onDensity={(value) => { setDensity(value); localStorage.setItem("mirsad.search-density", value); }} /></div>
+          </SheetContent>
+        </Sheet>
+        <Sheet open={traceOpen} onOpenChange={setTraceOpen}>
+          <SheetTrigger render={<Button variant="outline" size="sm" data-testid="trace-toggle" />}>
+            <PanelRightOpen />{t("live.title")}
+          </SheetTrigger>
+          <SheetContent side={locale === "ar" ? "left" : "right"} className="w-[min(94vw,380px)]">
             <SheetHeader><SheetTitle>{t("live.title")}</SheetTitle><SheetDescription>{t("diagnostics.description")}</SheetDescription></SheetHeader>
-            <div className="px-4"><LiveSearchTrace state={jobState} /></div>
+            <div className="min-h-0 px-4">{traceOpen && <LiveSearchTrace state={jobState} />}</div>
           </SheetContent>
         </Sheet>
       </div>
 
-      <div className="grid items-start gap-4 xl:grid-cols-[minmax(220px,250px)_minmax(0,1fr)_minmax(260px,300px)]">
-        <aside className="hidden xl:block">
-          <Card className="sticky top-4 shadow-none">
-            <CardContent className="space-y-4">
-              <h2 className="flex items-center gap-2 text-sm font-semibold"><SlidersHorizontal className="size-4" />{t("search.filtersSummary")}</h2>
-              {activeRequest ? (
-                <dl className="space-y-3 text-xs">
-                  <div><dt className="text-muted-foreground">{t("search.sourcePreset")}</dt><dd className="mt-1 font-medium">{activeRequest.source_selection === "auto" ? t("search.presetAutomatic") : t("search.presetCustom")}</dd></div>
-                  <div><dt className="text-muted-foreground">{t("search.timeRange")}</dt><dd className="mt-1 font-medium" dir="ltr">{activeRequest.time_range}</dd></div>
-                  <div><dt className="text-muted-foreground">{t("search.mode")}</dt><dd className="mt-1 font-medium">{activeRequest.search_mode}</dd></div>
-                  <div><dt className="text-muted-foreground">{t("search.language")}</dt><dd className="mt-1 font-medium">{activeRequest.language}</dd></div>
-                  <div><dt className="text-muted-foreground">{t("search.resultLimit")}</dt><dd className="mt-1 font-medium tabular-nums">{activeRequest.limit}</dd></div>
-                </dl>
-              ) : <p className="text-xs text-muted-foreground">{t("search.configurePrompt")}</p>}
-              <div className="border-t pt-3">
-                <div className="mb-2 text-xs text-muted-foreground">{t("search.density")}</div>
-                <div className="grid grid-cols-2 gap-1">
-                  {(["comfortable", "compact"] as const).map((value) => (
-                    <Button key={value} variant={density === value ? "secondary" : "ghost"} size="sm" onClick={() => { setDensity(value); localStorage.setItem("mirsad.search-density", value); }}>{t(`search.density.${value}`)}</Button>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+      <div
+        ref={workspace}
+        data-workspace-state={loading ? "active" : terminalWithResults ? "results-first" : currentSearch ? "terminal-empty" : "idle"}
+        className={`grid items-start gap-5 ${loading ? "xl:grid-cols-[minmax(220px,250px)_minmax(0,1fr)_minmax(260px,310px)]" : "grid-cols-1"}`}
+      >
+        <aside className={loading ? "hidden border-e pe-4 xl:block" : "hidden"} data-testid="desktop-filter-rail">
+          <div className="sticky top-4">
+            <FiltersPanel activeRequest={activeRequest} density={density} onDensity={(value) => { setDensity(value); localStorage.setItem("mirsad.search-density", value); }} />
+          </div>
         </aside>
 
         <section aria-label={t("search.workspace")} className="min-w-0">
@@ -404,13 +523,15 @@ export function SearchPage() {
                 <div className="text-xs font-medium uppercase tracking-wide text-primary">{t(`live.phase.${jobState.phase}`)}</div>
                 <h2 className="mt-1 text-lg font-semibold" dir="auto">{jobState.query}</h2>
               </div>
+              <div className="border-y bg-muted/10 px-3 py-2">
+                <RetrievalFlowSvg state={jobState} />
+              </div>
               <PageSkeleton rows={3} />
             </div>
           )}
           {!loading && currentSearch && (
             <>
-              <Card className="mb-4 shadow-none">
-                <CardContent>
+              <section className="mb-4 border-y bg-muted/10 px-4 py-4" aria-label={t("search.sessionSummary")}>
                   <div className="mb-3 flex flex-col justify-between gap-1 border-b pb-3 sm:flex-row sm:items-end">
                     <div><div className="text-xs text-muted-foreground">{t("search.keyword")}</div><div className="mt-1 text-lg font-semibold" dir="auto">{currentSearch.session.original_query}</div></div>
                     <div className="text-xs text-muted-foreground">{formatDate(currentSearch.session.started_at, locale)}</div>
@@ -425,8 +546,7 @@ export function SearchPage() {
                       [t("analytics.duration"), formatDuration(currentSearch.session.duration_ms, locale)],
                     ].map(([label, value]) => <div key={String(label)}><dt className="text-[11px] text-muted-foreground">{label}</dt><dd className="mt-1 font-semibold tabular-nums">{typeof value === "number" ? formatNumber(value, locale) : value}</dd></div>)}
                   </dl>
-                </CardContent>
-              </Card>
+              </section>
               {currentSearch.session.warnings.length > 0 && (
                 <Alert className="mb-4 border-amber-500/40 bg-amber-500/5">
                   <AlertTriangle /><AlertTitle className="flex items-center gap-2">{t("search.partialCoverage")}<StatusBadge status={currentSearch.session.status} /></AlertTitle>
@@ -439,12 +559,12 @@ export function SearchPage() {
                   {results.length ? (
                     <section aria-labelledby="results-title">
                       <div className="mb-3 flex items-center justify-between"><h2 id="results-title" className="flex items-center gap-2 text-sm font-semibold"><CheckCircle2 className="size-4 text-emerald-600" />{t("search.results")}</h2><span className="text-xs text-muted-foreground">{formatNumber(results.length, locale)} {t("search.resultsMeta")}</span></div>
-                      <div className="space-y-2.5">{visibleResults.map((item) => <ResultCard key={item.id} item={item} density={density} sessionId={currentSearch.session.id} initiallyBookmarked={bookmarkedContentIds.has(item.id)} />)}</div>
+                      <div ref={resultList} className="divide-y border-y">{visibleResults.map((item) => <ResultCard key={item.id} item={item} density={density} sessionId={currentSearch.session.id} initiallyBookmarked={bookmarkedContentIds.has(item.id)} />)}</div>
                       {totalPages > 1 && <div className="mt-5 flex items-center justify-center gap-1">{Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => <Button key={number} size="icon-sm" variant={page === number ? "default" : "ghost"} onClick={() => setPage(number)} aria-current={page === number ? "page" : undefined}>{number}</Button>)}</div>}
                     </section>
                   ) : <EmptyState title={t("search.emptyTitle")} description={resultEmptyDescription} />}
                 </TabsContent>
-                <TabsContent value="clusters"><div className="space-y-2">{currentSearch.clusters.length ? currentSearch.clusters.map((cluster) => <Card key={cluster.id} className="shadow-none"><CardContent><div className="flex justify-between gap-4"><div><h3 className="font-medium" dir="auto">{cluster.representative_title}</h3><p className="mt-1 text-xs text-muted-foreground">{Object.entries(cluster.source_distribution).map(([source, count]) => `${source} ${count}`).join(" · ")}</p></div><span className="text-sm font-semibold tabular-nums">{cluster.member_count}</span></div></CardContent></Card>) : <EmptyState title={t("clusters.title")} description={t("clusters.empty")} />}</div></TabsContent>
+                <TabsContent value="clusters"><div className="divide-y border-y">{currentSearch.clusters.length ? currentSearch.clusters.map((cluster) => <section key={cluster.id} className="px-1 py-4"><div className="flex justify-between gap-4"><div><h3 className="font-medium" dir="auto">{cluster.representative_title}</h3><p className="mt-1 text-xs text-muted-foreground">{Object.entries(cluster.source_distribution).map(([source, count]) => `${source} ${count}`).join(" · ")}</p></div><span className="text-sm font-semibold tabular-nums">{cluster.member_count}</span></div></section>) : <EmptyState title={t("clusters.title")} description={t("clusters.empty")} />}</div></TabsContent>
                 <TabsContent value="timeline"><Card className="shadow-none"><CardContent>{currentSearch.analytics.mentions_over_time.some((item) => item.count > 0) ? <ol className="space-y-2">{currentSearch.analytics.mentions_over_time.filter((item) => item.count > 0).map((item) => <li className="flex justify-between border-b pb-2 text-sm" key={item.timestamp}><time>{formatDate(item.timestamp, locale)}</time><strong className="tabular-nums">{formatNumber(item.count, locale)}</strong></li>)}</ol> : <p className="text-sm text-muted-foreground">{t("state.noData")}</p>}</CardContent></Card></TabsContent>
                 <TabsContent value="analysis"><Card className="shadow-none"><CardContent><dl className="grid gap-4 sm:grid-cols-2">{Object.entries(currentSearch.analytics.platform_distribution).map(([source, count]) => <div className="flex justify-between border-b pb-2" key={source}><dt dir="ltr">{source}</dt><dd className="font-semibold tabular-nums">{formatNumber(count, locale)}</dd></div>)}</dl></CardContent></Card></TabsContent>
               </Tabs>
@@ -453,8 +573,8 @@ export function SearchPage() {
           {!loading && !currentSearch && !error && <EmptyState title={t("search.emptyTitle")} description={t("search.emptyDescription")} />}
         </section>
 
-        <aside className="hidden xl:block">
-          <Card className="sticky top-4 shadow-none"><CardContent><LiveSearchTrace state={jobState} /></CardContent></Card>
+        <aside className={loading ? "hidden border-s ps-4 xl:block" : "hidden"} data-testid="desktop-trace-rail">
+          <div className="sticky top-4">{loading && wideWorkspace && <LiveSearchTrace state={jobState} />}</div>
         </aside>
       </div>
     </div>

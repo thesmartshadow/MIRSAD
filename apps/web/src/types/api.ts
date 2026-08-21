@@ -39,6 +39,8 @@ export type SearchEventName =
   | "search.started"
   | "planning.started"
   | "planning.completed"
+  | "acquisition.local_memory.started"
+  | "acquisition.local_memory.completed"
   | "source.selected"
   | "source.started"
   | "source.progress"
@@ -49,6 +51,8 @@ export type SearchEventName =
   | "collection.progress"
   | "normalization.completed"
   | "persistence.completed"
+  | "semantic.preparation.started"
+  | "semantic.preparation.completed"
   | "ranking.started"
   | "ranking.completed"
   | "clustering.started"
@@ -113,6 +117,7 @@ export interface ScoreExplanation {
   weighted_components: Record<string, number>;
   lexical_relevance: number;
   semantic_relevance: number | null;
+  semantic_state?: "ready" | "lexical_only" | "empty" | "not_applied";
   semantic_similarity: number | null;
   semantic_weight: number;
   secondary_quality_budget: number;
@@ -130,6 +135,8 @@ export interface SearchResultItem {
   source: string;
   source_type: string;
   acquisition_mode: string;
+  acquisition_path?: string | null;
+  acquisition_paths?: string[] | null;
   acquisition_modes_seen: string[];
   indexed_public_web_coverage: boolean;
   discovery_support: number | null;
@@ -437,6 +444,19 @@ export interface SearchDiagnostics {
       }> | null;
     }>;
     connector_completion_order?: string[];
+    acquisition_funnel?: Array<{
+      platform: string;
+      acquisition_path: string;
+      connector_executed: boolean;
+      connector_runs: number;
+      network_requests: number;
+      network_latency_ms: number | null;
+      local_lookup_latency_ms: number | null;
+      retrieved: number;
+      matched: number;
+      admitted: number;
+      final_top_k: number;
+    }>;
     candidate_admission?: {
       per_source_limit: number;
       matched_per_source: Record<string, number>;

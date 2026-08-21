@@ -4,7 +4,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import { StatusBadge } from "@/components/shared/page";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldLabel } from "@/components/ui/field";
 import {
@@ -287,8 +286,7 @@ export function SearchForm({
   };
 
   return (
-    <Card className="mb-5 shadow-none">
-      <CardContent>
+    <section className="mb-5 border-y bg-card/55 px-1 py-4 sm:px-4" data-search-instrument>
         <form
           onSubmit={submit}
           className="space-y-4"
@@ -300,7 +298,7 @@ export function SearchForm({
               {t("search.keyword")}
             </FieldLabel>
             <div className="flex flex-col gap-2 sm:flex-row">
-              <InputGroup className="h-9 flex-1">
+              <InputGroup className="h-12 flex-1 border-primary/35 bg-background shadow-[inset_3px_0_0_var(--primary)] focus-within:border-primary rtl:shadow-[inset_-3px_0_0_var(--primary)]">
                 <InputGroupAddon>
                   <Search />
                 </InputGroupAddon>
@@ -318,7 +316,7 @@ export function SearchForm({
               </InputGroup>
               <Button
                 type="submit"
-                className="h-9 min-w-32"
+                className="h-12 min-w-32"
                 disabled={!catalogReady || !form.sources.length}
               >
                 <Search /> {t("action.search")}
@@ -749,7 +747,6 @@ export function SearchForm({
           </label>
           </details>
         </form>
-      </CardContent>
-    </Card>
+    </section>
   );
 }
