@@ -37,7 +37,7 @@ export function BookmarksPage() {
   };
   useEffect(load, []);
   return (
-    <div>
+    <div className="instrument-page instrument-page--bookmarks">
       <PageHeader
         title={t("bookmarks.title")}
         description={t("bookmarks.description")}
@@ -52,13 +52,15 @@ export function BookmarksPage() {
           description={t("bookmarks.empty")}
         />
       ) : (
-        <div className="grid gap-3 xl:grid-cols-2">
-          {items.map((item) => {
+        <ol className="collection-ledger">
+          {items.map((item, index) => {
             const url = safeExternalUrl(item.canonical_url);
             return (
-              <Card key={item.id} className="shadow-none">
-                <CardContent className="space-y-3">
-                  <div className="flex items-start justify-between gap-3">
+              <li key={item.id}>
+              <Card className="collection-record shadow-none">
+                <CardContent className="collection-record__body">
+                  <div className="collection-record__identity">
+                    <span className="collection-record__index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                     <div className="min-w-0">
                       <div className="mb-1 flex flex-wrap gap-2">
                         <Badge variant="outline">{item.source}</Badge>
@@ -77,18 +79,22 @@ export function BookmarksPage() {
                       </p>
                     </div>
                   </div>
-                  <Textarea
-                    aria-label={t("bookmarks.note")}
-                    maxLength={1000}
-                    value={notes[item.id] ?? ""}
-                    onChange={(event) =>
-                      setNotes((current) => ({
-                        ...current,
-                        [item.id]: event.target.value,
-                      }))
-                    }
-                  />
-                  <div className="flex justify-end gap-2">
+                  <label className="collection-record__note">
+                    <span>{t("bookmarks.note")}</span>
+                    <Textarea
+                      aria-label={t("bookmarks.note")}
+                      rows={2}
+                      maxLength={1000}
+                      value={notes[item.id] ?? ""}
+                      onChange={(event) =>
+                        setNotes((current) => ({
+                          ...current,
+                          [item.id]: event.target.value,
+                        }))
+                      }
+                    />
+                  </label>
+                  <div className="collection-record__actions">
                     <Button
                       size="sm"
                       variant="outline"
@@ -140,9 +146,10 @@ export function BookmarksPage() {
                   </div>
                 </CardContent>
               </Card>
+              </li>
             );
           })}
-        </div>
+        </ol>
       )}
     </div>
   );

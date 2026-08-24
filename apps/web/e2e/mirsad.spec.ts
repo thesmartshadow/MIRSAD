@@ -25,6 +25,18 @@ async function expectNoSeriousAccessibilityViolations(page: Page) {
   ).toEqual([]);
 }
 
+async function navigateThroughUi(page: Page, path: string) {
+  const visibleLink = page.locator(`a[href="${path}"]:visible`).first();
+  if (await visibleLink.isVisible().catch(() => false)) {
+    await visibleLink.click();
+    return;
+  }
+  await page.locator('[data-navigation-menu="trigger"]:visible').click();
+  await page
+    .locator(`[data-navigation-menu="content"] a[href="${path}"]`)
+    .click();
+}
+
 test.beforeAll(async ({ request }) => {
   if (
     process.env.MIRSAD_LIVE_BASE_URL ||
@@ -162,33 +174,33 @@ test("opt-in functional production state is consistent across major routes", asy
   if ((await bookmarkButton.getAttribute("aria-label")) === "Bookmark result")
     await bookmarkButton.click();
 
-  await page.getByRole("link", { name: "History" }).click();
+  await navigateThroughUi(page, "/history");
   await expect(page.getByText("بغداد", { exact: true }).first()).toBeVisible();
 
-  await page.getByRole("link", { name: "Analytics" }).click();
+  await navigateThroughUi(page, "/analytics");
   await expect(page.getByText("Content records", { exact: true })).toBeVisible();
   await page.getByRole("combobox", { name: "Analytics scope" }).click();
   await page.getByRole("option", { name: "Current search session" }).click();
   await expect(page.getByText(/Analytics for:/)).toBeVisible();
 
-  await page.getByRole("link", { name: "Clusters" }).click();
+  await navigateThroughUi(page, "/clusters");
   await expect(page.getByRole("heading", { name: "Story clusters" })).toBeVisible();
-  await page.getByRole("link", { name: "Compare" }).click();
+  await navigateThroughUi(page, "/compare");
   await expect(page.getByRole("heading", { name: "Compare searches" })).toBeVisible();
-  await page.getByRole("link", { name: "Saved Searches" }).click();
+  await navigateThroughUi(page, "/saved");
   await expect(
     page.getByRole("heading", { name: "Saved searches", level: 2, exact: true }),
   ).toBeVisible();
-  await page.getByRole("link", { name: "Bookmarks" }).click();
+  await navigateThroughUi(page, "/bookmarks");
   await expect(
     page.getByRole("heading", { name: "Bookmarks", level: 2, exact: true }),
   ).toBeVisible();
-  await page.getByRole("link", { name: "Sources" }).click();
+  await navigateThroughUi(page, "/sources");
   await expect(page.getByText("Bluesky", { exact: true })).toBeVisible();
   await expect(page.getByText("Web discovery disabled").first()).toBeVisible();
-  await page.getByRole("link", { name: "System" }).click();
+  await navigateThroughUi(page, "/system");
   await expect(page.getByText(/1\.1\.0/).first()).toBeVisible();
-  await page.getByRole("link", { name: "Settings" }).first().click();
+  await navigateThroughUi(page, "/settings");
   await expect(page.getByRole("heading", { name: "Settings", level: 2 })).toBeVisible();
 
   await page.getByRole("button", { name: "Change language" }).click();
@@ -256,32 +268,29 @@ test("search, explanation, diagnostics, export, history, saved search and bookma
   await page.getByLabel("Saved search name").fill("Policy daily review");
   await page.getByRole("button", { name: "Save changes" }).click();
 
-  await page.getByRole("link", { name: "Analytics" }).click();
+  await navigateThroughUi(page, "/analytics");
   await expect(
     page.getByText("Mentions over time", { exact: true }),
   ).toBeVisible();
-  await page.getByRole("link", { name: "Clusters" }).click();
-  await page
-    .getByText(/public policy public briefing/i)
-    .first()
-    .click();
+  await navigateThroughUi(page, "/clusters");
+  await page.locator(".cluster-index button").first().click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(
     page.getByRole("dialog").getByText(/First Seen by MIRSAD/i),
   ).toBeVisible();
   await page.keyboard.press("Escape");
 
-  await page.getByRole("link", { name: "History" }).click();
+  await navigateThroughUi(page, "/history");
   await expect(page.getByText("public policy").first()).toBeVisible();
-  await page.getByRole("button", { name: "Open" }).first().click();
+  await page.getByRole("button", { name: "Open", exact: true }).first().click();
   await expect(page.getByText("Results")).toBeVisible();
 
-  await page.getByRole("link", { name: "Saved Searches" }).click();
+  await navigateThroughUi(page, "/saved");
   await expect(page.getByText("Policy daily review")).toBeVisible();
   await page.getByRole("button", { name: "Run again" }).click();
   await expect(page.getByText("public policy public briefing 1")).toBeVisible();
 
-  await page.getByRole("link", { name: "Bookmarks" }).click();
+  await navigateThroughUi(page, "/bookmarks");
   await expect(page.getByText("public policy public briefing 1")).toBeVisible();
   await page.getByLabel("Local note").fill("Include in briefing");
   await page.getByRole("button", { name: "Save changes" }).click();
@@ -296,7 +305,7 @@ test("Arabic RTL and theme controls work at a narrow viewport", async ({
   await page.getByText("Arabic", { exact: true }).click();
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
   await expect(page.locator("html")).toHaveAttribute("lang", "ar");
-  await page.getByRole("button", { name: "تبديل الشريط الجانبي" }).click();
+  await page.locator('[data-navigation-menu="trigger"]:visible').click();
   const mobileSidebar = page.locator(
     '[data-slot="sidebar"][data-mobile="true"]',
   );
@@ -318,22 +327,17 @@ test("Arabic RTL and theme controls work at a narrow viewport", async ({
   await expect(page.locator("main")).toBeVisible();
 });
 
-test("locale switching is immediate and preserves form and sidebar state", async ({
+test("locale switching is immediate and preserves form and navigation state", async ({
   page,
 }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => localStorage.setItem("mirsad.locale", "ar"));
   await page.goto("/search");
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
-  await expect(page.locator('[data-slot="sidebar"]')).toHaveAttribute(
-    "data-side",
-    "right",
-  );
   await page.getByLabel("كلمة مفتاحية أو عبارة").fill("وزارة الصحة Microsoft");
-  await page.locator('[data-sidebar="trigger"]').click();
-  await expect(page.locator('[data-slot="sidebar"]')).toHaveAttribute(
-    "data-state",
-    "collapsed",
-  );
+  await page.locator('[data-navigation-menu="trigger"]:visible').click();
+  await expect(page.locator('[data-slot="sidebar"][data-mobile="true"]')).toHaveAttribute("data-side", "right");
+  await page.keyboard.press("Escape");
 
   for (let index = 0; index < 20; index += 1) {
     const currentlyArabic = index % 2 === 0;
@@ -354,14 +358,9 @@ test("locale switching is immediate and preserves form and sidebar state", async
   await expect(page.getByLabel("كلمة مفتاحية أو عبارة")).toHaveValue(
     "وزارة الصحة Microsoft",
   );
-  await expect(page.locator('[data-slot="sidebar"]')).toHaveAttribute(
-    "data-side",
-    "right",
-  );
-  await expect(page.locator('[data-slot="sidebar"]')).toHaveAttribute(
-    "data-state",
-    "collapsed",
-  );
+  await page.locator('[data-navigation-menu="trigger"]:visible').click();
+  await expect(page.locator('[data-slot="sidebar"][data-mobile="true"]')).toHaveAttribute("data-side", "right");
+  await page.keyboard.press("Escape");
 });
 
 test("a completed stale search cannot redirect after route navigation", async ({
@@ -379,7 +378,7 @@ test("a completed stale search cannot redirect after route navigation", async ({
   await page.goto("/search");
   await page.getByLabel("Keyword or phrase").fill("slow stale request");
   await page.getByRole("button", { name: "Run search" }).click();
-  await page.getByRole("link", { name: "Settings" }).first().click();
+  await navigateThroughUi(page, "/settings");
   await expect(page).toHaveURL(/\/settings$/);
   await page.waitForTimeout(900);
   await expect(page).toHaveURL(/\/settings$/);
@@ -534,12 +533,12 @@ test("print report and settings data controls render from stored data", async ({
   });
   expect(search.ok()).toBeTruthy();
   await page.goto("/history");
-  await page.getByRole("button", { name: "Open" }).first().click();
+  await page.getByRole("button", { name: "Open", exact: true }).first().click();
   await page.getByRole("button", { name: "Print report" }).click();
   await expect(page.locator(".print-report")).toBeVisible();
   await expect(page.getByText("Platform distribution")).toBeVisible();
 
-  await page.getByRole("link", { name: "Settings" }).first().click();
+  await navigateThroughUi(page, "/settings");
   await page.getByRole("tab", { name: "Data" }).click();
   await expect(page.getByText("Local record counts")).toBeVisible();
   await page.getByRole("button", { name: "Rebuild FTS index" }).click();

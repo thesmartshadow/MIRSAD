@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { ErrorState, PageHeader, PageSkeleton } from "@/components/shared/page";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -125,7 +124,7 @@ export function SettingsPage() {
       </>
     );
   return (
-    <div>
+    <div className="instrument-page instrument-page--settings">
       <PageHeader
         title={t("settings.title")}
         description={t("settings.description")}
@@ -164,10 +163,10 @@ export function SettingsPage() {
       <Tabs
         defaultValue="general"
         orientation="vertical"
-        className="items-start gap-5 md:flex-row"
+        className="settings-layout"
       >
         <TabsList
-          className="w-full shrink-0 items-stretch overflow-x-auto md:w-48"
+          className="settings-sections"
           variant="line"
         >
           {(
@@ -186,7 +185,7 @@ export function SettingsPage() {
             </TabsTrigger>
           ))}
         </TabsList>
-        <div className="w-full min-w-0">
+        <div className="settings-content">
           <TabsContent value="general">
             <SettingCard>
               <SettingRow label={t("settings.defaultLimit")}>
@@ -437,11 +436,7 @@ export function SettingsPage() {
 }
 
 function SettingCard({ children }: { children: React.ReactNode }) {
-  return (
-    <Card className="shadow-none">
-      <CardContent className="space-y-4">{children}</CardContent>
-    </Card>
-  );
+  return <section className="settings-plane">{children}</section>;
 }
 
 function SettingRow({
@@ -452,7 +447,7 @@ function SettingRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col justify-between gap-3 border-b pb-4 sm:flex-row sm:items-center">
+    <div className="setting-row">
       <span className="text-sm font-medium">{label}</span>
       {children}
     </div>

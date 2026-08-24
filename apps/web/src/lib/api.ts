@@ -1,5 +1,6 @@
 import type {
   CompareResponse,
+  CoverageReport,
   Bookmark,
   AnalyticsSnapshot,
   DataActionResult,
@@ -89,6 +90,10 @@ export const api = {
   getDiagnostics: (id: string) =>
     request<SearchDiagnostics>(
       `/searches/${encodeURIComponent(id)}/diagnostics`,
+    ),
+  getCoverage: (id: string) =>
+    request<CoverageReport>(
+      `/searches/${encodeURIComponent(id)}/coverage`,
     ),
   getSources: () => request<SourceStatus[]>("/sources"),
   refreshSources: () =>

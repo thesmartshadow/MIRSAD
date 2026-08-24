@@ -35,8 +35,7 @@ function MetricCard({
   detail?: string;
 }) {
   return (
-    <Card className="shadow-none">
-      <CardContent className="py-3">
+    <section className="analytics-signal">
         <div className="text-xs text-muted-foreground">{label}</div>
         <div className="mt-1 font-heading text-2xl font-semibold tabular-nums">
           {value}
@@ -44,8 +43,7 @@ function MetricCard({
         {detail && (
           <div className="mt-1 text-xs text-muted-foreground">{detail}</div>
         )}
-      </CardContent>
-    </Card>
+    </section>
   );
 }
 
@@ -95,8 +93,8 @@ export function AnalyticsView({ analytics }: { analytics: AnalyticsSnapshot }) {
     analytics.publication_time_distribution ?? {},
   ).map(([range, count]) => ({ range: range.replaceAll("_", " "), count }));
   return (
-    <div className="space-y-4">
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+    <div className="analytics-canvas">
+      <div className="analytics-signal-band">
         <MetricCard
           label={globalScope ? t("analytics.contentRecords") : t("analytics.total")}
           value={formatNumber(analytics.total_results, locale)}

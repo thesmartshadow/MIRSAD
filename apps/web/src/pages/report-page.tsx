@@ -25,7 +25,7 @@ export function ReportPage() {
   if (error) return <ErrorState message={error} />;
   if (!data) return <PageSkeleton />;
   return (
-    <article className="print-report mx-auto max-w-5xl bg-background">
+    <article className="instrument-page instrument-page--report print-report mx-auto max-w-5xl bg-background">
       <div className="print-hidden mb-4 flex justify-end">
         <Button onClick={() => window.print()}>
           <Printer />

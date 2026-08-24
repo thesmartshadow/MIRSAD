@@ -286,10 +286,10 @@ export function SearchForm({
   };
 
   return (
-    <section className="mb-5 border-y bg-card/55 px-1 py-4 sm:px-4" data-search-instrument>
+    <section className="search-command" data-search-instrument data-active={loading}>
         <form
           onSubmit={submit}
-          className="space-y-4"
+          className="search-command__form"
           aria-label={t("search.title")}
           aria-busy={loading}
         >
@@ -297,8 +297,8 @@ export function SearchForm({
             <FieldLabel htmlFor="search-query">
               {t("search.keyword")}
             </FieldLabel>
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <InputGroup className="h-12 flex-1 border-primary/35 bg-background shadow-[inset_3px_0_0_var(--primary)] focus-within:border-primary rtl:shadow-[inset_-3px_0_0_var(--primary)]">
+            <div className="search-command__entry">
+              <InputGroup className="search-command__input">
                 <InputGroupAddon>
                   <Search />
                 </InputGroupAddon>
@@ -316,7 +316,7 @@ export function SearchForm({
               </InputGroup>
               <Button
                 type="submit"
-                className="h-12 min-w-32"
+                className="search-command__submit"
                 disabled={!catalogReady || !form.sources.length}
               >
                 <Search /> {t("action.search")}
@@ -329,7 +329,7 @@ export function SearchForm({
             </Alert>
           )}
 
-          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <div className="search-command__readout">
             <StatusBadge status={preset === "automatic" ? "automatic" : "custom"} />
             <span>{timeLabels[form.time_range]}</span>
             <span>·</span>
@@ -338,8 +338,8 @@ export function SearchForm({
             <span>{languageLabels[form.language]}</span>
             {form.exact_phrase && <span>· {t("search.exact")}</span>}
           </div>
-          <details className="group border-t pt-3">
-            <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground">
+          <details className="search-command__advanced group">
+            <summary className="search-command__advanced-trigger">
               <SlidersHorizontal className="size-4" />
               {t("search.advancedOptions")}
             </summary>

@@ -24,6 +24,7 @@ from ..connectors import (
 )
 from ..domains.analytics import build_analytics
 from ..domains.clustering import build_cluster_candidate_plan, cluster_items
+from ..domains.coverage import build_coverage_report
 from ..domains.deduplication import (
     DeduplicationItem,
     canonicalize_url,
@@ -910,6 +911,11 @@ class SearchService:
             )
             for candidate, (item, _source) in persisted_with_candidates
         }
+        historical_local_item_ids = {
+            item.id
+            for candidate, (item, _source) in persisted_with_candidates
+            if bool(candidate.raw_metadata.get("historical_local_evidence"))
+        }
         self.db.commit()
         persistence_duration_ms = round((perf_counter() - persistence_started) * 1000, 2)
         self._emit(
@@ -1298,6 +1304,7 @@ class SearchService:
             "final_unique_result_count": unique_count,
             "phase_timings_ms": {
                 "adaptive_planning": planning_duration_ms,
+                "local_memory_retrieval": planning.local_memory_duration_ms,
                 "connector_collection": connector_duration_ms,
                 "persistence": persistence_duration_ms,
                 "deduplication": dedupe_duration_ms,
@@ -1357,6 +1364,34 @@ class SearchService:
             },
             "mafer": search_trace,
         }
+        connector_states = {
+            key: planning.source_states.get(key, connector.configuration_state())
+            for key, connector in self.connectors.items()
+            if key != "mock"
+        }
+        session.diagnostics["coverage"] = build_coverage_report(
+            session_id=session.id,
+            outcome_status=session.status,
+            connector_states=connector_states,
+            planned_sources=planned_sources,
+            connector_rows=list(session.diagnostics["connectors"]),
+            acquisition_funnel=acquisition_funnel,
+            final_platforms=[source for _item, source in final_ordered],
+            final_acquisition_paths=[
+                acquisition_paths_by_item_id.get(item.id, (item.acquisition_mode,))
+                for item, _source in final_ordered
+            ],
+            historical_local_candidates=planning.local_memory.historical_matches,
+            historical_final_flags=[
+                item.id in historical_local_item_ids for item, _source in final_ordered
+            ],
+            historical_final_platforms=[
+                source for item, source in final_ordered if item.id in historical_local_item_ids
+            ],
+            resource_plan=list(search_trace.get("resource_plan", {}).get("resources", [])),
+            stop_reason=stop_reason.value if stop_reason else None,
+            searxng_enabled=self.settings.searxng_enabled,
+        )
         self._persist_phase3_observations(
             session=session,
             processed=processed,
@@ -1365,6 +1400,8 @@ class SearchService:
             collected=collected,
             final_ordered=final_ordered,
             cluster_by_item=cluster_by_item,
+            live_admitted_by_source=live_admitted_by_source,
+            final_live_by_source=final_live_by_source,
         )
         analytics_items = [
             {
@@ -1507,6 +1544,8 @@ class SearchService:
         collected: list[ConnectorItem],
         final_ordered: list[tuple[ContentItem, str]],
         cluster_by_item: dict[int, str],
+        live_admitted_by_source: Counter[str],
+        final_live_by_source: Counter[str],
     ) -> None:
         recorder = OutcomeRecorder(self.db)
         recorder.record(
@@ -1567,16 +1606,20 @@ class SearchService:
                         timed_out=bool(telemetry.get("timeout")),
                     )
                 )
-        final_counts = Counter(source for _item, source in final_ordered)
-        collected_by_source = Counter(item.source for item in collected)
+        live_collected = [
+            item
+            for item in collected
+            if self._item_acquisition_path(item) != AcquisitionMode.LOCAL_MEMORY.value
+        ]
+        collected_by_source = Counter(item.source for item in live_collected)
         unique_by_source = {
-            source: len({item.canonical_url for item in collected if item.source == source})
+            source: len({item.canonical_url for item in live_collected if item.source == source})
             for source in collected_by_source
         }
         for source in planning.resources.ordered:
             source_runs = runs_by_source.get(source.source, [])
             returned = sum(run.query_match_count for run in source_runs)
-            admitted = collected_by_source.get(source.source, 0)
+            admitted = live_admitted_by_source.get(source.source, 0)
             self.db.add(
                 SourceUtilityObservation(
                     search_session_id=session.id,
@@ -1587,7 +1630,7 @@ class SearchService:
                     returned_count=returned,
                     unique_count=unique_by_source.get(source.source, 0),
                     admitted_count=admitted,
-                    top_k_count=final_counts.get(source.source, 0),
+                    top_k_count=final_live_by_source.get(source.source, 0),
                     latency_ms=sum(run.latency_ms for run in source_runs),
                     failure_category=next(
                         (run.error.code for run in source_runs if run.error), None
@@ -2103,6 +2146,16 @@ class SearchService:
             )
         )
         if item is None:
+            now = datetime.now(UTC)
+            raw_first_seen = connector_item.raw_metadata.get("first_seen_by_mirsad")
+            try:
+                first_seen = (
+                    datetime.fromisoformat(str(raw_first_seen).replace("Z", "+00:00"))
+                    if raw_first_seen
+                    else now
+                )
+            except ValueError:
+                first_seen = now
             raw_metadata = {
                 **connector_item.raw_metadata,
                 "acquisition_mode": connector_item.acquisition_mode.value,
@@ -2119,6 +2172,9 @@ class SearchService:
                 text=connector_item.text,
                 published_at=connector_item.published_at,
                 fetched_at=connector_item.fetched_at,
+                first_seen_at=first_seen,
+                last_seen_at=now,
+                retrieved_at=connector_item.fetched_at,
                 language=connector_item.language,
                 hashtags=list(connector_item.hashtags)
                 if connector_item.hashtags is not None
@@ -2137,6 +2193,7 @@ class SearchService:
             self.db.add(item)
             self.db.flush()
         else:
+            now = datetime.now(UTC)
             previous_mode = item.acquisition_mode
             item.author_handle = connector_item.author_handle
             item.author_verified = connector_item.author_verified
@@ -2159,7 +2216,10 @@ class SearchService:
                 "acquisition_mode": connector_item.acquisition_mode.value,
                 "acquisition_modes_seen": modes,
             }
-            item.fetched_at = connector_item.fetched_at
+            item.last_seen_at = now
+            if self._item_acquisition_path(connector_item) != AcquisitionMode.LOCAL_MEMORY.value:
+                item.fetched_at = connector_item.fetched_at
+                item.retrieved_at = connector_item.fetched_at
             item.language = connector_item.language
             item.normalized_title = normalize_text(item.title or "")
             item.normalized_text = normalize_text(item.text)

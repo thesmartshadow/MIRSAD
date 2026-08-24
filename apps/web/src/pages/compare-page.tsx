@@ -93,7 +93,7 @@ export function ComparePage() {
     : [];
 
   return (
-    <div>
+    <div className="instrument-page instrument-page--compare">
       <PageHeader
         title={t("compare.title")}
         description={t("compare.description")}
@@ -106,7 +106,7 @@ export function ComparePage() {
         <EmptyState description={t("compare.empty")} />
       ) : (
         <>
-          <Card className="mb-4 shadow-none">
+          <Card className="compare-control-plane mb-4 shadow-none">
             <CardContent className="flex flex-col gap-3 md:flex-row md:items-end">
               <label className="flex-1 space-y-1.5 text-sm">
                 <span>{t("compare.left")}</span>
@@ -161,15 +161,18 @@ export function ComparePage() {
               </Button>
             </CardContent>
           </Card>
+          {!comparison && !loading && (
+            <EmptyState title={t("compare.title")} description={t("compare.empty")} />
+          )}
           {comparison && (
-            <div className="space-y-4">
+            <div className="compare-plane">
               {comparison.collection_window_warning && (
                 <Alert className="border-chart-2/50 bg-chart-2/5">
                   <AlertTriangle />
                   <AlertTitle>{t("compare.windowWarning")}</AlertTitle>
                 </Alert>
               )}
-              <div className="grid gap-4 lg:grid-cols-2">
+              <div className="compare-plane__subjects grid gap-4 lg:grid-cols-2">
                 {comparisonSides.map(({ side, summary, analytics }) => (
                   <Card key={side} className="shadow-none">
                     <CardHeader>
@@ -205,7 +208,7 @@ export function ComparePage() {
                   </Card>
                 ))}
               </div>
-              <Card className="shadow-none">
+              <Card className="compare-plane__timeline shadow-none">
                 <CardHeader>
                   <CardTitle>{t("analytics.mentions")}</CardTitle>
                 </CardHeader>
@@ -245,7 +248,7 @@ export function ComparePage() {
                   </ChartContainer>
                 </CardContent>
               </Card>
-              <div className="grid gap-4 lg:grid-cols-2">
+              <div className="compare-plane__distributions grid gap-4 lg:grid-cols-2">
                 {[comparison.left_analytics, comparison.right_analytics].map(
                   (analytics, index) => (
                     <Card key={index} className="shadow-none">

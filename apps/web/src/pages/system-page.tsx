@@ -86,7 +86,7 @@ export function SystemPage() {
       ]
     : [];
   return (
-    <div>
+    <div className="instrument-page instrument-page--system">
       <PageHeader
         title={t("system.title")}
         description={t("system.description")}
@@ -104,18 +104,16 @@ export function SystemPage() {
       ) : (
         system && (
           <div className="space-y-4">
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+            <div className="system-signal-band">
               {metrics.map(({ icon: MetricIcon, label, value }, index) => {
                 return (
-                  <Card key={index} className="shadow-none">
-                    <CardContent className="py-3">
+                  <section key={index} className="system-signal">
                       <MetricIcon className="mb-3 size-4 text-muted-foreground" />
                       <div className="text-xs text-muted-foreground">
                         {label}
                       </div>
                       <div className="mt-1 text-xl font-semibold">{value}</div>
-                    </CardContent>
-                  </Card>
+                  </section>
                 );
               })}
             </div>

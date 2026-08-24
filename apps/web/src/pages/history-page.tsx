@@ -9,17 +9,7 @@ import {
   PageSkeleton,
   StatusBadge,
 } from "@/components/shared/page";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { api } from "@/lib/api";
 import { formatDate, formatDuration, formatNumber } from "@/lib/format";
 import { useI18n } from "@/lib/i18n";
@@ -44,7 +34,7 @@ export function HistoryPage() {
   useEffect(load, []);
 
   return (
-    <div>
+    <div className="instrument-page instrument-page--history">
       <PageHeader
         title={t("history.title")}
         description={t("history.description")}
@@ -62,77 +52,37 @@ export function HistoryPage() {
       ) : history.length === 0 ? (
         <EmptyState />
       ) : (
-        <Card className="overflow-hidden py-0 shadow-none">
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>{t("history.query")}</TableHead>
-                  <TableHead>{t("history.normalized")}</TableHead>
-                  <TableHead>{t("history.date")}</TableHead>
-                  <TableHead>{t("history.status")}</TableHead>
-                  <TableHead>{t("history.sources")}</TableHead>
-                  <TableHead className="text-end">
-                    {t("history.results")}
-                  </TableHead>
-                  <TableHead className="text-end">
-                    {t("history.unique")}
-                  </TableHead>
-                  <TableHead className="text-end">
-                    {t("history.duration")}
-                  </TableHead>
-                  <TableHead />
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {history.map((session) => (
-                  <TableRow key={session.id}>
-                    <TableCell className="max-w-56 font-medium">
-                      <div className="truncate">{session.original_query}</div>
-                    </TableCell>
-                    <TableCell className="max-w-56 text-muted-foreground">
-                      <div className="truncate">{session.normalized_query}</div>
-                    </TableCell>
-                    <TableCell className="whitespace-nowrap text-xs">
-                      {formatDate(session.started_at, locale)}
-                    </TableCell>
-                    <TableCell>
-                      <StatusBadge status={session.status} />
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex max-w-56 flex-wrap gap-1">
-                        {session.sources.map((source) => (
-                          <Badge variant="outline" key={source}>
-                            {source}
-                          </Badge>
-                        ))}
-                      </div>
-                    </TableCell>
-                    <TableCell className="text-end tabular-nums">
-                      {formatNumber(session.result_count, locale)}
-                    </TableCell>
-                    <TableCell className="text-end tabular-nums">
-                      {formatNumber(session.unique_count, locale)}
-                    </TableCell>
-                    <TableCell className="whitespace-nowrap text-end text-xs">
-                      {formatDuration(session.duration_ms, locale)}
-                    </TableCell>
-                    <TableCell>
-                      <Button
-                        variant="ghost"
-                        size="icon-sm"
-                        aria-label={t("action.open")}
-                        onClick={() => navigate(`/search/${session.id}`)}
-                      >
-                        <ExternalLink />
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </Card>
+        <ol className="history-ledger">
+          {history.map((session, index) => (
+            <li key={session.id} className="history-ledger__row">
+              <div className="history-ledger__index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <div className="history-ledger__query">
+                <strong dir="auto">{session.original_query}</strong>
+                <span dir="auto">{session.normalized_query}</span>
+              </div>
+              <time>{formatDate(session.started_at, locale)}</time>
+              <div className="history-ledger__sources" dir="ltr">
+                {session.sources.join(" · ")}
+              </div>
+              <StatusBadge status={session.status} />
+              <dl>
+                <div><dt>{t("history.results")}</dt><dd>{formatNumber(session.result_count, locale)}</dd></div>
+                <div><dt>{t("history.unique")}</dt><dd>{formatNumber(session.unique_count, locale)}</dd></div>
+                <div><dt>{t("history.duration")}</dt><dd>{formatDuration(session.duration_ms, locale)}</dd></div>
+              </dl>
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-label={t("action.open")}
+                onClick={() => navigate(`/search/${session.id}`)}
+              >
+                <ExternalLink />
+              </Button>
+            </li>
+          ))}
+        </ol>
       )}
     </div>
   );

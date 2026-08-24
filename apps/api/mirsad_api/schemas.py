@@ -186,6 +186,9 @@ class SearchResultItem(BaseModel):
     semantic_only_match: bool = False
     published_at: datetime | None
     fetched_at: datetime
+    first_seen_at: datetime
+    last_seen_at: datetime
+    retrieved_at: datetime | None
     language: str
     hashtags: list[str] | None = None
     mentions: list[str] | None = None
@@ -241,11 +244,75 @@ class SearchSummary(BaseModel):
     outcome_context: dict[str, Any] = Field(default_factory=dict)
 
 
+class CoverageGapReason(StrEnum):
+    NOT_SELECTED = "NOT_SELECTED"
+    NO_CAPABILITY = "NO_CAPABILITY"
+    UNCONFIGURED = "UNCONFIGURED"
+    RESTRICTED = "RESTRICTED"
+    WEB_DISCOVERY_DISABLED = "WEB_DISCOVERY_DISABLED"
+    EXTERNAL_LIMIT = "EXTERNAL_LIMIT"
+    UNAVAILABLE = "UNAVAILABLE"
+    FAILED = "FAILED"
+    TIMEOUT = "TIMEOUT"
+    RATE_LIMITED = "RATE_LIMITED"
+    CIRCUIT_OPEN = "CIRCUIT_OPEN"
+    NO_MATCHES = "NO_MATCHES"
+    NO_MATCHES_IN_TIME_RANGE = "NO_MATCHES_IN_TIME_RANGE"
+    NOT_APPLICABLE = "NOT_APPLICABLE"
+
+
+class CoverageSource(BaseModel):
+    source: str
+    selected: bool
+    executed: bool
+    contributed: bool
+    status: str
+    acquisition_mode: str | None = None
+    reason: CoverageGapReason | None = None
+    detail: str | None = None
+    requests: int = 0
+    fetched: int = 0
+    matched: int = 0
+    admitted: int = 0
+    final: int = 0
+    planning_reasons: list[str] = Field(default_factory=list)
+
+
+class CoverageLane(BaseModel):
+    lane: Literal["LIVE", "LOCAL_MEMORY", "HISTORICAL"]
+    available: bool
+    executed: bool
+    contributed: bool
+    candidates: int = 0
+    final: int = 0
+    platforms: list[str] = Field(default_factory=list)
+
+
+class CoverageGap(BaseModel):
+    source: str
+    reason: CoverageGapReason
+    detail: str
+
+
+class CoverageReport(BaseModel):
+    session_id: str
+    outcome_status: str
+    coverage_status: Literal["COMPLETE_ATTEMPT", "PARTIAL", "LIMITED"]
+    sources: list[CoverageSource]
+    lanes: list[CoverageLane]
+    gaps: list[CoverageGap]
+    represented_platforms: list[str]
+    web_discovery: str
+    stop_reason: str | None = None
+    stop_explanation: str | None = None
+
+
 class SearchResponse(BaseModel):
     session: SearchSummary
     results: list[SearchResultItem]
     clusters: list[ClusterSummary]
     analytics: dict[str, Any]
+    coverage: CoverageReport
 
 
 class SearchDiagnostics(BaseModel):

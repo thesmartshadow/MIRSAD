@@ -155,6 +155,9 @@ export interface SearchResultItem {
   semantic_only_match: boolean;
   published_at: string | null;
   fetched_at: string;
+  first_seen_at?: string;
+  last_seen_at?: string;
+  retrieved_at?: string | null;
   language: string;
   hashtags: string[] | null;
   mentions: string[] | null;
@@ -241,11 +244,68 @@ export interface AnalyticsSnapshot {
   search_session_count?: number;
 }
 
+export type CoverageGapReason =
+  | "NOT_SELECTED"
+  | "NO_CAPABILITY"
+  | "UNCONFIGURED"
+  | "RESTRICTED"
+  | "WEB_DISCOVERY_DISABLED"
+  | "EXTERNAL_LIMIT"
+  | "UNAVAILABLE"
+  | "FAILED"
+  | "TIMEOUT"
+  | "RATE_LIMITED"
+  | "CIRCUIT_OPEN"
+  | "NO_MATCHES"
+  | "NO_MATCHES_IN_TIME_RANGE"
+  | "NOT_APPLICABLE";
+
+export interface CoverageSource {
+  source: string;
+  selected: boolean;
+  executed: boolean;
+  contributed: boolean;
+  status: string;
+  acquisition_mode: string | null;
+  reason: CoverageGapReason | null;
+  detail: string | null;
+  requests: number;
+  fetched: number;
+  matched: number;
+  admitted: number;
+  final: number;
+  planning_reasons: string[];
+}
+
+export interface CoverageLane {
+  lane: "LIVE" | "LOCAL_MEMORY" | "HISTORICAL";
+  available: boolean;
+  executed: boolean;
+  contributed: boolean;
+  candidates: number;
+  final: number;
+  platforms: string[];
+}
+
+export interface CoverageReport {
+  session_id: string;
+  outcome_status: string;
+  coverage_status: "COMPLETE_ATTEMPT" | "PARTIAL" | "LIMITED";
+  sources: CoverageSource[];
+  lanes: CoverageLane[];
+  gaps: Array<{ source: string; reason: CoverageGapReason; detail: string }>;
+  represented_platforms: string[];
+  web_discovery: string;
+  stop_reason: string | null;
+  stop_explanation: string | null;
+}
+
 export interface SearchResponse {
   session: SearchSummary;
   results: SearchResultItem[];
   clusters: ClusterSummary[];
   analytics: AnalyticsSnapshot;
+  coverage?: CoverageReport;
 }
 
 export interface SourceStatus {

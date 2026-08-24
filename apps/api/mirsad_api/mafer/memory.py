@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from datetime import UTC, datetime, timedelta
 
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
@@ -19,6 +20,8 @@ class LocalMemoryResult:
     content_fts_matches: int
     discovery_memory_matches: int
     scanned_discovery_records: int
+    exact_matches: int = 0
+    historical_matches: int = 0
 
     def as_dict(self) -> dict[str, int]:
         return {
@@ -26,6 +29,8 @@ class LocalMemoryResult:
             "discovery_memory_matches": self.discovery_memory_matches,
             "scanned_discovery_records": self.scanned_discovery_records,
             "total_local_candidates": len(self.items),
+            "exact_matches": self.exact_matches,
+            "historical_matches": self.historical_matches,
         }
 
 
@@ -39,9 +44,11 @@ class LocalMemorySearch:
         lattice: QueryLattice,
         *,
         limit: int,
+        historical_mode: bool = False,
     ) -> LocalMemoryResult:
         bounded = max(1, min(limit, 200))
-        content_ids: list[int] = []
+        content_ids: list[int] = self._literal_content_ids(processed, bounded)
+        exact_count = len(content_ids)
         for variant in lattice.variants:
             if variant.drift_risk > 0.35 or len(content_ids) >= bounded:
                 continue
@@ -62,10 +69,21 @@ class LocalMemorySearch:
         ).all()
         order = {item_id: index for index, item_id in enumerate(content_ids)}
         content_rows.sort(key=lambda row: order.get(row[0].id, bounded))
-        output = [
-            self._content_connector_item(item, source, metric)
-            for item, source, metric in content_rows
-        ]
+        historical_cutoff = datetime.now(UTC) - timedelta(days=30)
+        output: list[ConnectorItem] = []
+        historical_matches = 0
+        for item, source, metric in content_rows:
+            connector_item = self._content_connector_item(item, source, metric)
+            is_historical = bool(
+                historical_mode and ((item.published_at or item.first_seen_at) < historical_cutoff)
+            )
+            if is_historical:
+                historical_matches += 1
+                connector_item = replace(
+                    connector_item,
+                    raw_metadata={**connector_item.raw_metadata, "historical_local_evidence": True},
+                )
+            output.append(connector_item)
         seen_urls = {item.canonical_url for item in output}
 
         discovery_rows = self.db.scalars(
@@ -92,7 +110,7 @@ class LocalMemorySearch:
                 for variant in variant_queries
             ):
                 continue
-            output.append(self._discovery_connector_item(record))
+            output.append(self._discovery_connector_item(record, historical_mode=historical_mode))
             seen_urls.add(record.canonical_url)
             discovery_matches += 1
         return LocalMemoryResult(
@@ -100,7 +118,29 @@ class LocalMemorySearch:
             len(content_rows),
             discovery_matches,
             len(discovery_rows),
+            exact_count,
+            historical_matches + (discovery_matches if historical_mode else 0),
         )
+
+    def _literal_content_ids(self, processed: ProcessedQuery, limit: int) -> list[int]:
+        literal = processed.original.strip().strip('"')
+        is_literal_lane = literal.startswith(("@", "#")) or "-" in literal
+        if not is_literal_lane or not literal:
+            return []
+        rows = self.db.execute(
+            text(
+                "SELECT id FROM content_items WHERE "
+                "lower(external_id) = lower(:plain) OR "
+                "lower(COALESCE(author_handle, '')) = lower(:literal) "
+                "ORDER BY id DESC LIMIT :limit"
+            ),
+            {
+                "literal": literal,
+                "plain": literal.removeprefix("@").removeprefix("#"),
+                "limit": limit,
+            },
+        ).all()
+        return [int(row.id) for row in rows]
 
     def _fts_content_ids(self, processed: ProcessedQuery, limit: int) -> list[int]:
         if not processed.tokens:
@@ -125,6 +165,9 @@ class LocalMemorySearch:
             acquisition = AcquisitionMode.MANUAL_IMPORT
         metadata = dict(item.raw_metadata or {})
         metadata["local_memory_reuse"] = True
+        metadata["first_seen_by_mirsad"] = item.first_seen_at.isoformat()
+        metadata["last_seen_by_mirsad"] = item.last_seen_at.isoformat()
+        metadata["retrieved_at"] = item.retrieved_at.isoformat() if item.retrieved_at else None
         return ConnectorItem(
             source=source.key,
             external_id=item.external_id,
@@ -147,7 +190,9 @@ class LocalMemorySearch:
         )
 
     @staticmethod
-    def _discovery_connector_item(record: DiscoveryRecord) -> ConnectorItem:
+    def _discovery_connector_item(
+        record: DiscoveryRecord, *, historical_mode: bool = False
+    ) -> ConnectorItem:
         try:
             acquisition = AcquisitionMode(record.acquisition_mode)
         except ValueError:
@@ -171,6 +216,7 @@ class LocalMemorySearch:
                 "availability_state": record.availability_state,
                 "first_seen_by_mirsad": record.first_seen_at.isoformat(),
                 "last_seen_by_mirsad": record.last_seen_at.isoformat(),
+                "historical_local_evidence": historical_mode,
             },
             acquisition_mode=acquisition,
             acquisition_path=AcquisitionMode.LOCAL_MEMORY,

@@ -27,6 +27,7 @@ from ..models import (
 from ..schemas import (
     ClusterSummary,
     ConnectorWarning,
+    CoverageReport,
     HighlightRange,
     ScoreExplanation,
     SearchRequest,
@@ -34,6 +35,75 @@ from ..schemas import (
     SearchResultItem,
     SearchSummary,
 )
+
+
+def coverage_snapshot(session: SearchSession) -> CoverageReport:
+    raw = (session.diagnostics or {}).get("coverage")
+    if raw:
+        return CoverageReport.model_validate(raw)
+    connector_rows = list((session.diagnostics or {}).get("connectors") or ())
+    represented = sorted(
+        {
+            str(row.get("source"))
+            for row in connector_rows
+            if int(row.get("final_top_results") or 0) > 0
+        }
+    )
+    return CoverageReport.model_validate(
+        {
+            "session_id": session.id,
+            "outcome_status": session.status,
+            "coverage_status": "LIMITED",
+            "sources": [
+                {
+                    "source": str(row.get("source")),
+                    "selected": True,
+                    "executed": True,
+                    "contributed": int(row.get("final_top_results") or 0) > 0,
+                    "status": str(row.get("status") or "UNKNOWN").upper(),
+                    "acquisition_mode": row.get("acquisition_mode"),
+                    "requests": int(row.get("attempt_count") or 0),
+                    "fetched": int(row.get("fetched_results") or 0),
+                    "matched": int(row.get("final_matching_results") or 0),
+                    "admitted": int(row.get("candidate_admitted_results") or 0),
+                    "final": int(row.get("final_top_results") or 0),
+                }
+                for row in connector_rows
+            ],
+            "lanes": [
+                {
+                    "lane": "LIVE",
+                    "available": bool(connector_rows),
+                    "executed": bool(connector_rows),
+                    "contributed": bool(represented),
+                    "candidates": sum(
+                        int(row.get("candidate_admitted_results") or 0) for row in connector_rows
+                    ),
+                    "final": session.result_count,
+                    "platforms": represented,
+                },
+                {
+                    "lane": "LOCAL_MEMORY",
+                    "available": True,
+                    "executed": False,
+                    "contributed": False,
+                    "platforms": [],
+                },
+                {
+                    "lane": "HISTORICAL",
+                    "available": False,
+                    "executed": False,
+                    "contributed": False,
+                    "platforms": [],
+                },
+            ],
+            "gaps": [],
+            "represented_platforms": represented,
+            "web_discovery": "UNKNOWN",
+            "stop_reason": (session.diagnostics or {}).get("mafer", {}).get("stop_reason"),
+            "stop_explanation": "Coverage predates the v1.2 persisted coverage model.",
+        }
+    )
 
 
 def relevant_snippet(
@@ -389,6 +459,9 @@ def get_search_response(db: Session, session_id: str) -> SearchResponse:
                 ),
                 published_at=item.published_at,
                 fetched_at=item.fetched_at,
+                first_seen_at=item.first_seen_at,
+                last_seen_at=item.last_seen_at,
+                retrieved_at=item.retrieved_at,
                 language=item.language,
                 hashtags=item.hashtags,
                 mentions=item.mentions,
@@ -459,6 +532,7 @@ def get_search_response(db: Session, session_id: str) -> SearchResponse:
         results=results,
         clusters=cluster_summaries(db, session_id),
         analytics=analytics_snapshot(db, session_id),
+        coverage=coverage_snapshot(session),
     )
 
 
