@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
+from time import perf_counter
 from typing import Any
 
 from sqlalchemy import func, select, text
@@ -28,6 +29,7 @@ class AdaptivePlanningContext:
     budget: SearchBudget
     resources: ResourcePlan
     local_memory: LocalMemoryResult
+    local_memory_duration_ms: float
     source_states: dict[str, str]
     shadow_resources: ShadowRoutePlan
 
@@ -46,6 +48,7 @@ class AdaptivePlanningContext:
                     "round": 0,
                     "kind": "LOCAL_MEMORY",
                     **self.local_memory.as_dict(),
+                    "latency_ms": round(self.local_memory_duration_ms, 3),
                     "current_coverage": False,
                     "reason": "local accelerator; not current platform coverage",
                 }
@@ -102,11 +105,17 @@ class AdaptiveSearchPlanner:
             current_states=source_states,
             observations=observations,
         )
+        local_memory_started = perf_counter()
         local_memory = LocalMemorySearch(self.db).search(
             processed,
             lattice,
             limit=min(budget.max_normalized_candidates, 100),
+            historical_mode=(
+                explicit_time_range == "all"
+                or fingerprint.temporal_intent.value == "HISTORICAL"
+            ),
         )
+        local_memory_duration_ms = (perf_counter() - local_memory_started) * 1000
         query_class = next(
             (
                 label.value.casefold()
@@ -136,6 +145,7 @@ class AdaptiveSearchPlanner:
             budget,
             resources,
             local_memory,
+            local_memory_duration_ms,
             source_states,
             shadow_resources,
         )

@@ -1,6 +1,5 @@
 import { AnalyticsView } from "@/components/analytics/analytics-view";
 import { ErrorState, PageHeader, PageSkeleton } from "@/components/shared/page";
-import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -52,13 +51,12 @@ export function AnalyticsPage() {
       ? `${t("analytics.scopeSessionLabel")} ${analytics.scope_query ?? ""} · ${formatDate(analytics.scope_started_at ?? null, locale)}`
       : t(`analytics.scope.${scope === "session" ? "all" : scope}`);
   return (
-    <div>
+    <div className="instrument-page instrument-page--analytics">
       <PageHeader
         title={t("analytics.title")}
         description={t("analytics.description")}
       />
-      <Card className="mb-4 shadow-none">
-        <CardContent className="flex flex-col gap-3 py-3 sm:flex-row sm:items-end sm:justify-between">
+      <section className="analytics-scope-strip">
           <div>
             <Label htmlFor="analytics-scope">{t("analytics.scopeLabel")}</Label>
             <p className="mt-1 text-xs text-muted-foreground">{scopeLabel}</p>
@@ -82,8 +80,7 @@ export function AnalyticsPage() {
               <SelectItem value="30d">{t("analytics.scope.30d")}</SelectItem>
             </SelectContent>
           </Select>
-        </CardContent>
-      </Card>
+      </section>
       {loading && !analytics ? (
         <PageSkeleton rows={5} />
       ) : error ? (

@@ -4,8 +4,14 @@ from fastapi import APIRouter, HTTPException, Query, status
 
 from ..dependencies import AppSettings, Connectors, DbSession
 from ..models import SearchSession
-from ..schemas import SearchDiagnostics, SearchRequest, SearchResponse, SearchSummary
-from ..services.read_models import get_search_response, history
+from ..schemas import (
+    CoverageReport,
+    SearchDiagnostics,
+    SearchRequest,
+    SearchResponse,
+    SearchSummary,
+)
+from ..services.read_models import coverage_snapshot, get_search_response, history
 from ..services.search import SearchService
 
 router = APIRouter(prefix="/searches", tags=["search"])
@@ -34,6 +40,14 @@ async def get_search_diagnostics(session_id: str, db: DbSession) -> SearchDiagno
     if session is None:
         raise HTTPException(status_code=404, detail="Search session not found")
     return SearchDiagnostics(session_id=session.id, diagnostics=session.diagnostics or {})
+
+
+@router.get("/{session_id}/coverage", response_model=CoverageReport)
+async def get_search_coverage(session_id: str, db: DbSession) -> CoverageReport:
+    session = db.get(SearchSession, session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="Search session not found")
+    return coverage_snapshot(session)
 
 
 @router.get("", response_model=list[SearchSummary])

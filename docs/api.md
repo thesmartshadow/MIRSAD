@@ -52,7 +52,10 @@ persisted search. The synchronous endpoint remains supported.
 - `GET /api/v1/searches?limit=50&offset=0`: paginated summaries.
 - `GET /api/v1/searches/{session_id}`: stored results, explanations, clusters, and analytics.
 - `GET /api/v1/searches/{session_id}/diagnostics`: stored query, MAFER intent/lattice/resource plan/rounds/budget/uncertainty/gain/stop trace, connector completion order, live connector funnels, platform-plus-acquisition funnels, semantic-preparation/cache state, per-engine web-discovery telemetry, phase, duplicate, and score-distribution diagnostics. Local-memory rows always report zero network requests.
+- `GET /api/v1/searches/{session_id}/coverage`: persisted coverage read model. It keeps search outcome separate from coverage, reports LIVE, LOCAL_MEMORY, and HISTORICAL lanes, and classifies each source as executed, skipped, unavailable, externally limited, restricted, unconfigured, no-match, or web-discovery-disabled. It never invents a percentage denominator.
 - `GET /api/v1/searches/{session_id}/export?format=csv|json`: direct download; no filesystem path is accepted.
+
+Search responses also include the same typed `coverage` object so the completed workspace can render without recomputing planner evidence. Current connector health and long-term shadow utility remain separate. Adaptive recommendations are diagnostic only and never alter the production Phase 2 plan.
 
 JSON exports use schema `mirsad.search-export`, version `1.0`, and contain generated time, session/filter metadata, analytics, acquisition/discovery provenance, and records. CSV includes the same acquisition/discovery fields, is UTF-8 with BOM for Arabic interoperability, and prevents formula-like content from being interpreted by spreadsheets.
 

@@ -54,9 +54,9 @@ export function PageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <div className="mb-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
-      <div>
-        <h2 className="font-heading text-xl font-semibold tracking-tight">
+    <header className="instrument-page-header mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div className="instrument-page-header__copy">
+        <h2 className="font-heading text-2xl font-semibold tracking-[-0.025em] md:text-3xl">
           {title}
         </h2>
         <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
@@ -68,7 +68,7 @@ export function PageHeader({
           {actions}
         </div>
       )}
-    </div>
+    </header>
   );
 }
 

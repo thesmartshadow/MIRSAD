@@ -1,0 +1,558 @@
+{
+  "schema": "mirsad.v1.2.retrieval-baseline",
+  "fixture_sha256": "cef114386fca2c8800b54582bac90d922273adc910ae44ed942836c3e5b14dc8",
+  "method": "Frozen pre-router deterministic acquisition replay; final ranker is not changed or evaluated here.",
+  "production_policy": "All fixture-capable configured sources are attempted; local and historical evidence are retained separately.",
+  "totals": {
+    "queries": 14,
+    "requests": 98,
+    "zero_yield_requests": 38,
+    "useful_candidates": 87,
+    "mean_recall": 1.0,
+    "mean_useful_evidence_per_request": 0.693878,
+    "mean_time_to_useful_evidence_ms": 377.5
+  },
+  "per_query_class": {
+    "arabic_topic": {
+      "queries": 2,
+      "mean_recall": 1.0,
+      "requests": 14,
+      "zero_yield_requests": 4
+    },
+    "english_topic": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 2
+    },
+    "entity": {
+      "queries": 3,
+      "mean_recall": 1.0,
+      "requests": 21,
+      "zero_yield_requests": 5
+    },
+    "exact_phrase": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 3
+    },
+    "handle": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 4
+    },
+    "hashtag": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 4
+    },
+    "historical": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 4
+    },
+    "identifier": {
+      "queries": 2,
+      "mean_recall": 1.0,
+      "requests": 14,
+      "zero_yield_requests": 7
+    },
+    "person": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 4
+    },
+    "recent": {
+      "queries": 1,
+      "mean_recall": 1.0,
+      "requests": 7,
+      "zero_yield_requests": 1
+    }
+  },
+  "cases": [
+    {
+      "id": "ar-topic-baghdad",
+      "query": "بغداد",
+      "query_class": "arabic_topic",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 3,
+      "useful_candidates": 8,
+      "unique_useful_candidates": 8,
+      "useful_evidence_ids": [
+        "bg-1",
+        "bg-2",
+        "bg-3",
+        "bg-4",
+        "bg-5",
+        "bg-6",
+        "bg-7",
+        "bg-8"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 2,
+      "historical_contribution": 0,
+      "external_contribution": 6,
+      "time_to_useful_evidence_ms": 510,
+      "estimated_collection_ms": 1900,
+      "useful_evidence_per_request": 0.857143
+    },
+    {
+      "id": "ar-entity-ministry",
+      "query": "وزارة التخطيط",
+      "query_class": "entity",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 3,
+      "useful_candidates": 6,
+      "unique_useful_candidates": 6,
+      "useful_evidence_ids": [
+        "mp-1",
+        "mp-2",
+        "mp-3",
+        "mp-4",
+        "mp-5",
+        "mp-6"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 2,
+      "historical_contribution": 0,
+      "external_contribution": 4,
+      "time_to_useful_evidence_ms": 480,
+      "estimated_collection_ms": 1800,
+      "useful_evidence_per_request": 0.571429
+    },
+    {
+      "id": "ar-topic-ai-recent",
+      "query": "الذكاء الاصطناعي اليوم",
+      "query_class": "arabic_topic",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 1,
+      "useful_candidates": 8,
+      "unique_useful_candidates": 8,
+      "useful_evidence_ids": [
+        "aiar-1",
+        "aiar-2",
+        "aiar-3",
+        "aiar-4",
+        "aiar-5",
+        "aiar-6",
+        "aiar-7",
+        "aiar-8"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 7,
+      "time_to_useful_evidence_ms": 250,
+      "estimated_collection_ms": 1700,
+      "useful_evidence_per_request": 1.0
+    },
+    {
+      "id": "ar-person",
+      "query": "علي فراس",
+      "query_class": "person",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 4,
+      "useful_candidates": 4,
+      "unique_useful_candidates": 4,
+      "useful_evidence_ids": [
+        "af-1",
+        "af-2",
+        "af-3",
+        "af-4"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 3,
+      "time_to_useful_evidence_ms": 590,
+      "estimated_collection_ms": 1650,
+      "useful_evidence_per_request": 0.428571
+    },
+    {
+      "id": "mixed-entity",
+      "query": "Microsoft العراق",
+      "query_class": "entity",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 2,
+      "useful_candidates": 6,
+      "unique_useful_candidates": 6,
+      "useful_evidence_ids": [
+        "msiq-1",
+        "msiq-2",
+        "msiq-3",
+        "msiq-4",
+        "msiq-5",
+        "msiq-6"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 5,
+      "time_to_useful_evidence_ms": 300,
+      "estimated_collection_ms": 1750,
+      "useful_evidence_per_request": 0.714286
+    },
+    {
+      "id": "en-topic",
+      "query": "Linux kernel security",
+      "query_class": "english_topic",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 2,
+      "useful_candidates": 7,
+      "unique_useful_candidates": 7,
+      "useful_evidence_ids": [
+        "lks-1",
+        "lks-2",
+        "lks-3",
+        "lks-4",
+        "lks-5",
+        "lks-6",
+        "lks-7"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 6,
+      "time_to_useful_evidence_ms": 230,
+      "estimated_collection_ms": 1600,
+      "useful_evidence_per_request": 0.857143
+    },
+    {
+      "id": "en-entity",
+      "query": "OpenAI",
+      "query_class": "entity",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 0,
+      "useful_candidates": 8,
+      "unique_useful_candidates": 8,
+      "useful_evidence_ids": [
+        "oai-1",
+        "oai-2",
+        "oai-3",
+        "oai-4",
+        "oai-5",
+        "oai-6",
+        "oai-7",
+        "oai-8"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 7,
+      "time_to_useful_evidence_ms": 220,
+      "estimated_collection_ms": 1550,
+      "useful_evidence_per_request": 1.0
+    },
+    {
+      "id": "handle",
+      "query": "@openai",
+      "query_class": "handle",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 4,
+      "useful_candidates": 5,
+      "unique_useful_candidates": 5,
+      "useful_evidence_ids": [
+        "ho-1",
+        "ho-2",
+        "ho-3",
+        "ho-4",
+        "ho-5"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 4,
+      "time_to_useful_evidence_ms": 570,
+      "estimated_collection_ms": 1500,
+      "useful_evidence_per_request": 0.571429
+    },
+    {
+      "id": "hashtag",
+      "query": "#بغداد",
+      "query_class": "hashtag",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 4,
+      "useful_candidates": 5,
+      "unique_useful_candidates": 5,
+      "useful_evidence_ids": [
+        "htag-1",
+        "htag-2",
+        "htag-3",
+        "htag-4",
+        "htag-5"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 4,
+      "time_to_useful_evidence_ms": 580,
+      "estimated_collection_ms": 1520,
+      "useful_evidence_per_request": 0.571429
+    },
+    {
+      "id": "identifier-cve",
+      "query": "CVE-2026-61371",
+      "query_class": "identifier",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 3,
+      "useful_candidates": 6,
+      "unique_useful_candidates": 6,
+      "useful_evidence_ids": [
+        "cve-1",
+        "cve-2",
+        "cve-3",
+        "cve-4",
+        "cve-5",
+        "cve-6"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 1,
+      "historical_contribution": 0,
+      "external_contribution": 5,
+      "time_to_useful_evidence_ms": 210,
+      "estimated_collection_ms": 1480,
+      "useful_evidence_per_request": 0.714286
+    },
+    {
+      "id": "identifier-ghsa",
+      "query": "GHSA-xxxx-xxxx-xxxx",
+      "query_class": "identifier",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 4,
+      "useful_candidates": 4,
+      "unique_useful_candidates": 4,
+      "useful_evidence_ids": [
+        "ghsa-1",
+        "ghsa-2",
+        "ghsa-3",
+        "ghsa-4"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 0,
+      "historical_contribution": 0,
+      "external_contribution": 4,
+      "time_to_useful_evidence_ms": 205,
+      "estimated_collection_ms": 1450,
+      "useful_evidence_per_request": 0.571429
+    },
+    {
+      "id": "exact-phrase",
+      "query": "\"وزارة التخطيط\"",
+      "query_class": "exact_phrase",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 3,
+      "useful_candidates": 6,
+      "unique_useful_candidates": 6,
+      "useful_evidence_ids": [
+        "ex-1",
+        "ex-2",
+        "ex-3",
+        "ex-4",
+        "ex-5",
+        "ex-6"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 2,
+      "historical_contribution": 0,
+      "external_contribution": 4,
+      "time_to_useful_evidence_ms": 455,
+      "estimated_collection_ms": 1580,
+      "useful_evidence_per_request": 0.571429
+    },
+    {
+      "id": "historical",
+      "query": "Iraq 2003 reconstruction",
+      "query_class": "historical",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 4,
+      "useful_candidates": 8,
+      "unique_useful_candidates": 8,
+      "useful_evidence_ids": [
+        "hist-1",
+        "hist-2",
+        "hist-3",
+        "hist-4",
+        "hist-5",
+        "hist-6",
+        "hist-7",
+        "hist-8"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 3,
+      "historical_contribution": 2,
+      "external_contribution": 3,
+      "time_to_useful_evidence_ms": 470,
+      "estimated_collection_ms": 1800,
+      "useful_evidence_per_request": 0.428571
+    },
+    {
+      "id": "recent",
+      "query": "OpenAI latest news",
+      "query_class": "recent",
+      "production_sources": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "requests": 7,
+      "zero_yield_requests": 1,
+      "useful_candidates": 6,
+      "unique_useful_candidates": 6,
+      "useful_evidence_ids": [
+        "rec-1",
+        "rec-2",
+        "rec-3",
+        "rec-4",
+        "rec-5",
+        "rec-6"
+      ],
+      "useful_evidence_lost": [],
+      "recall": 1.0,
+      "local_memory_contribution": 0,
+      "historical_contribution": 0,
+      "external_contribution": 6,
+      "time_to_useful_evidence_ms": 215,
+      "estimated_collection_ms": 1510,
+      "useful_evidence_per_request": 0.857143
+    }
+  ]
+}

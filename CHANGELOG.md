@@ -1,5 +1,16 @@
 # Changelog
 
+## MIRSAD 1.2.0 - 2026-08-21
+
+- Adds deterministic shadow adaptive-routing decisions with separate long-term utility and current availability; replay evidence reduced modeled requests without evidence loss, but insufficient per-class depth keeps the router shadow-only.
+- Makes evidence-bound aliases, collision rejection, expansion provenance, and drift limits explicit without embedding-based identity merging or invented aliases.
+- Promotes bounded SQLite FTS5 local memory and historical evidence to explicit retrieval lanes with distinct publication, first-seen, last-seen, and retrieval timestamps.
+- Adds persisted session coverage reports for live, local, and historical lanes; capability, execution, provider limits, disabled web discovery, gaps, and final platform representation remain distinct.
+- Rebuilds the operator shell and major routes as a restrained retrieval instrument with route-wide hierarchy, coverage/source/cluster topology, RTL/mobile support, reduced motion, and disposable WebGL fallback.
+
+Adaptive routing remains Phase 3 shadow-only. Bluesky currently returns an environment-specific public
+AppView `403`; X, Threads, and Reddit web discovery remains disabled while optional SearXNG is disabled.
+
 ## MIRSAD 1.1.1 - 2026-08-21
 
 - Separates content platform from per-search acquisition path so local-memory evidence cannot masquerade as a live connector execution; adds truthful local-memory SSE and acquisition-funnel diagnostics.

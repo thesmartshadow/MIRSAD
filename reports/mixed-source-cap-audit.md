@@ -87,14 +87,14 @@ Queries: 11. Source pre-candidate limit: 50. Semantic rerank limit: 20. Final ca
 
 ### `الذكاء الاصطناعي`
 
-- Matched: youtube=16, bluesky=16, mastodon=16, github=16, hacker_news=16, rss=16
-- Candidate admitted: youtube=16, bluesky=16, mastodon=16, github=16, hacker_news=16, rss=16
-- Final top 30: youtube=11, bluesky=3, mastodon=3, github=4, hacker_news=3, rss=6
+- Matched: youtube=8, bluesky=8, mastodon=8, github=8, hacker_news=8, rss=8
+- Candidate admitted: youtube=8, bluesky=8, mastodon=8, github=8, hacker_news=8, rss=8
+- Final top 30: youtube=8, bluesky=3, mastodon=4, github=5, hacker_news=5, rss=5
 - Semantic top-20 opportunity: youtube=4, bluesky=3, mastodon=3, github=3, hacker_news=3, rss=4
-- Completion A: youtube, bluesky, mastodon, github, hacker_news, rss, youtube, bluesky, mastodon, github, hacker_news, rss
-- Completion B: rss, hacker_news, github, mastodon, bluesky, youtube, rss, hacker_news, github, mastodon, bluesky, youtube
+- Completion A: youtube, bluesky, mastodon, github, hacker_news, rss
+- Completion B: rss, hacker_news, github, mastodon, bluesky, youtube
 - Final identities/order unchanged: True
-- Relevance distributions: `{"bluesky": {"count": 16, "max": 83.61, "mean": 70.154, "median": 68.37, "min": 66.72, "p25": 66.833, "p75": 68.6}, "github": {"count": 16, "max": 99.94, "mean": 85.295, "median": 90.63, "min": 66.72, "p25": 66.833, "p75": 99.87}, "hacker_news": {"count": 16, "max": 99.87, "mean": 85.21, "median": 90.615, "min": 66.58, "p25": 66.685, "p75": 99.81}, "mastodon": {"count": 16, "max": 83.61, "mean": 70.154, "median": 68.37, "min": 66.72, "p25": 66.833, "p75": 68.6}, "rss": {"count": 16, "max": 99.94, "mean": 84.183, "median": 86.7, "min": 66.72, "p25": 66.833, "p75": 99.78}, "youtube": {"count": 16, "max": 99.94, "mean": 84.183, "median": 86.7, "min": 66.72, "p25": 66.833, "p75": 99.78}}`
+- Relevance distributions: `{"bluesky": {"count": 8, "max": 83.61, "mean": 72.373, "median": 68.365, "min": 66.72, "p25": 66.825, "p75": 78.555}, "github": {"count": 8, "max": 99.87, "mean": 83.05, "median": 86.42, "min": 66.72, "p25": 66.825, "p75": 93.668}, "hacker_news": {"count": 8, "max": 99.81, "mean": 82.972, "median": 86.4, "min": 66.57, "p25": 66.683, "p75": 93.638}, "mastodon": {"count": 8, "max": 83.61, "mean": 72.373, "median": 68.365, "min": 66.72, "p25": 66.825, "p75": 78.555}, "rss": {"count": 8, "max": 99.75, "mean": 82.427, "median": 86.42, "min": 66.72, "p25": 66.825, "p75": 92.453}, "youtube": {"count": 8, "max": 99.75, "mean": 82.427, "median": 86.42, "min": 66.72, "p25": 66.825, "p75": 92.453}}`
 
 ### `#بغداد`
 
@@ -105,7 +105,7 @@ Queries: 11. Source pre-candidate limit: 50. Semantic rerank limit: 20. Final ca
 - Completion A: youtube, bluesky, mastodon, github, hacker_news, rss
 - Completion B: rss, hacker_news, github, mastodon, bluesky, youtube
 - Final identities/order unchanged: True
-- Relevance distributions: `{"bluesky": {"count": 6, "max": 68.85, "mean": 67.737, "median": 67.65, "min": 66.77, "p25": 66.81, "p75": 68.64}, "github": {"count": 8, "max": 100, "mean": 87.496, "median": 99.81, "min": 66.77, "p25": 66.89, "p75": 99.94}, "hacker_news": {"count": 8, "max": 99.94, "mean": 87.4, "median": 99.745, "min": 66.63, "p25": 66.735, "p75": 99.87}, "mastodon": {"count": 6, "max": 68.85, "mean": 67.737, "median": 67.65, "min": 66.77, "p25": 66.81, "p75": 68.64}, "rss": {"count": 8, "max": 100, "mean": 87.496, "median": 99.81, "min": 66.77, "p25": 66.89, "p75": 99.94}, "youtube": {"count": 8, "max": 100, "mean": 87.496, "median": 99.81, "min": 66.77, "p25": 66.89, "p75": 99.94}}`
+- Relevance distributions: `{"bluesky": {"count": 6, "max": 68.85, "mean": 67.728, "median": 67.64, "min": 66.76, "p25": 66.8, "p75": 68.63}, "github": {"count": 8, "max": 100, "mean": 87.491, "median": 99.805, "min": 66.76, "p25": 66.88, "p75": 99.94}, "hacker_news": {"count": 8, "max": 99.94, "mean": 87.396, "median": 99.745, "min": 66.62, "p25": 66.725, "p75": 99.87}, "mastodon": {"count": 6, "max": 68.85, "mean": 67.728, "median": 67.64, "min": 66.76, "p25": 66.8, "p75": 68.63}, "rss": {"count": 8, "max": 100, "mean": 87.491, "median": 99.805, "min": 66.76, "p25": 66.88, "p75": 99.94}, "youtube": {"count": 8, "max": 100, "mean": 87.491, "median": 99.805, "min": 66.76, "p25": 66.88, "p75": 99.94}}`
 
 ### `Microsoft العراق`
 
@@ -127,7 +127,7 @@ Queries: 11. Source pre-candidate limit: 50. Semantic rerank limit: 20. Final ca
 - Completion A: youtube, bluesky, mastodon, github, hacker_news, rss, youtube, bluesky, mastodon, github, hacker_news, rss
 - Completion B: rss, hacker_news, github, mastodon, bluesky, youtube, rss, hacker_news, github, mastodon, bluesky, youtube
 - Final identities/order unchanged: True
-- Relevance distributions: `{"bluesky": {"count": 16, "max": 86.67, "mean": 70.873, "median": 68.38, "min": 66.73, "p25": 66.843, "p75": 68.61}, "github": {"count": 16, "max": 99.94, "mean": 85.93, "median": 93.275, "min": 66.73, "p25": 66.843, "p75": 99.87}, "hacker_news": {"count": 16, "max": 99.87, "mean": 85.845, "median": 93.26, "min": 66.59, "p25": 66.695, "p75": 99.81}, "mastodon": {"count": 16, "max": 86.67, "mean": 70.873, "median": 68.38, "min": 66.73, "p25": 66.843, "p75": 68.61}, "rss": {"count": 16, "max": 99.94, "mean": 85.181, "median": 90.65, "min": 66.73, "p25": 66.843, "p75": 99.78}, "youtube": {"count": 16, "max": 99.94, "mean": 85.181, "median": 90.65, "min": 66.73, "p25": 66.843, "p75": 99.78}}`
+- Relevance distributions: `{"bluesky": {"count": 16, "max": 86.67, "mean": 70.87, "median": 68.375, "min": 66.73, "p25": 66.843, "p75": 68.6}, "github": {"count": 16, "max": 99.94, "mean": 85.93, "median": 93.275, "min": 66.73, "p25": 66.843, "p75": 99.87}, "hacker_news": {"count": 16, "max": 99.87, "mean": 85.845, "median": 93.26, "min": 66.59, "p25": 66.695, "p75": 99.81}, "mastodon": {"count": 16, "max": 86.67, "mean": 70.87, "median": 68.375, "min": 66.73, "p25": 66.843, "p75": 68.6}, "rss": {"count": 16, "max": 99.94, "mean": 85.181, "median": 90.65, "min": 66.73, "p25": 66.843, "p75": 99.78}, "youtube": {"count": 16, "max": 99.94, "mean": 85.181, "median": 90.65, "min": 66.73, "p25": 66.843, "p75": 99.78}}`
 
 ## Finding
 

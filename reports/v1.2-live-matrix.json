@@ -1,0 +1,4256 @@
+{
+  "schema": "mirsad.v1.2.live-matrix",
+  "captured_at": "2026-08-21T16:42:27.357425+00:00",
+  "observational_only": true,
+  "external_network_variance": true,
+  "production_router_changed": false,
+  "source_states_before": [
+    {
+      "key": "bluesky",
+      "name": "Bluesky",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported",
+      "coverage_label": "Public posts indexed by Bluesky",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": true,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "top",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "external_limit",
+      "detail": null,
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-21T02:00:13.394193Z",
+      "last_success_at": "2026-08-15T08:07:07.477609Z",
+      "recent_failure": "Source access is unavailable from this environment",
+      "failure_category": "http_403",
+      "http_status": 403,
+      "average_latency_ms": 978.46,
+      "last_latency_ms": 1085.47,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 33,
+      "failure_count": 2,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "facebook",
+      "name": "Facebook",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Global public-post keyword search is unavailable",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": false,
+        "author_search": "conditional",
+        "recent_search": false,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": "conditional",
+        "pagination": false,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Global public-post keyword search is not available with the configured API access",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "gdelt",
+      "name": "GDELT News",
+      "kind": "news",
+      "category": "news",
+      "support_level": "supported",
+      "coverage_label": "News indexed by GDELT DOC 2.0",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": false,
+        "engagement_metrics": false,
+        "pagination": false,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "news"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "degraded",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-21T04:28:32.470153Z",
+      "last_success_at": null,
+      "recent_failure": "GDELT exceeded the interactive search latency budget",
+      "failure_category": "timeout",
+      "http_status": null,
+      "average_latency_ms": 1826.52,
+      "last_latency_ms": 3000.83,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 23,
+      "failure_count": 23,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "github",
+      "name": "GitHub",
+      "kind": "code",
+      "category": "developer_community",
+      "support_level": "supported",
+      "coverage_label": "Public repositories, issues, and pull requests",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "repositories",
+          "issues",
+          "pull_requests"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "DIRECT_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": true
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": true,
+      "status": "external_limit",
+      "detail": "Anonymous requests have a lower rate limit",
+      "confidence": 75.0,
+      "last_checked_at": "2026-08-21T02:02:27.314180Z",
+      "last_success_at": "2026-08-21T02:02:25.299188Z",
+      "recent_failure": "Source access is unavailable from this environment",
+      "failure_category": "http_403",
+      "http_status": 403,
+      "average_latency_ms": 611.04,
+      "last_latency_ms": 361.8,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 45,
+      "failure_count": 1,
+      "configuration": {
+        "scopes": [
+          "repositories"
+        ],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "hacker_news",
+      "name": "Hacker News",
+      "kind": "community",
+      "category": "developer_community",
+      "support_level": "supported",
+      "coverage_label": "Public Hacker News records indexed by Algolia",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": false,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-21T07:17:01.533177Z",
+      "last_success_at": "2026-08-21T07:17:01.533177Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 900.56,
+      "last_latency_ms": 903.93,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 50,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "instagram",
+      "name": "Instagram",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Hashtagged public media only; no global keyword search",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts",
+          "videos"
+        ],
+        "search_modes": [
+          "hashtag"
+        ],
+        "sort_modes": [
+          "recent"
+        ],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "unconfigured",
+      "detail": "Professional account hashtag access not configured",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "linkedin",
+      "name": "LinkedIn",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Authorized user or organization content only",
+      "capabilities": {
+        "keyword_search": false,
+        "phrase_search": false,
+        "hashtag_search": false,
+        "author_search": "conditional",
+        "recent_search": false,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": false,
+        "public_posts": "conditional",
+        "comments": false,
+        "engagement_metrics": "conditional",
+        "pagination": "conditional",
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Global public-post search is unavailable through configured API access",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "mastodon",
+      "name": "Mastodon",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported",
+      "coverage_label": "Public timeline coverage on configured Mastodon instances",
+      "capabilities": {
+        "keyword_search": "conditional",
+        "phrase_search": "conditional",
+        "hashtag_search": true,
+        "author_search": "conditional",
+        "recent_search": true,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": false,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": true,
+        "hashtag_timeline": true,
+        "authenticated_fulltext_search": "conditional",
+        "instance_scoped": true,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "public_timeline",
+          "hashtag_timeline",
+          "authenticated_fulltext_search"
+        ],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "PUBLIC_TIMELINE"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": "conditional",
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_TIMELINE",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": "Public timeline mode; full-text search not configured",
+      "confidence": 62.0,
+      "last_checked_at": "2026-08-21T04:28:32.470153Z",
+      "last_success_at": "2026-08-21T04:28:32.470153Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 577.8,
+      "last_latency_ms": 825.99,
+      "last_result_count": 40,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 30,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "rss",
+      "name": "RSS Feeds",
+      "kind": "feed",
+      "category": "news",
+      "support_level": "supported",
+      "coverage_label": "Server-configured public feeds",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": "conditional",
+        "date_filter": true,
+        "public_posts": false,
+        "comments": false,
+        "engagement_metrics": false,
+        "pagination": false,
+        "requires_credentials": false,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "news"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [
+          "PUBLIC_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": "conditional",
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "PUBLIC_API",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": null,
+      "confidence": 72.0,
+      "last_checked_at": "2026-08-21T07:17:01.533177Z",
+      "last_success_at": "2026-08-21T07:17:01.533177Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 483.09,
+      "last_latency_ms": 488.77,
+      "last_result_count": 30,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 56,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    },
+    {
+      "key": "reddit",
+      "name": "Reddit",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Approved Reddit Data API post search",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": false,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "all_reddit",
+          "communities"
+        ],
+        "sort_modes": [
+          "relevance",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX",
+          "HISTORICAL_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": "conditional",
+        "historical_index": "conditional",
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Approved API credentials required; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "telegram",
+      "name": "Telegram",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Public Channels only; requires a locally authorized user session",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": false,
+        "date_filter": "conditional",
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": "conditional",
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "unconfigured",
+      "detail": "Public-channel user session not configured",
+      "confidence": 62.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "threads",
+      "name": "Threads",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Official Threads keyword and topic-tag search",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": false,
+        "recent_search": true,
+        "historical_search": false,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": "conditional",
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [
+          "keyword",
+          "topic_tag"
+        ],
+        "sort_modes": [
+          "top",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Access token not configured; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "tiktok",
+      "name": "TikTok",
+      "kind": "social",
+      "category": "social",
+      "support_level": "restricted_access",
+      "coverage_label": "Public videos through the approved Research API",
+      "capabilities": {
+        "keyword_search": "conditional",
+        "phrase_search": "conditional",
+        "hashtag_search": "conditional",
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": false,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": true,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "videos"
+        ],
+        "search_modes": [],
+        "sort_modes": [],
+        "acquisition_modes": [],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": false,
+        "identifier_search": false
+      },
+      "configuration_state": "restricted",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": false,
+      "status": "restricted",
+      "detail": "Research API approval and credentials required",
+      "confidence": 60.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "restricted"
+      }
+    },
+    {
+      "key": "x",
+      "name": "X",
+      "kind": "social",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Official API recent posts; full archive depends on access tier",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": true,
+        "recent_search": true,
+        "historical_search": "conditional",
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": true,
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": "conditional",
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "posts"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "relevance",
+          "recent"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API",
+          "WEB_INDEX",
+          "HISTORICAL_INDEX"
+        ],
+        "web_index_search": "conditional",
+        "official_embed": "conditional",
+        "historical_index": "conditional",
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "unconfigured",
+      "active_acquisition_mode": "WEB_INDEX",
+      "enabled": true,
+      "configured": false,
+      "status": "web_discovery_disabled",
+      "detail": "Bearer token not configured; local SearXNG discovery is disabled",
+      "confidence": 65.0,
+      "last_checked_at": "2026-08-10T13:05:05.620362Z",
+      "last_success_at": null,
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": null,
+      "average_latency_ms": 0.0,
+      "last_latency_ms": 0.0,
+      "last_result_count": 0,
+      "last_normalized_count": 0,
+      "last_malformed_count": 0,
+      "request_count": 0,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "unconfigured"
+      }
+    },
+    {
+      "key": "youtube",
+      "name": "YouTube",
+      "kind": "video",
+      "category": "social",
+      "support_level": "supported_with_credentials",
+      "coverage_label": "Public videos, channels, and playlists through YouTube Data API",
+      "capabilities": {
+        "keyword_search": true,
+        "phrase_search": true,
+        "hashtag_search": true,
+        "author_search": "conditional",
+        "recent_search": true,
+        "historical_search": true,
+        "language_filter": true,
+        "date_filter": true,
+        "public_posts": true,
+        "comments": "conditional",
+        "engagement_metrics": true,
+        "pagination": true,
+        "requires_credentials": true,
+        "requires_approval": false,
+        "paid_access": false,
+        "public_timeline": false,
+        "hashtag_timeline": false,
+        "authenticated_fulltext_search": false,
+        "instance_scoped": false,
+        "content_types": [
+          "videos",
+          "channels",
+          "playlists"
+        ],
+        "search_modes": [],
+        "sort_modes": [
+          "relevance",
+          "recent",
+          "most_engaged"
+        ],
+        "acquisition_modes": [
+          "DIRECT_API"
+        ],
+        "web_index_search": false,
+        "official_embed": false,
+        "historical_index": false,
+        "full_text_search": true,
+        "identifier_search": "conditional"
+      },
+      "configuration_state": "configured",
+      "active_acquisition_mode": "DIRECT_API",
+      "enabled": true,
+      "configured": true,
+      "status": "healthy",
+      "detail": null,
+      "confidence": 70.0,
+      "last_checked_at": "2026-08-21T07:17:01.533177Z",
+      "last_success_at": "2026-08-21T07:17:01.533177Z",
+      "recent_failure": null,
+      "failure_category": null,
+      "http_status": 200,
+      "average_latency_ms": 1080.05,
+      "last_latency_ms": 1638.67,
+      "last_result_count": 50,
+      "last_normalized_count": 50,
+      "last_malformed_count": 0,
+      "request_count": 65,
+      "failure_count": 0,
+      "configuration": {
+        "scopes": [],
+        "credential_status": "configured"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "baghdad",
+      "query": "بغداد",
+      "time_range": "7d",
+      "session_id": "8afaa675-f507-42f2-ad9c-01620f932194",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:41:55.356490+00:00",
+      "completed_at": "2026-08-21T16:41:58.043357+00:00",
+      "wall_time_ms": 2686.867,
+      "status": "completed",
+      "intent": "keywords",
+      "production_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt",
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "github",
+        "bluesky",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "rss",
+          "hacker_news"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "github",
+        "bluesky",
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "hacker_news",
+        "youtube"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 9,
+            "final": 9,
+            "platforms": [
+              "hacker_news",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 14,
+            "final": 14,
+            "platforms": [
+              "bluesky",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          }
+        ],
+        "represented_platforms": [
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 8,
+          "admitted": 9,
+          "final": 9,
+          "latency_ms": 1834.05,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 1090.64,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 1600.16,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 15.86,
+          "retrieved": 8,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1600.07,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1088.03,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1833.42,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 8,
+          "admitted": 9,
+          "final_top_k": 9
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 15.86,
+          "retrieved": 92,
+          "matched": 40,
+          "admitted": 14,
+          "final_top_k": 14
+        }
+      ],
+      "planning_ms": 16.01,
+      "local_retrieval_ms": 6.807988999753434,
+      "live_collection_ms": 1862.8,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 2232.56,
+      "ranking_ms": 284.33,
+      "clustering_ms": 12.94,
+      "total_ms": 2620,
+      "results": 20,
+      "unique": 19,
+      "clusters": 17,
+      "stop_reason": "USER_LIMIT",
+      "stop_explanation": "Stopped because the configured result limit was satisfied."
+    },
+    {
+      "id": "planning_ministry",
+      "query": "وزارة التخطيط",
+      "time_range": "all",
+      "session_id": "2098b2b4-3a07-40b8-9a28-3b9374fc78e5",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:41:58.799730+00:00",
+      "completed_at": "2026-08-21T16:42:01.095777+00:00",
+      "wall_time_ms": 2296.047,
+      "status": "completed",
+      "intent": "keywords",
+      "production_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt",
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "github",
+        "bluesky",
+        "tiktok",
+        "facebook",
+        "instagram",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "rss",
+          "hacker_news"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "github",
+        "bluesky",
+        "tiktok",
+        "facebook",
+        "instagram",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 26,
+            "final": 20,
+            "platforms": [
+              "bluesky",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 5,
+            "final": 2,
+            "platforms": [
+              "bluesky",
+              "youtube"
+            ]
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "youtube",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          }
+        ],
+        "represented_platforms": [
+          "bluesky",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {},
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 12.29,
+          "retrieved": 8,
+          "matched": 6,
+          "admitted": 6,
+          "final_top_k": 6
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 12.29,
+          "retrieved": 37,
+          "matched": 31,
+          "admitted": 20,
+          "final_top_k": 14
+        }
+      ],
+      "planning_ms": 12.37,
+      "local_retrieval_ms": 3.6523260000649316,
+      "live_collection_ms": 15.01,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 2010.68,
+      "ranking_ms": 130.1,
+      "clustering_ms": 12.28,
+      "total_ms": 2248,
+      "results": 20,
+      "unique": 20,
+      "clusters": 14,
+      "stop_reason": "SATISFIED",
+      "stop_explanation": "Stopped because the available evidence satisfied the retrieval target."
+    },
+    {
+      "id": "arabic_ai",
+      "query": "الذكاء الاصطناعي",
+      "time_range": "7d",
+      "session_id": "9e46ae51-b410-4f6e-b837-27c53a64de24",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:01.849788+00:00",
+      "completed_at": "2026-08-21T16:42:04.484386+00:00",
+      "wall_time_ms": 2634.598,
+      "status": "completed",
+      "intent": "keywords",
+      "production_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt",
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "github",
+        "bluesky",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "rss",
+          "hacker_news"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "github",
+        "bluesky",
+        "x",
+        "reddit",
+        "telegram",
+        "threads",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "hacker_news",
+        "youtube"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 9,
+            "final": 5,
+            "platforms": [
+              "hacker_news",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 37,
+            "final": 19,
+            "platforms": [
+              "bluesky",
+              "github",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          }
+        ],
+        "represented_platforms": [
+          "github",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 5,
+          "admitted": 9,
+          "final": 5,
+          "latency_ms": 1030.63,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 327.17,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 762.01,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.66,
+          "retrieved": 3,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "github",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.66,
+          "retrieved": 30,
+          "matched": 30,
+          "admitted": 20,
+          "final_top_k": 10
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 761.93,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 325.37,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1030.13,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 5,
+          "admitted": 9,
+          "final_top_k": 5
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.66,
+          "retrieved": 34,
+          "matched": 23,
+          "admitted": 17,
+          "final_top_k": 9
+        }
+      ],
+      "planning_ms": 9.73,
+      "local_retrieval_ms": 4.002921999926912,
+      "live_collection_ms": 1056.9,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 1686.17,
+      "ranking_ms": 754.01,
+      "clustering_ms": 10.02,
+      "total_ms": 2580,
+      "results": 20,
+      "unique": 20,
+      "clusters": 18,
+      "stop_reason": "USER_LIMIT",
+      "stop_explanation": "Stopped because the configured result limit was satisfied."
+    },
+    {
+      "id": "openai",
+      "query": "OpenAI",
+      "time_range": "30d",
+      "session_id": "89c992df-119e-4bf7-9bf6-7afc217ec612",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:05.237860+00:00",
+      "completed_at": "2026-08-21T16:42:07.984853+00:00",
+      "wall_time_ms": 2746.993,
+      "status": "completed",
+      "intent": "keywords",
+      "production_plan": [
+        "youtube",
+        "rss",
+        "hacker_news",
+        "mastodon",
+        "gdelt",
+        "reddit",
+        "telegram",
+        "threads",
+        "x",
+        "tiktok",
+        "github",
+        "bluesky",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "rss",
+          "hacker_news"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "hacker_news",
+        "rss",
+        "mastodon",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "github",
+        "bluesky",
+        "reddit",
+        "telegram",
+        "threads",
+        "x",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "youtube",
+        "hacker_news"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 20,
+            "final": 7,
+            "platforms": [
+              "hacker_news",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 47,
+            "final": 15,
+            "platforms": [
+              "github",
+              "hacker_news",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          }
+        ],
+        "represented_platforms": [
+          "github",
+          "hacker_news",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 4,
+          "admitted": 11,
+          "final": 5,
+          "latency_ms": 1001.65,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 479.45,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 20,
+          "matched": 9,
+          "admitted": 9,
+          "final": 2,
+          "latency_ms": 1197.91,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "github",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.71,
+          "retrieved": 24,
+          "matched": 24,
+          "admitted": 20,
+          "final_top_k": 7
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.71,
+          "retrieved": 24,
+          "matched": 24,
+          "admitted": 11,
+          "final_top_k": 3
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1197.6,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 9,
+          "admitted": 9,
+          "final_top_k": 2
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 477.23,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1001.16,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 4,
+          "admitted": 11,
+          "final_top_k": 5
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.71,
+          "retrieved": 32,
+          "matched": 32,
+          "admitted": 16,
+          "final_top_k": 5
+        }
+      ],
+      "planning_ms": 9.8,
+      "local_retrieval_ms": 3.917453999747522,
+      "live_collection_ms": 1234.84,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 2005.56,
+      "ranking_ms": 449.54,
+      "clustering_ms": 69.01,
+      "total_ms": 2698,
+      "results": 20,
+      "unique": 20,
+      "clusters": 20,
+      "stop_reason": "USER_LIMIT",
+      "stop_explanation": "Stopped because the configured result limit was satisfied."
+    },
+    {
+      "id": "linux_security",
+      "query": "Linux kernel security",
+      "time_range": "30d",
+      "session_id": "afd36a61-fe0c-4bef-a11f-7b28a4d5db43",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:08.737867+00:00",
+      "completed_at": "2026-08-21T16:42:11.271811+00:00",
+      "wall_time_ms": 2533.944,
+      "status": "completed",
+      "intent": "organization_phrase",
+      "production_plan": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "mastodon",
+        "gdelt",
+        "reddit",
+        "telegram",
+        "threads",
+        "x",
+        "tiktok",
+        "github",
+        "bluesky",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "hacker_news",
+          "youtube",
+          "rss"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "hacker_news",
+        "rss",
+        "mastodon",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "github",
+        "bluesky",
+        "reddit",
+        "telegram",
+        "threads",
+        "x",
+        "tiktok",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "youtube",
+        "hacker_news"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 27,
+            "final": 9,
+            "platforms": [
+              "hacker_news",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 60,
+            "final": 20,
+            "platforms": [
+              "github",
+              "hacker_news",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "youtube",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          }
+        ],
+        "represented_platforms": [
+          "github",
+          "hacker_news",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 20,
+          "matched": 0,
+          "admitted": 13,
+          "final": 2,
+          "latency_ms": 1147.91,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 0,
+          "admitted": 14,
+          "final": 7,
+          "latency_ms": 1059.77,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 353.11,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "github",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 11.69,
+          "retrieved": 29,
+          "matched": 27,
+          "admitted": 20,
+          "final_top_k": 8
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 11.69,
+          "retrieved": 31,
+          "matched": 30,
+          "admitted": 20,
+          "final_top_k": 3
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1147.55,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 0,
+          "admitted": 13,
+          "final_top_k": 2
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 351.46,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1059.34,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 0,
+          "admitted": 14,
+          "final_top_k": 7
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 11.69,
+          "retrieved": 30,
+          "matched": 26,
+          "admitted": 20,
+          "final_top_k": 9
+        }
+      ],
+      "planning_ms": 11.78,
+      "local_retrieval_ms": 5.540654000014911,
+      "live_collection_ms": 1195.87,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 2034.33,
+      "ranking_ms": 69.01,
+      "clustering_ms": 175.0,
+      "total_ms": 2486,
+      "results": 20,
+      "unique": 20,
+      "clusters": 20,
+      "stop_reason": "USER_LIMIT",
+      "stop_explanation": "Stopped because the configured result limit was satisfied."
+    },
+    {
+      "id": "baghdad_hashtag",
+      "query": "#بغداد",
+      "time_range": "7d",
+      "session_id": "bae63f17-81d5-47a9-a9a9-b0e16e0fdb9d",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:12.025302+00:00",
+      "completed_at": "2026-08-21T16:42:13.648619+00:00",
+      "wall_time_ms": 1623.317,
+      "status": "completed",
+      "intent": "hashtag",
+      "production_plan": [
+        "youtube",
+        "mastodon",
+        "hacker_news",
+        "rss",
+        "gdelt",
+        "x",
+        "telegram",
+        "threads",
+        "bluesky",
+        "tiktok",
+        "instagram",
+        "reddit",
+        "github",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "mastodon",
+          "hacker_news"
+        ],
+        [
+          "rss",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "mastodon",
+        "hacker_news",
+        "rss"
+      ],
+      "adaptive_deferred": [
+        "gdelt",
+        "bluesky",
+        "x",
+        "telegram",
+        "threads",
+        "tiktok",
+        "instagram",
+        "reddit",
+        "github",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "hacker_news",
+        "mastodon",
+        "youtube"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 5,
+            "final": 5,
+            "platforms": [
+              "hacker_news",
+              "mastodon",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 7,
+            "final": 7,
+            "platforms": [
+              "bluesky",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          }
+        ],
+        "represented_platforms": [
+          "mastodon",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 3,
+          "admitted": 4,
+          "final": 4,
+          "latency_ms": 1027.09,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 1,
+          "admitted": 1,
+          "final": 1,
+          "latency_ms": 833.31,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 752.71,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 10.73,
+          "retrieved": 8,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 752.64,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "mastodon",
+          "acquisition_path": "PUBLIC_TIMELINE",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 825.77,
+          "local_lookup_latency_ms": null,
+          "retrieved": 1,
+          "matched": 1,
+          "admitted": 1,
+          "final_top_k": 1
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1026.49,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 3,
+          "admitted": 4,
+          "final_top_k": 4
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 10.73,
+          "retrieved": 92,
+          "matched": 7,
+          "admitted": 7,
+          "final_top_k": 7
+        }
+      ],
+      "planning_ms": 10.8,
+      "local_retrieval_ms": 4.854582999996637,
+      "live_collection_ms": 1089.7,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 0.0,
+      "ranking_ms": 10.38,
+      "clustering_ms": 415.98,
+      "total_ms": 1567,
+      "results": 11,
+      "unique": 11,
+      "clusters": 9,
+      "stop_reason": "SATISFIED",
+      "stop_explanation": "Stopped because the available evidence satisfied the retrieval target."
+    },
+    {
+      "id": "openai_handle",
+      "query": "@openai",
+      "time_range": "30d",
+      "session_id": "ef81ceff-9f60-4333-963f-93c26f55835f",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:14.401631+00:00",
+      "completed_at": "2026-08-21T16:42:18.556642+00:00",
+      "wall_time_ms": 4155.011,
+      "status": "partial",
+      "intent": "handle",
+      "production_plan": [
+        "youtube",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "gdelt",
+        "reddit",
+        "x",
+        "github",
+        "bluesky",
+        "tiktok",
+        "threads",
+        "telegram",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "youtube",
+          "hacker_news",
+          "mastodon"
+        ],
+        [
+          "rss",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "youtube",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "gdelt"
+      ],
+      "adaptive_deferred": [
+        "reddit",
+        "x",
+        "github",
+        "bluesky",
+        "tiktok",
+        "threads",
+        "telegram",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "mastodon",
+        "hacker_news",
+        "youtube",
+        "rss",
+        "gdelt"
+      ],
+      "coverage": {
+        "status": "PARTIAL",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": [
+              "gdelt",
+              "hacker_news",
+              "mastodon",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": [
+              "github",
+              "hacker_news",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": false,
+            "executed": false,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "TIMEOUT",
+            "detail": "Execution ended with timeout."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "youtube",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          }
+        ],
+        "represented_platforms": [],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 1013.81,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 20,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 1002.51,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 552.89,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 344.27,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 3000.21,
+          "statuses": [
+            "degraded"
+          ],
+          "error_categories": [
+            "timeout"
+          ]
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "gdelt",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 3000.18,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "github",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 10.57,
+          "retrieved": 24,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 10.57,
+          "retrieved": 33,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1002.21,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "mastodon",
+          "acquisition_path": "PUBLIC_TIMELINE",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 549.97,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 342.79,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1013.33,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 10.57,
+          "retrieved": 36,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        }
+      ],
+      "planning_ms": 10.66,
+      "local_retrieval_ms": 4.892632000064623,
+      "live_collection_ms": 4097.19,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 0.0,
+      "ranking_ms": 3.15,
+      "clustering_ms": 2.2,
+      "total_ms": 4144,
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "stop_explanation": "Stopped because another round had low expected marginal evidence gain."
+    },
+    {
+      "id": "cve_identifier",
+      "query": "CVE-2026-61371",
+      "time_range": "all",
+      "exact_phrase": true,
+      "session_id": "b65a8a63-3f07-40d8-a03f-cef6ce863acb",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:19.309904+00:00",
+      "completed_at": "2026-08-21T16:42:23.615481+00:00",
+      "wall_time_ms": 4305.577,
+      "status": "partial",
+      "intent": "exact_phrase",
+      "production_plan": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "mastodon",
+        "gdelt",
+        "github",
+        "reddit",
+        "threads",
+        "x",
+        "bluesky",
+        "telegram",
+        "tiktok",
+        "facebook",
+        "instagram",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "hacker_news",
+          "youtube",
+          "rss"
+        ],
+        [
+          "mastodon",
+          "gdelt"
+        ]
+      ],
+      "adaptive_plan": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "mastodon"
+      ],
+      "adaptive_deferred": [
+        "gdelt",
+        "github",
+        "reddit",
+        "threads",
+        "x",
+        "bluesky",
+        "telegram",
+        "tiktok",
+        "facebook",
+        "instagram",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "youtube",
+        "hacker_news",
+        "mastodon",
+        "rss",
+        "youtube",
+        "hacker_news",
+        "gdelt"
+      ],
+      "coverage": {
+        "status": "PARTIAL",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": [
+              "gdelt",
+              "hacker_news",
+              "mastodon",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": [
+              "bluesky",
+              "github",
+              "hacker_news",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 6,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "TIMEOUT",
+            "detail": "Execution ended with timeout."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "hacker_news",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "youtube",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          }
+        ],
+        "represented_platforms": [],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "hacker_news": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 2161.77,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 1193.67,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 2,
+          "fetched": 62,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 810.82,
+          "statuses": [
+            "healthy",
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "mastodon": {
+          "requests": 1,
+          "fetched": 40,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 291.96,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "gdelt": {
+          "requests": 2,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 2999.55,
+          "statuses": [
+            "degraded"
+          ],
+          "error_categories": [
+            "timeout"
+          ]
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.17,
+          "retrieved": 16,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "gdelt",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 2999.53,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "github",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.17,
+          "retrieved": 6,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.17,
+          "retrieved": 4,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 2,
+          "network_requests": 2,
+          "network_latency_ms": 2161.66,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "mastodon",
+          "acquisition_path": "PUBLIC_TIMELINE",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 290.59,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 2,
+          "network_requests": 2,
+          "network_latency_ms": 808.8,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 2,
+          "network_requests": 2,
+          "network_latency_ms": 1193.56,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 9.17,
+          "retrieved": 25,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        }
+      ],
+      "planning_ms": 9.24,
+      "local_retrieval_ms": 3.2879919999686535,
+      "live_collection_ms": 4268.06,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 0.0,
+      "ranking_ms": 3.47,
+      "clustering_ms": 2.19,
+      "total_ms": 4294,
+      "results": 0,
+      "unique": 0,
+      "clusters": 0,
+      "stop_reason": "LOW_MARGINAL_GAIN",
+      "stop_explanation": "Stopped because another round had low expected marginal evidence gain."
+    },
+    {
+      "id": "historical_iraq",
+      "query": "Iraq 2003 reconstruction",
+      "time_range": "all",
+      "session_id": "97973adf-c3b4-4332-931b-f39ac8aa2181",
+      "http_status": 201,
+      "started_at": "2026-08-21T16:42:24.368134+00:00",
+      "completed_at": "2026-08-21T16:42:27.354149+00:00",
+      "wall_time_ms": 2986.015,
+      "status": "completed",
+      "intent": "organization_phrase",
+      "production_plan": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "gdelt",
+        "mastodon",
+        "reddit",
+        "tiktok",
+        "github",
+        "telegram",
+        "x",
+        "bluesky",
+        "threads",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "production_rounds": [
+        [
+          "hacker_news",
+          "youtube",
+          "rss"
+        ],
+        [
+          "gdelt",
+          "mastodon"
+        ]
+      ],
+      "adaptive_plan": [
+        "hacker_news",
+        "youtube",
+        "rss",
+        "gdelt",
+        "mastodon"
+      ],
+      "adaptive_deferred": [
+        "reddit",
+        "tiktok",
+        "github",
+        "telegram",
+        "x",
+        "bluesky",
+        "threads",
+        "instagram",
+        "facebook",
+        "linkedin"
+      ],
+      "adaptive_mode": "SHADOW_ONLY",
+      "executed_sources": [
+        "rss",
+        "hacker_news",
+        "youtube"
+      ],
+      "coverage": {
+        "status": "LIMITED",
+        "lanes": [
+          {
+            "lane": "LIVE",
+            "available": true,
+            "executed": true,
+            "contributed": true,
+            "candidates": 26,
+            "final": 20,
+            "platforms": [
+              "hacker_news",
+              "rss",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "LOCAL_MEMORY",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 0,
+            "final": 0,
+            "platforms": [
+              "bluesky",
+              "youtube"
+            ]
+          },
+          {
+            "lane": "HISTORICAL",
+            "available": true,
+            "executed": true,
+            "contributed": false,
+            "candidates": 2,
+            "final": 0,
+            "platforms": []
+          }
+        ],
+        "gaps": [
+          {
+            "source": "bluesky",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "facebook",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "gdelt",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "github",
+            "reason": "NOT_SELECTED",
+            "detail": "The production planner did not select this source."
+          },
+          {
+            "source": "instagram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "linkedin",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "mastodon",
+            "reason": "NOT_SELECTED",
+            "detail": "The source was planned but the bounded search stopped before execution."
+          },
+          {
+            "source": "reddit",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "rss",
+            "reason": "NO_MATCHES",
+            "detail": "The source executed but produced no query matches."
+          },
+          {
+            "source": "telegram",
+            "reason": "UNCONFIGURED",
+            "detail": "The connector is not configured for this installation."
+          },
+          {
+            "source": "threads",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          },
+          {
+            "source": "tiktok",
+            "reason": "RESTRICTED",
+            "detail": "The connector requires restricted or approved access."
+          },
+          {
+            "source": "x",
+            "reason": "WEB_DISCOVERY_DISABLED",
+            "detail": "Optional web discovery is disabled."
+          }
+        ],
+        "represented_platforms": [
+          "hacker_news",
+          "youtube"
+        ],
+        "web_discovery": "DISABLED"
+      },
+      "per_source": {
+        "hacker_news": {
+          "requests": 1,
+          "fetched": 13,
+          "matched": 11,
+          "admitted": 11,
+          "final": 10,
+          "latency_ms": 1024.38,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "youtube": {
+          "requests": 2,
+          "fetched": 20,
+          "matched": 15,
+          "admitted": 15,
+          "final": 10,
+          "latency_ms": 1051.68,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        },
+        "rss": {
+          "requests": 1,
+          "fetched": 31,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "latency_ms": 341.76,
+          "statuses": [
+            "healthy"
+          ],
+          "error_categories": []
+        }
+      },
+      "acquisition_funnel": [
+        {
+          "platform": "bluesky",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 8.08,
+          "retrieved": 1,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "hacker_news",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 1024.11,
+          "local_lookup_latency_ms": null,
+          "retrieved": 13,
+          "matched": 11,
+          "admitted": 11,
+          "final_top_k": 10
+        },
+        {
+          "platform": "rss",
+          "acquisition_path": "PUBLIC_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 1,
+          "network_latency_ms": 340.14,
+          "local_lookup_latency_ms": null,
+          "retrieved": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "DIRECT_API",
+          "connector_executed": true,
+          "connector_runs": 1,
+          "network_requests": 2,
+          "network_latency_ms": 1051.27,
+          "local_lookup_latency_ms": null,
+          "retrieved": 20,
+          "matched": 15,
+          "admitted": 15,
+          "final_top_k": 10
+        },
+        {
+          "platform": "youtube",
+          "acquisition_path": "LOCAL_MEMORY",
+          "connector_executed": false,
+          "connector_runs": 0,
+          "network_requests": 0,
+          "network_latency_ms": null,
+          "local_lookup_latency_ms": 8.08,
+          "retrieved": 10,
+          "matched": 0,
+          "admitted": 0,
+          "final_top_k": 0
+        }
+      ],
+      "planning_ms": 8.15,
+      "local_retrieval_ms": 1.51612199988449,
+      "live_collection_ms": 1072.24,
+      "historical_retrieval_ms": null,
+      "semantic_preparation_ms": 1519.52,
+      "ranking_ms": 218.69,
+      "clustering_ms": 27.31,
+      "total_ms": 2927,
+      "results": 20,
+      "unique": 20,
+      "clusters": 20,
+      "stop_reason": "USER_LIMIT",
+      "stop_explanation": "Stopped because the configured result limit was satisfied."
+    }
+  ],
+  "post_fix_validation": {
+    "reason": "Coverage now uses the planner current-health snapshot.",
+    "session_id": "6018146c-e40b-47f2-9ae3-659082847b58",
+    "status": "completed",
+    "results": 20,
+    "coverage": {
+      "session_id": "6018146c-e40b-47f2-9ae3-659082847b58",
+      "outcome_status": "completed",
+      "coverage_status": "LIMITED",
+      "sources": [
+        {
+          "source": "bluesky",
+          "selected": false,
+          "executed": false,
+          "contributed": true,
+          "status": "EXTERNAL_LIMIT",
+          "acquisition_mode": null,
+          "reason": "EXTERNAL_LIMIT",
+          "detail": "The configured connector is currently limited by its external provider.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 6,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: external_limit"
+          ]
+        },
+        {
+          "source": "facebook",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "RESTRICTED",
+          "acquisition_mode": null,
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "current availability: restricted"
+          ]
+        },
+        {
+          "source": "gdelt",
+          "selected": true,
+          "executed": false,
+          "contributed": false,
+          "status": "DEGRADED",
+          "acquisition_mode": null,
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword"
+          ]
+        },
+        {
+          "source": "github",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "EXTERNAL_LIMIT",
+          "acquisition_mode": null,
+          "reason": "EXTERNAL_LIMIT",
+          "detail": "The configured connector is currently limited by its external provider.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: external_limit"
+          ]
+        },
+        {
+          "source": "hacker_news",
+          "selected": true,
+          "executed": false,
+          "contributed": false,
+          "status": "HEALTHY",
+          "acquisition_mode": null,
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword"
+          ]
+        },
+        {
+          "source": "instagram",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "UNCONFIGURED",
+          "acquisition_mode": null,
+          "reason": "UNCONFIGURED",
+          "detail": "The connector is not configured for this installation.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "current availability: unconfigured"
+          ]
+        },
+        {
+          "source": "linkedin",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "RESTRICTED",
+          "acquisition_mode": null,
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "current availability: restricted"
+          ]
+        },
+        {
+          "source": "mastodon",
+          "selected": true,
+          "executed": false,
+          "contributed": false,
+          "status": "HEALTHY",
+          "acquisition_mode": null,
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "Public timeline mode; full-text search not configured"
+          ]
+        },
+        {
+          "source": "reddit",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "UNCONFIGURED",
+          "acquisition_mode": null,
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: unconfigured"
+          ]
+        },
+        {
+          "source": "rss",
+          "selected": true,
+          "executed": false,
+          "contributed": false,
+          "status": "HEALTHY",
+          "acquisition_mode": null,
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword"
+          ]
+        },
+        {
+          "source": "telegram",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "UNCONFIGURED",
+          "acquisition_mode": null,
+          "reason": "UNCONFIGURED",
+          "detail": "The connector is not configured for this installation.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: unconfigured"
+          ]
+        },
+        {
+          "source": "threads",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "UNCONFIGURED",
+          "acquisition_mode": null,
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: unconfigured"
+          ]
+        },
+        {
+          "source": "tiktok",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "RESTRICTED",
+          "acquisition_mode": null,
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: restricted"
+          ]
+        },
+        {
+          "source": "x",
+          "selected": false,
+          "executed": false,
+          "contributed": false,
+          "status": "UNCONFIGURED",
+          "acquisition_mode": null,
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 0,
+          "planning_reasons": [
+            "capabilities fit: keyword",
+            "current availability: unconfigured"
+          ]
+        },
+        {
+          "source": "youtube",
+          "selected": true,
+          "executed": false,
+          "contributed": true,
+          "status": "HEALTHY",
+          "acquisition_mode": null,
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution.",
+          "requests": 0,
+          "fetched": 0,
+          "matched": 0,
+          "admitted": 0,
+          "final": 14,
+          "planning_reasons": [
+            "capabilities fit: keyword"
+          ]
+        }
+      ],
+      "lanes": [
+        {
+          "lane": "LIVE",
+          "available": false,
+          "executed": false,
+          "contributed": false,
+          "candidates": 0,
+          "final": 0,
+          "platforms": []
+        },
+        {
+          "lane": "LOCAL_MEMORY",
+          "available": true,
+          "executed": true,
+          "contributed": true,
+          "candidates": 26,
+          "final": 20,
+          "platforms": [
+            "bluesky",
+            "youtube"
+          ]
+        },
+        {
+          "lane": "HISTORICAL",
+          "available": true,
+          "executed": true,
+          "contributed": true,
+          "candidates": 5,
+          "final": 2,
+          "platforms": [
+            "bluesky",
+            "youtube"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "source": "bluesky",
+          "reason": "EXTERNAL_LIMIT",
+          "detail": "The configured connector is currently limited by its external provider."
+        },
+        {
+          "source": "facebook",
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access."
+        },
+        {
+          "source": "gdelt",
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution."
+        },
+        {
+          "source": "github",
+          "reason": "EXTERNAL_LIMIT",
+          "detail": "The configured connector is currently limited by its external provider."
+        },
+        {
+          "source": "hacker_news",
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution."
+        },
+        {
+          "source": "instagram",
+          "reason": "UNCONFIGURED",
+          "detail": "The connector is not configured for this installation."
+        },
+        {
+          "source": "linkedin",
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access."
+        },
+        {
+          "source": "mastodon",
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution."
+        },
+        {
+          "source": "reddit",
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled."
+        },
+        {
+          "source": "rss",
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution."
+        },
+        {
+          "source": "telegram",
+          "reason": "UNCONFIGURED",
+          "detail": "The connector is not configured for this installation."
+        },
+        {
+          "source": "threads",
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled."
+        },
+        {
+          "source": "tiktok",
+          "reason": "RESTRICTED",
+          "detail": "The connector requires restricted or approved access."
+        },
+        {
+          "source": "x",
+          "reason": "WEB_DISCOVERY_DISABLED",
+          "detail": "Optional web discovery is disabled."
+        },
+        {
+          "source": "youtube",
+          "reason": "NOT_SELECTED",
+          "detail": "The source was planned but the bounded search stopped before execution."
+        }
+      ],
+      "represented_platforms": [
+        "bluesky",
+        "youtube"
+      ],
+      "web_discovery": "DISABLED",
+      "stop_reason": "SATISFIED",
+      "stop_explanation": "Stopped because the available evidence satisfied the retrieval target."
+    },
+    "connector_completion_order": [],
+    "phase_timings_ms": {
+      "adaptive_planning": 16.8,
+      "local_memory_retrieval": 5.60144000019136,
+      "connector_collection": 15.62,
+      "persistence": 15.73,
+      "deduplication": 32.27,
+      "ranking": 133.87,
+      "semantic_reranking": 114.58,
+      "semantic_preparation": 2878.88,
+      "semantic_work_hidden": 0.0,
+      "clustering": 14.23,
+      "total": 3125
+    }
+  }
+}

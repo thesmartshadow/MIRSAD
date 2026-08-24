@@ -1,0 +1,33 @@
+{
+  "schema": "mirsad.v1.2.entity-evaluation",
+  "fixture_sha256": "cef114386fca2c8800b54582bac90d922273adc910ae44ed942836c3e5b14dc8",
+  "policy": {
+    "embedding_similarity_creates_aliases": false,
+    "minimum_independent_evidence_sources": 2,
+    "minimum_supported_confidence": 0.8,
+    "common_single_name_merge": "REJECTED",
+    "expansion_provenance_required": true,
+    "maximum_drift_risk_for_automatic_alias": 0.2
+  },
+  "deterministic_cases": [
+    {
+      "query": "وزارة التخطيط",
+      "alias": "Ministry of Planning",
+      "independent_sources": 2,
+      "status": "SUPPORTED"
+    },
+    {
+      "query": "علي",
+      "alias": "Ali",
+      "independent_sources": 1,
+      "status": "REJECTED_COLLISION_RISK"
+    },
+    {
+      "query": "علي فراس",
+      "alias": null,
+      "independent_sources": 0,
+      "status": "NO_UNSUPPORTED_EXPANSION"
+    }
+  ],
+  "test": "apps/api/tests/test_v12_retrieval_intelligence.py"
+}

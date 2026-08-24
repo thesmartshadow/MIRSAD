@@ -137,6 +137,9 @@ def apply_schema_migrations(target_engine: Engine) -> None:
             "normalized_text": "TEXT NOT NULL DEFAULT ''",
             "normalized_author": "TEXT NOT NULL DEFAULT ''",
             "acquisition_mode": "VARCHAR(30) NOT NULL DEFAULT 'DIRECT_API'",
+            "first_seen_at": "DATETIME",
+            "last_seen_at": "DATETIME",
+            "retrieved_at": "DATETIME",
         },
         "content_metrics": {
             "like_count": "INTEGER",
@@ -161,6 +164,10 @@ def apply_schema_migrations(target_engine: Engine) -> None:
         "search_results": {
             "acquisition_path": "VARCHAR(30)",
             "acquisition_paths": "JSON",
+        },
+        "entity_alias_edges": {
+            "evidence": "JSON NOT NULL DEFAULT '[]'",
+            "status": "VARCHAR(20) NOT NULL DEFAULT 'observed'",
         },
     }
     with target_engine.begin() as connection:
@@ -198,6 +205,15 @@ def apply_schema_migrations(target_engine: Engine) -> None:
             )
         connection.execute(
             text(
+                "UPDATE content_items SET "
+                "first_seen_at=COALESCE(first_seen_at, fetched_at), "
+                "last_seen_at=COALESCE(last_seen_at, fetched_at), "
+                "retrieved_at=COALESCE(retrieved_at, fetched_at) "
+                "WHERE first_seen_at IS NULL OR last_seen_at IS NULL OR retrieved_at IS NULL"
+            )
+        )
+        connection.execute(
+            text(
                 "CREATE INDEX IF NOT EXISTS ix_search_sessions_started_at "
                 "ON search_sessions(started_at)"
             )
@@ -206,6 +222,30 @@ def apply_schema_migrations(target_engine: Engine) -> None:
             text(
                 "CREATE INDEX IF NOT EXISTS ix_search_result_session_rank "
                 "ON search_results(search_session_id, rank)"
+            )
+        )
+        connection.execute(
+            text(
+                "CREATE INDEX IF NOT EXISTS ix_content_first_seen_at "
+                "ON content_items(first_seen_at)"
+            )
+        )
+        connection.execute(
+            text(
+                "CREATE INDEX IF NOT EXISTS ix_content_last_seen_at "
+                "ON content_items(last_seen_at)"
+            )
+        )
+        connection.execute(
+            text(
+                "CREATE INDEX IF NOT EXISTS ix_content_external_lower "
+                "ON content_items(lower(external_id))"
+            )
+        )
+        connection.execute(
+            text(
+                "CREATE INDEX IF NOT EXISTS ix_content_author_handle_lower "
+                "ON content_items(lower(COALESCE(author_handle, '')))"
             )
         )
 

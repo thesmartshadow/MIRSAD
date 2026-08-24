@@ -789,83 +789,83 @@
     {
       "query": "الذكاء الاصطناعي",
       "matched_per_source": {
-        "bluesky": 16,
-        "github": 16,
-        "hacker_news": 16,
-        "mastodon": 16,
-        "rss": 16,
-        "youtube": 16
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
       },
       "admitted_per_source": {
-        "bluesky": 16,
-        "github": 16,
-        "hacker_news": 16,
-        "mastodon": 16,
-        "rss": 16,
-        "youtube": 16
+        "bluesky": 8,
+        "github": 8,
+        "hacker_news": 8,
+        "mastodon": 8,
+        "rss": 8,
+        "youtube": 8
       },
       "final_top_30_per_source": {
-        "youtube": 11,
-        "rss": 6,
-        "github": 4,
-        "hacker_news": 3,
-        "mastodon": 3,
+        "youtube": 8,
+        "rss": 5,
+        "github": 5,
+        "hacker_news": 5,
+        "mastodon": 4,
         "bluesky": 3
       },
       "relevance_distribution_by_source": {
         "bluesky": {
-          "count": 16,
+          "count": 8,
           "min": 66.72,
-          "p25": 66.833,
-          "median": 68.37,
-          "mean": 70.154,
-          "p75": 68.6,
+          "p25": 66.825,
+          "median": 68.365,
+          "mean": 72.373,
+          "p75": 78.555,
           "max": 83.61
         },
         "github": {
-          "count": 16,
+          "count": 8,
           "min": 66.72,
-          "p25": 66.833,
-          "median": 90.63,
-          "mean": 85.295,
-          "p75": 99.87,
-          "max": 99.94
-        },
-        "hacker_news": {
-          "count": 16,
-          "min": 66.58,
-          "p25": 66.685,
-          "median": 90.615,
-          "mean": 85.21,
-          "p75": 99.81,
+          "p25": 66.825,
+          "median": 86.42,
+          "mean": 83.05,
+          "p75": 93.668,
           "max": 99.87
         },
+        "hacker_news": {
+          "count": 8,
+          "min": 66.57,
+          "p25": 66.683,
+          "median": 86.4,
+          "mean": 82.972,
+          "p75": 93.638,
+          "max": 99.81
+        },
         "mastodon": {
-          "count": 16,
+          "count": 8,
           "min": 66.72,
-          "p25": 66.833,
-          "median": 68.37,
-          "mean": 70.154,
-          "p75": 68.6,
+          "p25": 66.825,
+          "median": 68.365,
+          "mean": 72.373,
+          "p75": 78.555,
           "max": 83.61
         },
         "rss": {
-          "count": 16,
+          "count": 8,
           "min": 66.72,
-          "p25": 66.833,
-          "median": 86.7,
-          "mean": 84.183,
-          "p75": 99.78,
-          "max": 99.94
+          "p25": 66.825,
+          "median": 86.42,
+          "mean": 82.427,
+          "p75": 92.453,
+          "max": 99.75
         },
         "youtube": {
-          "count": 16,
+          "count": 8,
           "min": 66.72,
-          "p25": 66.833,
-          "median": 86.7,
-          "mean": 84.183,
-          "p75": 99.78,
-          "max": 99.94
+          "p25": 66.825,
+          "median": 86.42,
+          "mean": 82.427,
+          "p75": 92.453,
+          "max": 99.75
         }
       },
       "completion_order_a": [
@@ -874,21 +874,9 @@
         "mastodon",
         "github",
         "hacker_news",
-        "rss",
-        "youtube",
-        "bluesky",
-        "mastodon",
-        "github",
-        "hacker_news",
         "rss"
       ],
       "completion_order_b": [
-        "rss",
-        "hacker_news",
-        "github",
-        "mastodon",
-        "bluesky",
-        "youtube",
         "rss",
         "hacker_news",
         "github",
@@ -937,55 +925,55 @@
       "relevance_distribution_by_source": {
         "bluesky": {
           "count": 6,
-          "min": 66.77,
-          "p25": 66.81,
-          "median": 67.65,
-          "mean": 67.737,
-          "p75": 68.64,
+          "min": 66.76,
+          "p25": 66.8,
+          "median": 67.64,
+          "mean": 67.728,
+          "p75": 68.63,
           "max": 68.85
         },
         "github": {
           "count": 8,
-          "min": 66.77,
-          "p25": 66.89,
-          "median": 99.81,
-          "mean": 87.496,
+          "min": 66.76,
+          "p25": 66.88,
+          "median": 99.805,
+          "mean": 87.491,
           "p75": 99.94,
           "max": 100
         },
         "hacker_news": {
           "count": 8,
-          "min": 66.63,
-          "p25": 66.735,
+          "min": 66.62,
+          "p25": 66.725,
           "median": 99.745,
-          "mean": 87.4,
+          "mean": 87.396,
           "p75": 99.87,
           "max": 99.94
         },
         "mastodon": {
           "count": 6,
-          "min": 66.77,
-          "p25": 66.81,
-          "median": 67.65,
-          "mean": 67.737,
-          "p75": 68.64,
+          "min": 66.76,
+          "p25": 66.8,
+          "median": 67.64,
+          "mean": 67.728,
+          "p75": 68.63,
           "max": 68.85
         },
         "rss": {
           "count": 8,
-          "min": 66.77,
-          "p25": 66.89,
-          "median": 99.81,
-          "mean": 87.496,
+          "min": 66.76,
+          "p25": 66.88,
+          "median": 99.805,
+          "mean": 87.491,
           "p75": 99.94,
           "max": 100
         },
         "youtube": {
           "count": 8,
-          "min": 66.77,
-          "p25": 66.89,
-          "median": 99.81,
-          "mean": 87.496,
+          "min": 66.76,
+          "p25": 66.88,
+          "median": 99.805,
+          "mean": 87.491,
           "p75": 99.94,
           "max": 100
         }
@@ -1171,9 +1159,9 @@
           "count": 16,
           "min": 66.73,
           "p25": 66.843,
-          "median": 68.38,
-          "mean": 70.873,
-          "p75": 68.61,
+          "median": 68.375,
+          "mean": 70.87,
+          "p75": 68.6,
           "max": 86.67
         },
         "github": {
@@ -1198,9 +1186,9 @@
           "count": 16,
           "min": 66.73,
           "p25": 66.843,
-          "median": 68.38,
-          "mean": 70.873,
-          "p75": 68.61,
+          "median": 68.375,
+          "mean": 70.87,
+          "p75": 68.6,
           "max": 86.67
         },
         "rss": {

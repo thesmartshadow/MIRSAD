@@ -246,3 +246,12 @@ async def test_unselected_bluesky_memory_result_keeps_connector_events_truthful(
     assert memory_funnel["network_latency_ms"] is None
     assert memory_funnel["admitted"] >= 1
     assert memory_funnel["final_top_k"] >= 1
+    bluesky_coverage = next(
+        row for row in response.coverage.sources if row.source == "bluesky"
+    )
+    assert bluesky_coverage.selected is False
+    assert bluesky_coverage.executed is False
+    assert bluesky_coverage.contributed is True
+    local_lane = next(row for row in response.coverage.lanes if row.lane == "LOCAL_MEMORY")
+    assert local_lane.contributed is True
+    assert local_lane.platforms == ["bluesky"]

@@ -1,0 +1,1902 @@
+{
+  "schema": "mirsad.v1.2.router-evaluation",
+  "fixture_sha256": "cef114386fca2c8800b54582bac90d922273adc910ae44ed942836c3e5b14dc8",
+  "mode": "SHADOW_ONLY",
+  "production_execution_changed": false,
+  "method": "Frozen acquisition replay with prior v1.1 bounded utility observations. The fixture labels were fixed before router implementation and do not execute production routing.",
+  "aggregate": {
+    "production_requests": 98,
+    "shadow_requests": 81,
+    "requests_saved": 17,
+    "request_reduction_fraction": 0.173469,
+    "useful_evidence_lost": [],
+    "mean_production_recall": 1.0,
+    "mean_shadow_recall": 1.0
+  },
+  "per_query_class": {
+    "arabic_topic": {
+      "queries": 2,
+      "production_requests": 14,
+      "shadow_requests": 14,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "english_topic": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 7,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "entity": {
+      "queries": 3,
+      "production_requests": 21,
+      "shadow_requests": 21,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "exact_phrase": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 7,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "handle": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 4,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "hashtag": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 4,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "historical": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 5,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "identifier": {
+      "queries": 2,
+      "production_requests": 14,
+      "shadow_requests": 8,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "person": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 4,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    },
+    "recent": {
+      "queries": 1,
+      "production_requests": 7,
+      "shadow_requests": 7,
+      "minimum_shadow_recall": 1.0,
+      "useful_evidence_lost": []
+    }
+  },
+  "promotion_gate": {
+    "no_query_class_recall_regression": true,
+    "meaningful_work_reduction": true,
+    "sufficient_independent_cases_per_class": false,
+    "completion_order_invariance_required": true,
+    "decision": "ADAPTIVE ROUTER REMAINS SHADOW",
+    "reason": "Observed gains are positive, but at least one query class lacks enough independent cases for production promotion."
+  },
+  "cases": [
+    {
+      "id": "ar-topic-baghdad",
+      "query": "بغداد",
+      "query_class": "arabic_topic",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 69.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 69.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 64.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "bg-1",
+          "bg-2",
+          "bg-3",
+          "bg-4",
+          "bg-5",
+          "bg-6",
+          "bg-7",
+          "bg-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 510,
+        "estimated_collection_ms": 1900,
+        "useful_evidence_per_request": 0.857143
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "bg-1",
+          "bg-2",
+          "bg-3",
+          "bg-4",
+          "bg-5",
+          "bg-6",
+          "bg-7",
+          "bg-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 510,
+        "estimated_collection_ms": 1900,
+        "useful_evidence_per_request": 0.857143
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "ar-entity-ministry",
+      "query": "وزارة التخطيط",
+      "query_class": "entity",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "github",
+        "gdelt",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 71.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 67.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 65.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "mp-1",
+          "mp-2",
+          "mp-3",
+          "mp-4",
+          "mp-5",
+          "mp-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 480,
+        "estimated_collection_ms": 1800,
+        "useful_evidence_per_request": 0.571429
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "mp-1",
+          "mp-2",
+          "mp-3",
+          "mp-4",
+          "mp-5",
+          "mp-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 480,
+        "estimated_collection_ms": 1800,
+        "useful_evidence_per_request": 0.571429
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "ar-topic-ai-recent",
+      "query": "الذكاء الاصطناعي اليوم",
+      "query_class": "arabic_topic",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 69.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 69.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 64.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 1,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "aiar-1",
+          "aiar-2",
+          "aiar-3",
+          "aiar-4",
+          "aiar-5",
+          "aiar-6",
+          "aiar-7",
+          "aiar-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 7,
+        "time_to_useful_evidence_ms": 250,
+        "estimated_collection_ms": 1700,
+        "useful_evidence_per_request": 1.0
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 1,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "aiar-1",
+          "aiar-2",
+          "aiar-3",
+          "aiar-4",
+          "aiar-5",
+          "aiar-6",
+          "aiar-7",
+          "aiar-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 7,
+        "time_to_useful_evidence_ms": 250,
+        "estimated_collection_ms": 1700,
+        "useful_evidence_per_request": 1.0
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "ar-person",
+      "query": "علي فراس",
+      "query_class": "person",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "mastodon",
+        "rss"
+      ],
+      "deferred": [
+        "gdelt",
+        "github",
+        "hacker_news"
+      ],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 88.0,
+          "long_term_utility": 88.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 79.0,
+          "long_term_utility": 79.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 62.0,
+          "long_term_utility": 65.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "gdelt": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 59.0,
+          "long_term_utility": 62.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "github": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 58.5,
+          "long_term_utility": 63.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 56.5,
+          "long_term_utility": 61.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 4,
+        "useful_candidates": 4,
+        "unique_useful_candidates": 4,
+        "useful_evidence_ids": [
+          "af-1",
+          "af-2",
+          "af-3",
+          "af-4"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 3,
+        "time_to_useful_evidence_ms": 590,
+        "estimated_collection_ms": 1650,
+        "useful_evidence_per_request": 0.428571
+      },
+      "shadow": {
+        "requests": 4,
+        "zero_yield_requests": 1,
+        "useful_candidates": 4,
+        "unique_useful_candidates": 4,
+        "useful_evidence_ids": [
+          "af-1",
+          "af-2",
+          "af-3",
+          "af-4"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 3,
+        "time_to_useful_evidence_ms": 590,
+        "estimated_collection_ms": 700,
+        "useful_evidence_per_request": 0.75
+      },
+      "requests_saved": 3,
+      "estimated_latency_saved_ms": 950
+    },
+    {
+      "id": "mixed-entity",
+      "query": "Microsoft العراق",
+      "query_class": "entity",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "github",
+        "gdelt",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 71.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 67.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 65.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 2,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "msiq-1",
+          "msiq-2",
+          "msiq-3",
+          "msiq-4",
+          "msiq-5",
+          "msiq-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 5,
+        "time_to_useful_evidence_ms": 300,
+        "estimated_collection_ms": 1750,
+        "useful_evidence_per_request": 0.714286
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 2,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "msiq-1",
+          "msiq-2",
+          "msiq-3",
+          "msiq-4",
+          "msiq-5",
+          "msiq-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 5,
+        "time_to_useful_evidence_ms": 300,
+        "estimated_collection_ms": 1750,
+        "useful_evidence_per_request": 0.714286
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "en-topic",
+      "query": "Linux kernel security",
+      "query_class": "english_topic",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 69.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 69.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 64.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 2,
+        "useful_candidates": 7,
+        "unique_useful_candidates": 7,
+        "useful_evidence_ids": [
+          "lks-1",
+          "lks-2",
+          "lks-3",
+          "lks-4",
+          "lks-5",
+          "lks-6",
+          "lks-7"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 230,
+        "estimated_collection_ms": 1600,
+        "useful_evidence_per_request": 0.857143
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 2,
+        "useful_candidates": 7,
+        "unique_useful_candidates": 7,
+        "useful_evidence_ids": [
+          "lks-1",
+          "lks-2",
+          "lks-3",
+          "lks-4",
+          "lks-5",
+          "lks-6",
+          "lks-7"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 230,
+        "estimated_collection_ms": 1600,
+        "useful_evidence_per_request": 0.857143
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "en-entity",
+      "query": "OpenAI",
+      "query_class": "entity",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "github",
+        "gdelt",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 71.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 67.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 65.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 0,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "oai-1",
+          "oai-2",
+          "oai-3",
+          "oai-4",
+          "oai-5",
+          "oai-6",
+          "oai-7",
+          "oai-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 7,
+        "time_to_useful_evidence_ms": 220,
+        "estimated_collection_ms": 1550,
+        "useful_evidence_per_request": 1.0
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 0,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "oai-1",
+          "oai-2",
+          "oai-3",
+          "oai-4",
+          "oai-5",
+          "oai-6",
+          "oai-7",
+          "oai-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 7,
+        "time_to_useful_evidence_ms": 220,
+        "estimated_collection_ms": 1550,
+        "useful_evidence_per_request": 1.0
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "handle",
+      "query": "@openai",
+      "query_class": "handle",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "mastodon",
+        "rss"
+      ],
+      "deferred": [
+        "github",
+        "gdelt",
+        "hacker_news"
+      ],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 88.0,
+          "long_term_utility": 88.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 79.0,
+          "long_term_utility": 79.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 60.0,
+          "long_term_utility": 65.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "github": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 58.0,
+          "long_term_utility": 63.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "gdelt": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 57.0,
+          "long_term_utility": 62.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 56.0,
+          "long_term_utility": 61.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 4,
+        "useful_candidates": 5,
+        "unique_useful_candidates": 5,
+        "useful_evidence_ids": [
+          "ho-1",
+          "ho-2",
+          "ho-3",
+          "ho-4",
+          "ho-5"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 570,
+        "estimated_collection_ms": 1500,
+        "useful_evidence_per_request": 0.571429
+      },
+      "shadow": {
+        "requests": 4,
+        "zero_yield_requests": 1,
+        "useful_candidates": 5,
+        "unique_useful_candidates": 5,
+        "useful_evidence_ids": [
+          "ho-1",
+          "ho-2",
+          "ho-3",
+          "ho-4",
+          "ho-5"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 570,
+        "estimated_collection_ms": 690,
+        "useful_evidence_per_request": 1.0
+      },
+      "requests_saved": 3,
+      "estimated_latency_saved_ms": 810
+    },
+    {
+      "id": "hashtag",
+      "query": "#بغداد",
+      "query_class": "hashtag",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "mastodon",
+        "rss"
+      ],
+      "deferred": [
+        "github",
+        "gdelt",
+        "hacker_news"
+      ],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 88.0,
+          "long_term_utility": 88.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 79.0,
+          "long_term_utility": 79.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 60.0,
+          "long_term_utility": 65.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "github": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 58.0,
+          "long_term_utility": 63.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "gdelt": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 57.0,
+          "long_term_utility": 62.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 56.0,
+          "long_term_utility": 61.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 4,
+        "useful_candidates": 5,
+        "unique_useful_candidates": 5,
+        "useful_evidence_ids": [
+          "htag-1",
+          "htag-2",
+          "htag-3",
+          "htag-4",
+          "htag-5"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 580,
+        "estimated_collection_ms": 1520,
+        "useful_evidence_per_request": 0.571429
+      },
+      "shadow": {
+        "requests": 4,
+        "zero_yield_requests": 1,
+        "useful_candidates": 5,
+        "unique_useful_candidates": 5,
+        "useful_evidence_ids": [
+          "htag-1",
+          "htag-2",
+          "htag-3",
+          "htag-4",
+          "htag-5"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 580,
+        "estimated_collection_ms": 700,
+        "useful_evidence_per_request": 1.0
+      },
+      "requests_saved": 3,
+      "estimated_latency_saved_ms": 820
+    },
+    {
+      "id": "identifier-cve",
+      "query": "CVE-2026-61371",
+      "query_class": "identifier",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "github",
+        "rss",
+        "hacker_news",
+        "bluesky"
+      ],
+      "deferred": [
+        "youtube",
+        "gdelt",
+        "mastodon"
+      ],
+      "decisions": {
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 87.0,
+          "long_term_utility": 87.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 65.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "gdelt": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 58.0,
+          "long_term_utility": 62.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 56.0,
+          "long_term_utility": 60.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "cve-1",
+          "cve-2",
+          "cve-3",
+          "cve-4",
+          "cve-5",
+          "cve-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 5,
+        "time_to_useful_evidence_ms": 210,
+        "estimated_collection_ms": 1480,
+        "useful_evidence_per_request": 0.714286
+      },
+      "shadow": {
+        "requests": 4,
+        "zero_yield_requests": 0,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "cve-1",
+          "cve-2",
+          "cve-3",
+          "cve-4",
+          "cve-5",
+          "cve-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 1,
+        "historical_contribution": 0,
+        "external_contribution": 5,
+        "time_to_useful_evidence_ms": 210,
+        "estimated_collection_ms": 560,
+        "useful_evidence_per_request": 1.25
+      },
+      "requests_saved": 3,
+      "estimated_latency_saved_ms": 920
+    },
+    {
+      "id": "identifier-ghsa",
+      "query": "GHSA-xxxx-xxxx-xxxx",
+      "query_class": "identifier",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "github",
+        "rss",
+        "hacker_news",
+        "bluesky"
+      ],
+      "deferred": [
+        "youtube",
+        "gdelt",
+        "mastodon"
+      ],
+      "decisions": {
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 87.0,
+          "long_term_utility": 87.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 65.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "gdelt": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 58.0,
+          "long_term_utility": 62.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 56.0,
+          "long_term_utility": 60.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 4,
+        "useful_candidates": 4,
+        "unique_useful_candidates": 4,
+        "useful_evidence_ids": [
+          "ghsa-1",
+          "ghsa-2",
+          "ghsa-3",
+          "ghsa-4"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 0,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 205,
+        "estimated_collection_ms": 1450,
+        "useful_evidence_per_request": 0.571429
+      },
+      "shadow": {
+        "requests": 4,
+        "zero_yield_requests": 1,
+        "useful_candidates": 4,
+        "unique_useful_candidates": 4,
+        "useful_evidence_ids": [
+          "ghsa-1",
+          "ghsa-2",
+          "ghsa-3",
+          "ghsa-4"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 0,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 205,
+        "estimated_collection_ms": 550,
+        "useful_evidence_per_request": 1.0
+      },
+      "requests_saved": 3,
+      "estimated_latency_saved_ms": 900
+    },
+    {
+      "id": "exact-phrase",
+      "query": "\"وزارة التخطيط\"",
+      "query_class": "exact_phrase",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "gdelt",
+        "github",
+        "mastodon",
+        "hacker_news"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 68.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 68.0,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 66.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "ex-1",
+          "ex-2",
+          "ex-3",
+          "ex-4",
+          "ex-5",
+          "ex-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 455,
+        "estimated_collection_ms": 1580,
+        "useful_evidence_per_request": 0.571429
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 3,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "ex-1",
+          "ex-2",
+          "ex-3",
+          "ex-4",
+          "ex-5",
+          "ex-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 2,
+        "historical_contribution": 0,
+        "external_contribution": 4,
+        "time_to_useful_evidence_ms": 455,
+        "estimated_collection_ms": 1580,
+        "useful_evidence_per_request": 0.571429
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "historical",
+      "query": "Iraq 2003 reconstruction",
+      "query_class": "historical",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "youtube",
+        "rss",
+        "gdelt",
+        "bluesky",
+        "github"
+      ],
+      "deferred": [
+        "hacker_news",
+        "mastodon"
+      ],
+      "decisions": {
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 85.0,
+          "long_term_utility": 85.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 81.0,
+          "long_term_utility": 81.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 72.0,
+          "long_term_utility": 75.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 68.0,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "hacker_news": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 63.0,
+          "long_term_utility": 66.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "mastodon": {
+          "recommendation": "DEFER",
+          "reason": "repeated low observed yield relative to expected retrieval cost",
+          "expected_utility": 62.0,
+          "long_term_utility": 65.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 4,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "hist-1",
+          "hist-2",
+          "hist-3",
+          "hist-4",
+          "hist-5",
+          "hist-6",
+          "hist-7",
+          "hist-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 3,
+        "historical_contribution": 2,
+        "external_contribution": 3,
+        "time_to_useful_evidence_ms": 470,
+        "estimated_collection_ms": 1800,
+        "useful_evidence_per_request": 0.428571
+      },
+      "shadow": {
+        "requests": 5,
+        "zero_yield_requests": 2,
+        "useful_candidates": 8,
+        "unique_useful_candidates": 8,
+        "useful_evidence_ids": [
+          "hist-1",
+          "hist-2",
+          "hist-3",
+          "hist-4",
+          "hist-5",
+          "hist-6",
+          "hist-7",
+          "hist-8"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 3,
+        "historical_contribution": 2,
+        "external_contribution": 3,
+        "time_to_useful_evidence_ms": 470,
+        "estimated_collection_ms": 1800,
+        "useful_evidence_per_request": 0.6
+      },
+      "requests_saved": 2,
+      "estimated_latency_saved_ms": 0
+    },
+    {
+      "id": "recent",
+      "query": "OpenAI latest news",
+      "query_class": "recent",
+      "production_plan": [
+        "youtube",
+        "bluesky",
+        "mastodon",
+        "github",
+        "hacker_news",
+        "rss",
+        "gdelt"
+      ],
+      "shadow_plan": [
+        "bluesky",
+        "youtube",
+        "rss",
+        "gdelt",
+        "github",
+        "hacker_news",
+        "mastodon"
+      ],
+      "deferred": [],
+      "decisions": {
+        "bluesky": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 78.0,
+          "long_term_utility": 78.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "youtube": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 77.0,
+          "long_term_utility": 77.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "rss": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 73.0,
+          "long_term_utility": 73.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "gdelt": {
+          "recommendation": "SELECT",
+          "reason": "protected query-class capability",
+          "expected_utility": 70.0,
+          "long_term_utility": 70.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "github": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 69.0,
+          "long_term_utility": 71.0,
+          "current_availability": 100.0,
+          "observations": 8
+        },
+        "hacker_news": {
+          "recommendation": "SELECT",
+          "reason": "insufficient evidence to defer",
+          "expected_utility": 69.0,
+          "long_term_utility": 69.0,
+          "current_availability": 100.0,
+          "observations": 0
+        },
+        "mastodon": {
+          "recommendation": "SELECT",
+          "reason": "expected evidence gain remains competitive",
+          "expected_utility": 64.5,
+          "long_term_utility": 68.0,
+          "current_availability": 100.0,
+          "observations": 8
+        }
+      },
+      "production": {
+        "requests": 7,
+        "zero_yield_requests": 1,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "rec-1",
+          "rec-2",
+          "rec-3",
+          "rec-4",
+          "rec-5",
+          "rec-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 0,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 215,
+        "estimated_collection_ms": 1510,
+        "useful_evidence_per_request": 0.857143
+      },
+      "shadow": {
+        "requests": 7,
+        "zero_yield_requests": 1,
+        "useful_candidates": 6,
+        "unique_useful_candidates": 6,
+        "useful_evidence_ids": [
+          "rec-1",
+          "rec-2",
+          "rec-3",
+          "rec-4",
+          "rec-5",
+          "rec-6"
+        ],
+        "useful_evidence_lost": [],
+        "recall": 1.0,
+        "local_memory_contribution": 0,
+        "historical_contribution": 0,
+        "external_contribution": 6,
+        "time_to_useful_evidence_ms": 215,
+        "estimated_collection_ms": 1510,
+        "useful_evidence_per_request": 0.857143
+      },
+      "requests_saved": 0,
+      "estimated_latency_saved_ms": 0
+    }
+  ]
+}

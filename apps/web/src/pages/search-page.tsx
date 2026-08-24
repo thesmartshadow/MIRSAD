@@ -12,7 +12,9 @@ import { startTransition, useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 import { LiveSearchTrace } from "@/components/search/live-search-trace";
+import { CoverageView } from "@/components/search/coverage-view";
 import { RetrievalFlowSvg } from "@/components/search/retrieval-flow-svg";
+import { QueryField } from "@/components/search/query-field";
 import { ResultCard } from "@/components/search/result-card";
 import { SearchDiagnostics } from "@/components/search/search-diagnostics";
 import { SearchForm } from "@/components/search/search-form";
@@ -436,7 +438,7 @@ export function SearchPage() {
     : t("search.emptyDescription");
 
   return (
-    <div>
+    <div className="instrument-page instrument-page--search">
       <PageHeader
         title={t("search.title")}
         description={t("search.description")}
@@ -507,10 +509,10 @@ export function SearchPage() {
       <div
         ref={workspace}
         data-workspace-state={loading ? "active" : terminalWithResults ? "results-first" : currentSearch ? "terminal-empty" : "idle"}
-        className={`grid items-start gap-5 ${loading ? "xl:grid-cols-[minmax(220px,250px)_minmax(0,1fr)_minmax(260px,310px)]" : "grid-cols-1"}`}
+        className={`search-workspace${loading ? " search-workspace--active" : ""}`}
       >
-        <aside className={loading ? "hidden border-e pe-4 xl:block" : "hidden"} data-testid="desktop-filter-rail">
-          <div className="sticky top-4">
+        <aside className={loading ? "search-workspace__rail search-workspace__rail--filters" : "hidden"} data-testid="desktop-filter-rail">
+          <div className="search-workspace__sticky">
             <FiltersPanel activeRequest={activeRequest} density={density} onDensity={(value) => { setDensity(value); localStorage.setItem("mirsad.search-density", value); }} />
           </div>
         </aside>
@@ -531,12 +533,12 @@ export function SearchPage() {
           )}
           {!loading && currentSearch && (
             <>
-              <section className="mb-4 border-y bg-muted/10 px-4 py-4" aria-label={t("search.sessionSummary")}>
-                  <div className="mb-3 flex flex-col justify-between gap-1 border-b pb-3 sm:flex-row sm:items-end">
+              <section className="session-readout" aria-label={t("search.sessionSummary")}>
+                  <div className="session-readout__query">
                     <div><div className="text-xs text-muted-foreground">{t("search.keyword")}</div><div className="mt-1 text-lg font-semibold" dir="auto">{currentSearch.session.original_query}</div></div>
                     <div className="text-xs text-muted-foreground">{formatDate(currentSearch.session.started_at, locale)}</div>
                   </div>
-                  <dl className="grid grid-cols-3 gap-3 sm:grid-cols-6">
+                  <dl className="session-readout__metrics">
                     {[
                       [t("search.collected"), currentSearch.session.result_count],
                       [t("analytics.unique"), currentSearch.session.unique_count],
@@ -554,15 +556,18 @@ export function SearchPage() {
                 </Alert>
               )}
               <Tabs defaultValue="results">
-                <TabsList className="mb-4"><TabsTrigger value="results">{t("search.results")}</TabsTrigger><TabsTrigger value="clusters">{t("nav.clusters")}</TabsTrigger><TabsTrigger value="timeline">{t("search.timeline")}</TabsTrigger><TabsTrigger value="analysis">{t("nav.analytics")}</TabsTrigger></TabsList>
+                <TabsList className="mb-4"><TabsTrigger value="results">{t("search.results")}</TabsTrigger><TabsTrigger value="coverage">{t("coverage.label")}</TabsTrigger><TabsTrigger value="clusters">{t("nav.clusters")}</TabsTrigger><TabsTrigger value="timeline">{t("search.timeline")}</TabsTrigger><TabsTrigger value="analysis">{t("nav.analytics")}</TabsTrigger></TabsList>
                 <TabsContent value="results">
                   {results.length ? (
                     <section aria-labelledby="results-title">
                       <div className="mb-3 flex items-center justify-between"><h2 id="results-title" className="flex items-center gap-2 text-sm font-semibold"><CheckCircle2 className="size-4 text-emerald-600" />{t("search.results")}</h2><span className="text-xs text-muted-foreground">{formatNumber(results.length, locale)} {t("search.resultsMeta")}</span></div>
-                      <div ref={resultList} className="divide-y border-y">{visibleResults.map((item) => <ResultCard key={item.id} item={item} density={density} sessionId={currentSearch.session.id} initiallyBookmarked={bookmarkedContentIds.has(item.id)} />)}</div>
+                      <div ref={resultList} className="evidence-ledger">{visibleResults.map((item) => <ResultCard key={item.id} item={item} density={density} sessionId={currentSearch.session.id} initiallyBookmarked={bookmarkedContentIds.has(item.id)} />)}</div>
                       {totalPages > 1 && <div className="mt-5 flex items-center justify-center gap-1">{Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => <Button key={number} size="icon-sm" variant={page === number ? "default" : "ghost"} onClick={() => setPage(number)} aria-current={page === number ? "page" : undefined}>{number}</Button>)}</div>}
                     </section>
                   ) : <EmptyState title={t("search.emptyTitle")} description={resultEmptyDescription} />}
+                </TabsContent>
+                <TabsContent value="coverage">
+                  {currentSearch.coverage ? <CoverageView coverage={currentSearch.coverage} /> : <EmptyState title={t("coverage.label")} description={t("state.noData")} />}
                 </TabsContent>
                 <TabsContent value="clusters"><div className="divide-y border-y">{currentSearch.clusters.length ? currentSearch.clusters.map((cluster) => <section key={cluster.id} className="px-1 py-4"><div className="flex justify-between gap-4"><div><h3 className="font-medium" dir="auto">{cluster.representative_title}</h3><p className="mt-1 text-xs text-muted-foreground">{Object.entries(cluster.source_distribution).map(([source, count]) => `${source} ${count}`).join(" · ")}</p></div><span className="text-sm font-semibold tabular-nums">{cluster.member_count}</span></div></section>) : <EmptyState title={t("clusters.title")} description={t("clusters.empty")} />}</div></TabsContent>
                 <TabsContent value="timeline"><Card className="shadow-none"><CardContent>{currentSearch.analytics.mentions_over_time.some((item) => item.count > 0) ? <ol className="space-y-2">{currentSearch.analytics.mentions_over_time.filter((item) => item.count > 0).map((item) => <li className="flex justify-between border-b pb-2 text-sm" key={item.timestamp}><time>{formatDate(item.timestamp, locale)}</time><strong className="tabular-nums">{formatNumber(item.count, locale)}</strong></li>)}</ol> : <p className="text-sm text-muted-foreground">{t("state.noData")}</p>}</CardContent></Card></TabsContent>
@@ -570,11 +575,11 @@ export function SearchPage() {
               </Tabs>
             </>
           )}
-          {!loading && !currentSearch && !error && <EmptyState title={t("search.emptyTitle")} description={t("search.emptyDescription")} />}
+          {!loading && !currentSearch && !error && <QueryField />}
         </section>
 
-        <aside className={loading ? "hidden border-s ps-4 xl:block" : "hidden"} data-testid="desktop-trace-rail">
-          <div className="sticky top-4">{loading && wideWorkspace && <LiveSearchTrace state={jobState} />}</div>
+        <aside className={loading ? "search-workspace__rail search-workspace__rail--trace" : "hidden"} data-testid="desktop-trace-rail">
+          <div className="search-workspace__sticky">{loading && wideWorkspace && <LiveSearchTrace state={jobState} />}</div>
         </aside>
       </div>
     </div>

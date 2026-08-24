@@ -155,8 +155,12 @@ describe("application workflows", () => {
 
     const workspace = await screen.findByLabelText("Search results workspace");
     expect(workspace.parentElement).toHaveAttribute("data-workspace-state", "active");
-    expect(screen.getByTestId("desktop-filter-rail")).toHaveClass("xl:block");
-    expect(screen.getByTestId("desktop-trace-rail")).toHaveClass("xl:block");
+    expect(screen.getByTestId("desktop-filter-rail")).toHaveClass(
+      "search-workspace__rail--filters",
+    );
+    expect(screen.getByTestId("desktop-trace-rail")).toHaveClass(
+      "search-workspace__rail--trace",
+    );
     expect(PendingEventSource.instances).toHaveLength(1);
   });
 
@@ -202,7 +206,7 @@ describe("application workflows", () => {
       database_integrity: "ok",
       foreign_key_violations: 0,
       capabilities: ["fts5"],
-      version: "1.1.1",
+      version: "1.2.0",
     };
     const quality = {
       search_count: 4,

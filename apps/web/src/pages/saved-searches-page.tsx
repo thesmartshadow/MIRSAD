@@ -76,7 +76,7 @@ export function SavedSearchesPage() {
   };
 
   return (
-    <div>
+    <div className="instrument-page instrument-page--saved">
       <PageHeader
         title={t("saved.title")}
         description={t("saved.description")}
@@ -88,7 +88,7 @@ export function SavedSearchesPage() {
       ) : items.length === 0 ? (
         <EmptyState title={t("saved.title")} description={t("saved.empty")} />
       ) : (
-        <Card className="overflow-hidden py-0 shadow-none">
+        <Card className="saved-register overflow-hidden py-0 shadow-none">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>

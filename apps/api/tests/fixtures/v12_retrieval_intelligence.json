@@ -1,0 +1,218 @@
+{
+  "schema": "mirsad.v1.2.retrieval-intelligence-fixture",
+  "frozen_before_router_implementation": true,
+  "sources": ["youtube", "bluesky", "mastodon", "github", "hacker_news", "rss", "gdelt"],
+  "cases": [
+    {
+      "id": "ar-topic-baghdad",
+      "query": "بغداد",
+      "query_class": "arabic_topic",
+      "local_useful": ["bg-1", "bg-2"],
+      "sources": {
+        "youtube": {"latency_ms": 820, "useful": ["bg-3", "bg-4"]},
+        "bluesky": {"latency_ms": 620, "useful": ["bg-5", "bg-6"]},
+        "mastodon": {"latency_ms": 710, "useful": []},
+        "github": {"latency_ms": 330, "useful": []},
+        "hacker_news": {"latency_ms": 260, "useful": []},
+        "rss": {"latency_ms": 510, "useful": ["bg-7"]},
+        "gdelt": {"latency_ms": 1900, "useful": ["bg-8"]}
+      }
+    },
+    {
+      "id": "ar-entity-ministry",
+      "query": "وزارة التخطيط",
+      "query_class": "entity",
+      "local_useful": ["mp-1", "mp-2"],
+      "sources": {
+        "youtube": {"latency_ms": 760, "useful": ["mp-3"]},
+        "bluesky": {"latency_ms": 610, "useful": ["mp-4"]},
+        "mastodon": {"latency_ms": 730, "useful": []},
+        "github": {"latency_ms": 300, "useful": []},
+        "hacker_news": {"latency_ms": 240, "useful": []},
+        "rss": {"latency_ms": 480, "useful": ["mp-5"]},
+        "gdelt": {"latency_ms": 1800, "useful": ["mp-6"]}
+      }
+    },
+    {
+      "id": "ar-topic-ai-recent",
+      "query": "الذكاء الاصطناعي اليوم",
+      "query_class": "arabic_topic",
+      "local_useful": ["aiar-1"],
+      "sources": {
+        "youtube": {"latency_ms": 790, "useful": ["aiar-2", "aiar-3"]},
+        "bluesky": {"latency_ms": 600, "useful": ["aiar-4"]},
+        "mastodon": {"latency_ms": 690, "useful": ["aiar-5"]},
+        "github": {"latency_ms": 320, "useful": []},
+        "hacker_news": {"latency_ms": 250, "useful": ["aiar-6"]},
+        "rss": {"latency_ms": 500, "useful": ["aiar-7"]},
+        "gdelt": {"latency_ms": 1700, "useful": ["aiar-8"]}
+      }
+    },
+    {
+      "id": "ar-person",
+      "query": "علي فراس",
+      "query_class": "person",
+      "local_useful": ["af-1"],
+      "sources": {
+        "youtube": {"latency_ms": 700, "useful": ["af-2"]},
+        "bluesky": {"latency_ms": 590, "useful": ["af-3"]},
+        "mastodon": {"latency_ms": 680, "useful": ["af-4"]},
+        "github": {"latency_ms": 310, "useful": []},
+        "hacker_news": {"latency_ms": 230, "useful": []},
+        "rss": {"latency_ms": 470, "useful": []},
+        "gdelt": {"latency_ms": 1650, "useful": []}
+      }
+    },
+    {
+      "id": "mixed-entity",
+      "query": "Microsoft العراق",
+      "query_class": "entity",
+      "local_useful": ["msiq-1"],
+      "sources": {
+        "youtube": {"latency_ms": 740, "useful": ["msiq-2"]},
+        "bluesky": {"latency_ms": 610, "useful": ["msiq-3"]},
+        "mastodon": {"latency_ms": 700, "useful": []},
+        "github": {"latency_ms": 300, "useful": ["msiq-4"]},
+        "hacker_news": {"latency_ms": 245, "useful": []},
+        "rss": {"latency_ms": 490, "useful": ["msiq-5"]},
+        "gdelt": {"latency_ms": 1750, "useful": ["msiq-6"]}
+      }
+    },
+    {
+      "id": "en-topic",
+      "query": "Linux kernel security",
+      "query_class": "english_topic",
+      "local_useful": ["lks-1"],
+      "sources": {
+        "youtube": {"latency_ms": 730, "useful": ["lks-2"]},
+        "bluesky": {"latency_ms": 600, "useful": ["lks-3"]},
+        "mastodon": {"latency_ms": 670, "useful": []},
+        "github": {"latency_ms": 290, "useful": ["lks-4", "lks-5"]},
+        "hacker_news": {"latency_ms": 230, "useful": ["lks-6"]},
+        "rss": {"latency_ms": 460, "useful": ["lks-7"]},
+        "gdelt": {"latency_ms": 1600, "useful": []}
+      }
+    },
+    {
+      "id": "en-entity",
+      "query": "OpenAI",
+      "query_class": "entity",
+      "local_useful": ["oai-1"],
+      "sources": {
+        "youtube": {"latency_ms": 710, "useful": ["oai-2"]},
+        "bluesky": {"latency_ms": 580, "useful": ["oai-3"]},
+        "mastodon": {"latency_ms": 660, "useful": ["oai-4"]},
+        "github": {"latency_ms": 280, "useful": ["oai-5"]},
+        "hacker_news": {"latency_ms": 220, "useful": ["oai-6"]},
+        "rss": {"latency_ms": 450, "useful": ["oai-7"]},
+        "gdelt": {"latency_ms": 1550, "useful": ["oai-8"]}
+      }
+    },
+    {
+      "id": "handle",
+      "query": "@openai",
+      "query_class": "handle",
+      "local_useful": ["ho-1"],
+      "sources": {
+        "youtube": {"latency_ms": 690, "useful": ["ho-2"]},
+        "bluesky": {"latency_ms": 570, "useful": ["ho-3", "ho-4"]},
+        "mastodon": {"latency_ms": 640, "useful": ["ho-5"]},
+        "github": {"latency_ms": 270, "useful": []},
+        "hacker_news": {"latency_ms": 215, "useful": []},
+        "rss": {"latency_ms": 440, "useful": []},
+        "gdelt": {"latency_ms": 1500, "useful": []}
+      }
+    },
+    {
+      "id": "hashtag",
+      "query": "#بغداد",
+      "query_class": "hashtag",
+      "local_useful": ["htag-1"],
+      "sources": {
+        "youtube": {"latency_ms": 700, "useful": ["htag-2"]},
+        "bluesky": {"latency_ms": 580, "useful": ["htag-3", "htag-4"]},
+        "mastodon": {"latency_ms": 650, "useful": ["htag-5"]},
+        "github": {"latency_ms": 275, "useful": []},
+        "hacker_news": {"latency_ms": 220, "useful": []},
+        "rss": {"latency_ms": 445, "useful": []},
+        "gdelt": {"latency_ms": 1520, "useful": []}
+      }
+    },
+    {
+      "id": "identifier-cve",
+      "query": "CVE-2026-61371",
+      "query_class": "identifier",
+      "local_useful": ["cve-1"],
+      "sources": {
+        "youtube": {"latency_ms": 680, "useful": []},
+        "bluesky": {"latency_ms": 560, "useful": ["cve-2"]},
+        "mastodon": {"latency_ms": 630, "useful": []},
+        "github": {"latency_ms": 260, "useful": ["cve-3", "cve-4"]},
+        "hacker_news": {"latency_ms": 210, "useful": ["cve-5"]},
+        "rss": {"latency_ms": 430, "useful": ["cve-6"]},
+        "gdelt": {"latency_ms": 1480, "useful": []}
+      }
+    },
+    {
+      "id": "identifier-ghsa",
+      "query": "GHSA-xxxx-xxxx-xxxx",
+      "query_class": "identifier",
+      "local_useful": [],
+      "sources": {
+        "youtube": {"latency_ms": 670, "useful": []},
+        "bluesky": {"latency_ms": 550, "useful": []},
+        "mastodon": {"latency_ms": 620, "useful": []},
+        "github": {"latency_ms": 250, "useful": ["ghsa-1", "ghsa-2"]},
+        "hacker_news": {"latency_ms": 205, "useful": ["ghsa-3"]},
+        "rss": {"latency_ms": 420, "useful": ["ghsa-4"]},
+        "gdelt": {"latency_ms": 1450, "useful": []}
+      }
+    },
+    {
+      "id": "exact-phrase",
+      "query": "\"وزارة التخطيط\"",
+      "query_class": "exact_phrase",
+      "local_useful": ["ex-1", "ex-2"],
+      "sources": {
+        "youtube": {"latency_ms": 720, "useful": ["ex-3"]},
+        "bluesky": {"latency_ms": 590, "useful": ["ex-4"]},
+        "mastodon": {"latency_ms": 660, "useful": []},
+        "github": {"latency_ms": 285, "useful": []},
+        "hacker_news": {"latency_ms": 225, "useful": []},
+        "rss": {"latency_ms": 455, "useful": ["ex-5"]},
+        "gdelt": {"latency_ms": 1580, "useful": ["ex-6"]}
+      }
+    },
+    {
+      "id": "historical",
+      "query": "Iraq 2003 reconstruction",
+      "query_class": "historical",
+      "local_useful": ["hist-1", "hist-2", "hist-3"],
+      "historical_useful": ["hist-4", "hist-5"],
+      "sources": {
+        "youtube": {"latency_ms": 750, "useful": ["hist-6"]},
+        "bluesky": {"latency_ms": 600, "useful": []},
+        "mastodon": {"latency_ms": 680, "useful": []},
+        "github": {"latency_ms": 300, "useful": []},
+        "hacker_news": {"latency_ms": 235, "useful": []},
+        "rss": {"latency_ms": 470, "useful": ["hist-7"]},
+        "gdelt": {"latency_ms": 1800, "useful": ["hist-8"]}
+      }
+    },
+    {
+      "id": "recent",
+      "query": "OpenAI latest news",
+      "query_class": "recent",
+      "local_useful": [],
+      "sources": {
+        "youtube": {"latency_ms": 700, "useful": ["rec-1"]},
+        "bluesky": {"latency_ms": 570, "useful": ["rec-2"]},
+        "mastodon": {"latency_ms": 640, "useful": ["rec-3"]},
+        "github": {"latency_ms": 275, "useful": []},
+        "hacker_news": {"latency_ms": 215, "useful": ["rec-4"]},
+        "rss": {"latency_ms": 440, "useful": ["rec-5"]},
+        "gdelt": {"latency_ms": 1510, "useful": ["rec-6"]}
+      }
+    }
+  ]
+}

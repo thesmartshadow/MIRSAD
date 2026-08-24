@@ -1,0 +1,22 @@
+{
+  "schema": "mirsad.v1.2.memory-evaluation",
+  "fixture_sha256": "cef114386fca2c8800b54582bac90d922273adc910ae44ed942836c3e5b14dc8",
+  "queries_with_local_evidence": 12,
+  "local_useful_candidates": 17,
+  "queries_with_historical_evidence": 1,
+  "historical_useful_candidates": 2,
+  "retrieval": {
+    "database": "SQLite FTS5",
+    "literal_identifier_handle_hashtag_lane": true,
+    "bounded_candidate_limit": true,
+    "whole_corpus_semantic_scan": false,
+    "acquisition_path": "LOCAL_MEMORY"
+  },
+  "timestamp_semantics": {
+    "published_at": "source publication time or null",
+    "first_seen_at": "first observation by MIRSAD",
+    "last_seen_at": "latest observation by MIRSAD",
+    "retrieved_at": "latest non-local retrieval execution",
+    "publication_inferred_from_ingestion": false
+  }
+}

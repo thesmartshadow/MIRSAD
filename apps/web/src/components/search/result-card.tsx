@@ -379,15 +379,15 @@ export function ResultCard({
   ).filter((entry): entry is [TranslationKey, number] => entry[1] !== null);
   return (
     <article
-      className={`group border-s-2 border-transparent px-1 transition-colors hover:border-s-primary hover:bg-muted/20 sm:px-3 ${density === "compact" ? "space-y-2 py-3" : "space-y-3 py-5"}`}
+      className={`evidence-record group ${density === "compact" ? "evidence-record--compact" : ""}`}
       data-testid="evidence-record"
     >
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center border-b-2 border-primary/40 text-[11px] font-semibold uppercase">
+        <div className="evidence-record__heading">
+          <div className="evidence-record__source">
             {item.source.slice(0, 2)}
           </div>
-          <div className="min-w-0 flex-1">
-            <div className="mb-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <div className="evidence-record__title-block">
+            <div className="evidence-record__eyebrow">
               <span className="font-semibold uppercase tracking-[0.08em] text-foreground" dir="ltr">{item.source}</span>
               {item.acquisition_mode === "WEB_INDEX" && (
                 <Tooltip>
@@ -424,32 +424,32 @@ export function ResultCard({
               </span>
             </div>
             <h3
-              className="line-clamp-2 text-sm font-semibold leading-snug"
+              className="evidence-record__title line-clamp-2"
               dir="auto"
             >
               {title}
             </h3>
           </div>
-          <div className="shrink-0 text-end">
-            <div className="font-heading text-lg font-semibold tabular-nums">
+          <div className="evidence-record__score">
+            <div>
               {formatNumber(item.score, locale, 1)}
             </div>
-            <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+            <div>
               {t("result.score")}
             </div>
           </div>
         </div>
         <p
-          className={
+          className={`evidence-record__snippet ${
             density === "compact"
               ? "line-clamp-2 text-xs leading-relaxed text-muted-foreground"
               : "line-clamp-3 text-sm leading-relaxed text-muted-foreground"
-          }
+          }`}
           dir="auto"
         >
           <HighlightedSnippet text={excerpt} ranges={item.highlight_ranges} />
         </p>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
+        <div className="evidence-record__provenance">
           {domain && (
             <span dir="ltr" className="max-w-56 truncate">
               {domain}
@@ -510,7 +510,7 @@ export function ResultCard({
             ))}
           </div>
         )}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t pt-3">
+        <div className="evidence-record__footer">
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
             <span>
               {t("result.engagement")}:{" "}

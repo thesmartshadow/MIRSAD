@@ -17,6 +17,13 @@ class AliasEvidence:
     support_count: int
     confidence: float
     evidence_sources: tuple[str, ...]
+    status: str
+    evidence: tuple[dict[str, str], ...]
+
+
+COMMON_SINGLE_NAMES = frozenset(
+    {"علي", "محمد", "حسين", "احمد", "أحمد", "ali", "mohammed", "muhammad", "hussein"}
+)
 
 
 class EntityAliasRepository:
@@ -38,6 +45,7 @@ class EntityAliasRepository:
                 ),
                 EntityAliasEdge.confidence >= minimum_confidence,
                 EntityAliasEdge.support_count >= 2,
+                EntityAliasEdge.status == "supported",
             )
             .order_by(EntityAliasEdge.confidence.desc(), EntityAliasEdge.right_value)
             .limit(5)
@@ -52,6 +60,8 @@ class EntityAliasRepository:
                     row.support_count,
                     row.confidence,
                     tuple(row.evidence_sources or ()),
+                    row.status,
+                    tuple(row.evidence or ()),
                 )
             )
         return tuple(output)
@@ -64,6 +74,8 @@ class EntityAliasRepository:
         relationship_type: str,
         evidence_source: str,
         direct_evidence: bool = False,
+        evidence_id: str | None = None,
+        evidence_kind: str = "observed_relationship",
     ) -> EntityAliasEdge | None:
         left_clean = left.strip()
         right_clean = right.strip()
@@ -77,6 +89,19 @@ class EntityAliasRepository:
             or len(right_normalized) > 500
         ):
             return None
+        left_tokens = left_normalized.split()
+        right_tokens = right_normalized.removeprefix("@").split()
+        handle_relationship = relationship_type in {"public_handle", "platform_handle"}
+        if not handle_relationship and (
+            (len(left_tokens) == 1 and left_normalized in COMMON_SINGLE_NAMES)
+            or (len(right_tokens) == 1 and right_normalized in COMMON_SINGLE_NAMES)
+        ):
+            return None
+        evidence_entry = {
+            "source": evidence_source[:100],
+            "kind": evidence_kind[:60],
+            "evidence_id": (evidence_id or "")[:300],
+        }
         row = self.db.scalar(
             select(EntityAliasEdge).where(
                 EntityAliasEdge.left_normalized == left_normalized,
@@ -92,6 +117,8 @@ class EntityAliasRepository:
                 right_normalized=right_normalized,
                 relationship_type=relationship_type,
                 evidence_sources=[evidence_source],
+                evidence=[evidence_entry],
+                status="observed",
                 support_count=1,
                 confidence=0.8 if direct_evidence else 0.55,
             )
@@ -106,11 +133,16 @@ class EntityAliasRepository:
         if is_independent:
             row.support_count += 1
         row.evidence_sources = sorted(sources)
+        evidence = list(row.evidence or ())
+        if evidence_entry not in evidence:
+            evidence.append(evidence_entry)
+        row.evidence = evidence[-20:]
         row.confidence = min(
             0.98,
             max(row.confidence, 0.8 if direct_evidence else 0.55)
             + (0.1 if is_independent else 0.0),
         )
         row.last_seen_at = datetime.now(UTC)
+        row.status = "supported" if row.support_count >= 2 and row.confidence >= 0.8 else "observed"
         self.db.flush()
         return row
